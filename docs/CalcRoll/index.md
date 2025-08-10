@@ -1,4 +1,4 @@
-# CalcRoll Information
+# カルメモ　CalcRoll Information
 
 電卓のようにキーをタップして計算式を入れてください。最後に[=]をタップすれば答えが出ます
 
@@ -35,11 +35,16 @@
     
 
 ## リンク
-- 個人情報保護方針： Privacy Information 
 
-- 開発現場：　GitHub/SumPositive Repositorie
+### ● EULA　エンドユーザー使用許諾契約
 
-- 作者紹介：　sumpo / SumPositive 
+- [日本語](../EULA.md)
+- [English](../EULA_en.md)
+
+### ● Privacy policy　プライバシーポリシー
+
+- [日本語](../PrivacyPolicy.md)
+- [English](../PrivacyPolicy_en.md)
 
 
 ## 技術的うんちく
