@@ -40,13 +40,13 @@
 
 ## ● EULA　エンドユーザー使用許諾契約
 
-- [日本語](../EULA.md)
-- [English](../EULA_en.md)
+- [日本語](https://info.engineer.co.jp/EULA.html)
+- [English](https://info.engineer.co.jp/EULA_en.html)
 
 ## ● Privacy policy　プライバシーポリシー
 
-- [日本語](../PrivacyPolicy.md)
-- [English](../PrivacyPolicy_en.md)
+- [日本語](https://info.engineer.co.jp/PrivacyPolicy.html)
+- [English](https://info.engineer.co.jp/PrivacyPolicy_en.html)
 
 <br>
 
