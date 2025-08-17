@@ -38,20 +38,16 @@
     
 <br>
 
-## ● EULA　エンドユーザー使用許諾契約
+## EULA　エンドユーザー使用許諾契約
+- [English](https://info.engineer.co.jp/EULA_en.html)　　[日本語](https://info.engineer.co.jp/EULA.html)
 
-- [日本語](https://info.engineer.co.jp/EULA.html)
-- [English](https://info.engineer.co.jp/EULA_en.html)
+## Privacy policy　プライバシーポリシー
+- [English](https://info.engineer.co.jp/PrivacyPolicy_en.html)　　[日本語](https://info.engineer.co.jp/PrivacyPolicy.html)
 
-## ● Privacy policy　プライバシーポリシー
-
-- [日本語](https://info.engineer.co.jp/PrivacyPolicy.html)
-- [English](https://info.engineer.co.jp/PrivacyPolicy_en.html)
-
-<br>
+## Source Code
+- [GitHub: SumPositive](https://github.com/SumPositive/Calc26/)
 
 ## 作者自己紹介：　sumpo
-
 はじまりは、2009年 iPhone3 の日本登場と共にアプリ開発してみようと思い中古Mac-miniを購入した
 
 Xcode3/Objective-C/CoCoa に慣れるために自分が欲しいと思ったアプリを夢中に作成した
