@@ -45,7 +45,7 @@
 - [English](https://info.engineer.co.jp/PrivacyPolicy_en.html)　　[日本語](https://info.engineer.co.jp/PrivacyPolicy.html)
 
 ## Source Code
-- [GitHub: SumPositive](https://github.com/SumPositive/Calc26/)
+- [GitHub: SumPositive](https://github.com/SumPositive/CalcRoll/)　（要招待）
 
 ## 作者自己紹介：　sumpo
 はじまりは、2009年 iPhone3 の日本登場と共にアプリ開発してみようと思い中古Mac-miniを購入した
@@ -69,7 +69,7 @@ Xcode3/Objective-C/CoCoa に慣れるために自分が欲しいと思ったア�
 2025年 万博を機に、Swift6/SwiftUI に慣れるため CalcRoll の移植を開始
 2025年8月24日 新規アプリとして提出したところ、Apple審査落ち、理由は「類似アプリあり、新規性なし」、仕方なく旧アプリのアップデートに変更
 
-    - 2025年9月4日  カルメモ／CalcRoll 2.0 公開
+    - 2025年9月4日 8:58 カルメモ／CalcRoll 2.0 公開
 
 <br>
 
