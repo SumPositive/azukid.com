@@ -1,4 +1,4 @@
-# MochiMemo User Guide
+# Packlin User Guide
 
 This is a packing checklist that is useful for trips and events. You can edit it freely.
 
@@ -43,9 +43,9 @@ Please try the features below.
 
 <br>
 
-### [End User License Agreement](https://info.engineer.co.jp/EULA.html)
+### [End User License Agreement](https://info.engineer.co.jp/EULA_en.html)
 
-### [Privacy Policy](https://info.engineer.co.jp/PrivacyPolicy.html)
+### [Privacy Policy](https://info.engineer.co.jp/PrivacyPolicy_en.html)
 
 ### [Source Code: GitHub](https://github.com/SumPositive/RackList/)
 
