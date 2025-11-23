@@ -1,2 +1,1 @@
-# azukid.com
-azuki creator's documents
+### azuki creator's documents

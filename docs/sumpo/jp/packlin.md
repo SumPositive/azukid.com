@@ -53,7 +53,7 @@ App
 
 ### [Source Code： GitHub](https://github.com/SumPositive/RackList/)
 
-### [作者自己紹介：　sumpo](https://docs.azukid.com/sumpo/jp/index)
+### [作者自己紹介： sumpo](https://docs.azukid.com/sumpo/jp/index)
 
 <br><br>
 
