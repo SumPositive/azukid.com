@@ -1,11 +1,11 @@
 # モチメモ　取扱説明書
-
 旅行やイベントに役立つ持ち物メモです。自由自在に編集できます
 
 旅行や出張などにご利用ください。重量集計により、体力に合わせた荷造りができます。趣味の用品管理などにもお役立てください
 
 操作手間の最小化を目指しました。よくある「確認」ボタンはありません、編集後の「保存」ボタンもありません。「削除」ボタンは確認なしに即削除します。もし、間違ったならば「↩︎ Undo」ボタンで前の状態に戻せます。最大10回前まで戻せます
 
+## 新機能
 チャッピー(AI)にパックの作成や修正を依頼できるようになりました（内部課金）。要望に沿った叩き台を手早く作ってくれる感じです。参考にして修正しながらお楽しみください
 
 ## 情報
@@ -27,11 +27,9 @@ App
          ├─ Item
          └─ Item
 ```
-<br>
-
-以下の機能がありますのでお試しください
 
 ## 機能
+以下の機能がありますのでお試しください
 
     - アイテム毎にチェックして全体のチェック状況を確認できる
     - 必要数と在庫数を記録できる
@@ -46,20 +44,7 @@ App
 
     - チャッピー(AI)にパックの作成や修正を依頼できる（内部課金）
 
-<br><br>
-
-### [エンドユーザー使用許諾契約](https://info.engineer.co.jp/EULA.html)
-
-### [プライバシーポリシー](https://info.engineer.co.jp/PrivacyPolicy.html)
-
-### [Source Code： GitHub](https://github.com/SumPositive/RackList/)
-
-### [作者自己紹介： sumpo](https://docs.azukid.com/sumpo/jp/index)
-
-<br><br>
-
 ## 仕様・諸元
-
     - DATABASE： SwiftData(sqlite3)
     - 数量制限(最大)：ほぼ無制限なのですが、動作検証のため制限しています。もし、拡張する必要があれば教えてください
         - パック： 30
@@ -75,10 +60,19 @@ App
     - チャッピー(AI)
         - OpenAI ChatGPT-API
 
-<br><br>
+<br>
+
+### [エンドユーザー使用許諾契約](https://info.engineer.co.jp/EULA.html)
+
+### [プライバシーポリシー](https://info.engineer.co.jp/PrivacyPolicy.html)
+
+### [Source Code： GitHub](https://github.com/SumPositive/RackList/)
+
+### [作者自己紹介： sumpo](https://docs.azukid.com/sumpo/jp/index)
+
+<br>
 
 ## 履歴
-
 | Version  | 公開日      | 開発環境等
 |----------|------------|
 | 0.2      | 2010/2/16  | モチメモ／PackList Xcode3,Objective-C,CoreData 
