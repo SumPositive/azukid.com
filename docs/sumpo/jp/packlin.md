@@ -45,7 +45,7 @@ App
 
     - チャッピー(AI)にパックの作成や修正を依頼できる（内部課金）
 
-<br>
+<br><br>
 
 ### [エンドユーザー使用許諾契約](https://info.engineer.co.jp/EULA.html)
 
@@ -54,6 +54,25 @@ App
 ### [Source Code： GitHub](https://github.com/SumPositive/RackList/)
 
 ### [作者自己紹介： sumpo](https://docs.azukid.com/sumpo/jp/index)
+
+<br><br>
+
+## 仕様・諸元
+
+    - DATABASE： SwiftData(sqlite3)
+    - 数量制限(最大)：ほぼ無制限なのですが、動作検証のため制限しています。もし、拡張する必要があれば教えてください
+        - パック： 30
+        - グループ： 30
+        - アイテム： 100
+        - 個重量： 999,999(g)
+        - 在庫数： 999
+        - 必要数： 999
+        - 名称：200文字
+        - メモ：200文字
+        - チャッピー(AI)送信文：1,000文字
+        - チャッピー(AI)受信文：8,000文字
+    - チャッピー(AI)
+        - OpenAI ChatGPT-API
 
 <br><br>
 
