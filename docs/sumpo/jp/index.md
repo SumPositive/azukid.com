@@ -16,10 +16,10 @@ Xcode3/Objective-C/CoCoa に慣れるために自分が欲しいと思ったア�
 さらにCoreDataに慣れるためのアプリを企画。自己満足のアプリでも世界中で100人くらいにはハマるだろうと思い App Store に公開しはじめた
 
     - 2010年2月16日 2:23 モチメモ 0.2 公開　仕事や旅、キャンプの持ち物を管理する     　 (Total: 109,000 DL)
+    - 2010年4月2日 4:19  クレメモ 0.1 公開　クレジットカードの利用を記録して集計管理する  (Total: 81,000 DL)
 
 App Store：[クレメモ Legacy](https://apps.apple.com/jp/app/%E3%82%AF%E3%83%AC%E3%83%A1%E3%83%A2-legacy/id363741814)　　[クレメモ](https://apps.apple.com/jp/app/%E3%82%AF%E3%83%AC%E3%83%A1%E3%83%A2/id432458298)
-
-    - 2010年4月2日 4:19  クレメモ 0.1 公開　クレジットカードの利用を記録して集計管理する  (Total: 81,000 DL)
+<br>
 
 これまでの開発過程で Picker は入力(選択)用だが出力にも使えそうと思い立ち、店のレジからロールペーパーのレシートが出るような電卓をイメージした。そして、ドラム式計算機が出来上がった
 
@@ -28,23 +28,23 @@ App Store：[クレメモ Legacy](https://apps.apple.com/jp/app/%E3%82%AF%E3%83%
 立体リアルデザインが現れ始めたので、クラシックなダイアル操作をリアルに再現、それを使うためのアプリを開発
 
     - 2011年10月4日 8:29 割勘 　　1.0 公開　割り勘計算する、人数や金額をダイアル入力 　　 (Total: 4,000 DL)
-
-App Store：[体調メモ](https://apps.apple.com/jp/app/%E4%BD%93%E8%AA%BF%E3%83%A1%E3%83%A2/id472914799)
-
     - 2012年1月14日 5:45 体調メモ 0.8 公開　体重や血圧などをダイアル入力して集計管理する (Total: 29,000 DL)
 
+App Store：[体調メモ](https://apps.apple.com/jp/app/%E4%BD%93%E8%AA%BF%E3%83%A1%E3%83%A2/id472914799)
 <br>
 
 2025年 万博を機に、Swift6/SwiftUI に慣れるため CalcRoll の移植を開始
 2025年8月24日 新規アプリとして提出したところ、Apple審査落ち！理由は「類似アプリあり、新規性なし」そりゃそうだな！旧アプリのアップデートにして審査パス、公開できた
 
-App Store：[カルメモ Calclin](https://apps.apple.com/jp/app/%E3%82%AB%E3%83%AB%E3%83%A1%E3%83%A2/id385216637)
-
     - 2025年9月4日 8:58 カルメモ Calclin 2.0 公開
+
+App Store：[カルメモ Calclin](https://apps.apple.com/jp/app/%E3%82%AB%E3%83%AB%E3%83%A1%E3%83%A2/id385216637)
+<br>
 
 2025年9月 カルメモ公開後、モチメモもSwiftUI移行を始めた。1ヶ月程で従来からの課題を解決したalpha版ができた。初期画面に表示させるサンプルデータをAIに作らせた思いの外上出来！そこで「チャッピー(AI)に依頼する」新機能搭載を思いついた結果、世界規模のスケーラブルAPIサーバの開発とセキュア運用管理まで必要になった
 
-App Store：[モチメモ Packlin](https://apps.apple.com/jp/app/%E3%83%A2%E3%83%81%E3%83%A1%E3%83%A2/id495525984)
-
     - 2025年11月xx日 xx:xx モチメモ Packlin 3.0 公開
+
+App Store：[モチメモ Packlin](https://apps.apple.com/jp/app/%E3%83%A2%E3%83%81%E3%83%A1%E3%83%A2/id495525984)
+<br>
 
