@@ -36,42 +36,19 @@
 
     - キーボードを切り替えられる（５キーボード）
     
-<br>
+<br><br>
 
-## EULA　エンドユーザー使用許諾契約
-- [English](https://info.engineer.co.jp/EULA_en.html)　　[日本語](https://info.engineer.co.jp/EULA.html)
+### [エンドユーザー使用許諾契約](https://info.engineer.co.jp/EULA.html)
 
-## Privacy policy　プライバシーポリシー
-- [English](https://info.engineer.co.jp/PrivacyPolicy_en.html)　　[日本語](https://info.engineer.co.jp/PrivacyPolicy.html)
+### [プライバシーポリシー](https://info.engineer.co.jp/PrivacyPolicy.html)
 
-## Source Code
-- [GitHub: SumPositive](https://github.com/SumPositive/CalcRoll/)　（要招待）
+### [Source Code： GitHub](https://github.com/SumPositive/CalcRoll/)
 
-## 作者自己紹介：　sumpo
-はじまりは、2009年 iPhone3 の日本登場と共にアプリ開発してみようと思い中古Mac-miniを購入した
+### [作者自己紹介：　sumpo](https://docs.azukid.com/sumpo/jp/index)
 
-Xcode3/Objective-C/CoCoa に慣れるために自分が欲しいと思ったアプリを夢中に作成した
+<br><br>
 
-さらにCoreDataに慣れるためのアプリを企画。自己満足のアプリでも世界中で100人くらいにはハマるだろうと思い App Store に公開しはじめた
-
-    - 2010年2月16日 2:23 モチメモ 0.2 公開　仕事や旅、キャンプの持ち物を管理する     　 (Total: 109,000 DL)
-    - 2010年4月2日 4:19  クレメモ 0.1 公開　クレジットカードの利用を記録して集計管理する  (Total: 81,000 DL)
-
-これまでの開発過程で Picker は入力(選択)用だが出力にも使えそうと思い立ち、店のレジからロールペーパーのレシートが出るような電卓をイメージした。そして、ドラム式計算機が出来上がった
-
-    - 2010年8月7日 9:19　ドラタク 0.1 公開　のちに海外で好評だったので CalcRoll に改名 (Total: 55,000 DL)
-
-立体リアルデザインが現れ始めたので、クラシックなダイアル操作をリアルに再現、それを使うためのアプリを開発
-
-    - 2011年10月4日 8:29 割勘 　　1.0 公開　割り勘計算する、人数や金額をダイアル入力 　　 (Total: 4,000 DL)
-    - 2012年1月14日 5:45 体調メモ 0.8 公開　体重や血圧などをダイアル入力して集計管理する (Total: 29,000 DL)
-
-2025年 万博を機に、Swift6/SwiftUI に慣れるため CalcRoll の移植を開始
-2025年8月24日 新規アプリとして提出したところ、Apple審査落ち、理由は「類似アプリあり、新規性なし」、仕方なく旧アプリのアップデートに変更
-
-    - 2025年9月4日 8:58 カルメモ／CalcRoll 2.0 公開
-
-<br>
+## 仕様・諸元
 
     - 計算エンジン：　C/C++ 十進固定小数点方式、最大有効2G桁超のうち60桁だけ使用
     - 計算フィールド： 逆ポーランド式、最大３フィールド
@@ -129,9 +106,10 @@ Xcode3/Objective-C/CoCoa に慣れるために自分が欲しいと思ったア�
 | 1.0.9    | 2011/10/21 |
 | 1.1      | 2011/11/20 |   
 | 1.1.7    | 2012/10/10 |      
-| 1.2.0    |            | 2020/7 Swift移植を検討したが中断
+| 1.2      |            | 2020/7 Swift移植を検討したが中断
 |          |            | 2025/7 Swift6,SwiftUI に慣れるために作成を開始 
-| 2.0.0    | 2025/9/4   | カルメモ／CalcRoll Xcode16,Swift6,SwiftUI,C/C++ 
+| 2.0      | 2025/9/4   | カルメモ/CalcRoll Xcode16,Swift6,SwiftUI,C/C++ 
+| 2.1      | 2025/ /    | カルメモ/Calclin Xcode26,Swift6,SwiftUI,C/C++ 
 
 
         
