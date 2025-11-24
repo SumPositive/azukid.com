@@ -1,12 +1,10 @@
-# カルメモ　取扱説明書
+# カルメモ (Calclin)　取扱説明書
 
 電卓のようにキーをタップして計算式を入れてください。最後に[=]をタップすれば答えが出ます
 
 以上が基本操作です
 
 もし興味があれば、以下の機能が隠れていますので直感的に操作して見つけてお試しください
-
-<br>
 
 ## 機能
 
@@ -35,18 +33,6 @@
     - キーボードをお好みにレイアウトできる
 
     - キーボードを切り替えられる（５キーボード）
-    
-<br><br>
-
-### [エンドユーザー使用許諾契約](https://info.engineer.co.jp/EULA.html)
-
-### [プライバシーポリシー](https://info.engineer.co.jp/PrivacyPolicy.html)
-
-### [Source Code： GitHub](https://github.com/SumPositive/CalcRoll/)
-
-### [作者自己紹介： sumpo](https://docs.azukid.com/sumpo/jp/index)
-
-<br><br>
 
 ## 仕様・諸元
 
@@ -93,9 +79,28 @@
         - ml dl [L] ㎥ 合 升 ガロン
         - mg g [kg] t kt 匁 貫 ポンド
 
-<br><br>
+    - Version x.y.z：アプリ製造番号：各値は0から始まり下記の要領でカウントアップします
+        - x：大幅改良、全面刷新
+        - y：機能追加・変更
+        - z：微修正、不具合修正
 
-## バージョン履歴
+    - SupportID：サポート識別番号：8〜12桁くらいの英数字
+        - 個人を特定しない（できない）番号です
+        - サーバ内にあるログを調査する必要が生じた時に使用します
+
+<br>
+
+### [エンドユーザー使用許諾契約](https://info.engineer.co.jp/EULA.html)
+
+### [プライバシーポリシー](https://info.engineer.co.jp/PrivacyPolicy.html)
+
+### [Source Code： GitHub](https://github.com/SumPositive/CalcRoll/)
+
+### [作者自己紹介： sumpo](https://docs.azukid.com/sumpo/jp/index)
+
+<br>
+
+## 履歴
 
 | Version  | 公開日      | 開発環境等
 |----------|------------|
@@ -111,5 +116,3 @@
 | 2.0      | 2025/9/4   | カルメモ/CalcRoll Xcode16,Swift6,SwiftUI,C/C++ 
 | 2.1      | 2025/ /    | カルメモ/Calclin Xcode26,Swift6,SwiftUI,C/C++ 
 
-
-        
