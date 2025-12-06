@@ -1,137 +1,117 @@
-# カルメモ　取扱説明書
+# Calclin User Guide
 
-電卓のようにキーをタップして計算式を入れてください。最後に[=]をタップすれば答えが出ます
+Tap the keys like a calculator to enter an expression. Tap [=] at the end to get the answer.
 
-以上が基本操作です
+That's all for basic operation.
 
-もし興味があれば、以下の機能が隠れていますので直感的に操作して見つけてお試しください
+If you're curious, the features below are tucked away—try intuitive gestures to find and use them.
 
-<br>
+## Features
 
-## 機能
+    - Choose the decimal point symbol (default: [.] period)
 
-    - 小数点の文字を選択できる（デフォルト：[.]ピリオド）
+    - Change the number of displayed decimal digits (default: 3 digits, up to 10 digits)
 
-    - 小数の表示桁数が変更できる（デフォルト 3桁、最大 10桁）
-        
-    - 小数の表示桁数で区切る場合の「丸め処理」が選択できる（デフォルト：五捨五超入）
-        - 内部有効60桁処理により五捨五超入（偶数丸め）が正しく行えます
+    - Choose how to round when truncating to the displayed decimal digits (default: round half to even)
+        - Internal 60-digit precision ensures accurate round half to even (banker's rounding)
 
-    - 桁区切りの文字を選択できる（デフォルト：[,]コンマ）
+    - Choose the digit grouping symbol (default: [,] comma)
 
-    - 桁区切りの方式を選択できる（デフォルト：3桁区切り）
-        - インド式もあります
+    - Choose the digit grouping style (default: every 3 digits)
+        - Includes the Indian numbering style
 
-    - 計算フィールドを増設して切替利用できる（最大：3フィールド）
-    
-    - 計算式と答えの履歴からコピーができる
-    
-    - 計算式や答えの文字サイズを拡大縮小できる
+    - Add extra calculation fields and switch between them (maximum: 3 fields)
 
-    - 複数の電卓が使える（最大3連装）
+    - Copy from the history of expressions and answers
 
-    - 単位付きの計算ができる
+    - Enlarge or reduce the text size of expressions and answers
 
-    - キーボードをお好みにレイアウトできる
+    - Use multiple calculators (up to triple deck)
 
-    - キーボードを切り替えられる（５キーボード）
-    
-<br>
+    - Perform unit-aware calculations
 
-## EULA　エンドユーザー使用許諾契約
-- [English](https://info.engineer.co.jp/EULA_en.html)　　[日本語](https://info.engineer.co.jp/EULA.html)
+    - Lay out the keyboard to your liking
 
-## Privacy policy　プライバシーポリシー
-- [English](https://info.engineer.co.jp/PrivacyPolicy_en.html)　　[日本語](https://info.engineer.co.jp/PrivacyPolicy.html)
+    - Switch keyboards (5 layouts)
 
-## Source Code
-- [GitHub: SumPositive](https://github.com/SumPositive/CalcRoll/)　（要招待）
+## Specifications
 
-## 作者自己紹介：　sumpo
-はじまりは、2009年 iPhone3 の日本登場と共にアプリ開発してみようと思い中古Mac-miniを購入した
-
-Xcode3/Objective-C/CoCoa に慣れるために自分が欲しいと思ったアプリを夢中に作成した
-
-さらにCoreDataに慣れるためのアプリを企画。自己満足のアプリでも世界中で100人くらいにはハマるだろうと思い App Store に公開しはじめた
-
-    - 2010年2月16日 2:23 モチメモ 0.2 公開　仕事や旅、キャンプの持ち物を管理する     　 (Total: 109,000 DL)
-    - 2010年4月2日 4:19  クレメモ 0.1 公開　クレジットカードの利用を記録して集計管理する  (Total: 81,000 DL)
-
-これまでの開発過程で Picker は入力(選択)用だが出力にも使えそうと思い立ち、店のレジからロールペーパーのレシートが出るような電卓をイメージした。そして、ドラム式計算機が出来上がった
-
-    - 2010年8月7日 9:19　ドラタク 0.1 公開　のちに海外で好評だったので CalcRoll に改名 (Total: 55,000 DL)
-
-立体リアルデザインが現れ始めたので、クラシックなダイアル操作をリアルに再現、それを使うためのアプリを開発
-
-    - 2011年10月4日 8:29 割勘 　　1.0 公開　割り勘計算する、人数や金額をダイアル入力 　　 (Total: 4,000 DL)
-    - 2012年1月14日 5:45 体調メモ 0.8 公開　体重や血圧などをダイアル入力して集計管理する (Total: 29,000 DL)
-
-2025年 万博を機に、Swift6/SwiftUI に慣れるため CalcRoll の移植を開始
-2025年8月24日 新規アプリとして提出したところ、Apple審査落ち、理由は「類似アプリあり、新規性なし」、仕方なく旧アプリのアップデートに変更
-
-    - 2025年9月4日 8:58 カルメモ／CalcRoll 2.0 公開
-
-<br>
-
-    - 計算エンジン：　C/C++ 十進固定小数点方式、最大有効2G桁超のうち60桁だけ使用
-    - 計算フィールド： 逆ポーランド式、最大３フィールド
-    - 履歴リスト：　最大100件、古いものから削除循環方式
-    - 計算方式：　四則公式
-    - 小数桁数：　0~10(最大15桁)
-    - 端数丸め：　7種
-        - 切り上げ    常に無限遠点へ近づくことになるから「無限大への丸め」と言われる
-        - 正方向丸め  常に増えるから「正の無限大への丸め」と言われる
-        - 四捨五入    [JIS Z 8401 規則Ｂ]
-        * 五捨五超入   最近接偶数への丸め [JIS Z 8401 規則Ａ]（偶数丸め、JIS丸め、ISO丸め、銀行家の丸め）
-        - 五捨六入    
-        - 負方向丸め   常に減るから「負の無限大への丸め」と言われる
-        - 切り捨て    （丸めない）常に0に近づくことになるから「0への丸め」と言われる
-    - 小数点文字：　３種
-        * [.] ピリオド
-        - [·] センター
-        - [,] コンマ
-    - 桁区切り方式：　４種
-        -　区切りなし [123456789.0]
-        *　３桁区切り [123,456,789.0]
-        -　インド式　 [12,34,56,789.0]
-        -　４桁区切り [1,2345,6789.0]
-    - 桁区切り文字：　４種
-        * [,] コンマ
-        - ['] アッパー
-        - [ ] スペース
-        - [.] ピリオド
-    - 演算子：
-        - ＋ ー ×　÷
+    - Calculation engine: C/C++ fixed-point decimal, using 60 of over 2G significant digits
+    - Calculation fields: Reverse Polish style, up to 3 fields
+    - History list: up to 100 entries, circular deletion from oldest
+    - Calculation style: four arithmetic operations
+    - Decimal digits: 0~10 (max 15)
+    - Rounding modes: 7 types
+        - Round up — always toward positive infinity
+        - Round toward +∞ — always increases
+        - Round half away from zero [JIS Z 8401 Rule B]
+        * Round half to even [JIS Z 8401 Rule A] (even rounding, JIS/ISO/banker's rounding)
+        - Round half toward +∞
+        - Round toward −∞ — always decreases
+        - Truncate — no rounding, always toward zero
+    - Decimal point symbols: 3 types
+        * [.] period
+        - [·] middle dot
+        - [,] comma
+    - Grouping styles: 4 types
+        - No grouping [123456789.0]
+        * Group every 3 digits [123,456,789.0]
+        - Indian style [12,34,56,789.0]
+        - Group every 4 digits [1,2345,6789.0]
+    - Grouping symbols: 4 types
+        * [,] comma
+        - ['] apostrophe
+        - [ ] space
+        - [.] period
+    - Operators:
+        - ＋ ー × ÷
         - ＝ ( )
-        - √　3√
-    - 編集：
-        - ClearAll ClearSection BackSpace -/+
-    - 定数：
-        - 円周率π 黄金比φ ネイピアe
-    - 割合：
+        - √ 3√
+    - Editing:
+        - ClearAll  ClearSection  BackSpace  -/+
+    - Constants:
+        - π (pi), φ (golden ratio), e (Napier's constant)
+    - Percentages:
         - % ‰ 割 分 厘
-    - 単位：
+    - Units:
         - mm cm [m] km 寸 尺 里 in ft yd
-        - m㎡ c㎡ [㎡] a ha k㎡ 坪 畝 反 ac 
-        - ml dl [L] ㎥ 合 升 ガロン
-        - mg g [kg] t kt 匁 貫 ポンド
+        - m㎡ c㎡ [㎡] a ha k㎡ 坪 畝 反 ac
+        - ml dl [L] ㎥ 合 升 gallon
+        - mg g [kg] t kt 匁 貫 pound
 
-<br><br>
+    - Version x.y.z: build number; each value starts at 0 and increments as follows
+        - x: major overhaul, full redesign
+        - y: feature additions or changes
+        - z: minor tweaks, bug fixes
 
-## バージョン履歴
+    - SupportID: support identifier; an 8–12 character alphanumeric string
+        - Cannot identify an individual
+        - Used when server log investigation is required
 
-| Version  | 公開日      | 開発環境等
-|----------|------------|
-| 0.1      | 2010/8/7   | ドラタク Xcode3,Objective-C,C/C++ 
-| 0.3      | 2011/3/1   |        
-| 0.4.2    | 2011/3/24  |        
-| 1.0      | 2011/4/21  | CalcRoll Xcode4,Objective-C,C/C++ 
-| 1.0.9    | 2011/10/21 |
-| 1.1      | 2011/11/20 |   
-| 1.1.7    | 2012/10/10 |      
-| 1.2.0    |            | 2020/7 Swift移植を検討したが中断
-|          |            | 2025/7 Swift6,SwiftUI に慣れるために作成を開始 
-| 2.0.0    | 2025/9/4   | カルメモ／CalcRoll Xcode16,Swift6,SwiftUI,C/C++ 
+<br>
 
+### [End User License Agreement](https://info.engineer.co.jp/EULA.html)
 
-        
+### [Privacy Policy](https://info.engineer.co.jp/PrivacyPolicy.html)
+
+### [Source Code: GitHub](https://github.com/SumPositive/CalcRoll/)
+
+### [Author Bio: sumpo](https://docs.azukid.com/sumpo/jp/index)
+
+<br>
+
+## Release History
+
+| Version  | Release Date | Development Environment |
+|----------|--------------|-------------------------|
+| 0.1      | 2010/8/7     | Drataku — Xcode 3, Objective-C, C/C++ |
+| 0.3      | 2011/3/1     | |
+| 0.4.2    | 2011/3/24    | |
+| 1.0      | 2011/4/21    | CalcRoll — Xcode 4, Objective-C, C/C++ |
+| 1.0.9    | 2011/10/21   | |
+| 1.1      | 2011/11/20   | |
+| 1.1.7    | 2012/10/10   | |
+| 1.2      |              | 2020/7 considered Swift migration but paused |
+|          |              | 2025/7 restarted to learn Swift 6 and SwiftUI |
+| 2.0      | 2025/9/4     | Cal Memo / CalcRoll — Xcode 16, Swift 6, SwiftUI, C/C++ |
+| 2.1      | 2025/ /      | Cal Memo / Calclin — Xcode 26, Swift 6, SwiftUI, C/C++ |
