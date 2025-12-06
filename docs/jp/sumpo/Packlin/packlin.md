@@ -1,4 +1,4 @@
-# モチメモ/Packlin　取扱説明書
+# モチメモ　取扱説明書
 
 旅行やイベントに役立つ持ち物メモです。自由自在に編集できます
 
@@ -71,9 +71,9 @@
 
 ### [プライバシーポリシー](https://info.engineer.co.jp/PrivacyPolicy.html)
 
-### [Source Code： GitHub](https://github.com/SumPositive/RackList/)
+### [Source Code： GitHub](https://github.com/SumPositive/PackList/)
 
-### [作者自己紹介： sumpo](https://docs.azukid.com/sumpo/jp/index)
+### [作者自己紹介： sumpo](https://docs.azukid.com/jp/sumpo/index)
 
 <br>
 

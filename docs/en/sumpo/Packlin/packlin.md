@@ -1,4 +1,4 @@
-# Mochi Memo / Packlin User Guide
+# Packlin User Guide
 
 A packing checklist useful for travel and events. Edit freely as you like.
 
@@ -65,13 +65,13 @@ Give the following features a try:
 
 <br>
 
-### [End User License Agreement](https://info.engineer.co.jp/EULA.html)
+### [End User License Agreement](https://info.engineer.co.jp/EULA_en.html)
 
-### [Privacy Policy](https://info.engineer.co.jp/PrivacyPolicy.html)
+### [Privacy Policy](https://info.engineer.co.jp/PrivacyPolicy_en.html)
 
-### [Source Code: GitHub](https://github.com/SumPositive/RackList/)
+### [Source Code: GitHub](https://github.com/SumPositive/PackList/)
 
-### [Author Bio: sumpo](https://docs.azukid.com/sumpo/jp/index)
+### [Author Bio: sumpo](https://docs.azukid.com/en/sumpo/index)
 
 <br>
 
@@ -79,7 +79,7 @@ Give the following features a try:
 
 | Version  | Release Date | Development Environment |
 |----------|--------------|-------------------------|
-| 0.2      | 2010/2/16    | Mochi Memo / PackList — Xcode 3, Objective-C, Core Data |
+| 0.2      | 2010/2/16    | PackList — Xcode 3, Objective-C, Core Data |
 | 0.5.5    | 2010/6/27    | |
 | 1.0      | 2011/4/23    | Xcode 4, Objective-C, Core Data |
 | 1.1      | 2011/9/22    | |
@@ -87,4 +87,4 @@ Give the following features a try:
 | 2.0      | 2012/3/28    | |
 | 2.1.3    | 2017/9/28    | |
 |----------|--------------|-------------------------|
-| 3.0      | 2025/12/xx   | Mochi Memo / Packlin — Xcode 26, SwiftUI, SwiftData |
+| 3.0      | 2025/12/xx   | Packlin — Xcode 26, SwiftUI, SwiftData |
