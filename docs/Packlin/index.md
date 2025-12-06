@@ -1,19 +1,19 @@
 # MochiMemo User Guide
 
-This is a packing checklist that is handy for trips and events. You can edit it freely.
+A packing checklist that helps for trips and events. You can edit everything freely.
 
-Please use it for travel or business trips. By totaling the weight, you can pack according to your physical strength. It is also useful for managing hobby gear.
+Use it for travel or business trips. By totaling the weight, you can pack according to your strength. It is also useful for managing hobby gear.
 
-We aimed to minimize the operating steps. There is no common "Confirm" button, and there is no "Save" button after editing. The "Delete" button removes an item immediately without confirmation. If you make a mistake, you can return to the previous state with the "↩︎ Undo" button, up to 10 steps back.
+We aimed to minimize operation steps. There is no common "Confirm" button, and there is no "Save" button after editing. The "Delete" button removes items immediately without confirmation. If you make a mistake, press the "↩︎ Undo" button to return to the previous state, up to 10 steps back.
 
-You can now ask Chappy (AI) to create or modify packs (in-app purchase). It quickly creates a draft that matches your requests, so enjoy refining it based on that.
+You can now ask Chappy (AI) to create or modify packs (in-app purchase). It quickly builds a rough draft that follows your request, so enjoy adjusting it while using it as a reference.
 
-Records are organized in the following three layers. The Item is the smallest unit of belongings.
+Records are kept in the following three layers. Item is the smallest unit of belongings.
 ```
 App
  ├─ Pack (storage pack)
  │   ├─ Group (category group)
- │   │   ├─ Item (belonging)
+ │   │   ├─ Item (belongings)
  │   │   └─ Item
  │   └─ Group
  │       ├─ Item
@@ -32,14 +32,14 @@ Please try the following features.
 
 ## Features
 
-- Check each item to see the overall progress of your checklist.
-- Record the required quantity and the quantity on hand.
+- Check each item and see the overall progress.
+- Record the required quantity and the stock on hand.
 - Register item weights (g) and check the total weight.
-- Rearrange items with drag-and-drop.
+- Rearrange items with drag-and-drop operations.
 - Move or duplicate items into other groups or packs.
 - Move or duplicate groups into other packs.
-- Undo: revert up to 10 steps.
-- Redo: go back up to 10 steps before the last Undo.
+- Undo: revert up to 10 steps back.
+- Redo: return up to 10 Undo steps forward.
 - Ask Chappy (AI) to create or modify packs (in-app purchase).
 
 <br>
@@ -53,30 +53,29 @@ Please try the following features.
 <br>
 
 ## About the Author: sumpo
-It all started in 2009, when the iPhone 3 launched in Japan and I decided to try developing an app, so I bought a used Mac mini.
+It began when I bought a used Mac mini in 2009, right as the iPhone 3 arrived in Japan, thinking I'd like to try app development.
 
-To get used to Xcode 3 / Objective-C / Cocoa, I enthusiastically built an app that I personally wanted.
+To get used to Xcode 3 / Objective-C / Cocoa, I enthusiastically built apps I personally wanted.
 
-Next, to become familiar with Core Data, I planned another app. I figured that even a self-indulgent app might hook about a hundred people worldwide, so I began releasing it on the App Store.
+To become familiar with Core Data as well, I planned another app. I figured even a self-indulgent app might hook about one hundred people worldwide, so I started publishing on the App Store.
 
-- February 16, 2010 2:23 — MochiMemo 0.2 released: manage belongings for work, travel, and camping (Total: 109,000 downloads)
-- April 2, 2010 4:19 — KureMemo 0.1 released: record credit card use and compile totals (Total: 81,000 downloads)
+- February 16, 2010 2:23 — MochiMemo 0.2 released: manage belongings for work, travel, and camping (Total: 109,000 DL)
+- April 2, 2010 4:19 — KureMemo 0.1 released: record credit card use and compile totals (Total: 81,000 DL)
 
-During development, I realized that although the picker is for input (selection), it might also serve as output. Imagining a calculator that prints receipts like roll paper from a store register, I created a drum-style calculator.
+During development, I realized that while a picker is meant for input (selection), it might also work for output. Imagining a calculator that prints roll-paper receipts like a store register, I created a drum-style calculator.
 
-- August 7, 2010 9:19 — DoraTaku 0.1 released; later renamed CalcRoll after becoming popular overseas (Total: 55,000 downloads)
+- August 7, 2010 9:19 — DoraTaku 0.1 released; later renamed CalcRoll after becoming popular overseas (Total: 55,000 DL)
 
-As realistic 3D designs emerged, I faithfully recreated classic dial controls and built an app to use them.
+As realistic 3D designs began appearing, I faithfully recreated classic dial controls and built an app to use them.
 
-- October 4, 2011 8:29 — Warikan 1.0 released: split bills with dial input for people and amounts (Total: 4,000 downloads)
-- January 14, 2012 5:45 — BodyMemo 0.8 released: dial input for weight, blood pressure, etc., with compiled tracking (Total: 29,000 downloads)
+- October 4, 2011 8:29 — Warikan 1.0 released: split bills with dial input for people and amounts (Total: 4,000 DL)
+- January 14, 2012 5:45 — BodyMemo 0.8 released: dial input for weight, blood pressure, etc., with compiled tracking (Total: 29,000 DL)
 
-With Expo 2025 approaching, I began porting CalcRoll to Swift 6 / SwiftUI.
-On August 24, 2025, I submitted it as a new app, but Apple rejected it: "A similar app exists; no novelty." Fair enough! I resubmitted it as an update to the old app, it passed review, and was released.
+In 2025, prompted by the World Expo, I began porting CalcRoll to Swift 6 / SwiftUI to get familiar with them. When I submitted it as a new app on August 24, 2025, Apple rejected it, saying, "A similar app exists; no novelty." Fair enough! I resubmitted it as an update to the old app, it passed review, and was released.
 
 - September 4, 2025 8:58 — KaruMemo / CalcRoll 2.0 released
 
-After releasing KaruMemo in September 2025, I started migrating MochiMemo to SwiftUI. In about a month, an alpha version that solved long-standing issues was ready. The sample data shown on the initial screen was surprisingly good, thanks to AI! That sparked the idea to add the new "Ask Chappy (AI)" feature, which required developing a globally scalable API server and running it securely.
+After releasing KaruMemo in September 2025, I started migrating MochiMemo to SwiftUI. In about a month, an alpha version that solved long-standing issues was ready. The sample data shown on the initial screen was surprisingly good thanks to AI! That inspired the new "Ask Chappy (AI)" feature, which in turn required developing a globally scalable API server and operating it securely.
 
 - November xx, 2025 xx:xx — MochiMemo / Packlin 3.0 released
 
@@ -95,4 +94,3 @@ After releasing KaruMemo in September 2025, I started migrating MochiMemo to Swi
 | 2.1.3    | 2017/9/28    |                         |
 |----------|--------------|-------------------------|
 | 3.0      | 2025/11/xx   | MochiMemo / Packlin, Xcode 26, SwiftUI, SwiftData |
-
