@@ -89,6 +89,6 @@
 | 2.0      | 2012/3/28  |  
 | 2.1.3    | 2017/9/28  |  
 |----------|------------|
-| 3.0      | 2025/12/xx | モチメモ/Packlin Xcode26,SwiftUI,SwiftData
+| 3.0      | 2025/12/8  | モチメモ/Packlin Xcode26,SwiftUI,SwiftData
 
         
