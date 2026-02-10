@@ -4,14 +4,14 @@
 # 公開アプリ
 
 ## 2026 Update
-   - [モチメモ](https://apps.apple.com/jp/app/%E3%83%A2%E3%83%81%E3%83%A1%E3%83%A2/id495525984)
+   - [モチメモ／Packlin](https://apps.apple.com/jp/app/%E3%83%A2%E3%83%81%E3%83%A1%E3%83%A2/id495525984)
 
 ## 2025 Update
-   - [カルメモ](https://apps.apple.com/jp/app/%E3%82%AB%E3%83%AB%E3%83%A1%E3%83%A2/id385216637)
+   - [カルメモ／Calclin](https://apps.apple.com/jp/app/%E3%82%AB%E3%83%AB%E3%83%A1%E3%83%A2/id385216637)
 
 ## 2018 Update
-   - [体調メモ](https://apps.apple.com/jp/app/%E4%BD%93%E8%AA%BF%E3%83%A1%E3%83%A2/id472914799)
-   - [クレメモ](https://apps.apple.com/jp/app/%E3%82%AF%E3%83%AC%E3%83%A1%E3%83%A2/id432458298)
+   - [体調メモ／Condition](https://apps.apple.com/jp/app/%E4%BD%93%E8%AA%BF%E3%83%A1%E3%83%A2/id472914799)
+   - [クレメモ／PayNote](https://apps.apple.com/jp/app/%E3%82%AF%E3%83%AC%E3%83%A1%E3%83%A2/id432458298)
 
 
 <br><br>
