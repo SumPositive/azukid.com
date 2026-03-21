@@ -7,20 +7,25 @@
   <link rel="stylesheet" href="../../../style.css">
 </head>
 <body>
-<nav>
-  <a href="../../../index.html">← Back to Home</a>
-</nav>
-<div class="container">
 
-  <h1>Calclin User Guide</h1>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../../index.html">Home</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">Calclin</span>
+  </div>
+</header>
 
-  <p>Tap the keys like a calculator to enter an expression. Tap [=] at the end to get the answer.</p>
-  <p>That's all for basic operation.</p>
-  <p>If you're curious, the features below are tucked away — try intuitive gestures to find and use them.</p>
+<main class="page">
 
-  <div class="section">
+  <div class="page-header">
+    <h1>Calclin User Guide</h1>
+    <p class="page-tagline">Tap the keys like a calculator to enter an expression. Tap [=] at the end to get the answer. That's all for basic operation.</p>
+  </div>
+
+  <section class="content-section">
     <h2>Features</h2>
-    <ul>
+    <ul class="feature-list">
       <li>Choose the decimal point symbol (default: [.] period)</li>
       <li>Change the number of displayed decimal digits (default: 3 digits, up to 10 digits)</li>
       <li>Choose how to round when truncating to the displayed decimal digits (default: round half to even)
@@ -42,11 +47,11 @@
       <li>Lay out the keyboard to your liking</li>
       <li>Switch keyboards (5 layouts)</li>
     </ul>
-  </div>
+  </section>
 
-  <div class="section">
+  <section class="content-section">
     <h2>Specifications</h2>
-    <ul>
+    <ul class="spec-list">
       <li>Calculation engine: C/C++ fixed-point decimal, using 60 of over 2G significant digits</li>
       <li>Calculation fields: Reverse Polish style, up to 3 fields</li>
       <li>History list: up to 100 entries, circular deletion from oldest</li>
@@ -112,9 +117,9 @@
         </ul>
       </li>
     </ul>
-  </div>
+  </section>
 
-  <div class="section">
+  <section class="content-section">
     <h2>Release History</h2>
     <div class="table-wrap">
       <table>
@@ -135,7 +140,7 @@
         </tbody>
       </table>
     </div>
-  </div>
+  </section>
 
   <div class="footer-links">
     <a href="https://info.engineer.co.jp/EULA_en.html">End User License Agreement</a>
@@ -144,6 +149,6 @@
     <a href="../index.html">Author Bio: sumpo</a>
   </div>
 
-</div>
+</main>
 </body>
 </html>

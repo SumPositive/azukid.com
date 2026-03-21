@@ -7,25 +7,30 @@
   <link rel="stylesheet" href="../../../style.css">
 </head>
 <body>
-<nav>
-  <a href="../../../index.html">← ホームへ戻る</a>
-</nav>
-<div class="container">
 
-  <h1>モチメモ　取扱説明書</h1>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../../index.html">ホーム</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">モチメモ</span>
+  </div>
+</header>
 
-  <p>旅行やイベントに役立つ持ち物メモです。自由自在に編集できます</p>
-  <p>旅行や出張などにご利用ください。重量集計により、体力に合わせた荷造りができます。趣味の用品管理などにもお役立てください</p>
+<main class="page">
 
-  <div class="section">
-    <h2>Undo</h2>
-    <p>操作手間の最小化を目指しました。よくある「確認」操作はありません、編集後の「保存」ボタンもありません。「削除」は確認なしに削除します。もし、間違ったならば「Undo ↩︎」ボタンで前の状態に戻せます。最大10回前まで戻せます</p>
+  <div class="page-header">
+    <h1>モチメモ (Packlin)</h1>
+    <p class="page-tagline">旅行やイベントに役立つ持ち物メモです。自由自在に編集できます。</p>
   </div>
 
-  <div class="section">
+  <section class="content-section">
+    <h2>Undo</h2>
+    <p>操作手間の最小化を目指しました。よくある「確認」操作はありません、編集後の「保存」ボタンもありません。「削除」は確認なしに削除します。もし、間違ったならば「Undo ↩︎」ボタンで前の状態に戻せます。最大10回前まで戻せます</p>
+  </section>
+
+  <section class="content-section">
     <h2>機能</h2>
-    <p>以下の機能がありますのでお試しください</p>
-    <ul>
+    <ul class="feature-list">
       <li>アイテム毎にチェックして全体のチェック状況を確認できる</li>
       <li>必要数と在庫数を記録できる</li>
       <li>アイテムの重量(g)を登録して総重量を確認できる</li>
@@ -35,11 +40,11 @@
       <li>Undo：最大10回前の状態に戻せる</li>
       <li>Redo：最大10回Undo前の状態に戻せる</li>
     </ul>
-  </div>
+  </section>
 
-  <div class="section">
+  <section class="content-section">
     <h2>仕様・諸元</h2>
-    <ul>
+    <ul class="spec-list">
       <li>DATABASE：SwiftData (sqlite3)</li>
       <li>数量制限（最大）：ほぼ無制限なのですが、動作検証のため制限しています。もし、拡張したい活用法があれば教えてください
         <ul>
@@ -85,9 +90,9 @@
         </ul>
       </li>
     </ul>
-  </div>
+  </section>
 
-  <div class="section">
+  <section class="content-section">
     <h2>履歴</h2>
     <div class="table-wrap">
       <table>
@@ -106,7 +111,7 @@
         </tbody>
       </table>
     </div>
-  </div>
+  </section>
 
   <div class="footer-links">
     <a href="https://info.engineer.co.jp/EULA.html">エンドユーザー使用許諾契約</a>
@@ -115,6 +120,6 @@
     <a href="../index.html">作者自己紹介: sumpo</a>
   </div>
 
-</div>
+</main>
 </body>
 </html>

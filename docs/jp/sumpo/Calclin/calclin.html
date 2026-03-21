@@ -7,20 +7,25 @@
   <link rel="stylesheet" href="../../../style.css">
 </head>
 <body>
-<nav>
-  <a href="../../../index.html">← ホームへ戻る</a>
-</nav>
-<div class="container">
 
-  <h1>カルメモ (Calclin)　取扱説明書</h1>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../../index.html">ホーム</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">カルメモ</span>
+  </div>
+</header>
 
-  <p>電卓のようにキーをタップして計算式を入れてください。最後に[=]をタップすれば答えが出ます</p>
-  <p>以上が基本操作です</p>
-  <p>もし興味があれば、以下の機能が隠れていますので直感的に操作して見つけてお試しください</p>
+<main class="page">
 
-  <div class="section">
+  <div class="page-header">
+    <h1>カルメモ (Calclin)</h1>
+    <p class="page-tagline">電卓のようにキーをタップして計算式を入れてください。最後に[=]をタップすれば答えが出ます。</p>
+  </div>
+
+  <section class="content-section">
     <h2>機能</h2>
-    <ul>
+    <ul class="feature-list">
       <li>小数点の文字を選択できる（デフォルト：[.]ピリオド）</li>
       <li>小数の表示桁数が変更できる（デフォルト 3桁、最大 10桁）</li>
       <li>小数の表示桁数で区切る場合の「丸め処理」が選択できる（デフォルト：五捨五超入）
@@ -42,11 +47,11 @@
       <li>キーボードをお好みにレイアウトできる</li>
       <li>キーボードを切り替えられる（５キーボード）</li>
     </ul>
-  </div>
+  </section>
 
-  <div class="section">
+  <section class="content-section">
     <h2>仕様・諸元</h2>
-    <ul>
+    <ul class="spec-list">
       <li>計算エンジン：C/C++ 十進固定小数点方式、最大有効2G桁超のうち60桁だけ使用</li>
       <li>計算フィールド：逆ポーランド式、最大３フィールド</li>
       <li>履歴リスト：最大100件、古いものから削除循環方式</li>
@@ -113,9 +118,9 @@
         </ul>
       </li>
     </ul>
-  </div>
+  </section>
 
-  <div class="section">
+  <section class="content-section">
     <h2>履歴</h2>
     <div class="table-wrap">
       <table>
@@ -136,7 +141,7 @@
         </tbody>
       </table>
     </div>
-  </div>
+  </section>
 
   <div class="footer-links">
     <a href="https://info.engineer.co.jp/EULA.html">エンドユーザー使用許諾契約</a>
@@ -145,6 +150,6 @@
     <a href="../index.html">作者自己紹介: sumpo</a>
   </div>
 
-</div>
+</main>
 </body>
 </html>

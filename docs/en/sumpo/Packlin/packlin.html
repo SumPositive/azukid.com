@@ -7,25 +7,30 @@
   <link rel="stylesheet" href="../../../style.css">
 </head>
 <body>
-<nav>
-  <a href="../../../index.html">← Back to Home</a>
-</nav>
-<div class="container">
 
-  <h1>Packlin User Guide</h1>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../../index.html">Home</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">Packlin</span>
+  </div>
+</header>
 
-  <p>A packing checklist useful for travel and events. Edit freely as you like.</p>
-  <p>Use it for trips and business travel. Weight totals help you pack to match your strength. It also works well for managing hobby gear.</p>
+<main class="page">
 
-  <div class="section">
-    <h2>Undo</h2>
-    <p>The goal is to minimize extra steps. There are no common "confirm" prompts, and there is no "save" button after editing. "Delete" removes items without confirmation. If you make a mistake, tap the "Undo ↩︎" button to revert to the previous state. You can go back up to 10 steps.</p>
+  <div class="page-header">
+    <h1>Packlin User Guide</h1>
+    <p class="page-tagline">A packing checklist useful for travel and events. Edit freely as you like.</p>
   </div>
 
-  <div class="section">
+  <section class="content-section">
+    <h2>Undo</h2>
+    <p>The goal is to minimize extra steps. There are no common "confirm" prompts, and there is no "save" button after editing. "Delete" removes items without confirmation. If you make a mistake, tap the "Undo ↩︎" button to revert to the previous state. You can go back up to 10 steps.</p>
+  </section>
+
+  <section class="content-section">
     <h2>Features</h2>
-    <p>Give the following features a try:</p>
-    <ul>
+    <ul class="feature-list">
       <li>Check items one by one and see overall completion</li>
       <li>Record required quantity and stock quantity</li>
       <li>Register item weight (g) and check total weight</li>
@@ -35,11 +40,11 @@
       <li>Undo: revert up to 10 steps</li>
       <li>Redo: restore up to 10 steps before Undo</li>
     </ul>
-  </div>
+  </section>
 
-  <div class="section">
+  <section class="content-section">
     <h2>Specifications</h2>
-    <ul>
+    <ul class="spec-list">
       <li>Database: SwiftData (sqlite3)</li>
       <li>Quantity limits (maximum): functionally almost unlimited, but restricted for validation. Tell us if you have use cases needing larger limits.
         <ul>
@@ -84,9 +89,9 @@
         </ul>
       </li>
     </ul>
-  </div>
+  </section>
 
-  <div class="section">
+  <section class="content-section">
     <h2>Release History</h2>
     <div class="table-wrap">
       <table>
@@ -105,7 +110,7 @@
         </tbody>
       </table>
     </div>
-  </div>
+  </section>
 
   <div class="footer-links">
     <a href="https://info.engineer.co.jp/EULA_en.html">End User License Agreement</a>
@@ -114,6 +119,6 @@
     <a href="../index.html">Author Bio: sumpo</a>
   </div>
 
-</div>
+</main>
 </body>
 </html>
