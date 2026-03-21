@@ -489,48 +489,36 @@ p:last-child { margin-bottom: 0; }
 
 /* ── Timeline (author bio page) ── */
 .timeline {
-  position: relative;
-  padding-left: 28px;
-}
-
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 7px;
-  top: 10px;
-  bottom: 0;
-  width: 2px;
-  background: var(--border);
-  z-index: 0;
+  border-left: 2px solid var(--border);
+  padding-left: 24px;
 }
 
 .timeline-item {
-  position: relative;
   margin-bottom: 40px;
 }
 
 .timeline-item:last-child { margin-bottom: 0; }
 
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  left: -24px;
-  top: 7px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--surface);
-  border: 2.5px solid var(--accent);
-  z-index: 1;
-}
-
 .timeline-era {
+  position: relative;
   font-size: .6875rem;
   font-weight: 700;
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 8px;
+}
+
+.timeline-era::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2.5px solid var(--accent);
 }
 
 .timeline-story {
