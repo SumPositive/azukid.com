@@ -468,6 +468,184 @@ a:hover { color: var(--accent-dark); text-decoration: underline; }
 p { margin-bottom: 14px; }
 p:last-child { margin-bottom: 0; }
 
+/* ── Lead text (intro paragraphs on detail pages) ── */
+.lead {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-light);
+  padding: 20px 24px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow);
+}
+
+.lead p {
+  font-size: .9375rem;
+  color: var(--text-2);
+  line-height: 1.75;
+  margin-bottom: 10px;
+}
+
+.lead p:last-child { margin-bottom: 0; }
+
+.lead strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ── Feature grid ── */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border-light);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.feature-item {
+  background: var(--surface);
+  padding: 12px 14px 12px 38px;
+  position: relative;
+  font-size: .875rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.feature-item::before {
+  content: "✓";
+  position: absolute;
+  left: 13px;
+  top: 13px;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: .875rem;
+}
+
+.feature-item small {
+  display: block;
+  font-size: .8rem;
+  color: var(--text-2);
+  margin-top: 2px;
+  line-height: 1.45;
+}
+
+/* ── Spec groups ── */
+.spec-group {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+}
+
+.spec-group-title {
+  font-size: .6875rem;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  padding: 7px 16px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.spec-row {
+  display: flex;
+  gap: 16px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border-light);
+  font-size: .875rem;
+  align-items: baseline;
+}
+
+.spec-row:last-child { border-bottom: none; }
+
+.spec-key {
+  flex-shrink: 0;
+  width: 130px;
+  color: var(--text-2);
+  font-size: .8125rem;
+  line-height: 1.6;
+  padding-top: 1px;
+}
+
+.spec-val {
+  flex: 1;
+  color: var(--text);
+  line-height: 1.6;
+  min-width: 0;
+}
+
+/* ── Option list (within spec-val) ── */
+.option-list {
+  list-style: none;
+  margin: 2px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.option-list li {
+  font-size: .8125rem;
+  color: var(--text-2);
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.option-list li.is-default {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ── Limit table (Packlin quantity limits) ── */
+.limit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1px;
+  background: var(--border-light);
+  margin-top: 10px;
+}
+
+.limit-cell {
+  background: var(--surface);
+  padding: 8px 12px;
+  font-size: .875rem;
+}
+
+.limit-cell-key {
+  color: var(--text-2);
+  font-size: .75rem;
+  margin-bottom: 2px;
+}
+
+.limit-cell-val {
+  color: var(--text);
+  font-weight: 600;
+  font-size: .9375rem;
+}
+
+/* ── Undo callout (Packlin) ── */
+.callout {
+  background: #f0f6ff;
+  border: 1px solid #cce0ff;
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  font-size: .9rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 0;
+}
+
+.callout strong {
+  color: var(--accent);
+}
+
 /* ── Responsive ── */
 @media (max-width: 600px) {
   html { font-size: 15px; }
@@ -485,6 +663,14 @@ p:last-child { margin-bottom: 0; }
   pre { font-size: .75rem; }
 
   th, td { padding: 8px 10px; }
+
+  .feature-grid { grid-template-columns: 1fr; }
+
+  .spec-row { flex-direction: column; gap: 4px; }
+
+  .spec-key { width: auto; }
+
+  .limit-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 380px) {

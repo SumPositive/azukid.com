@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>体調メモ (Condition) 取扱説明書</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../../index.html">ホーム</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">体調メモ</span>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <h1>体調メモ (Condition)</h1>
+    <p class="page-tagline">健康管理アプリ</p>
+  </div>
+
+  <div class="lead">
+    <p>血圧・心拍・体温・体重などの健康データを記録・管理するアプリです。</p>
+    <p>測定タイミング（起床時・運動後など）を時刻から自動で分類します。グラフや統計で変化を確認し、Apple ヘルスケアアプリとの同期もできます。</p>
+  </div>
+
+  <section class="content-section">
+    <h2>機能</h2>
+    <div class="feature-grid">
+      <div class="feature-item">7 種類の健康データを記録できる<small>血圧・心拍・体温・体重・歩数・体脂肪率・骨格筋率</small></div>
+      <div class="feature-item">測定タイミングを自動分類する<small>起床時・安静時・就寝前など、時刻帯から自動判定</small></div>
+      <div class="feature-item">グラフで推移を確認できる<small>1週〜1年の期間を切り替え表示</small></div>
+      <div class="feature-item">統計分析ができる<small>血圧分布・JSH基準比率・体重と歩数の相関など</small></div>
+      <div class="feature-item">Apple ヘルスケアと同期できる<small>書き込み・読み込み・双方向を選択可能</small></div>
+      <div class="feature-item">目標値を設定できる<small>血圧・体重・歩数など各項目に目標を登録</small></div>
+      <div class="feature-item">表示項目と順序をカスタマイズできる<small>記録フォームとグラフそれぞれに設定可能</small></div>
+      <div class="feature-item">設定を iCloud で同期できる<small>複数端末で同じ設定を共有</small></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>仕様・諸元</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">記録項目と入力範囲</p>
+      <div class="spec-row">
+        <span class="spec-key">血圧（収縮期）</span>
+        <span class="spec-val">30〜300 mmHg</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">血圧（拡張期）</span>
+        <span class="spec-val">20〜200 mmHg</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">心拍数</span>
+        <span class="spec-val">10〜200 bpm</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">体温</span>
+        <span class="spec-val">31.0〜42.9 °C</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">体重</span>
+        <span class="spec-val">0.0〜200.0 kg</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">歩数</span>
+        <span class="spec-val">0〜99,999 歩</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">体脂肪率</span>
+        <span class="spec-val">0.0〜100.0 %</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">骨格筋率</span>
+        <span class="spec-val">0.0〜100.0 %</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">測定タイミング（自動分類）</p>
+      <div class="spec-row">
+        <span class="spec-key">分類方式</span>
+        <span class="spec-val">記録時刻に基づいて自動分類。各タイミングの時刻帯は設定でカスタマイズ可能。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">タイミング種類</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>起床時 — 目が覚めた直後</li>
+            <li>安静時 — 安静な状態</li>
+            <li>就寝前 — 就寝する直前</li>
+            <li>就寝時 — 就寝中</li>
+            <li>運動前 — 運動の開始前</li>
+            <li>運動後 — 運動の終了後</li>
+          </ul>
+        </span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">グラフ</p>
+      <div class="spec-row">
+        <span class="spec-key">表示期間</span>
+        <span class="spec-val">1週間・1ヶ月・3ヶ月・6ヶ月・1年</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">グラフ種類</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>血圧（収縮期・拡張期）</li>
+            <li>平均血圧（MAP）</li>
+            <li>心拍数</li>
+            <li>体温</li>
+            <li>体重・体重変化</li>
+            <li>歩数</li>
+            <li>体脂肪率</li>
+            <li>骨格筋率</li>
+            <li>BMI</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">カスタマイズ</span>
+        <span class="spec-val">グラフの表示・非表示と順序を変更可能</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">統計分析</p>
+      <div class="spec-row">
+        <span class="spec-key">分析期間</span>
+        <span class="spec-val">7〜70日（デフォルト 7日）</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">分析項目</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>血圧分布</li>
+            <li>血圧 JSH ガイドライン準拠比率</li>
+            <li>血圧と測定タイミングの相関</li>
+            <li>24時間血圧分布</li>
+            <li>体重サマリー</li>
+            <li>体重と歩数の相関</li>
+            <li>体温サマリー</li>
+            <li>24時間体温分布</li>
+            <li>体温度数分布</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">カスタマイズ</span>
+        <span class="spec-val">分析項目の表示・非表示と順序を変更可能</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Apple ヘルスケア連携</p>
+      <div class="spec-row">
+        <span class="spec-key">同期方向</span>
+        <span class="spec-val">書き込みのみ・読み込みのみ・双方向</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">同期タイミング</span>
+        <span class="spec-val">自動（保存・表示時）または手動（ボタン操作）</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">対応データ種</span>
+        <span class="spec-val">血圧・心拍数・体温・体重・歩数・体脂肪率</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">データベース・同期</p>
+      <div class="spec-row">
+        <span class="spec-key">データベース</span>
+        <span class="spec-val">SwiftData (sqlite3)</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">設定同期</span>
+        <span class="spec-val">iCloud キーバリューストア</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">記録可能期間</span>
+        <span class="spec-val">〜2090/12/31</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">データ移行</span>
+        <span class="spec-val">旧バージョン（Core Data）からのデータを自動移行</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">アプリ情報</p>
+      <div class="spec-row">
+        <span class="spec-key">Version x.y.z.#</span>
+        <span class="spec-val">x：大幅改良・全面刷新　y：機能追加・変更　z：微調整・不具合修正　#：ビルド連番</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Support ID</span>
+        <span class="spec-val">8〜12 桁の英数字。個人を特定しない番号。サーバログ調査が必要な際に使用します。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>履歴</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Version</th><th>公開日</th><th>開発環境等</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0.8</td><td>2012/1/14</td><td>体調メモ — Xcode 4, Objective-C, Core Data, AZDial</td></tr>
+          <tr><td>〜1.x</td><td>〜2018</td><td></td></tr>
+          <tr><td>2.0</td><td>2026/ /</td><td>体調メモ/Condition — Xcode 26, Swift 6, SwiftUI, SwiftData, HealthKit</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="footer-links">
+    <a href="https://info.engineer.co.jp/EULA.html">エンドユーザー使用許諾契約</a>
+    <a href="https://info.engineer.co.jp/PrivacyPolicy.html">プライバシーポリシー</a>
+    <a href="../index.html">作者自己紹介: sumpo</a>
+  </div>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Condition User Guide</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../../index.html">Home</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">Condition</span>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <h1>Condition User Guide</h1>
+    <p class="page-tagline">Health monitoring app</p>
+  </div>
+
+  <div class="lead">
+    <p>Record and manage your health data — blood pressure, heart rate, body temperature, weight, and more.</p>
+    <p>Measurement timing (wake, post-exercise, etc.) is automatically classified from the time of entry. Track trends with graphs, run statistical analyses, and sync with the Apple Health app.</p>
+  </div>
+
+  <section class="content-section">
+    <h2>Features</h2>
+    <div class="feature-grid">
+      <div class="feature-item">Record 7 types of health data<small>Blood pressure, heart rate, temperature, weight, steps, body fat, skeletal muscle rate</small></div>
+      <div class="feature-item">Automatic timing classification<small>Wake, rest, pre-sleep, etc. — determined from the time of entry</small></div>
+      <div class="feature-item">View trends in graphs<small>Switch between 1-week to 1-year periods</small></div>
+      <div class="feature-item">Statistical analysis<small>BP distribution, JSH guideline ratios, weight/step correlations, and more</small></div>
+      <div class="feature-item">Sync with Apple Health<small>Choose write-only, read-only, or bidirectional sync</small></div>
+      <div class="feature-item">Set personal goals<small>Target values for BP, weight, steps, and other metrics</small></div>
+      <div class="feature-item">Customize displayed fields and order<small>Configure separately for the record form and graphs</small></div>
+      <div class="feature-item">Sync settings via iCloud<small>Share your settings across multiple devices</small></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Specifications</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Recorded Metrics &amp; Input Ranges</p>
+      <div class="spec-row">
+        <span class="spec-key">Systolic BP</span>
+        <span class="spec-val">30–300 mmHg</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Diastolic BP</span>
+        <span class="spec-val">20–200 mmHg</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Heart rate</span>
+        <span class="spec-val">10–200 bpm</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Body temperature</span>
+        <span class="spec-val">31.0–42.9 °C</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Body weight</span>
+        <span class="spec-val">0.0–200.0 kg</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Step count</span>
+        <span class="spec-val">0–99,999 steps</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Body fat %</span>
+        <span class="spec-val">0.0–100.0 %</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Skeletal muscle %</span>
+        <span class="spec-val">0.0–100.0 %</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Measurement Timing (Auto-classification)</p>
+      <div class="spec-row">
+        <span class="spec-key">Method</span>
+        <span class="spec-val">Automatically classified from the time of entry. Time-of-day assignments are customizable in Settings.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Categories</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>Wake — immediately upon waking</li>
+            <li>Rest — in a resting state</li>
+            <li>Before sleep — just before going to bed</li>
+            <li>During sleep</li>
+            <li>Pre-exercise — before starting a workout</li>
+            <li>Post-exercise — after finishing a workout</li>
+          </ul>
+        </span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Graphs</p>
+      <div class="spec-row">
+        <span class="spec-key">View periods</span>
+        <span class="spec-val">1 week, 1 month, 3 months, 6 months, 1 year</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Graph types</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>Blood pressure (systolic / diastolic)</li>
+            <li>Mean arterial pressure (MAP)</li>
+            <li>Heart rate</li>
+            <li>Body temperature</li>
+            <li>Body weight / weight change</li>
+            <li>Step count</li>
+            <li>Body fat %</li>
+            <li>Skeletal muscle %</li>
+            <li>BMI</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Customization</span>
+        <span class="spec-val">Toggle graph visibility and reorder as preferred</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Statistical Analysis</p>
+      <div class="spec-row">
+        <span class="spec-key">Analysis period</span>
+        <span class="spec-val">7–70 days (default: 7 days)</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Sections</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>Blood pressure distribution</li>
+            <li>BP / JSH guideline compliance ratio</li>
+            <li>BP / measurement timing correlation</li>
+            <li>24-hour blood pressure distribution</li>
+            <li>Weight summary statistics</li>
+            <li>Weight / step count correlation</li>
+            <li>Temperature summary</li>
+            <li>24-hour temperature distribution</li>
+            <li>Temperature frequency histogram</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Customization</span>
+        <span class="spec-val">Toggle section visibility and reorder as preferred</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Apple Health Integration</p>
+      <div class="spec-row">
+        <span class="spec-key">Sync direction</span>
+        <span class="spec-val">Write-only, read-only, or bidirectional</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Sync timing</span>
+        <span class="spec-val">Automatic (on save / on view) or manual (button)</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Supported data</span>
+        <span class="spec-val">Blood pressure, heart rate, body temperature, weight, step count, body fat %</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Database &amp; Sync</p>
+      <div class="spec-row">
+        <span class="spec-key">Database</span>
+        <span class="spec-val">SwiftData (sqlite3)</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Settings sync</span>
+        <span class="spec-val">iCloud Key-Value Store</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Max record date</span>
+        <span class="spec-val">2090/12/31</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Data migration</span>
+        <span class="spec-val">Automatic migration from the previous version (Core Data)</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">App Info</p>
+      <div class="spec-row">
+        <span class="spec-key">Version x.y.z</span>
+        <span class="spec-val">x: major overhaul / full redesign　y: feature additions or changes　z: minor adjustments / bug fixes</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Support ID</span>
+        <span class="spec-val">An 8–12 character alphanumeric string. Cannot identify an individual. Used when server log investigation is required.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Release History</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Version</th><th>Release Date</th><th>Development Environment</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0.8</td><td>2012/1/14</td><td>Condition — Xcode 4, Objective-C, Core Data, AZDial</td></tr>
+          <tr><td>〜1.x</td><td>〜2018</td><td></td></tr>
+          <tr><td>2.0</td><td>2026/ /</td><td>Condition — Xcode 26, Swift 6, SwiftUI, SwiftData, HealthKit</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="footer-links">
+    <a href="https://info.engineer.co.jp/EULA_en.html">End User License Agreement</a>
+    <a href="https://info.engineer.co.jp/PrivacyPolicy_en.html">Privacy Policy</a>
+    <a href="../index.html">Author Bio: sumpo</a>
+  </div>
+
+</main>
+</body>
+</html>
