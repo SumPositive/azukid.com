@@ -9,7 +9,10 @@
       "Bash(sips -z 120 120 /Users/sumpositive/GitLocal/AzPackList/Design/Pack-1024.png --out /Users/sumpositive/GitLocal/azukid.com/docs/images/icon-packlin.png)",
       "Bash(sips -z 120 120 /Users/sumpositive/GitLocal/Condition2/Condition/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png --out /Users/sumpositive/GitLocal/azukid.com/docs/images/icon-condition.png)",
       "Bash(find /Users/sumpositive/GitLocal -name Credit-1024.png -o -name Credit*1024*)",
-      "Bash(sips -z 120 120 /Users/sumpositive/GitLocal/AzCredit/Design/Credit-1024.png --out /Users/sumpositive/GitLocal/azukid.com/docs/images/icon-credit.png)"
+      "Bash(sips -z 120 120 /Users/sumpositive/GitLocal/AzCredit/Design/Credit-1024.png --out /Users/sumpositive/GitLocal/azukid.com/docs/images/icon-credit.png)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   }
 }
