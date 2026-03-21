@@ -19,77 +19,137 @@
 <main class="page">
 
   <div class="page-header">
-    <h1>モチメモ (Packlin)</h1>
-    <p class="page-tagline">旅行やイベントに役立つ持ち物メモです。自由自在に編集できます。</p>
+    <img class="page-header-icon" src="../../../images/icon-packlin.png" alt="モチメモ">
+    <div class="page-header-text">
+      <h1>モチメモ (Packlin) 取扱説明書</h1>
+      <p class="page-tagline">持ち物チェックリストアプリ</p>
+    </div>
+  </div>
+
+  <div class="lead">
+    <p>旅行やイベントに役立つ持ち物メモです。自由自在に編集できます。</p>
+    <p>旅行や出張などにご利用ください。重量集計により、体力に合わせた荷造りができます。趣味の用品管理などにもお役立てください。</p>
   </div>
 
   <section class="content-section">
-    <h2>Undo</h2>
-    <p>操作手間の最小化を目指しました。よくある「確認」操作はありません、編集後の「保存」ボタンもありません。「削除」は確認なしに削除します。もし、間違ったならば「Undo ↩︎」ボタンで前の状態に戻せます。最大10回前まで戻せます</p>
+    <h2>Undo について</h2>
+    <div class="callout">
+      操作手間の最小化を目指しました。よくある <strong>「確認」ダイアログはなく</strong>、編集後の <strong>「保存」ボタンもありません</strong>。「削除」は確認なしに即削除します。<br><br>
+      間違えたときは <strong>「Undo ↩︎」</strong> ボタンで前の状態に戻せます。最大 10 回前まで戻れます。Redo で取り消しを戻すことも可能です。
+    </div>
   </section>
 
   <section class="content-section">
     <h2>機能</h2>
-    <ul class="feature-list">
-      <li>アイテム毎にチェックして全体のチェック状況を確認できる</li>
-      <li>必要数と在庫数を記録できる</li>
-      <li>アイテムの重量(g)を登録して総重量を確認できる</li>
-      <li>ドラッグ＆ドロップ操作で並べ替えができる</li>
-      <li>アイテムを他のグループやパックへ移動や複製ができる</li>
-      <li>グループを他のパックへ移動や複製ができる</li>
-      <li>Undo：最大10回前の状態に戻せる</li>
-      <li>Redo：最大10回Undo前の状態に戻せる</li>
-    </ul>
+    <div class="feature-grid">
+      <div class="feature-item">アイテムごとにチェックできる<small>全体の完了状況もひと目で確認</small></div>
+      <div class="feature-item">必要数と在庫数を記録できる</div>
+      <div class="feature-item">アイテムの重量を登録できる<small>単位：g。パック全体の総重量を表示</small></div>
+      <div class="feature-item">ドラッグ＆ドロップで並べ替えできる</div>
+      <div class="feature-item">アイテムを移動・複製できる<small>他のグループやパックへ</small></div>
+      <div class="feature-item">グループを移動・複製できる<small>他のパックへ</small></div>
+      <div class="feature-item">Undo：最大 10 回前の状態に戻せる</div>
+      <div class="feature-item">Redo：最大 10 回 Undo 前の状態に進める</div>
+    </div>
   </section>
 
   <section class="content-section">
     <h2>仕様・諸元</h2>
-    <ul class="spec-list">
-      <li>DATABASE：SwiftData (sqlite3)</li>
-      <li>数量制限（最大）：ほぼ無制限なのですが、動作検証のため制限しています。もし、拡張したい活用法があれば教えてください
-        <ul>
-          <li>パック：30</li>
-          <li>グループ：30</li>
-          <li>アイテム：100</li>
-          <li>個重量：999,999 (g)</li>
-          <li>在庫数：999</li>
-          <li>必要数：999</li>
-          <li>名称：200文字</li>
-          <li>メモ：200文字</li>
-        </ul>
-      </li>
-      <li>データ構造：下記の三層で記録します。Itemが最小単位になります
-        <pre>App
-├─ Pack（パック：バッグやリュック、トランクや倉庫など）
-│   ├─ Group（グループ：ポーチやボックスなどで小分けしましょう）
-│   │   ├─ Item（アイテム：個として扱う物品です）
+
+    <div class="spec-group">
+      <p class="spec-group-title">データベース</p>
+      <div class="spec-row">
+        <span class="spec-key">データベース</span>
+        <span class="spec-val">SwiftData (sqlite3)</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">データ構造</p>
+      <div class="spec-row">
+        <span class="spec-key">階層</span>
+        <span class="spec-val">Pack → Group → Item の 3 層構造。Item が最小単位です。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Pack</span>
+        <span class="spec-val">バッグ・リュック・トランク・倉庫など</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Group</span>
+        <span class="spec-val">ポーチ・ボックスなど、Pack 内の小分け</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Item</span>
+        <span class="spec-val">個として扱う物品</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">ツリー図</span>
+        <span class="spec-val">
+<pre>App
+├─ Pack
+│   ├─ Group
+│   │   ├─ Item
 │   │   └─ Item
 │   └─ Group
-│       ├─ Item
 │       └─ Item
 └─ Pack
-    ├─ Group
-    │   ├─ Item
-    │   └─ Item
     └─ Group
-        ├─ Item
         └─ Item</pre>
-      </li>
-      <li>Version x.y.z.#：アプリ製造番号：各値は0から始まり下記の要領でカウントアップします
-        <ul>
-          <li>x：大幅改良、全面刷新</li>
-          <li>y：機能追加・変更</li>
-          <li>z：微調整、不具合修正</li>
-          <li>#：ビルド連番</li>
-        </ul>
-      </li>
-      <li>Support：サポート識別番号：8〜12桁くらいの英数字
-        <ul>
-          <li>個人を特定しない（できない）番号です</li>
-          <li>サーバ内にあるログを調査する必要が生じた時に使用します</li>
-        </ul>
-      </li>
-    </ul>
+        </span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">数量制限（最大）</p>
+      <div class="spec-row">
+        <span class="spec-key">補足</span>
+        <span class="spec-val">機能上はほぼ無制限ですが、動作検証のため制限しています。拡張が必要な活用法があればお知らせください。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">パック</span>
+        <span class="spec-val">30</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">グループ</span>
+        <span class="spec-val">30</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">アイテム</span>
+        <span class="spec-val">100</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">個重量</span>
+        <span class="spec-val">999,999 g</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">在庫数</span>
+        <span class="spec-val">999</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">必要数</span>
+        <span class="spec-val">999</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">名称</span>
+        <span class="spec-val">200 文字</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">メモ</span>
+        <span class="spec-val">200 文字</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">アプリ情報</p>
+      <div class="spec-row">
+        <span class="spec-key">Version x.y.z.#</span>
+        <span class="spec-val">x：大幅改良・全面刷新　y：機能追加・変更　z：微調整・不具合修正　#：ビルド連番</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Support ID</span>
+        <span class="spec-val">8〜12 桁の英数字。個人を特定しない番号。サーバログ調査が必要な際に使用します。</span>
+      </div>
+    </div>
   </section>
 
   <section class="content-section">
@@ -100,14 +160,14 @@
           <tr><th>Version</th><th>公開日</th><th>開発環境等</th></tr>
         </thead>
         <tbody>
-          <tr><td>0.2</td><td>2010/2/16</td><td>モチメモ／PackList Xcode3, Objective-C, CoreData</td></tr>
+          <tr><td>0.2</td><td>2010/2/16</td><td>モチメモ/PackList — Xcode 3, Objective-C, Core Data</td></tr>
           <tr><td>0.5.5</td><td>2010/6/27</td><td></td></tr>
-          <tr><td>1.0</td><td>2011/4/23</td><td>Xcode4, Objective-C, CoreData</td></tr>
+          <tr><td>1.0</td><td>2011/4/23</td><td>Xcode 4, Objective-C, Core Data</td></tr>
           <tr><td>1.1</td><td>2011/9/22</td><td></td></tr>
           <tr><td>1.2</td><td>2012/3/31</td><td></td></tr>
           <tr><td>2.0</td><td>2012/3/28</td><td></td></tr>
           <tr><td>2.1.3</td><td>2017/9/28</td><td></td></tr>
-          <tr><td>3.0</td><td>2025/12/8</td><td>モチメモ/Packlin Xcode26, SwiftUI, SwiftData</td></tr>
+          <tr><td>3.0</td><td>2025/12/8</td><td>モチメモ/Packlin — Xcode 26, SwiftUI, SwiftData</td></tr>
         </tbody>
       </table>
     </div>

@@ -19,76 +19,137 @@
 <main class="page">
 
   <div class="page-header">
-    <h1>Packlin User Guide</h1>
-    <p class="page-tagline">A packing checklist useful for travel and events. Edit freely as you like.</p>
+    <img class="page-header-icon" src="../../../images/icon-packlin.png" alt="Packlin">
+    <div class="page-header-text">
+      <h1>Packlin User Guide</h1>
+      <p class="page-tagline">Packing checklist app</p>
+    </div>
+  </div>
+
+  <div class="lead">
+    <p>A packing checklist useful for travel and events. Edit freely as you like.</p>
+    <p>Use it for trips and business travel. Weight totals help you pack to match your strength. It also works well for managing hobby gear.</p>
   </div>
 
   <section class="content-section">
-    <h2>Undo</h2>
-    <p>The goal is to minimize extra steps. There are no common "confirm" prompts, and there is no "save" button after editing. "Delete" removes items without confirmation. If you make a mistake, tap the "Undo ↩︎" button to revert to the previous state. You can go back up to 10 steps.</p>
+    <h2>About Undo</h2>
+    <div class="callout">
+      The goal is to minimize extra steps. There are <strong>no confirmation prompts</strong> and <strong>no Save button</strong> after editing. "Delete" removes items immediately without confirmation.<br><br>
+      If you make a mistake, tap <strong>"Undo ↩︎"</strong> to revert to the previous state — up to 10 steps back. Redo lets you step forward again.
+    </div>
   </section>
 
   <section class="content-section">
     <h2>Features</h2>
-    <ul class="feature-list">
-      <li>Check items one by one and see overall completion</li>
-      <li>Record required quantity and stock quantity</li>
-      <li>Register item weight (g) and check total weight</li>
-      <li>Reorder via drag and drop</li>
-      <li>Move or duplicate items to other groups or packs</li>
-      <li>Move or duplicate groups to other packs</li>
-      <li>Undo: revert up to 10 steps</li>
-      <li>Redo: restore up to 10 steps before Undo</li>
-    </ul>
+    <div class="feature-grid">
+      <div class="feature-item">Check items one by one<small>See overall completion at a glance</small></div>
+      <div class="feature-item">Record required quantity and stock quantity</div>
+      <div class="feature-item">Register item weight<small>Unit: g. View total weight per pack.</small></div>
+      <div class="feature-item">Reorder via drag and drop</div>
+      <div class="feature-item">Move or duplicate items<small>To other groups or packs</small></div>
+      <div class="feature-item">Move or duplicate groups<small>To other packs</small></div>
+      <div class="feature-item">Undo: revert up to 10 steps</div>
+      <div class="feature-item">Redo: restore up to 10 steps</div>
+    </div>
   </section>
 
   <section class="content-section">
     <h2>Specifications</h2>
-    <ul class="spec-list">
-      <li>Database: SwiftData (sqlite3)</li>
-      <li>Quantity limits (maximum): functionally almost unlimited, but restricted for validation. Tell us if you have use cases needing larger limits.
-        <ul>
-          <li>Packs: 30</li>
-          <li>Groups: 30</li>
-          <li>Items: 100</li>
-          <li>Item weight: 999,999 (g)</li>
-          <li>Stock quantity: 999</li>
-          <li>Required quantity: 999</li>
-          <li>Name: 200 characters</li>
-          <li>Memo: 200 characters</li>
-        </ul>
-      </li>
-      <li>Data structure: recorded in three layers below; Item is the smallest unit
-        <pre>App
-├─ Pack (bags, backpacks, trunks, storage, etc.)
-│   ├─ Group (pouches or boxes for subdividing)
-│   │   ├─ Item (individual objects)
+
+    <div class="spec-group">
+      <p class="spec-group-title">Database</p>
+      <div class="spec-row">
+        <span class="spec-key">Database</span>
+        <span class="spec-val">SwiftData (sqlite3)</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Data Structure</p>
+      <div class="spec-row">
+        <span class="spec-key">Layers</span>
+        <span class="spec-val">Three layers: Pack → Group → Item. Item is the smallest unit.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Pack</span>
+        <span class="spec-val">Bags, backpacks, trunks, storage, etc.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Group</span>
+        <span class="spec-val">Pouches, boxes — subdivisions within a Pack</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Item</span>
+        <span class="spec-val">Individual objects</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Tree view</span>
+        <span class="spec-val">
+<pre>App
+├─ Pack
+│   ├─ Group
+│   │   ├─ Item
 │   │   └─ Item
 │   └─ Group
-│       ├─ Item
 │       └─ Item
 └─ Pack
-    ├─ Group
-    │   ├─ Item
-    │   └─ Item
     └─ Group
-        ├─ Item
         └─ Item</pre>
-      </li>
-      <li>Version x.y.z: build number; each value starts at 0 and increments as follows
-        <ul>
-          <li>x: major overhaul, full redesign</li>
-          <li>y: feature additions or changes</li>
-          <li>z: minor adjustments, bug fixes</li>
-        </ul>
-      </li>
-      <li>Support: support identifier; an 8–12 character alphanumeric string
-        <ul>
-          <li>Cannot identify an individual</li>
-          <li>Used when server log investigation is required</li>
-        </ul>
-      </li>
-    </ul>
+        </span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Quantity Limits (Maximum)</p>
+      <div class="spec-row">
+        <span class="spec-key">Note</span>
+        <span class="spec-val">Functionally almost unlimited, but restricted for validation purposes. Let us know if you need larger limits for your use case.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Packs</span>
+        <span class="spec-val">30</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Groups</span>
+        <span class="spec-val">30</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Items</span>
+        <span class="spec-val">100</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Item weight</span>
+        <span class="spec-val">999,999 g</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Stock quantity</span>
+        <span class="spec-val">999</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Required quantity</span>
+        <span class="spec-val">999</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Name</span>
+        <span class="spec-val">200 characters</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Memo</span>
+        <span class="spec-val">200 characters</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">App Info</p>
+      <div class="spec-row">
+        <span class="spec-key">Version x.y.z</span>
+        <span class="spec-val">x: major overhaul / full redesign　y: feature additions or changes　z: minor adjustments / bug fixes</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Support ID</span>
+        <span class="spec-val">An 8–12 character alphanumeric string. Cannot identify an individual. Used when server log investigation is required.</span>
+      </div>
+    </div>
   </section>
 
   <section class="content-section">
