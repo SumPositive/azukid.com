@@ -501,6 +501,7 @@ p:last-child { margin-bottom: 0; }
   bottom: 0;
   width: 2px;
   background: var(--border);
+  z-index: 0;
 }
 
 .timeline-item {
@@ -520,6 +521,7 @@ p:last-child { margin-bottom: 0; }
   border-radius: 50%;
   background: var(--surface);
   border: 2.5px solid var(--accent);
+  z-index: 1;
 }
 
 .timeline-era {
