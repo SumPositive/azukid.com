@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packlin User Guide</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<nav>
+  <a href="/">← Back to Home</a>
+</nav>
+<div class="container">
+
+  <h1>Packlin User Guide</h1>
+
+  <p>A packing checklist useful for travel and events. Edit freely as you like.</p>
+  <p>Use it for trips and business travel. Weight totals help you pack to match your strength. It also works well for managing hobby gear.</p>
+
+  <div class="section">
+    <h2>Undo</h2>
+    <p>The goal is to minimize extra steps. There are no common "confirm" prompts, and there is no "save" button after editing. "Delete" removes items without confirmation. If you make a mistake, tap the "Undo ↩︎" button to revert to the previous state. You can go back up to 10 steps.</p>
+  </div>
+
+  <div class="section">
+    <h2>Features</h2>
+    <p>Give the following features a try:</p>
+    <ul>
+      <li>Check items one by one and see overall completion</li>
+      <li>Record required quantity and stock quantity</li>
+      <li>Register item weight (g) and check total weight</li>
+      <li>Reorder via drag and drop</li>
+      <li>Move or duplicate items to other groups or packs</li>
+      <li>Move or duplicate groups to other packs</li>
+      <li>Undo: revert up to 10 steps</li>
+      <li>Redo: restore up to 10 steps before Undo</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Specifications</h2>
+    <ul>
+      <li>Database: SwiftData (sqlite3)</li>
+      <li>Quantity limits (maximum): functionally almost unlimited, but restricted for validation. Tell us if you have use cases needing larger limits.
+        <ul>
+          <li>Packs: 30</li>
+          <li>Groups: 30</li>
+          <li>Items: 100</li>
+          <li>Item weight: 999,999 (g)</li>
+          <li>Stock quantity: 999</li>
+          <li>Required quantity: 999</li>
+          <li>Name: 200 characters</li>
+          <li>Memo: 200 characters</li>
+        </ul>
+      </li>
+      <li>Data structure: recorded in three layers below; Item is the smallest unit
+        <pre>App
+├─ Pack (bags, backpacks, trunks, storage, etc.)
+│   ├─ Group (pouches or boxes for subdividing)
+│   │   ├─ Item (individual objects)
+│   │   └─ Item
+│   └─ Group
+│       ├─ Item
+│       └─ Item
+└─ Pack
+    ├─ Group
+    │   ├─ Item
+    │   └─ Item
+    └─ Group
+        ├─ Item
+        └─ Item</pre>
+      </li>
+      <li>Version x.y.z: build number; each value starts at 0 and increments as follows
+        <ul>
+          <li>x: major overhaul, full redesign</li>
+          <li>y: feature additions or changes</li>
+          <li>z: minor adjustments, bug fixes</li>
+        </ul>
+      </li>
+      <li>Support: support identifier; an 8–12 character alphanumeric string
+        <ul>
+          <li>Cannot identify an individual</li>
+          <li>Used when server log investigation is required</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Release History</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Version</th><th>Release Date</th><th>Development Environment</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0.2</td><td>2010/2/16</td><td>PackList — Xcode 3, Objective-C, Core Data</td></tr>
+          <tr><td>0.5.5</td><td>2010/6/27</td><td></td></tr>
+          <tr><td>1.0</td><td>2011/4/23</td><td>Xcode 4, Objective-C, Core Data</td></tr>
+          <tr><td>1.1</td><td>2011/9/22</td><td></td></tr>
+          <tr><td>1.2</td><td>2012/3/31</td><td></td></tr>
+          <tr><td>2.0</td><td>2012/3/28</td><td></td></tr>
+          <tr><td>2.1.3</td><td>2017/9/28</td><td></td></tr>
+          <tr><td>3.0</td><td>2025/12/8</td><td>Packlin — Xcode 26, SwiftUI, SwiftData</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer-links">
+    <a href="https://info.engineer.co.jp/EULA_en.html">End User License Agreement</a>
+    <a href="https://info.engineer.co.jp/PrivacyPolicy_en.html">Privacy Policy</a>
+    <a href="https://github.com/SumPositive/PackList/">Source Code: GitHub</a>
+    <a href="/en/sumpo/">Author Bio: sumpo</a>
+  </div>
+
+</div>
+</body>
+</html>

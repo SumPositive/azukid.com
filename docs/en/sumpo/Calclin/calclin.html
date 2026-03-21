@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calclin User Guide</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<nav>
+  <a href="/">← Back to Home</a>
+</nav>
+<div class="container">
+
+  <h1>Calclin User Guide</h1>
+
+  <p>Tap the keys like a calculator to enter an expression. Tap [=] at the end to get the answer.</p>
+  <p>That's all for basic operation.</p>
+  <p>If you're curious, the features below are tucked away — try intuitive gestures to find and use them.</p>
+
+  <div class="section">
+    <h2>Features</h2>
+    <ul>
+      <li>Choose the decimal point symbol (default: [.] period)</li>
+      <li>Change the number of displayed decimal digits (default: 3 digits, up to 10 digits)</li>
+      <li>Choose how to round when truncating to the displayed decimal digits (default: round half to even)
+        <ul>
+          <li>Internal 60-digit precision ensures accurate round half to even (banker's rounding)</li>
+        </ul>
+      </li>
+      <li>Choose the digit grouping symbol (default: [,] comma)</li>
+      <li>Choose the digit grouping style (default: every 3 digits)
+        <ul>
+          <li>Includes the Indian numbering style</li>
+        </ul>
+      </li>
+      <li>Add extra calculation fields and switch between them (maximum: 3 fields)</li>
+      <li>Copy from the history of expressions and answers</li>
+      <li>Enlarge or reduce the text size of expressions and answers</li>
+      <li>Use multiple calculators (up to triple deck)</li>
+      <li>Perform unit-aware calculations</li>
+      <li>Lay out the keyboard to your liking</li>
+      <li>Switch keyboards (5 layouts)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Specifications</h2>
+    <ul>
+      <li>Calculation engine: C/C++ fixed-point decimal, using 60 of over 2G significant digits</li>
+      <li>Calculation fields: Reverse Polish style, up to 3 fields</li>
+      <li>History list: up to 100 entries, circular deletion from oldest</li>
+      <li>Calculation style: four arithmetic operations</li>
+      <li>Decimal digits: 0–10 (max 15)</li>
+      <li>Rounding modes: 7 types
+        <ul>
+          <li>Round up — always toward positive infinity</li>
+          <li>Round toward +∞ — always increases</li>
+          <li>Round half away from zero [JIS Z 8401 Rule B]</li>
+          <li><span class="default-marker">★</span> Round half to even [JIS Z 8401 Rule A] (even rounding, JIS/ISO/banker's rounding)</li>
+          <li>Round half toward +∞</li>
+          <li>Round toward −∞ — always decreases</li>
+          <li>Truncate — no rounding, always toward zero</li>
+        </ul>
+      </li>
+      <li>Decimal point symbols: 3 types
+        <ul>
+          <li><span class="default-marker">★</span> [.] period</li>
+          <li>[·] middle dot</li>
+          <li>[,] comma</li>
+        </ul>
+      </li>
+      <li>Grouping styles: 4 types
+        <ul>
+          <li>No grouping [123456789.0]</li>
+          <li><span class="default-marker">★</span> Group every 3 digits [123,456,789.0]</li>
+          <li>Indian style [12,34,56,789.0]</li>
+          <li>Group every 4 digits [1,2345,6789.0]</li>
+        </ul>
+      </li>
+      <li>Grouping symbols: 4 types
+        <ul>
+          <li><span class="default-marker">★</span> [,] comma</li>
+          <li>['] apostrophe</li>
+          <li>[ ] space</li>
+          <li>[.] period</li>
+        </ul>
+      </li>
+      <li>Operators: ＋ ー × ÷ ／ ＝ ( ) ／ √ 3√</li>
+      <li>Editing: ClearAll　ClearSection　BackSpace　-/+</li>
+      <li>Constants: π (pi)　φ (golden ratio)　e (Napier's constant)</li>
+      <li>Percentages: % ‰ 割 分 厘</li>
+      <li>Units:
+        <ul>
+          <li>mm cm [m] km 寸 尺 里 in ft yd</li>
+          <li>m㎡ c㎡ [㎡] a ha k㎡ 坪 畝 反 ac</li>
+          <li>ml dl [L] ㎥ 合 升 gallon</li>
+          <li>mg g [kg] t kt 匁 貫 pound</li>
+        </ul>
+      </li>
+      <li>Version x.y.z: build number; each value starts at 0 and increments as follows
+        <ul>
+          <li>x: major overhaul, full redesign</li>
+          <li>y: feature additions or changes</li>
+          <li>z: minor tweaks, bug fixes</li>
+        </ul>
+      </li>
+      <li>SupportID: support identifier; an 8–12 character alphanumeric string
+        <ul>
+          <li>Cannot identify an individual</li>
+          <li>Used when server log investigation is required</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Release History</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Version</th><th>Release Date</th><th>Development Environment</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0.1</td><td>2010/8/7</td><td>Drataku — Xcode 3, Objective-C, C/C++</td></tr>
+          <tr><td>0.3</td><td>2011/3/1</td><td></td></tr>
+          <tr><td>0.4.2</td><td>2011/3/24</td><td></td></tr>
+          <tr><td>1.0</td><td>2011/4/21</td><td>CalcRoll — Xcode 4, Objective-C, C/C++</td></tr>
+          <tr><td>1.0.9</td><td>2011/10/21</td><td></td></tr>
+          <tr><td>1.1</td><td>2011/11/20</td><td></td></tr>
+          <tr><td>1.1.7</td><td>2012/10/10</td><td></td></tr>
+          <tr><td>1.2</td><td></td><td>2020/7 considered Swift migration but paused<br>2025/7 restarted to learn Swift 6 and SwiftUI</td></tr>
+          <tr><td>2.0</td><td>2025/9/4</td><td>Cal Memo / CalcRoll — Xcode 16, Swift 6, SwiftUI, C/C++</td></tr>
+          <tr><td>2.1</td><td>2025/ /</td><td>Cal Memo / Calclin — Xcode 26, Swift 6, SwiftUI, C/C++</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer-links">
+    <a href="https://info.engineer.co.jp/EULA_en.html">End User License Agreement</a>
+    <a href="https://info.engineer.co.jp/PrivacyPolicy_en.html">Privacy Policy</a>
+    <a href="https://github.com/SumPositive/CalcRoll/">Source Code: GitHub</a>
+    <a href="/en/sumpo/">Author Bio: sumpo</a>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,267 @@
+:root {
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+  --color-heading: #222222;
+  --color-link: #0066cc;
+  --color-link-hover: #004499;
+  --color-border: #dddddd;
+  --color-code-bg: #f5f5f5;
+  --color-nav-bg: #f8f8f8;
+  --color-accent: #555555;
+  --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  --max-width: 860px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+  padding: 0 16px;
+}
+
+/* ── Layout ── */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px 0 64px;
+}
+
+/* ── Navigation ── */
+nav {
+  background: var(--color-nav-bg);
+  border-bottom: 1px solid var(--color-border);
+  padding: 10px 16px;
+  margin: 0 -16px 32px;
+  font-size: 0.875rem;
+}
+
+nav a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ── Headings ── */
+h1 {
+  font-size: 1.75rem;
+  color: var(--color-heading);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-border);
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: 1.25rem;
+  color: var(--color-heading);
+  margin-top: 32px;
+  margin-bottom: 12px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+h3 {
+  font-size: 1rem;
+  color: var(--color-accent);
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+/* ── Subtitle / tagline ── */
+.subtitle {
+  font-size: 1rem;
+  color: var(--color-accent);
+  margin-bottom: 24px;
+}
+
+/* ── Paragraphs ── */
+p {
+  margin-bottom: 16px;
+}
+
+/* ── Links ── */
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+/* ── Lists ── */
+ul, ol {
+  margin: 8px 0 16px 1.5em;
+}
+
+li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+/* ── App list on index ── */
+.app-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.app-list li {
+  margin-bottom: 8px;
+}
+
+.app-list li a {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* ── Section card ── */
+.section {
+  margin-bottom: 40px;
+}
+
+/* ── Links section (EULA etc.) ── */
+.link-group {
+  margin-bottom: 24px;
+}
+
+.link-group h3 {
+  margin-top: 0;
+}
+
+/* ── Code / pre ── */
+pre {
+  background: var(--color-code-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  white-space: pre;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--color-code-bg);
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+/* ── Tables ── */
+.table-wrap {
+  overflow-x: auto;
+  margin-bottom: 16px;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+th, td {
+  border: 1px solid var(--color-border);
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: var(--color-nav-bg);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+tr:nth-child(even) td {
+  background: #fafafa;
+}
+
+/* ── Default marker list (★ etc.) ── */
+.spec-list {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.spec-list li {
+  padding-left: 1.2em;
+  text-indent: -1.2em;
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 32px 0;
+}
+
+/* ── Footer-style link row ── */
+.footer-links {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+.footer-links a {
+  white-space: nowrap;
+}
+
+/* ── Default marker ── */
+.default-marker {
+  color: #e06000;
+  font-weight: bold;
+}
+
+/* ── Responsive breakpoints ── */
+@media (max-width: 600px) {
+  html {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.15rem;
+  }
+
+  pre {
+    font-size: 0.75rem;
+  }
+
+  th, td {
+    padding: 6px 8px;
+    font-size: 0.82rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
