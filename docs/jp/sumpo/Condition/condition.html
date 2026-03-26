@@ -34,12 +34,13 @@
   <section class="content-section">
     <h2>機能</h2>
     <div class="feature-grid">
-      <div class="feature-item">7 種類の健康データを記録できる<small>血圧・心拍・体温・体重・歩数・体脂肪率・骨格筋率</small></div>
+      <div class="feature-item">6 種類の健康データを記録できる<small>血圧・心拍・体温・体重・体脂肪率・骨格筋率</small></div>
       <div class="feature-item">測定タイミングを自動分類する<small>起床時・安静時・就寝前など、時刻帯から自動判定</small></div>
       <div class="feature-item">グラフで推移を確認できる<small>1週〜1年の期間を切り替え表示</small></div>
-      <div class="feature-item">統計分析ができる<small>血圧分布・JSH基準比率・体重と歩数の相関など</small></div>
+      <div class="feature-item">統計分析ができる<small>血圧分布・JSH基準比率・脈圧分析など</small></div>
       <div class="feature-item">Apple ヘルスケアと同期できる<small>書き込み・読み込み・双方向を選択可能</small></div>
-      <div class="feature-item">目標値を設定できる<small>血圧・体重・歩数など各項目に目標を登録</small></div>
+      <div class="feature-item">目標値を設定できる<small>血圧・体重など各項目に目標を登録</small></div>
+      <div class="feature-item">PDF・CSV・JSON で出力できる<small>PDF を印刷・CSV を Excel で読み込み・JSON はお好きにどうぞ</small></div>
       <div class="feature-item">表示項目と順序をカスタマイズできる<small>記録フォームとグラフそれぞれに設定可能</small></div>
       <div class="feature-item">設定を iCloud で同期できる<small>複数端末で同じ設定を共有</small></div>
     </div>
@@ -71,10 +72,6 @@
         <span class="spec-val">0.0〜200.0 kg</span>
       </div>
       <div class="spec-row">
-        <span class="spec-key">歩数</span>
-        <span class="spec-val">0〜99,999 歩</span>
-      </div>
-      <div class="spec-row">
         <span class="spec-key">体脂肪率</span>
         <span class="spec-val">0.0〜100.0 %</span>
       </div>
@@ -103,6 +100,21 @@
           </ul>
         </span>
       </div>
+      <div class="spec-row">
+        <span class="spec-key">デフォルト時間帯</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>0〜2時：就寝時</li>
+            <li>3〜7時：起床時</li>
+            <li>8〜10時：安静時</li>
+            <li>11〜13時：運動前</li>
+            <li>14〜16時：運動後</li>
+            <li>17〜19時：安静時</li>
+            <li>20〜21時：就寝前</li>
+            <li>22〜23時：就寝時</li>
+          </ul>
+        </span>
+      </div>
     </div>
 
     <div class="spec-group">
@@ -116,14 +128,14 @@
         <span class="spec-val">
           <ul class="option-list">
             <li>血圧（収縮期・拡張期）</li>
-            <li>平均血圧（MAP）</li>
+            <li>脈圧（収縮期 − 拡張期）</li>
             <li>心拍数</li>
             <li>体温</li>
-            <li>体重・体重変化</li>
-            <li>歩数</li>
+            <li>体重</li>
+            <li>体重変化量</li>
             <li>体脂肪率</li>
             <li>骨格筋率</li>
-            <li>BMI</li>
+            <li>BMI（身長設定が必要）</li>
           </ul>
         </span>
       </div>
@@ -148,10 +160,9 @@
             <li>血圧と測定タイミングの相関</li>
             <li>24時間血圧分布</li>
             <li>体重サマリー</li>
-            <li>体重と歩数の相関</li>
             <li>体温サマリー</li>
             <li>24時間体温分布</li>
-            <li>体温度数分布</li>
+            <li>体温分布</li>
           </ul>
         </span>
       </div>
@@ -173,7 +184,15 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">対応データ種</span>
-        <span class="spec-val">血圧・心拍数・体温・体重・歩数・体脂肪率</span>
+        <span class="spec-val">血圧・心拍数・体温・体重・体脂肪率（骨格筋率は非対応）</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">データ出力</p>
+      <div class="spec-row">
+        <span class="spec-key">形式</span>
+        <span class="spec-val">PDF・CSV（Excel 対応 UTF-8 BOM）・JSON</span>
       </div>
     </div>
 

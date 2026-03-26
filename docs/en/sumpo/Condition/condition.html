@@ -34,12 +34,13 @@
   <section class="content-section">
     <h2>Features</h2>
     <div class="feature-grid">
-      <div class="feature-item">Record 7 types of health data<small>Blood pressure, heart rate, temperature, weight, steps, body fat, skeletal muscle rate</small></div>
+      <div class="feature-item">Record 6 types of health data<small>Blood pressure, heart rate, temperature, weight, body fat %, skeletal muscle %</small></div>
       <div class="feature-item">Automatic timing classification<small>Wake, rest, pre-sleep, etc. — determined from the time of entry</small></div>
       <div class="feature-item">View trends in graphs<small>Switch between 1-week to 1-year periods</small></div>
-      <div class="feature-item">Statistical analysis<small>BP distribution, JSH guideline ratios, weight/step correlations, and more</small></div>
+      <div class="feature-item">Statistical analysis<small>BP distribution, JSH guideline ratios, pulse pressure analysis, and more</small></div>
       <div class="feature-item">Sync with Apple Health<small>Choose write-only, read-only, or bidirectional sync</small></div>
-      <div class="feature-item">Set personal goals<small>Target values for BP, weight, steps, and other metrics</small></div>
+      <div class="feature-item">Set personal goals<small>Target values for BP, weight, and other metrics</small></div>
+      <div class="feature-item">Export to PDF, CSV, or JSON<small>Print as PDF · open CSV in Excel · do what you like with JSON</small></div>
       <div class="feature-item">Customize displayed fields and order<small>Configure separately for the record form and graphs</small></div>
       <div class="feature-item">Sync settings via iCloud<small>Share your settings across multiple devices</small></div>
     </div>
@@ -71,10 +72,6 @@
         <span class="spec-val">0.0–200.0 kg</span>
       </div>
       <div class="spec-row">
-        <span class="spec-key">Step count</span>
-        <span class="spec-val">0–99,999 steps</span>
-      </div>
-      <div class="spec-row">
         <span class="spec-key">Body fat %</span>
         <span class="spec-val">0.0–100.0 %</span>
       </div>
@@ -103,6 +100,21 @@
           </ul>
         </span>
       </div>
+      <div class="spec-row">
+        <span class="spec-key">Default time map</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>0–2h: During sleep</li>
+            <li>3–7h: Wake</li>
+            <li>8–10h: Rest</li>
+            <li>11–13h: Pre-exercise</li>
+            <li>14–16h: Post-exercise</li>
+            <li>17–19h: Rest</li>
+            <li>20–21h: Before sleep</li>
+            <li>22–23h: During sleep</li>
+          </ul>
+        </span>
+      </div>
     </div>
 
     <div class="spec-group">
@@ -116,14 +128,14 @@
         <span class="spec-val">
           <ul class="option-list">
             <li>Blood pressure (systolic / diastolic)</li>
-            <li>Mean arterial pressure (MAP)</li>
+            <li>Pulse pressure (systolic − diastolic)</li>
             <li>Heart rate</li>
             <li>Body temperature</li>
-            <li>Body weight / weight change</li>
-            <li>Step count</li>
+            <li>Body weight</li>
+            <li>Weight change</li>
             <li>Body fat %</li>
             <li>Skeletal muscle %</li>
-            <li>BMI</li>
+            <li>BMI (requires height setting)</li>
           </ul>
         </span>
       </div>
@@ -148,10 +160,9 @@
             <li>BP / measurement timing correlation</li>
             <li>24-hour blood pressure distribution</li>
             <li>Weight summary statistics</li>
-            <li>Weight / step count correlation</li>
             <li>Temperature summary</li>
             <li>24-hour temperature distribution</li>
-            <li>Temperature frequency histogram</li>
+            <li>Temperature frequency distribution</li>
           </ul>
         </span>
       </div>
@@ -173,7 +184,15 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Supported data</span>
-        <span class="spec-val">Blood pressure, heart rate, body temperature, weight, step count, body fat %</span>
+        <span class="spec-val">Blood pressure, heart rate, body temperature, weight, body fat % (skeletal muscle % not supported)</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Data Export</p>
+      <div class="spec-row">
+        <span class="spec-key">Formats</span>
+        <span class="spec-val">PDF, CSV (UTF-8 with BOM, Excel-compatible), JSON</span>
       </div>
     </div>
 
