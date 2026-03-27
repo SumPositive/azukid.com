@@ -530,26 +530,32 @@ td {
 
 tr:last-child td { border-bottom: none; }
 
-/* ── Footer links ── */
-.footer-links {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border-light);
+/* ── Pill links (before spec section) ── */
+.pill-link-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 16px;
+  gap: 8px;
+  margin-bottom: 40px;
 }
 
-.footer-links a {
-  font-size: .8125rem;
+.pill-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1.5px solid var(--accent);
   color: var(--accent);
+  font-size: .8125rem;
+  font-weight: 500;
   text-decoration: none;
   white-space: nowrap;
+  transition: background .12s, color .12s;
 }
 
-.footer-links a:hover {
-  color: var(--accent-dark);
-  text-decoration: underline;
+.pill-link:hover {
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
 }
 
 /* ── Utility ── */
