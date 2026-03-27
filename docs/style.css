@@ -857,8 +857,9 @@ p:last-child { margin-bottom: 0; }
   .hero { padding: 28px 0 24px; }
 
   .app-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .app-card { padding: 14px 14px 12px; }
   .app-card-footer { flex-direction: column; gap: 6px; }
-  .app-card-btn { flex: none; }
+  .app-card-btn { flex: none; width: 100%; }
 
   .doc-row { padding: 12px 16px; gap: 8px; }
 
