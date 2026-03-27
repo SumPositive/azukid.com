@@ -170,13 +170,10 @@ body {
   border-radius: var(--radius);
   border: 1px solid var(--border-light);
   box-shadow: var(--shadow);
-  padding: 16px 20px 18px;
-  text-decoration: none;
-  color: inherit;
+  padding: 16px 20px 14px;
   display: flex;
   flex-direction: column;
   gap: 4px;
-  transition: box-shadow .15s, border-color .15s;
 }
 
 .app-card-icon {
@@ -185,13 +182,6 @@ body {
   border-radius: 14px;
   margin-bottom: 10px;
   box-shadow: 0 1px 4px rgba(0,0,0,.12);
-}
-
-.app-card:hover {
-  box-shadow: 0 2px 8px rgba(0,0,0,.10), 0 8px 24px rgba(0,0,0,.08);
-  border-color: var(--border);
-  text-decoration: none;
-  color: inherit;
 }
 
 .app-card-name {
@@ -206,12 +196,48 @@ body {
   color: var(--text-2);
 }
 
-.app-card-badge {
-  margin-top: 6px;
-  font-size: .6875rem;
-  font-weight: 500;
-  color: var(--text-3);
-  letter-spacing: .03em;
+.app-card-footer {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.app-card-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 8px;
+  border-radius: var(--radius-xs);
+  font-size: .75rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .15s, color .15s;
+}
+
+.app-card-btn-doc {
+  border: 1.5px solid var(--border);
+  color: var(--text-2);
+  background: transparent;
+}
+
+.app-card-btn-doc:hover {
+  background: var(--bg);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.app-card-btn-store {
+  background: var(--accent);
+  color: #fff;
+  border: 1.5px solid transparent;
+}
+
+.app-card-btn-store:hover {
+  background: var(--accent-dark);
+  color: #fff;
+  text-decoration: none;
 }
 
 /* ── Doc row (products docs section) ── */
