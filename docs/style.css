@@ -229,14 +229,24 @@ body {
 }
 
 .app-card-btn-store {
-  background: var(--accent);
-  color: #fff;
-  border: 1.5px solid transparent;
+  background: #fff;
+  color: #000;
+  border: 1.5px solid var(--border);
+  gap: 5px;
+  border-radius: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
+
+.app-card-btn-store::before {
+  content: "\F8FF";
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.15em;
+  line-height: 1;
 }
 
 .app-card-btn-store:hover {
-  background: var(--accent-dark);
-  color: #fff;
+  background: var(--bg);
+  color: #000;
   text-decoration: none;
 }
 
