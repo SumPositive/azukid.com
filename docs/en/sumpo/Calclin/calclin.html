@@ -40,10 +40,10 @@
       <div class="feature-item">Choose a rounding mode<small>Default: round half to even (banker's rounding)</small></div>
       <div class="feature-item">Choose the digit grouping symbol<small>Default: [,] comma</small></div>
       <div class="feature-item">Choose the digit grouping style<small>Every 3 digits, every 4 digits, Indian style, etc.</small></div>
-      <div class="feature-item">Add extra calculation fields<small>Switch between up to 3 fields</small></div>
-      <div class="feature-item">Copy from expression and answer history</div>
+      <div class="feature-item">Use multiple calculators side by side<small>Up to triple deck. Use [+][−] header buttons to add or remove panels. Swipe or tap the indicator to switch. Double-tap to toggle 1-panel ⇔ 2-panel view.</small></div>
+      <div class="feature-item">History of expressions and answers<small>Swipe left: delete　Swipe right: add memo / copy expression / copy answer　Double-tap: copy expression</small></div>
+      <div class="feature-item">Add notes to history entries</div>
       <div class="feature-item">Enlarge or reduce text size</div>
-      <div class="feature-item">Use multiple calculators<small>Up to triple deck</small></div>
       <div class="feature-item">Perform unit-aware calculations<small>Length, area, volume, weight</small></div>
       <div class="feature-item">Lay out the keyboard to your liking</div>
       <div class="feature-item">Switch keyboards<small>5 available layouts</small></div>
@@ -137,7 +137,7 @@
       <p class="spec-group-title">Operators, Constants &amp; Units</p>
       <div class="spec-row">
         <span class="spec-key">Operators</span>
-        <span class="spec-val">＋ ー × ÷ ／ ＝ ( ) √ 3√</span>
+        <span class="spec-val">＋ ー × ÷ ／ ＝ ( ) √ 3√ (displays "Error" when given a negative number)</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Editing</span>
@@ -150,6 +150,17 @@
       <div class="spec-row">
         <span class="spec-key">Percentages</span>
         <span class="spec-val">% ‰ 割 分 厘</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">% calculation</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>100 + 5% → 105　(same as Google Calculator)</li>
+            <li>100 − 5% → 95　(same as Google Calculator)</li>
+            <li>100 × 5% → 5　(100 × 5 ÷ 100)</li>
+            <li>100 ÷ 5% → 2000　(100 ÷ 5 × 100)</li>
+          </ul>
+        </span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Units (length)</span>
@@ -199,7 +210,7 @@
           <tr><td>1.1.7</td><td>2012/10/10</td><td></td></tr>
           <tr><td>1.2</td><td></td><td>2020/7 considered Swift migration but paused<br>2025/7 restarted to learn Swift 6 and SwiftUI</td></tr>
           <tr><td>2.0</td><td>2025/9/4</td><td>Calclin — Xcode 16, Swift 6, SwiftUI, C/C++</td></tr>
-          <tr><td>2.1</td><td>2025/ /</td><td>Calclin — Xcode 26, Swift 6, SwiftUI, C/C++</td></tr>
+          <tr><td>2.0.2</td><td>2026/3/30</td><td>Calclin — Xcode 26, Swift 6, SwiftUI, C/C++</td></tr>
         </tbody>
       </table>
     </div>
