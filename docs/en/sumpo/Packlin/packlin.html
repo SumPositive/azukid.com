@@ -50,6 +50,125 @@
       <div class="feature-item">Move or duplicate groups<small>To other packs</small></div>
       <div class="feature-item">Undo: revert up to 10 steps</div>
       <div class="feature-item">Redo: restore up to 10 steps</div>
+      <div class="feature-item">Export and import packs<small>Share with other devices or friends</small></div>
+      <div class="feature-item">Full backup and restore<small>For device migration or data safety</small></div>
+      <div class="feature-item">AI suggests pack contents (optional)<small>Requires tickets — purchase or watch an ad</small></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Pack Sharing &amp; Backup</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Export</p>
+      <div class="spec-row">
+        <span class="spec-key">Single pack</span>
+        <span class="spec-val">Choose "Export" from the pack menu to export one pack as a <code>.packlin</code> file. Share it via AirDrop, email, Notes, or any other method.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">All packs (backup)</span>
+        <span class="spec-val">Use "Export All Packs (Backup)" in Settings to save all packs as a single <code>.packlin</code> file. Useful for device migration and data safety.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Import</p>
+      <div class="spec-row">
+        <span class="spec-key">How to import</span>
+        <span class="spec-val">Tap "Load Pack" in Settings and select a file. Both single-pack and backup files are imported the same way.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Duplicate handling</span>
+        <span class="spec-val">When restoring a backup, packs with matching IDs are overwritten. For single-pack imports, packs with the same name are overwritten. Non-matching packs are added as new.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">File detection</span>
+        <span class="spec-val">The app detects whether a file is a single pack or a backup by reading the JSON content, not the file extension.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>AI Generation (Chappy)<small style="font-size:0.65em; font-weight:normal; margin-left:8px;">Optional · In-app purchase</small></h2>
+    <div class="callout">
+      Tell Chappy where you're going or what the occasion is, and the AI will suggest a complete pack for you. The suggested pack is saved directly and can be edited freely afterward. You can also hand an existing pack to Chappy and ask for revisions.<br><br>
+      <strong>Each generation costs 1 AI ticket.</strong> Tickets are available via in-app purchase (1 or 5 tickets) or by watching an ad.
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">How to use</p>
+      <div class="spec-row">
+        <span class="spec-key">Create new</span>
+        <span class="spec-val">Tap the ✦ button in the top-right of the pack list and choose "Ask Chappy to create one."</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Revise existing</span>
+        <span class="spec-val">Tap the ✦ button in the pack edit screen and choose "Ask Chappy to revise this." The current pack contents are passed to the AI for additions or edits.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Request text</span>
+        <span class="spec-val">Up to 1,000 characters. Describe the destination, duration, purpose, season, or anything else that helps.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">How to get tickets</p>
+      <div class="spec-row">
+        <span class="spec-key">In-app purchase</span>
+        <span class="spec-val">Available in sets of 1 or 5 tickets.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Watch an ad</span>
+        <span class="spec-val">Tickets can also be earned by watching a video ad from the "Support with an Ad" button in Settings.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Settings</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Display</p>
+      <div class="spec-row">
+        <span class="spec-key">Display mode</span>
+        <span class="spec-val"><strong>Beginner</strong>: shows operation hints in the header. <strong>Expert</strong>: hides hints for a compact layout.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Row detail</span>
+        <span class="spec-val">Controls how many lines are shown per row. <strong>Minimal</strong>: name 1 line, memo hidden. <strong>1 line</strong>: name 1 line, memo 1 line. <strong>2 lines</strong>: 2 lines each. <strong>3 lines</strong>: 3 lines each.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Behavior</p>
+      <div class="spec-row">
+        <span class="spec-key">New item position</span>
+        <span class="spec-val">Choose whether new items, groups, and packs are added at the <strong>top</strong> or <strong>bottom</strong> of the list.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Weight</p>
+      <div class="spec-row">
+        <span class="spec-key">Show required weight</span>
+        <span class="spec-val">Displays the weight for the required quantity (required × unit weight).</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Show kg above 1,000 g</span>
+        <span class="spec-val">When the total weight reaches 1,000 g, switches display to "1.0 kg" format.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Check &amp; stock linking</p>
+      <div class="spec-row">
+        <span class="spec-key">Check ON fills stock</span>
+        <span class="spec-val">When you check an item, the stock quantity is automatically raised to meet the required quantity.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Check OFF clears stock</span>
+        <span class="spec-val">When you uncheck an item, the stock quantity is reset to 0.</span>
+      </div>
     </div>
   </section>
 
@@ -142,6 +261,10 @@
       <div class="spec-row">
         <span class="spec-key">Memo</span>
         <span class="spec-val">200 characters</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">AI request text</span>
+        <span class="spec-val">1,000 characters</span>
       </div>
     </div>
 

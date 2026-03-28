@@ -50,6 +50,125 @@
       <div class="feature-item">グループを移動・複製できる<small>他のパックへ</small></div>
       <div class="feature-item">Undo：最大 10 回前の状態に戻せる</div>
       <div class="feature-item">Redo：最大 10 回 Undo 前の状態に進める</div>
+      <div class="feature-item">パックを書き出し・読み込みできる<small>他の端末や友人と共有</small></div>
+      <div class="feature-item">全パックを一括バックアップ・復元できる<small>機種変更やデータ保全に</small></div>
+      <div class="feature-item">AI がパックを提案してくれる（オプション）<small>利用券が必要。購入または広告視聴で入手</small></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>パック共有・バックアップ</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">書き出し</p>
+      <div class="spec-row">
+        <span class="spec-key">パック単体</span>
+        <span class="spec-val">パック画面のメニューから「書き出す」を選ぶと、そのパック 1 件を <code>.packlin</code> ファイルとして書き出せます。AirDrop・メール・メモアプリなど任意の方法で共有できます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">全パックまとめて</span>
+        <span class="spec-val">設定画面の「全パックを書き出す（バックアップ）」から、全パックを 1 つの <code>.packlin</code> ファイルとして書き出せます。機種変更やデータ保全にご利用ください。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">読み込み</p>
+      <div class="spec-row">
+        <span class="spec-key">操作</span>
+        <span class="spec-val">設定画面の「パックを読み込む」からファイルを選択します。単体パックとバックアップのどちらも同じ操作で読み込めます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">重複の扱い</span>
+        <span class="spec-val">バックアップ復元では ID が一致するパックを上書きします。単体パックの共有では名前が一致するパックを上書きします。一致しない場合は新規追加されます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">ファイル判別</span>
+        <span class="spec-val">拡張子ではなく JSON の内容で単体／バックアップを自動判別します。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>AI 生成（チャッピー）<small style="font-size:0.65em; font-weight:normal; margin-left:8px;">オプション・有料</small></h2>
+    <div class="callout">
+      旅行先やイベントの目的を伝えると、AI がパックの内容を提案してくれます。提案されたパックはそのまま保存でき、あとから自由に編集できます。既存パックを AI に渡して修正を依頼することもできます。<br><br>
+      <strong>1 回の生成につき AI 利用券 1 枚が必要です。</strong>利用券はアプリ内購入（1 枚・5 枚）または広告視聴で入手できます。
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">利用方法</p>
+      <div class="spec-row">
+        <span class="spec-key">新規作成</span>
+        <span class="spec-val">パックリスト右上の ✦ ボタンから「チャッピーに作ってもらう」を選択して起動します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">既存パック修正</span>
+        <span class="spec-val">パック編集画面の ✦ ボタンから「チャッピーに修正してもらう」を選択します。現在のパック内容が AI に渡され、追記・修正の依頼ができます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">要望テキスト</span>
+        <span class="spec-val">最大 1,000 文字。旅行先・日数・目的・季節など自由に記述してください。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">AI 利用券の入手方法</p>
+      <div class="spec-row">
+        <span class="spec-key">アプリ内購入</span>
+        <span class="spec-val">1 枚・5 枚のセットを購入できます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">広告視聴</span>
+        <span class="spec-val">設定画面の「広告を見て寄付」から動画広告を視聴することでも入手できます。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>設定</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">表示</p>
+      <div class="spec-row">
+        <span class="spec-key">表示モード</span>
+        <span class="spec-val"><strong>初心者</strong>：ヘッダーに操作説明を表示します。<strong>達人</strong>：説明を省いてコンパクトに表示します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">明細表示</span>
+        <span class="spec-val">行ごとの表示行数を切り替えます。<strong>最小</strong>：名称 1 行・メモ非表示　<strong>1 行</strong>：名称 1 行・メモ 1 行　<strong>2 行</strong>：各 2 行　<strong>3 行</strong>：各 3 行。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">操作</p>
+      <div class="spec-row">
+        <span class="spec-key">新規追加位置</span>
+        <span class="spec-val">新しいアイテム・グループ・パックをリストの <strong>先頭</strong> または <strong>末尾</strong> に追加するか選べます。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">重量</p>
+      <div class="spec-row">
+        <span class="spec-key">必要重量を表示</span>
+        <span class="spec-val">必要数ぶんの重量（必要数 × 単重）を表示します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">重量計 1000g から kg 表示</span>
+        <span class="spec-val">合計重量が 1,000g 以上になると「1.0 kg」形式に切り替えます。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">チェックと在庫の連動</p>
+      <div class="spec-row">
+        <span class="spec-key">チェック ON で在庫を満たす</span>
+        <span class="spec-val">チェックをオンにしたとき、在庫数を必要数まで自動で増やします。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">チェック OFF で在庫を 0 にする</span>
+        <span class="spec-val">チェックをオフにしたとき、在庫数を 0 にリセットします。</span>
+      </div>
     </div>
   </section>
 
@@ -142,6 +261,10 @@
       <div class="spec-row">
         <span class="spec-key">メモ</span>
         <span class="spec-val">200 文字</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">AI 要望テキスト</span>
+        <span class="spec-val">1,000 文字</span>
       </div>
     </div>
 
