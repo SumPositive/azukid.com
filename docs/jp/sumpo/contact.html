@@ -119,6 +119,10 @@
         </select>
       </div>
       <div class="form-group">
+        <label for="email">メールアドレス <span style="color:red">*</span></label>
+        <input type="email" id="email" name="email" placeholder="返信先のメールアドレス" required>
+      </div>
+      <div class="form-group">
         <label for="subject">件名</label>
         <input type="text" id="subject" name="subject" placeholder="アプリを選択すると自動入力されます" maxlength="100">
       </div>
@@ -126,8 +130,8 @@
         <label for="body">お問い合わせ内容</label>
         <textarea id="body" name="body" placeholder="ご質問・不具合の詳細・ご要望などをご記入ください。"></textarea>
       </div>
-      <button type="submit" class="form-submit">メールアプリで送信</button>
-      <p class="form-note">送信ボタンを押すとメールアプリが開きます。<br>宛先は自動的に設定されます。</p>
+      <button type="submit" class="form-submit" id="submitBtn">送信する</button>
+      <p class="form-note" id="formNote">内容を確認後、メールにてご返信いたします。</p>
     </form>
   </section>
 
@@ -140,19 +144,34 @@
     subjectField.value = app ? app + ' のお問い合わせ' : '';
   });
 
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    const subject = document.getElementById('subject').value.trim();
-    const body = document.getElementById('body').value.trim();
+    const btn = document.getElementById('submitBtn');
+    const note = document.getElementById('formNote');
+    btn.disabled = true;
+    btn.textContent = '送信中…';
 
-    const mailSubject = subject || 'お問い合わせ';
-
-    const mailto = 'contact.sumpo@azukid.com';
-    const url = 'mailto:' + mailto
-      + '?subject=' + encodeURIComponent(mailSubject)
-      + '&body=' + encodeURIComponent(body);
-
-    window.location.href = url;
+    const data = new FormData(this);
+    try {
+      const res = await fetch('https://formspree.io/f/xqeglybk', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        this.innerHTML = '<p style="text-align:center; padding: 32px 0; font-size:1rem; color:var(--accent);">送信しました。ご連絡ありがとうございます。</p>';
+      } else {
+        btn.disabled = false;
+        btn.textContent = '送信する';
+        note.textContent = '送信に失敗しました。しばらくしてから再度お試しください。';
+        note.style.color = 'red';
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = '送信する';
+      note.textContent = '送信に失敗しました。通信環境をご確認ください。';
+      note.style.color = 'red';
+    }
   });
 </script>
 

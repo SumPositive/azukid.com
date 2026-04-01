@@ -119,6 +119,10 @@
         </select>
       </div>
       <div class="form-group">
+        <label for="email">Email address <span style="color:red">*</span></label>
+        <input type="email" id="email" name="email" placeholder="Your reply-to email address" required>
+      </div>
+      <div class="form-group">
         <label for="subject">Subject</label>
         <input type="text" id="subject" name="subject" placeholder="e.g. Question about purchase" maxlength="100">
       </div>
@@ -126,8 +130,8 @@
         <label for="body">Message</label>
         <textarea id="body" name="body" placeholder="Describe your question, issue, or request in detail."></textarea>
       </div>
-      <button type="submit" class="form-submit">Open in Mail App</button>
-      <p class="form-note">Tapping the button will open your mail app.<br>The recipient address is set automatically.</p>
+      <button type="submit" class="form-submit" id="submitBtn">Send</button>
+      <p class="form-note" id="formNote">We'll reply by email after reviewing your message.</p>
     </form>
   </section>
 
@@ -140,19 +144,34 @@
     subjectField.value = app ? app + ' — Contact' : '';
   });
 
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    const subject = document.getElementById('subject').value.trim();
-    const body = document.getElementById('body').value.trim();
+    const btn = document.getElementById('submitBtn');
+    const note = document.getElementById('formNote');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
 
-    const mailSubject = subject || 'Contact';
-
-    const mailto = 'contact.sumpo@azukid.com';
-    const url = 'mailto:' + mailto
-      + '?subject=' + encodeURIComponent(mailSubject)
-      + '&body=' + encodeURIComponent(body);
-
-    window.location.href = url;
+    const data = new FormData(this);
+    try {
+      const res = await fetch('https://formspree.io/f/xqeglybk', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        this.innerHTML = '<p style="text-align:center; padding: 32px 0; font-size:1rem; color:var(--accent);">Message sent. Thank you for reaching out!</p>';
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Send';
+        note.textContent = 'Submission failed. Please try again later.';
+        note.style.color = 'red';
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Send';
+      note.textContent = 'Submission failed. Please check your connection.';
+      note.style.color = 'red';
+    }
   });
 </script>
 
