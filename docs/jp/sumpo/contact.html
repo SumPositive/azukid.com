@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ — sumpo products</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .contact-form {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 28px 24px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: .8125rem;
+      font-weight: 600;
+      color: var(--text-2);
+      margin-bottom: 6px;
+      letter-spacing: .02em;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font);
+      font-size: .9375rem;
+      color: var(--text);
+      background: var(--bg);
+      transition: border-color .15s;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      background: var(--surface);
+    }
+    .form-group textarea {
+      min-height: 160px;
+      resize: vertical;
+      line-height: 1.65;
+    }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%236e6e73' d='M8 10.5L3 5.5h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 36px;
+    }
+    .form-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 32px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      font-family: var(--font);
+      font-size: .9375rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .15s;
+      width: 100%;
+    }
+    .form-submit:hover { background: var(--accent-dark); }
+    .form-note {
+      font-size: .8125rem;
+      color: var(--text-3);
+      margin-top: 14px;
+      line-height: 1.6;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../index.html">ホーム</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">お問い合わせ</span>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <div class="page-header-text">
+      <h1>お問い合わせ</h1>
+      <p class="page-tagline">sumpo products へのご質問・ご要望</p>
+    </div>
+  </div>
+
+  <div class="lead">
+    <p>アプリに関するご質問・不具合報告・ご要望などをお送りください。内容を確認のうえ、メールにてご返信いたします。</p>
+  </div>
+
+  <section class="content-section">
+    <form class="contact-form" id="contactForm">
+      <div class="form-group">
+        <label for="app">対象アプリ</label>
+        <select id="app" name="app">
+          <option value="">選択してください</option>
+          <option value="モチメモ Packlin">モチメモ Packlin</option>
+          <option value="体調メモ Condition">体調メモ Condition</option>
+          <option value="カルメモ Calclin">カルメモ Calclin</option>
+          <option value="その他">その他</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="subject">件名</label>
+        <input type="text" id="subject" name="subject" placeholder="アプリを選択すると自動入力されます" maxlength="100">
+      </div>
+      <div class="form-group">
+        <label for="body">お問い合わせ内容</label>
+        <textarea id="body" name="body" placeholder="ご質問・不具合の詳細・ご要望などをご記入ください。"></textarea>
+      </div>
+      <button type="submit" class="form-submit">メールアプリで送信</button>
+      <p class="form-note">送信ボタンを押すとメールアプリが開きます。<br>宛先は自動的に設定されます。</p>
+    </form>
+  </section>
+
+</main>
+
+<script>
+  document.getElementById('app').addEventListener('change', function() {
+    const app = this.value;
+    const subjectField = document.getElementById('subject');
+    subjectField.value = app ? app + ' のお問い合わせ' : '';
+  });
+
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const subject = document.getElementById('subject').value.trim();
+    const body = document.getElementById('body').value.trim();
+
+    const mailSubject = subject || 'お問い合わせ';
+
+    const mailto = 'contact.sumpo@azukid.com';
+    const url = 'mailto:' + mailto
+      + '?subject=' + encodeURIComponent(mailSubject)
+      + '&body=' + encodeURIComponent(body);
+
+    window.location.href = url;
+  });
+</script>
+
+</body>
+</html>
