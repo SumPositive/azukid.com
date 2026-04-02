@@ -245,6 +245,20 @@ body {
   text-decoration: none;
 }
 
+.app-card-btn-discord {
+  background: #5865F2;
+  color: #fff;
+  border: 1.5px solid #5865F2;
+  gap: 4px;
+}
+
+.app-card-btn-discord:hover {
+  background: #4752C4;
+  border-color: #4752C4;
+  color: #fff;
+  text-decoration: none;
+}
+
 /* ── Doc row (products docs section) ── */
 .doc-list {
   background: var(--surface);
