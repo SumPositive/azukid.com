@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AZDial — Swift Package</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../index.html">ホーム</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">AZDial</span>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <div class="page-header-text">
+      <h1>AZDial</h1>
+      <p class="page-tagline">SwiftUI スクロールホイール型ダイアルコントロール</p>
+    </div>
+  </div>
+
+  <div class="lead">
+    <p>iOS・macOS・visionOS 向けの SwiftUI ダイアルコントロールです。</p>
+    <p>2012年に Objective-C コンポーネントとして開発。2025年に SwiftUI で全面再実装しました。Swift Package Manager で利用できます。</p>
+  </div>
+
+  <div class="pill-link-row">
+    <a class="pill-link" href="https://github.com/SumPositive/AZDial" target="_blank">GitHub</a>
+    <a class="pill-link" href="https://swiftpackageindex.com/SumPositive/AZDial" target="_blank">Swift Package Index</a>
+  </div>
+
+  <section class="content-section">
+    <h2>特長</h2>
+    <div class="feature-grid">
+      <div class="feature-item">8 種類のビルトインスタイル<small>Regacy・Midnight・Brass・Ocean・Varnia・Chrome・Hairline・Rubber</small></div>
+      <div class="feature-item">カスタム画像タイルに対応<small>自作の PDF / PNG アセットをタイル表示できる</small></div>
+      <div class="feature-item">ダイアル幅を調整できる<small>80〜220 pt の範囲で指定可能</small></div>
+      <div class="feature-item">ステッパーボタンを内蔵<small>ステップ量のラベル表示つき。0 指定で非表示</small></div>
+      <div class="feature-item">ドラッグ操作と触覚フィードバック<small>iOS では UISelectionFeedbackGenerator を使用</small></div>
+      <div class="feature-item">VoiceOver / アクセシビリティ対応<small>accessibilityAdjustableAction で増減操作が可能</small></div>
+      <div class="feature-item">ダークモード対応<small>全ビルトインスタイルがライト／ダーク両対応</small></div>
+      <div class="feature-item">Pure SwiftUI<small>UIKit ラッパーなし。Canvas と GeometryReader のみで実装</small></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>要件</h2>
+    <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">プラットフォーム</span>
+        <span class="spec-val">iOS 16.0+ / macOS 13.0+ / visionOS 1.0+</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Swift</span>
+        <span class="spec-val">5.9+</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Xcode</span>
+        <span class="spec-val">15+</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>導入</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Xcode から追加</p>
+      <p><strong>File → Add Package Dependencies</strong> で以下の URL を入力してください。</p>
+      <pre>https://github.com/SumPositive/AZDial</pre>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Package.swift に追記</p>
+      <pre>dependencies: [
+    .package(url: "https://github.com/SumPositive/AZDial", from: "3.0.0")
+]</pre>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>使い方</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">基本的な使い方</p>
+      <pre>import AZDial
+
+struct ContentView: View {
+    @State private var weight = 600  // 60.0 kg（×10 で保持）
+
+    var body: some View {
+        AZDialView(
+            value: $weight,
+            min: 300,         // 30.0 kg
+            max: 2000,        // 200.0 kg
+            step: 1,
+            stepperStep: 10,
+            decimals: 1,
+            style: .regacy,
+            dialWidth: 220
+        )
+    }
+}</pre>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">パラメータ</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>パラメータ</th><th>型</th><th>デフォルト</th><th>説明</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>value</code></td><td><code>Binding&lt;Int&gt;</code></td><td>—</td><td>現在の値</td></tr>
+            <tr><td><code>min</code></td><td><code>Int</code></td><td>—</td><td>最小値</td></tr>
+            <tr><td><code>max</code></td><td><code>Int</code></td><td>—</td><td>最大値</td></tr>
+            <tr><td><code>step</code></td><td><code>Int</code></td><td>—</td><td>ドラッグ 1 ステップあたりの変化量</td></tr>
+            <tr><td><code>stepperStep</code></td><td><code>Int</code></td><td>—</td><td>ステッパーボタンの変化量（0 で非表示）</td></tr>
+            <tr><td><code>decimals</code></td><td><code>Int</code></td><td><code>0</code></td><td>ステッパーラベルの小数点以下桁数</td></tr>
+            <tr><td><code>style</code></td><td><code>DialStyle</code></td><td><code>.regacy</code></td><td>ビジュアルスタイル</td></tr>
+            <tr><td><code>dialWidth</code></td><td><code>CGFloat</code></td><td><code>220</code></td><td>ダイアル幅（80〜220 pt にクランプ）</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>DialStyle</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">ビルトインスタイル</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>スタイル</th><th>説明</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.regacy</code></td><td>クラシック AZDial ナーリング — Objective-C 版の復刻デザイン</td></tr>
+            <tr><td><code>.midnight</code></td><td>ガンメタル地にシルバーのハイコントラスト</td></tr>
+            <tr><td><code>.brass</code></td><td>ウォームブラス地にシャンパンゴールドのハイライト</td></tr>
+            <tr><td><code>.ocean</code></td><td>ブルーアルマイト地にアイスブルーのハイライト</td></tr>
+            <tr><td><code>.varnia</code></td><td>細かいマシンドナーリング</td></tr>
+            <tr><td><code>.chrome</code></td><td>ポリッシュクロム・ハイコントラスト</td></tr>
+            <tr><td><code>.hairline</code></td><td>極細ヘアラインエングレービング</td></tr>
+            <tr><td><code>.rubber</code></td><td>幅広のマットなラバーグリップ</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">カスタム画像タイル</p>
+      <p><code>Assets.xcassets</code> に配置した PDF または PNG をタイルとして使用できます。</p>
+      <pre>AZDialView(
+    value: $value,
+    min: 0, max: 100,
+    step: 1, stepperStep: 10,
+    style: .tile(
+        light: "MyDialTile",
+        dark: "MyDialTile_Dark",  // 省略可
+        tileWidth: 20             // 画像の幅（pt）に合わせる
+    )
+)</pre>
+      <p>Swift Package 内のアセットには <code>bundle: .module</code> を指定してください。</p>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">スタイルの永続化</p>
+      <p><code>DialStyle.id</code>（<code>String</code>）で UserDefaults や iCloud KVS に保存し、<code>DialStyle.builtin(id:)</code> で復元できます。</p>
+      <pre>// 保存
+UserDefaults.standard.set(style.id, forKey: "dialStyle")
+
+// 復元
+let id = UserDefaults.standard.string(forKey: "dialStyle") ?? ""
+let style = DialStyle.builtin(id: id) ?? .regacy</pre>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>AZDialSurface（背景のみ）</h2>
+    <p>スクロールするリッジ背景だけが必要な場合（設定画面のプレビューなど）は <code>AZDialSurface</code> を単独で使えます。</p>
+    <pre>AZDialSurface(offset: 0, tickGap: 10, style: .brass)
+    .frame(height: 44)
+    .clipShape(RoundedRectangle(cornerRadius: 8))</pre>
+  </section>
+
+  <section class="content-section">
+    <h2>リリース履歴</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Version</th><th>概要</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1.x</td><td>初期リリース（Objective-C 版の SPM 移植）</td></tr>
+          <tr><td>2.x</td><td>SwiftUI で全面再実装。Canvas ベースのビルトインスタイルを追加</td></tr>
+          <tr><td>3.0</td><td><code>AZDialBack</code> を <code>AZDialSurface</code> にリネーム。AZDialDemo の英語ローカライズ追加</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

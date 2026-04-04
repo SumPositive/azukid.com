@@ -251,6 +251,7 @@ body {
   color: #fff;
   border: 1.5px solid #5865F2;
   gap: 4px;
+  border-radius: 20px;
 }
 
 .app-card-btn-discord:hover {
