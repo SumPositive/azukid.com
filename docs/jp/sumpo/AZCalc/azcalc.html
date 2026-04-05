@@ -134,12 +134,12 @@ let config = AZDecimalConfig.default
     .trailingZero(true)
     .grouping(.threes)
 
-let result = AZDecimal("3.456").rounded(config: config)
+let result = AZDecimal("3.456").rounded(config)
 // AZDecimal("3.46")
 
 // 書式化（丸め後に呼ぶ）
 let value = AZDecimal("1234567.045")
-print(value.rounded(config: config).formatted(config: config))
+print(value.rounded(config).formatted(config))
 // "1,234,567.05"</pre>
     </div>
 
@@ -148,16 +148,16 @@ print(value.rounded(config: config).formatted(config: config))
       <div class="table-wrap">
         <table>
           <thead>
-            <tr><th>モード</th><th>名称</th><th>説明</th></tr>
+            <tr><th>モード</th><th>名称</th><th>説明</th><th>規格</th></tr>
           </thead>
           <tbody>
-            <tr><td><code>.rup</code></td><td>切り上げ</td><td>絶対値の大きい方向に丸める</td></tr>
-            <tr><td><code>.rPlus</code></td><td>正方向丸め</td><td>正の無限大方向に丸める</td></tr>
-            <tr><td><code>.r54</code></td><td>四捨五入</td><td>JIS Z 8401 規則B（デフォルト）</td></tr>
-            <tr><td><code>.r55</code></td><td>五捨五超入</td><td>JIS Z 8401 規則A・銀行家の丸め</td></tr>
-            <tr><td><code>.r65</code></td><td>五捨六入</td><td>5は切り捨て・6以上で切り上げ</td></tr>
-            <tr><td><code>.rMinus</code></td><td>負方向丸め</td><td>負の無限大方向に丸める</td></tr>
-            <tr><td><code>.truncate</code></td><td>切り捨て</td><td>丸めなし・生の値を返す</td></tr>
+            <tr><td><code>.rup</code></td><td>切り上げ</td><td>絶対値の大きい方向に丸める</td><td>—</td></tr>
+            <tr><td><code>.rPlus</code></td><td>正方向丸め</td><td>正の無限大方向に丸める</td><td>IEEE 754: roundTowardPositive</td></tr>
+            <tr><td><code>.r54</code></td><td>四捨五入</td><td>5以上を切り上げ</td><td>JIS Z 8401 規則B</td></tr>
+            <tr><td><code>.r55</code></td><td>五捨五超入</td><td>偶数丸め・銀行家の丸め</td><td>JIS Z 8401 規則A · IEEE 754: roundTiesToEven</td></tr>
+            <tr><td><code>.r65</code></td><td>五捨六入</td><td>5は切り捨て・6以上で切り上げ</td><td>—</td></tr>
+            <tr><td><code>.rMinus</code></td><td>負方向丸め</td><td>負の無限大方向に丸める</td><td>IEEE 754: roundTowardNegative</td></tr>
+            <tr><td><code>.truncate</code></td><td>切り捨て</td><td>丸めなし・生の値を返す</td><td>IEEE 754: roundTowardZero</td></tr>
           </tbody>
         </table>
       </div>

@@ -135,7 +135,7 @@ let config = AZDecimalConfig.default
     .grouping(.threes)
 
 let value = AZDecimal("1234567.045")
-print(value.rounded(config: config).formatted(config: config))
+print(value.rounded(config).formatted(config))
 // "1,234,567.05"</pre>
     </div>
 
@@ -144,16 +144,16 @@ print(value.rounded(config: config).formatted(config: config))
       <div class="table-wrap">
         <table>
           <thead>
-            <tr><th>Mode</th><th>Name</th><th>Description</th></tr>
+            <tr><th>Mode</th><th>Name</th><th>Description</th><th>Standard</th></tr>
           </thead>
           <tbody>
-            <tr><td><code>.rup</code></td><td>Round Up</td><td>Away from zero</td></tr>
-            <tr><td><code>.rPlus</code></td><td>Toward +∞</td><td>Round toward positive infinity</td></tr>
-            <tr><td><code>.r54</code></td><td>Round Half Up</td><td>JIS Z 8401 Rule B (default)</td></tr>
-            <tr><td><code>.r55</code></td><td>Round Half Even</td><td>JIS Z 8401 Rule A — Banker's rounding</td></tr>
-            <tr><td><code>.r65</code></td><td>Round Half Down</td><td>5 rounds down, 6+ rounds up</td></tr>
-            <tr><td><code>.rMinus</code></td><td>Toward −∞</td><td>Round toward negative infinity</td></tr>
-            <tr><td><code>.truncate</code></td><td>Truncate</td><td>No rounding — returns raw value</td></tr>
+            <tr><td><code>.rup</code></td><td>Round Up</td><td>Round away from zero</td><td>—</td></tr>
+            <tr><td><code>.rPlus</code></td><td>Round toward +∞</td><td>Round toward positive infinity</td><td>IEEE 754: roundTowardPositive</td></tr>
+            <tr><td><code>.r54</code></td><td>Round Half Up</td><td>Round half up</td><td>JIS Z 8401 Rule B</td></tr>
+            <tr><td><code>.r55</code></td><td>Round Half Even</td><td>Round half to even — Banker's rounding</td><td>JIS Z 8401 Rule A · IEEE 754: roundTiesToEven</td></tr>
+            <tr><td><code>.r65</code></td><td>Round Half Down</td><td>5 rounds down, 6+ rounds up</td><td>—</td></tr>
+            <tr><td><code>.rMinus</code></td><td>Round toward −∞</td><td>Round toward negative infinity</td><td>IEEE 754: roundTowardNegative</td></tr>
+            <tr><td><code>.truncate</code></td><td>Truncate</td><td>No rounding — return raw value</td><td>IEEE 754: roundTowardZero</td></tr>
           </tbody>
         </table>
       </div>
