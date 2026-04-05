@@ -39,7 +39,7 @@
     <h2>特長</h2>
     <div class="feature-grid">
       <div class="feature-item">浮動小数点誤差なし<small>BCD（2進化10進数）演算で 0.1+0.2=0.3 が保証される</small></div>
-      <div class="feature-item">60 桁の精度<small>整数部・小数部それぞれ最大 30 桁。<code>SBCD_PRECISION</code>（<code>Sources/AZDecimalC/include/SBCD.h</code>）を偶数値に変更してリビルドすることで変更可能。上限は固定サイズ C 配列（<code>char digit[SBCD_PRECISION+1]</code>）のスタック消費により制限されます。</small></div>
+      <div class="feature-item">60 桁の精度<small>整数部・小数部それぞれ最大 30 桁。<code>SBCD_PRECISION</code>（<code>Sources/AZDecimalC/include/SBCD.h</code>）は <code>#ifndef</code> ガード付きで定義されており、パッケージをフォークしてビルドフラグ（<code>-DSBCD_PRECISION=120</code>）で変更可能。値は偶数に限る。上限は固定サイズ C 配列（<code>char digit[SBCD_PRECISION+1]</code>）のスタック消費により制限されます。SPM の制約上、依存先からの外部指定は不可。</small></div>
       <div class="feature-item">7 種の丸めモード<small>四捨五入・銀行家の丸め・切り上げ・切り捨てなど</small></div>
       <div class="feature-item">数式評価エンジン<small>Shunting Yard アルゴリズムによる中置記法の解析</small></div>
       <div class="feature-item">% 演算子の文脈依存展開<small>100+5% → 105（増量）/ 100×5% → 5（比率）</small></div>
@@ -273,7 +273,7 @@ let result = AZFormula.evaluate("1 ÷ 3", config: config)
             <tr><th>エラー</th><th>原因</th></tr>
           </thead>
           <tbody>
-            <tr><td><code>.tooLong</code></td><td>数式が <code>AZFormula.maxFormulaLength</code>（200文字）を超えた</td></tr>
+            <tr><td><code>.tooLong</code></td><td>数式が <code>AZFormula.maxFormulaLength</code> を超えた（デフォルト 200 文字。実行時に変更可能）</td></tr>
             <tr><td><code>.negativeSqrt</code></td><td>√ に負の値を適用した</td></tr>
             <tr><td><code>.invalidExpression</code></td><td>括弧の不一致・演算子の連続など</td></tr>
           </tbody>
