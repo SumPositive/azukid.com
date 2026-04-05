@@ -27,7 +27,7 @@
 
   <div class="lead">
     <p>浮動小数点誤差のない BCD（Binary Coded Decimal）演算型 <strong>AZDecimal</strong> と、中置記法の数式文字列を評価する <strong>AZFormula</strong> を一つのパッケージで提供します。整数部・小数部それぞれ最大 30 桁（合計 60 桁）の精度を持ち、7 種の丸めモードに対応しています。</p>
-    <p>CalcRoll（カルメモ）の BCD 演算コアを Swift パッケージとして独立させたものです。C++ で実装した sbcd ライブラリを Swift から透過的に利用できます。</p>
+    <p>このパッケージの中核にある sbcd ライブラリは <strong>1998 年</strong>に C/C++ で開発され、<strong>カルメモ（CalcRoll）創期から組み込まれてきた演算エンジン</strong>です。「電卓アプリには浮動小数点演算を使ってはいけない」という一点にこだわり続けた結果が、25 年以上にわたって実動してきたこのコードです。2026 年に Swift 6 対応の Swift Package として独立公開しました。</p>
   </div>
 
   <div class="pill-link-row">
