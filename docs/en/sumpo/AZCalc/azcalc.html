@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AZCalc — Swift Package</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../index.html">Home</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">AZCalc</span>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <div class="page-header-text">
+      <h1>AZCalc</h1>
+      <p class="page-tagline">BCD decimal arithmetic and formula evaluation (iOS / macOS)</p>
+    </div>
+  </div>
+
+  <div class="lead">
+    <p>A Swift package providing <strong>AZDecimal</strong> — a floating-point-free BCD decimal type with 60-digit precision and 7 rounding modes — and <strong>AZFormula</strong> — an infix formula string evaluator built on the Shunting Yard algorithm.</p>
+    <p>Originally the BCD arithmetic core of CalcRoll (Calclin), extracted as a standalone Swift Package. The C++ sbcd library is wrapped transparently in Swift.</p>
+  </div>
+
+  <div class="pill-link-row">
+    <a class="pill-link" href="https://github.com/SumPositive/AZCalc" target="_blank">GitHub</a>
+    <a class="pill-link" href="https://swiftpackageindex.com/SumPositive/AZCalc" target="_blank">Swift Package Index</a>
+  </div>
+
+  <section class="content-section">
+    <h2>Features</h2>
+    <div class="feature-grid">
+      <div class="feature-item">No floating-point errors<small>BCD arithmetic guarantees 0.1+0.2=0.3</small></div>
+      <div class="feature-item">60-digit precision<small>Up to 30 integer digits + 30 decimal digits</small></div>
+      <div class="feature-item">7 rounding modes<small>Round half up, banker's rounding, ceiling, floor, and more</small></div>
+      <div class="feature-item">Formula evaluator<small>Infix parsing via Shunting Yard algorithm</small></div>
+      <div class="feature-item">Context-sensitive % operator<small>100+5% → 105 (add) / 100×5% → 5 (ratio)</small></div>
+      <div class="feature-item">Flexible number formatting<small>Thousands, fours, Indian grouping with custom separators</small></div>
+      <div class="feature-item">Swift 6 Sendable<small>Value type struct — safe to pass across threads</small></div>
+      <div class="feature-item">SwiftUI demo app included<small>iOS 17+ demo bundled. Open in Xcode and run instantly</small></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Requirements</h2>
+    <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">Platform</span>
+        <span class="spec-val">iOS 16.0+ / macOS 13.0+</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Swift</span>
+        <span class="spec-val">5.9+</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Xcode</span>
+        <span class="spec-val">15+</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Installation</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Add via Xcode</p>
+      <p>Go to <strong>File → Add Package Dependencies</strong> and enter:</p>
+      <pre>https://github.com/SumPositive/AZCalc</pre>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Package.swift</p>
+      <pre>dependencies: [
+    .package(url: "https://github.com/SumPositive/AZCalc", from: "1.0.0")
+]
+
+// Add to your target
+.target(
+    name: "MyApp",
+    dependencies: [
+        .product(name: "AZDecimal", package: "AZCalc"),
+        .product(name: "AZFormula", package: "AZCalc"),
+    ]
+)</pre>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>AZDecimal</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Basic arithmetic</p>
+      <pre>import AZDecimal
+
+let a: AZDecimal = "1.1"
+let b: AZDecimal = "2.0456"
+print(a + b)   // "3.1456"
+print(a - b)   // "-0.9456"
+print(a * b)   // "2.25016"
+print(a / b)   // "0.537815..."
+
+var x: AZDecimal = "10"
+x += "3"   // 13
+x -= "5"   // 8
+x *= "2"   // 16
+x /= "4"   // 4</pre>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Convenience properties</p>
+      <pre>AZDecimal.zero        // AZDecimal("0")
+AZDecimal.one         // AZDecimal("1")
+
+let v: AZDecimal = "-3.14"
+v.isZero              // false
+v.isNegative          // true
+v.abs                 // AZDecimal("3.14")</pre>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Rounding and formatting</p>
+      <pre>// Fluent configuration
+let config = AZDecimalConfig.default
+    .digits(2)
+    .rounding(.r54)
+    .trailingZero(true)
+    .grouping(.threes)
+
+let value = AZDecimal("1234567.045")
+print(value.rounded(config: config).formatted(config: config))
+// "1,234,567.05"</pre>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Rounding modes</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Mode</th><th>Name</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.rup</code></td><td>Round Up</td><td>Away from zero</td></tr>
+            <tr><td><code>.rPlus</code></td><td>Toward +∞</td><td>Round toward positive infinity</td></tr>
+            <tr><td><code>.r54</code></td><td>Round Half Up</td><td>JIS Z 8401 Rule B (default)</td></tr>
+            <tr><td><code>.r55</code></td><td>Round Half Even</td><td>JIS Z 8401 Rule A — Banker's rounding</td></tr>
+            <tr><td><code>.r65</code></td><td>Round Half Down</td><td>5 rounds down, 6+ rounds up</td></tr>
+            <tr><td><code>.rMinus</code></td><td>Toward −∞</td><td>Round toward negative infinity</td></tr>
+            <tr><td><code>.truncate</code></td><td>Truncate</td><td>No rounding — returns raw value</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Fluent configuration (AZDecimalConfig)</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Method</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.digits(_ n: Int)</code></td><td>Set decimal digit count</td></tr>
+            <tr><td><code>.rounding(_ type: RoundType)</code></td><td>Set rounding mode</td></tr>
+            <tr><td><code>.trailingZero(_ enabled: Bool)</code></td><td>Pad or strip trailing zeros</td></tr>
+            <tr><td><code>.grouping(_ type: GroupType, separator: String)</code></td><td>Set digit grouping</td></tr>
+            <tr><td><code>.decimalSep(_ separator: String)</code></td><td>Set decimal separator</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Grouping types</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Type</th><th>Example</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.none</code></td><td>1234567</td></tr>
+            <tr><td><code>.threes</code></td><td>1,234,567</td></tr>
+            <tr><td><code>.fours</code></td><td>123,4567</td></tr>
+            <tr><td><code>.indian</code></td><td>12,34,567</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>AZFormula</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Basic usage</p>
+      <pre>import AZFormula
+
+// Returns a String
+switch AZFormula.evaluate("(100 + 5%) × 1.08") {
+case .success(let value): print(value)  // "113.4"
+case .failure(let error): print(error)
+}
+
+// With rounding config
+let config = AZDecimalConfig.default.digits(2).rounding(.r54)
+let result = AZFormula.evaluate("1 ÷ 3", config: config)
+// .success("0.33")</pre>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Returns AZDecimal</p>
+      <p>Use <code>evaluateDecimal</code> when you need to perform further arithmetic on the result.</p>
+      <pre>if case .success(let a) = AZFormula.evaluateDecimal("10+5"),
+   case .success(let b) = AZFormula.evaluateDecimal("2+1") {
+    print(a * b)     // AZDecimal("45")
+    print(a.isZero)  // false
+}</pre>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Supported operators</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Operator</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>+ - × ÷</code></td><td>Basic arithmetic (<code>* /</code> also accepted)</td></tr>
+            <tr><td><code>√</code></td><td>Square root</td></tr>
+            <tr><td><code>∛</code></td><td>Cube root</td></tr>
+            <tr><td><code>( )</code></td><td>Parentheses</td></tr>
+            <tr><td><code>%</code></td><td>Percent — context-sensitive (see below)</td></tr>
+            <tr><td><code>割 分 厘</code></td><td>Japanese percent notation</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Percent operator expansion rules</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Input</th><th>Expands to</th><th>Result</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>100+5%</code></td><td><code>100×(100+5)÷100</code></td><td>105</td></tr>
+            <tr><td><code>100-5%</code></td><td><code>100×(100-5)÷100</code></td><td>95</td></tr>
+            <tr><td><code>100×5%</code></td><td><code>100×5÷100</code></td><td>5</td></tr>
+            <tr><td><code>100÷5%</code></td><td><code>100÷5×100</code></td><td>2000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Errors</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Error</th><th>Cause</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.tooLong</code></td><td>Formula exceeds <code>AZFormula.maxFormulaLength</code> (200 characters)</td></tr>
+            <tr><td><code>.negativeSqrt</code></td><td>√ applied to a negative number</td></tr>
+            <tr><td><code>.invalidExpression</code></td><td>Mismatched parentheses, consecutive operators, etc.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Sub-step API (for testing / custom pipelines)</p>
+      <pre>let tokens = AZFormula.tokenize("100+5%")
+// ["100", "×", "(", "100", "+", "5", ")", "÷", "100"]
+
+let rpn = AZFormula.toRPN(tokens)
+// ["100", "100", "5", "+", "×", "100", "÷"]</pre>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Demo App</h2>
+    <p>A SwiftUI demo app (iOS 17+) is included in the package.</p>
+    <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">Calculator tab</span>
+        <span class="spec-val">Formula input, rounding config, example expressions</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Rounding tab</span>
+        <span class="spec-val">Side-by-side comparison of all 7 rounding modes</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Format tab</span>
+        <span class="spec-val">Live preview of grouping and decimal separator options</span>
+      </div>
+    </div>
+    <p>Open <code>AZCalc.xcworkspace</code> in Xcode to run all 77 package tests and demo app tests together.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Release History</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Version</th><th>Summary</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1.0</td><td>Initial release. AZDecimal (arithmetic, rounding, formatting) and AZFormula (formula evaluation). Includes fluent config, convenience properties, and a bilingual (ja/en) SwiftUI demo app.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

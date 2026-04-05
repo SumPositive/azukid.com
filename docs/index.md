@@ -45,4 +45,12 @@
 
 # Technical documents　技術書類
 
+## ● AZDial — Swift Package
+   - [日本語](https://docs.azukid.com/jp/sumpo/AZDial/azdial)
+   - [English](https://docs.azukid.com/en/sumpo/AZDial/azdial)
+
+## ● AZCalc — Swift Package
+   - [日本語](https://docs.azukid.com/jp/sumpo/AZCalc/azcalc)
+   - [English](https://docs.azukid.com/en/sumpo/AZCalc/azcalc)
+
 <br><br>

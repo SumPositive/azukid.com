@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AZCalc — Swift Package</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../index.html">ホーム</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">AZCalc</span>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <div class="page-header-text">
+      <h1>AZCalc</h1>
+      <p class="page-tagline">BCD 十進演算と数式評価（iOS / macOS）</p>
+    </div>
+  </div>
+
+  <div class="lead">
+    <p>浮動小数点誤差のない BCD（Binary Coded Decimal）演算型 <strong>AZDecimal</strong> と、中置記法の数式文字列を評価する <strong>AZFormula</strong> を一つのパッケージで提供します。整数部・小数部それぞれ最大 30 桁（合計 60 桁）の精度を持ち、7 種の丸めモードに対応しています。</p>
+    <p>CalcRoll（カルメモ）の BCD 演算コアを Swift パッケージとして独立させたものです。C++ で実装した sbcd ライブラリを Swift から透過的に利用できます。</p>
+  </div>
+
+  <div class="pill-link-row">
+    <a class="pill-link" href="https://github.com/SumPositive/AZCalc" target="_blank">GitHub</a>
+    <a class="pill-link" href="https://swiftpackageindex.com/SumPositive/AZCalc" target="_blank">Swift Package Index</a>
+  </div>
+
+  <section class="content-section">
+    <h2>特長</h2>
+    <div class="feature-grid">
+      <div class="feature-item">浮動小数点誤差なし<small>BCD（2進化10進数）演算で 0.1+0.2=0.3 が保証される</small></div>
+      <div class="feature-item">60 桁の精度<small>整数部・小数部それぞれ最大 30 桁</small></div>
+      <div class="feature-item">7 種の丸めモード<small>四捨五入・銀行家の丸め・切り上げ・切り捨てなど</small></div>
+      <div class="feature-item">数式評価エンジン<small>Shunting Yard アルゴリズムによる中置記法の解析</small></div>
+      <div class="feature-item">% 演算子の文脈依存展開<small>100+5% → 105（増量）/ 100×5% → 5（比率）</small></div>
+      <div class="feature-item">桁区切りフォーマット<small>3桁・4桁・インド式・任意セパレータに対応</small></div>
+      <div class="feature-item">Swift 6 Sendable 対応<small>struct で値型。スレッドをまたいで安全に渡せる</small></div>
+      <div class="feature-item">デモアプリ付属<small>SwiftUI デモ（iOS 17+）が同梱。Xcode ですぐに試せる</small></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>要件</h2>
+    <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">プラットフォーム</span>
+        <span class="spec-val">iOS 16.0+ / macOS 13.0+</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Swift</span>
+        <span class="spec-val">5.9+</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Xcode</span>
+        <span class="spec-val">15+</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>導入</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Xcode から追加</p>
+      <p><strong>File → Add Package Dependencies</strong> で以下の URL を入力してください。</p>
+      <pre>https://github.com/SumPositive/AZCalc</pre>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Package.swift に追記</p>
+      <pre>dependencies: [
+    .package(url: "https://github.com/SumPositive/AZCalc", from: "1.0.0")
+]
+
+// ターゲットへの追加
+.target(
+    name: "MyApp",
+    dependencies: [
+        .product(name: "AZDecimal", package: "AZCalc"),
+        .product(name: "AZFormula", package: "AZCalc"),
+    ]
+)</pre>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>AZDecimal</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">基本演算</p>
+      <pre>import AZDecimal
+
+let a: AZDecimal = "1.1"
+let b: AZDecimal = "2.0456"
+print(a + b)   // "3.1456"
+print(a - b)   // "-0.9456"
+print(a * b)   // "2.25016"
+print(a / b)   // "0.537815..."
+
+var x: AZDecimal = "10"
+x += "3"   // 13
+x -= "5"   // 8
+x *= "2"   // 16
+x /= "4"   // 4</pre>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">便利プロパティ</p>
+      <pre>AZDecimal.zero        // AZDecimal("0")
+AZDecimal.one         // AZDecimal("1")
+
+let v: AZDecimal = "-3.14"
+v.isZero              // false
+v.isNegative          // true
+v.abs                 // AZDecimal("3.14")</pre>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">丸め</p>
+      <pre>// フルエント設定
+let config = AZDecimalConfig.default
+    .digits(2)
+    .rounding(.r54)
+    .trailingZero(true)
+    .grouping(.threes)
+
+let result = AZDecimal("3.456").rounded(config: config)
+// AZDecimal("3.46")
+
+// 書式化（丸め後に呼ぶ）
+let value = AZDecimal("1234567.045")
+print(value.rounded(config: config).formatted(config: config))
+// "1,234,567.05"</pre>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">丸めモード</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>モード</th><th>名称</th><th>説明</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.rup</code></td><td>切り上げ</td><td>絶対値の大きい方向に丸める</td></tr>
+            <tr><td><code>.rPlus</code></td><td>正方向丸め</td><td>正の無限大方向に丸める</td></tr>
+            <tr><td><code>.r54</code></td><td>四捨五入</td><td>JIS Z 8401 規則B（デフォルト）</td></tr>
+            <tr><td><code>.r55</code></td><td>五捨五超入</td><td>JIS Z 8401 規則A・銀行家の丸め</td></tr>
+            <tr><td><code>.r65</code></td><td>五捨六入</td><td>5は切り捨て・6以上で切り上げ</td></tr>
+            <tr><td><code>.rMinus</code></td><td>負方向丸め</td><td>負の無限大方向に丸める</td></tr>
+            <tr><td><code>.truncate</code></td><td>切り捨て</td><td>丸めなし・生の値を返す</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">フルエント設定（AZDecimalConfig）</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>メソッド</th><th>説明</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.digits(_ n: Int)</code></td><td>小数桁数を設定</td></tr>
+            <tr><td><code>.rounding(_ type: RoundType)</code></td><td>丸めモードを設定</td></tr>
+            <tr><td><code>.trailingZero(_ enabled: Bool)</code></td><td>末尾ゼロの補充 / 削除</td></tr>
+            <tr><td><code>.grouping(_ type: GroupType, separator: String)</code></td><td>桁区切りを設定</td></tr>
+            <tr><td><code>.decimalSep(_ separator: String)</code></td><td>小数点記号を設定</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">桁区切りタイプ</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>タイプ</th><th>例</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.none</code></td><td>1234567</td></tr>
+            <tr><td><code>.threes</code></td><td>1,234,567</td></tr>
+            <tr><td><code>.fours</code></td><td>123,4567</td></tr>
+            <tr><td><code>.indian</code></td><td>12,34,567</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>AZFormula</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">基本的な使い方</p>
+      <pre>import AZFormula
+
+// 文字列を返す
+switch AZFormula.evaluate("(100 + 5%) × 1.08") {
+case .success(let value): print(value)  // "113.4"
+case .failure(let error): print(error)
+}
+
+// 設定を指定して丸める
+let config = AZDecimalConfig.default.digits(2).rounding(.r54)
+let result = AZFormula.evaluate("1 ÷ 3", config: config)
+// .success("0.33")</pre>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">AZDecimal を返す</p>
+      <p>結果をさらに演算したい場合は <code>evaluateDecimal</code> を使います。</p>
+      <pre>if case .success(let a) = AZFormula.evaluateDecimal("10+5"),
+   case .success(let b) = AZFormula.evaluateDecimal("2+1") {
+    print(a * b)   // AZDecimal("45")
+    print(a.isZero)  // false
+}</pre>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">対応演算子</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>演算子</th><th>説明</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>+ - × ÷</code></td><td>四則演算（<code>* /</code> も受け付ける）</td></tr>
+            <tr><td><code>√</code></td><td>平方根</td></tr>
+            <tr><td><code>∛</code></td><td>立方根</td></tr>
+            <tr><td><code>( )</code></td><td>括弧</td></tr>
+            <tr><td><code>%</code></td><td>パーセント（文脈依存、下表参照）</td></tr>
+            <tr><td><code>割 分 厘</code></td><td>日本式パーセント表記</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">% 演算子の展開ルール</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>入力</th><th>展開後</th><th>結果</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>100+5%</code></td><td><code>100×(100+5)÷100</code></td><td>105</td></tr>
+            <tr><td><code>100-5%</code></td><td><code>100×(100-5)÷100</code></td><td>95</td></tr>
+            <tr><td><code>100×5%</code></td><td><code>100×5÷100</code></td><td>5</td></tr>
+            <tr><td><code>100÷5%</code></td><td><code>100÷5×100</code></td><td>2000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">エラー</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>エラー</th><th>原因</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.tooLong</code></td><td>数式が <code>AZFormula.maxFormulaLength</code>（200文字）を超えた</td></tr>
+            <tr><td><code>.negativeSqrt</code></td><td>√ に負の値を適用した</td></tr>
+            <tr><td><code>.invalidExpression</code></td><td>括弧の不一致・演算子の連続など</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">サブステップ API（テスト・カスタム処理用）</p>
+      <pre>let tokens = AZFormula.tokenize("100+5%")
+// ["100", "×", "(", "100", "+", "5", ")", "÷", "100"]
+
+let rpn = AZFormula.toRPN(tokens)
+// ["100", "100", "5", "+", "×", "100", "÷"]</pre>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>デモアプリ</h2>
+    <p>パッケージに SwiftUI デモアプリが同梱されています（iOS 17+）。</p>
+    <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">Calculator タブ</span>
+        <span class="spec-val">数式入力・丸め設定・使用例</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Rounding タブ</span>
+        <span class="spec-val">7種の丸めモードを一覧比較</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Format タブ</span>
+        <span class="spec-val">桁区切り・小数点記号のライブプレビュー</span>
+      </div>
+    </div>
+    <p><code>AZCalc.xcworkspace</code> を Xcode で開くと、パッケージのテスト（77件）とデモアプリのテストをまとめて実行できます。</p>
+  </section>
+
+  <section class="content-section">
+    <h2>リリース履歴</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Version</th><th>概要</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1.0</td><td>初回公開。AZDecimal（演算・丸め・書式化）と AZFormula（数式評価）を収録。フルエント設定・便利プロパティ・日英ローカライズ対応デモアプリ付属</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>
