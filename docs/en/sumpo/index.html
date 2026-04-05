@@ -60,6 +60,7 @@
           </div>
         </div>
         <p class="timeline-story">While developing, I noticed that pickers — typically used for selection input — could just as well serve as output. I pictured a receipt rolling out of a cash register and built a drum-style calculator. The response from overseas users was strong enough that I later renamed it CalcRoll.</p>
+        <p class="timeline-story">The moment I decided to build a calculator app, I also decided: no floating-point arithmetic. I embedded the BCD arithmetic library (sbcd) I had written in 1998, guaranteeing that 0.1+0.2=0.3 from day one. That library remained the heart of Calclin all the way until it was published as the AZCalc Swift Package in 2026.</p>
         <div class="timeline-releases">
           <div class="release-item">
             <img class="release-icon" src="../../images/icon-calclin.png" alt="Drataku">
@@ -100,7 +101,7 @@
 
       <div class="timeline-item">
         <p class="timeline-era">2025 — Migrating to Swift 6 / SwiftUI</p>
-        <p class="timeline-story">I ported CalcRoll to learn Swift 6 and SwiftUI. The original codebase was entirely Objective-C, so rewriting it in modern Swift was effectively a ground-up redesign. I first submitted it as a new app, but Apple rejected it — "similar apps exist; lacks novelty." Fair enough! I resubmitted it as an update to the original app and passed review.</p>
+        <p class="timeline-story">I ported CalcRoll to learn Swift 6 and SwiftUI. The original codebase was entirely Objective-C, so rewriting it in modern Swift was effectively a ground-up redesign. I first submitted it as a new app, but Apple rejected it — "similar apps exist; lacks novelty." Fair enough! I resubmitted it as an update to the original app and passed review. The 1998 sbcd library was carried forward as-is in C++, wrapped in a Swift Package and accessed via Swift/C++ interop.</p>
         <div class="timeline-releases">
           <div class="release-item">
             <img class="release-icon" src="../../images/icon-calclin.png" alt="Calclin">
@@ -135,6 +136,17 @@
               <p class="release-meta">Apr 1, 2026 16:17 rolling out — full rewrite with SwiftData and HealthKit integration</p>
             </div>
             <a class="release-link" href="https://apps.apple.com/app/id472914799">App Store ↗</a>
+          </div>
+        </div>
+        <p class="timeline-story">The BCD arithmetic library that had been embedded in Calclin since its first release in 2010 — originally written in 1998 — was published as a standalone Swift Package. Over 25 years of real-world use in a calculator app, driven by one conviction: never use floating-point arithmetic. Now available for anyone to use.</p>
+        <div class="timeline-releases">
+          <div class="release-item">
+            <div class="release-icon-placeholder"></div>
+            <div class="release-info">
+              <span class="release-name">AZCalc 1.0 — Swift Package</span>
+              <p class="release-meta">Apr 2026 — BCD decimal arithmetic (AZDecimal) and formula evaluation (AZFormula)</p>
+            </div>
+            <a class="release-link" href="AZCalc/azcalc.html">Docs ↗</a>
           </div>
         </div>
       </div>

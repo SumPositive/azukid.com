@@ -60,6 +60,7 @@
           </div>
         </div>
         <p class="timeline-story">開発を続ける中で、Picker コンポーネントは入力専用だが出力にも応用できると気づいた。店のレジからレシートが出てくるようなドラム式電卓を思い描き、実装してみると思いどおりの動きになった。海外ユーザーに特に好評だったため、後に CalcRoll と改名した。</p>
+        <p class="timeline-story">電卓アプリを作ると決めた瞬間に「浮動小数点演算は使わない」と心に決めた。1998 年に自作した BCD 演算ライブラリ（sbcd）をそのまま組み込み、0.1+0.2=0.3 が保証される演算エンジンとして初版から搭載した。このライブラリは 2026 年に AZCalc として Swift Package 化されるまで、ずっとカルメモの核心であり続けた。</p>
         <div class="timeline-releases">
           <div class="release-item">
             <img class="release-icon" src="../../images/icon-calclin.png" alt="ドラタク">
@@ -100,7 +101,7 @@
 
       <div class="timeline-item">
         <p class="timeline-era">2025 — Swift 6 / SwiftUI への移行</p>
-        <p class="timeline-story">Swift 6・SwiftUI に慣れるため CalcRoll の移植を開始した。旧コードはすべて Objective-C で書かれており、現代の Swift に書き直すのは一からの再設計に近かった。新規アプリとして審査に提出したところ「類似アプリあり、新規性なし」で却下——そりゃそうだ！旧アプリのアップデートとして再提出し、無事に審査を通過した。</p>
+        <p class="timeline-story">Swift 6・SwiftUI に慣れるため CalcRoll の移植を開始した。旧コードはすべて Objective-C で書かれており、現代の Swift に書き直すのは一からの再設計に近かった。新規アプリとして審査に提出したところ「類似アプリあり、新規性なし」で却下——そりゃそうだ！旧アプリのアップデートとして再提出し、無事に審査を通過した。1998 年からの sbcd ライブラリは C++ のまま Swift Package に梱包し、Swift/C++ interop で継続利用した。</p>
         <div class="timeline-releases">
           <div class="release-item">
             <img class="release-icon" src="../../images/icon-calclin.png" alt="カルメモ">
@@ -135,6 +136,17 @@
               <p class="release-meta">2026/4/1 16:17 より順次公開 — SwiftData・HealthKit 連携で全面刷新</p>
             </div>
             <a class="release-link" href="https://apps.apple.com/app/id472914799">App Store ↗</a>
+          </div>
+        </div>
+        <p class="timeline-story">カルメモの演算コアとして 1998 年から使い続けてきた BCD 演算ライブラリを、Swift Package として独立公開した。カルメモの初版（2010 年）から組み込まれていたモジュールで、「電卓に浮動小数点演算は使わない」という姿勢を 25 年以上支えてきたコードが、ここで初めて外部から利用できる形になった。</p>
+        <div class="timeline-releases">
+          <div class="release-item">
+            <div class="release-icon-placeholder"></div>
+            <div class="release-info">
+              <span class="release-name">AZCalc 1.0 — Swift Package</span>
+              <p class="release-meta">2026/4 公開 — BCD 十進演算（AZDecimal）と数式評価（AZFormula）</p>
+            </div>
+            <a class="release-link" href="AZCalc/azcalc.html">ドキュメント ↗</a>
           </div>
         </div>
       </div>
