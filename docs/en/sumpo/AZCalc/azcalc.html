@@ -39,7 +39,7 @@
     <h2>Features</h2>
     <div class="feature-grid">
       <div class="feature-item">No floating-point errors<small>BCD arithmetic guarantees 0.1+0.2=0.3</small></div>
-      <div class="feature-item">60-digit precision<small>Up to 30 integer digits + 30 decimal digits</small></div>
+      <div class="feature-item">60-digit precision<small>Up to 30 integer digits + 30 decimal digits. Changeable by editing <code>SBCD_PRECISION</code> (even values only) in <code>Sources/AZDecimalC/include/SBCD.h</code> and rebuilding. The upper bound is limited by stack consumption of the fixed-size C array (<code>char digit[SBCD_PRECISION+1]</code>).</small></div>
       <div class="feature-item">7 rounding modes<small>Round half up, banker's rounding, ceiling, floor, and more</small></div>
       <div class="feature-item">Formula evaluator<small>Infix parsing via Shunting Yard algorithm</small></div>
       <div class="feature-item">Context-sensitive % operator<small>100+5% → 105 (add) / 100×5% → 5 (ratio)</small></div>
