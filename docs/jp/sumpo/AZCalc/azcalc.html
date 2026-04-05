@@ -237,15 +237,15 @@ let result = AZFormula.evaluate("1 ÷ 3", config: config)
           </thead>
           <tbody>
             <tr><td><code>+ - × ÷</code></td><td>四則演算（<code>* /</code> も受け付ける）</td></tr>
-            <tr><td><code>√</code></td><td>平方根（※）</td></tr>
-            <tr><td><code>∛</code></td><td>立方根（※）</td></tr>
+            <tr><td><code>√</code></td><td>平方根</td></tr>
+            <tr><td><code>∛</code></td><td>立方根</td></tr>
             <tr><td><code>( )</code></td><td>括弧</td></tr>
             <tr><td><code>%</code></td><td>パーセント（文脈依存、下表参照）</td></tr>
             <tr><td><code>割 分 厘</code></td><td>日本式パーセント表記</td></tr>
           </tbody>
         </table>
       </div>
-      <p><small>※ √ と ∛ は現在 <code>Double</code>（約15桁）経由で計算しているため、BCD 本来の精度（60桁）は得られません。近々 SBCD を用いたネイティブ実装に置き換える予定です。</small></p>
+      <p><small>√ と ∛ はニュートン法（反復回数は <code>SBCD_PRECISION</code> に基づき自動計算）による BCD ネイティブ実装です。完全桁精度で計算されます。</small></p>
     </div>
 
     <div class="spec-group">
