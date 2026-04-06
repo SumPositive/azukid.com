@@ -42,6 +42,11 @@
   </section>
 
   <section class="content-section">
+    <h2>Hobbies</h2>
+    <p>This (app development), swimming, skiing, camping (BBQ)</p>
+  </section>
+
+  <section class="content-section">
     <h2>Development History</h2>
 
     <div class="timeline">
@@ -73,8 +78,8 @@
             <a class="release-link" href="https://apps.apple.com/app/id432458298">App Store ↗</a>
           </div>
         </div>
-        <p class="timeline-story">While developing, I noticed that pickers — typically used for selection input — could just as well serve as output. I pictured a receipt rolling out of a cash register and built a drum-style calculator. The response from overseas users was strong enough that I later renamed it CalcRoll.</p>
-        <p class="timeline-story">The moment I decided to build a calculator app, I also decided: no floating-point arithmetic. I embedded the BCD arithmetic library (sbcd) I had written in 1998, guaranteeing that 0.1+0.2=0.3 from day one. That library remained the heart of Calclin all the way until it was published as the AZCalc Swift Package in 2026.</p>
+        <p class="timeline-story">While developing, I noticed that pickers — typically used for selection input — could just as well serve as output. I pictured a receipt rolling out of a cash register and built a drum-style calculator. It went through several names: Drataku ⇒ CalcRoll ⇒ Calclin.</p>
+        <p class="timeline-story">When I decided to build a calculator app, I also decided: no floating-point arithmetic. I embedded the BCD arithmetic library (SBCD/C++) I had written in 1998, guaranteeing that 0.1+0.2=0.3 from day one. That library would later be published as the AZCalc Swift Package in 2026.</p>
         <div class="timeline-releases">
           <div class="release-item">
             <img class="release-icon" src="../../images/icon-calclin.png" alt="Drataku">
@@ -88,7 +93,7 @@
 
       <div class="timeline-item">
         <p class="timeline-era">2011–2012 — The Dial UI Era</p>
-        <p class="timeline-story">As skeuomorphic design took hold in iOS, I built a custom control — AZDial — that reproduced the tactile feel of classic physical dials using scroll gestures and touch. I went on to build several apps designed around that control.</p>
+        <p class="timeline-story">As skeuomorphic design took hold in iOS, I built a custom control — AZDial — that reproduced the tactile feel of classic physical dials using scroll gestures and touch. I built a few apps around that control. It would later be published as the AZDial Swift Package in 2026.</p>
         <div class="timeline-releases">
           <div class="release-item">
             <img class="release-icon" src="../../images/icon-warikan.png" alt="SplitPay">
@@ -115,7 +120,7 @@
 
       <div class="timeline-item">
         <p class="timeline-era">2025 — Migrating to Swift 6 / SwiftUI</p>
-        <p class="timeline-story">I ported CalcRoll to learn Swift 6 and SwiftUI. The original codebase was entirely Objective-C, so rewriting it in modern Swift was effectively a ground-up redesign. I first submitted it as a new app, but Apple rejected it — "similar apps exist; lacks novelty." Fair enough! I resubmitted it as an update to the original app and passed review. The 1998 sbcd library was carried forward as-is in C++, wrapped in a Swift Package and accessed via Swift/C++ interop.</p>
+        <p class="timeline-story">I ported CalcRoll to learn Swift 6 and SwiftUI. The original codebase was entirely Objective-C, so rewriting it in modern Swift was effectively a ground-up redesign. I first submitted it as a new app, but Apple rejected it — "similar apps exist; lacks novelty." Fair enough! I resubmitted it as an update to the original app and passed review. The 1998 SBCD library was carried forward as-is in C++ and embedded directly.</p>
         <div class="timeline-releases">
           <div class="release-item">
             <img class="release-icon" src="../../images/icon-calclin.png" alt="Calclin">
@@ -140,7 +145,7 @@
       </div>
 
       <div class="timeline-item">
-        <p class="timeline-era">2026 — Released</p>
+        <p class="timeline-era">2026 — AI goes full swing (shifting to directing and producing)</p>
         <p class="timeline-story">Condition was fully rebuilt with SwiftData and HealthKit. Using Claude code boosted development efficiency even further. The migration logic was carefully designed to automatically carry over all existing records from the previous Core Data version. or so Claude says.</p>
         <div class="timeline-releases">
           <div class="release-item">
