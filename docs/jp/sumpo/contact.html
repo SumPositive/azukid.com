@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>お問い合わせ — sumpo products</title>
+  <meta name="description" content="sumpo products のお問い合わせ窓口です。ご質問、不具合報告、ご要望をお送りいただけます。">
+  <link rel="canonical" href="https://azukid.com/jp/sumpo/contact.html">
+  <link rel="alternate" href="https://azukid.com/jp/sumpo/contact.html" hreflang="ja">
+  <link rel="alternate" href="https://azukid.com/en/sumpo/contact.html" hreflang="en">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="お問い合わせ — sumpo products">
+  <meta property="og:description" content="ご質問、不具合報告、ご要望をお送りください。内容確認後にメールで返信します。">
+  <meta property="og:url" content="https://azukid.com/jp/sumpo/contact.html">
   <link rel="stylesheet" href="../../style.css">
   <style>
     .contact-form {
@@ -107,7 +117,7 @@
   </div>
 
   <section class="content-section">
-    <form class="contact-form" id="contactForm">
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xqeglybk" method="post" accept-charset="UTF-8">
       <div class="form-group">
         <label for="app">対象アプリ</label>
         <select id="app" name="app">
@@ -131,7 +141,7 @@
         <textarea id="body" name="body" placeholder="ご質問・不具合の詳細・ご要望などをご記入ください。"></textarea>
       </div>
       <button type="submit" class="form-submit" id="submitBtn">送信する</button>
-      <p class="form-note" id="formNote">内容を確認後、メールにてご返信いたします。</p>
+      <p class="form-note" id="formNote" role="status" aria-live="polite">内容を確認後、メールにてご返信いたします。メールアドレスは返信以外の目的では使用しません。</p>
     </form>
   </section>
 
@@ -148,6 +158,7 @@
     e.preventDefault();
     const btn = document.getElementById('submitBtn');
     const note = document.getElementById('formNote');
+    this.setAttribute('aria-busy', 'true');
     btn.disabled = true;
     btn.textContent = '送信中…';
 
@@ -159,14 +170,16 @@
         headers: { 'Accept': 'application/json' }
       });
       if (res.ok) {
-        this.innerHTML = '<p style="text-align:center; padding: 32px 0; font-size:1rem; color:var(--accent);">送信しました。ご連絡ありがとうございます。</p>';
+        this.innerHTML = '<p role="status" aria-live="polite" style="text-align:center; padding: 32px 0; font-size:1rem; color:var(--accent);">送信しました。ご連絡ありがとうございます。</p>';
       } else {
+        this.removeAttribute('aria-busy');
         btn.disabled = false;
         btn.textContent = '送信する';
         note.textContent = '送信に失敗しました。しばらくしてから再度お試しください。';
         note.style.color = 'red';
       }
     } catch {
+      this.removeAttribute('aria-busy');
       btn.disabled = false;
       btn.textContent = '送信する';
       note.textContent = '送信に失敗しました。通信環境をご確認ください。';

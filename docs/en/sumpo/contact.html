@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — sumpo products</title>
+  <meta name="description" content="Contact page for sumpo products. Send questions, bug reports, or feature requests by email form.">
+  <link rel="canonical" href="https://azukid.com/en/sumpo/contact.html">
+  <link rel="alternate" href="https://azukid.com/jp/sumpo/contact.html" hreflang="ja">
+  <link rel="alternate" href="https://azukid.com/en/sumpo/contact.html" hreflang="en">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Contact — sumpo products">
+  <meta property="og:description" content="Send questions, bug reports, or feature requests and we'll reply by email.">
+  <meta property="og:url" content="https://azukid.com/en/sumpo/contact.html">
   <link rel="stylesheet" href="../../style.css">
   <style>
     .contact-form {
@@ -107,7 +117,7 @@
   </div>
 
   <section class="content-section">
-    <form class="contact-form" id="contactForm">
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xqeglybk" method="post" accept-charset="UTF-8">
       <div class="form-group">
         <label for="app">App</label>
         <select id="app" name="app">
@@ -131,7 +141,7 @@
         <textarea id="body" name="body" placeholder="Describe your question, issue, or request in detail."></textarea>
       </div>
       <button type="submit" class="form-submit" id="submitBtn">Send</button>
-      <p class="form-note" id="formNote">We'll reply by email after reviewing your message.</p>
+      <p class="form-note" id="formNote" role="status" aria-live="polite">We'll reply by email after reviewing your message. Your email address is used only for support responses.</p>
     </form>
   </section>
 
@@ -148,6 +158,7 @@
     e.preventDefault();
     const btn = document.getElementById('submitBtn');
     const note = document.getElementById('formNote');
+    this.setAttribute('aria-busy', 'true');
     btn.disabled = true;
     btn.textContent = 'Sending…';
 
@@ -159,14 +170,16 @@
         headers: { 'Accept': 'application/json' }
       });
       if (res.ok) {
-        this.innerHTML = '<p style="text-align:center; padding: 32px 0; font-size:1rem; color:var(--accent);">Message sent. Thank you for reaching out!</p>';
+        this.innerHTML = '<p role="status" aria-live="polite" style="text-align:center; padding: 32px 0; font-size:1rem; color:var(--accent);">Message sent. Thank you for reaching out!</p>';
       } else {
+        this.removeAttribute('aria-busy');
         btn.disabled = false;
         btn.textContent = 'Send';
         note.textContent = 'Submission failed. Please try again later.';
         note.style.color = 'red';
       }
     } catch {
+      this.removeAttribute('aria-busy');
       btn.disabled = false;
       btn.textContent = 'Send';
       note.textContent = 'Submission failed. Please check your connection.';
