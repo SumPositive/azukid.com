@@ -44,9 +44,9 @@
   <section class="content-section">
     <h2>Demo</h2>
     <div style="display:flex; gap:16px; flex-wrap:wrap;">
-      <img src="https://raw.githubusercontent.com/SumPositive/AZDial/main/docs/images/demo-styles.png"
+      <img src="images/demo-styles.png"
            alt="Dial style picker" style="width:45%; min-width:160px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,.15);">
-      <img src="https://raw.githubusercontent.com/SumPositive/AZDial/main/docs/images/demo-usage.png"
+      <img src="images/demo-usage.png"
            alt="Decimal, integer, stepper, dialWidth, custom tile" style="width:45%; min-width:160px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,.15);">
     </div>
   </section>
@@ -59,7 +59,7 @@
   <section class="content-section">
     <h2>Features</h2>
     <div class="feature-grid">
-      <div class="feature-item">8 built-in visual styles<small>Regacy, Midnight, Brass, Ocean, Varnia, Chrome, Hairline, Rubber</small></div>
+      <div class="feature-item">9 built-in visual styles<small>Regacy, Midnight, Brass, Ocean, Shape, Varnia, Chrome, Hairline, Rubber</small></div>
       <div class="feature-item">Custom image tile support<small>Use your own PDF / PNG assets as a tiling background</small></div>
       <div class="feature-item">Adjustable dial width<small>Specify 80–220 pt</small></div>
       <div class="feature-item">Built-in stepper buttons<small>Step label included. Pass 0 to hide</small></div>
@@ -123,7 +123,7 @@ struct ContentView: View {
             step: 1,
             stepperStep: 10,
             decimals: 1,
-            style: .regacy,
+            style: .shape,
             dialWidth: 220
         )
     }
@@ -144,7 +144,7 @@ struct ContentView: View {
             <tr><td><code>step</code></td><td><code>Int</code></td><td>—</td><td>Value increment per drag step</td></tr>
             <tr><td><code>stepperStep</code></td><td><code>Int</code></td><td>—</td><td>Stepper button increment (0 = hidden)</td></tr>
             <tr><td><code>decimals</code></td><td><code>Int</code></td><td><code>0</code></td><td>Decimal places on stepper label</td></tr>
-            <tr><td><code>style</code></td><td><code>DialStyle</code></td><td><code>.regacy</code></td><td>Visual style</td></tr>
+            <tr><td><code>style</code></td><td><code>DialStyle</code></td><td><code>.shape</code></td><td>Visual style</td></tr>
             <tr><td><code>dialWidth</code></td><td><code>CGFloat</code></td><td><code>220</code></td><td>Dial width in points (clamped to 80–220)</td></tr>
           </tbody>
         </table>
@@ -167,6 +167,7 @@ struct ContentView: View {
             <tr><td><code>.midnight</code></td><td>Dark gunmetal with high-contrast silver highlights</td></tr>
             <tr><td><code>.brass</code></td><td>Warm brass with champagne gold highlights</td></tr>
             <tr><td><code>.ocean</code></td><td>Blue anodized aluminum with ice-blue highlights</td></tr>
+            <tr><td><code>.shape</code></td><td>Shape-based knurling tile <strong>(default)</strong></td></tr>
             <tr><td><code>.varnia</code></td><td>Narrow machined knurling</td></tr>
             <tr><td><code>.chrome</code></td><td>Polished chrome with high contrast</td></tr>
             <tr><td><code>.hairline</code></td><td>Ultra-fine hairline engraving</td></tr>
@@ -200,7 +201,7 @@ UserDefaults.standard.set(style.id, forKey: "dialStyle")
 
 // Restore
 let id = UserDefaults.standard.string(forKey: "dialStyle") ?? ""
-let style = DialStyle.builtin(id: id) ?? .regacy</pre>
+let style = DialStyle.builtin(id: id) ?? .shape</pre>
     </div>
   </section>
 
@@ -223,6 +224,7 @@ let style = DialStyle.builtin(id: id) ?? .regacy</pre>
           <tr><td>1.x</td><td>Initial release (SPM port of the Objective-C component)</td></tr>
           <tr><td>2.x</td><td>Full rewrite in SwiftUI. Canvas-based built-in styles added</td></tr>
           <tr><td>3.0</td><td>Renamed <code>AZDialBack</code> to <code>AZDialSurface</code>. Added English localization to AZDialDemo</td></tr>
+          <tr><td>3.1</td><td>Added <code>.shape</code> built-in style. Changed default style to <code>.shape</code></td></tr>
         </tbody>
       </table>
     </div>

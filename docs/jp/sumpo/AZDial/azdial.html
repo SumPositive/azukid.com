@@ -44,9 +44,9 @@
   <section class="content-section">
     <h2>デモ</h2>
     <div style="display:flex; gap:16px; flex-wrap:wrap;">
-      <img src="https://raw.githubusercontent.com/SumPositive/AZDial/main/docs/images/demo-styles.png"
+      <img src="images/demo-styles.png"
            alt="ダイアルスタイル選択" style="width:45%; min-width:160px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,.15);">
-      <img src="https://raw.githubusercontent.com/SumPositive/AZDial/main/docs/images/demo-usage.png"
+      <img src="images/demo-usage.png"
            alt="小数・整数・ステッパー・幅・カスタムタイル" style="width:45%; min-width:160px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,.15);">
     </div>
   </section>
@@ -59,7 +59,7 @@
   <section class="content-section">
     <h2>特長</h2>
     <div class="feature-grid">
-      <div class="feature-item">8 種類のビルトインスタイル<small>Regacy・Midnight・Brass・Ocean・Varnia・Chrome・Hairline・Rubber</small></div>
+      <div class="feature-item">9 種類のビルトインスタイル<small>Regacy・Midnight・Brass・Ocean・Shape・Varnia・Chrome・Hairline・Rubber</small></div>
       <div class="feature-item">カスタム画像タイルに対応<small>自作の PDF / PNG アセットをタイル表示できる</small></div>
       <div class="feature-item">ダイアル幅を調整できる<small>80〜220 pt の範囲で指定可能</small></div>
       <div class="feature-item">ステッパーボタンを内蔵<small>ステップ量のラベル表示つき。0 指定で非表示</small></div>
@@ -123,7 +123,7 @@ struct ContentView: View {
             step: 1,
             stepperStep: 10,
             decimals: 1,
-            style: .regacy,
+            style: .shape,
             dialWidth: 220
         )
     }
@@ -144,7 +144,7 @@ struct ContentView: View {
             <tr><td><code>step</code></td><td><code>Int</code></td><td>—</td><td>ドラッグ 1 ステップあたりの変化量</td></tr>
             <tr><td><code>stepperStep</code></td><td><code>Int</code></td><td>—</td><td>ステッパーボタンの変化量（0 で非表示）</td></tr>
             <tr><td><code>decimals</code></td><td><code>Int</code></td><td><code>0</code></td><td>ステッパーラベルの小数点以下桁数</td></tr>
-            <tr><td><code>style</code></td><td><code>DialStyle</code></td><td><code>.regacy</code></td><td>ビジュアルスタイル</td></tr>
+            <tr><td><code>style</code></td><td><code>DialStyle</code></td><td><code>.shape</code></td><td>ビジュアルスタイル</td></tr>
             <tr><td><code>dialWidth</code></td><td><code>CGFloat</code></td><td><code>220</code></td><td>ダイアル幅（80〜220 pt にクランプ）</td></tr>
           </tbody>
         </table>
@@ -167,6 +167,7 @@ struct ContentView: View {
             <tr><td><code>.midnight</code></td><td>ガンメタル地にシルバーのハイコントラスト</td></tr>
             <tr><td><code>.brass</code></td><td>ウォームブラス地にシャンパンゴールドのハイライト</td></tr>
             <tr><td><code>.ocean</code></td><td>ブルーアルマイト地にアイスブルーのハイライト</td></tr>
+            <tr><td><code>.shape</code></td><td>シェイプベースのナーリングタイル <strong>（デフォルト）</strong></td></tr>
             <tr><td><code>.varnia</code></td><td>細かいマシンドナーリング</td></tr>
             <tr><td><code>.chrome</code></td><td>ポリッシュクロム・ハイコントラスト</td></tr>
             <tr><td><code>.hairline</code></td><td>極細ヘアラインエングレービング</td></tr>
@@ -200,7 +201,7 @@ UserDefaults.standard.set(style.id, forKey: "dialStyle")
 
 // 復元
 let id = UserDefaults.standard.string(forKey: "dialStyle") ?? ""
-let style = DialStyle.builtin(id: id) ?? .regacy</pre>
+let style = DialStyle.builtin(id: id) ?? .shape</pre>
     </div>
   </section>
 
@@ -223,6 +224,7 @@ let style = DialStyle.builtin(id: id) ?? .regacy</pre>
           <tr><td>1.x</td><td>初期リリース（Objective-C 版の SPM 移植）</td></tr>
           <tr><td>2.x</td><td>SwiftUI で全面再実装。Canvas ベースのビルトインスタイルを追加</td></tr>
           <tr><td>3.0</td><td><code>AZDialBack</code> を <code>AZDialSurface</code> にリネーム。AZDialDemo の英語ローカライズ追加</td></tr>
+          <tr><td>3.1</td><td>ビルトインスタイル <code>.shape</code> を追加。デフォルトスタイルを <code>.shape</code> に変更</td></tr>
         </tbody>
       </table>
     </div>
