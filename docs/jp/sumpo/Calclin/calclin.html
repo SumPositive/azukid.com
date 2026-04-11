@@ -37,7 +37,7 @@
   </div>
 
   <div class="lead">
-    <p>電卓のようにキーをタップして計算式を入れてください。最後に <strong>[=]</strong> をタップすれば答えが出ます。</p>
+    <p>電卓のようにキーをタップして計算してください。最後に <strong>[=]</strong> をタップすれば答えが出ます。</p>
     <p>以上が基本操作です。</p>
     <p>もし興味があれば、以下の機能が隠れていますので直感的に操作して見つけてお試しください。</p>
   </div>
@@ -45,6 +45,10 @@
   <section class="content-section">
     <h2>機能</h2>
     <div class="feature-grid">
+      <div class="feature-item">電卓モードと数式モードを切り替えられる<small>電卓：左から順に計算（5+5×2=20）<br>数式：演算子の優先順位を守って計算（5+5×2=15）</small></div>
+      <div class="feature-item">電卓モードで入力中に累計を確認できる<small>ロールの入力行に累計を常時表示（表示幅に余裕がある時）</small></div>
+      <div class="feature-item">電卓ロールの行を後から編集できる<small>電卓モードでロール行をタップすると編集して再計算できる</small></div>
+      <div class="feature-item">初心者モード（操作ヒント付き）<small>設定で「初心者」「達人」を切り替え。初心者モードではボタンの役割説明を表示</small></div>
       <div class="feature-item">小数点の文字を選択できる<small>デフォルト：[.] ピリオド</small></div>
       <div class="feature-item">小数の表示桁数を変更できる<small>デフォルト 3桁、最大 10桁</small></div>
       <div class="feature-item">丸め処理を選択できる<small>デフォルト：五捨五超入（偶数丸め）</small></div>
@@ -78,7 +82,12 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">計算方式</span>
-        <span class="spec-val">四則公式</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li class="is-default">★ 電卓モード — 左から順に計算（5+5×2=20）普通の電卓と同じ</li>
+            <li>数式モード — 演算子優先順位あり（5+5×2=15）括弧・√・∛ 使用可</li>
+          </ul>
+        </span>
       </div>
       <div class="spec-row">
         <span class="spec-key">計算フィールド</span>
@@ -222,6 +231,7 @@
           <tr><td>1.2</td><td></td><td>2020/7 Swift 移植を検討したが中断<br>2025/7 Swift 6・SwiftUI に慣れるために作成再開</td></tr>
           <tr><td>2.0</td><td>2025/9/4</td><td>カルメモ/Calclin — Xcode 16, Swift 6, SwiftUI, C/C++</td></tr>
           <tr><td>2.0.2</td><td>2026/3/30</td><td>カルメモ/Calclin — Xcode 26, Swift 6, SwiftUI, C/C++</td></tr>
+          <tr><td>2.1.0</td><td></td><td>電卓モード追加・ロール行編集・メモ入力・自動スクロール</td></tr>
         </tbody>
       </table>
     </div>

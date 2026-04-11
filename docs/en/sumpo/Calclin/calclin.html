@@ -45,6 +45,10 @@
   <section class="content-section">
     <h2>Features</h2>
     <div class="feature-grid">
+      <div class="feature-item">Switch between Calculator mode and Formula mode<small>Calculator: left-to-right evaluation (5+5×2=20)<br>Formula: operator precedence (5+5×2=15), with parentheses and roots</small></div>
+      <div class="feature-item">See a running total while entering numbers<small>Calculator mode shows the running total on the current input row (when display width allows)</small></div>
+      <div class="feature-item">Edit past roll rows and recalculate<small>In calculator mode, tap any roll row to edit and recalculate</small></div>
+      <div class="feature-item">Beginner mode with operation hints<small>Switch between Beginner and Master in Settings. Beginner mode shows labels and tips throughout the UI</small></div>
       <div class="feature-item">Choose the decimal point symbol<small>Default: [.] period</small></div>
       <div class="feature-item">Change the number of decimal digits shown<small>Default: 3 digits, up to 10 digits</small></div>
       <div class="feature-item">Choose a rounding mode<small>Default: round half to even (banker's rounding)</small></div>
@@ -75,6 +79,15 @@
       <div class="spec-row">
         <span class="spec-key">Engine</span>
         <span class="spec-val">C/C++ fixed-point decimal. Uses 60 of over 2 billion significant digits.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Calculation mode</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li class="is-default">★ Calculator mode — left-to-right evaluation (5+5×2=20), like a physical calculator</li>
+            <li>Formula mode — operator precedence respected (5+5×2=15), with parentheses, √, ∛</li>
+          </ul>
+        </span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Operations</span>
@@ -222,6 +235,7 @@
           <tr><td>1.2</td><td></td><td>2020/7 considered Swift migration but paused<br>2025/7 restarted to learn Swift 6 and SwiftUI</td></tr>
           <tr><td>2.0</td><td>2025/9/4</td><td>Calclin — Xcode 16, Swift 6, SwiftUI, C/C++</td></tr>
           <tr><td>2.0.2</td><td>2026/3/30</td><td>Calclin — Xcode 26, Swift 6, SwiftUI, C/C++</td></tr>
+          <tr><td>2.1.0</td><td></td><td>Calculator mode, roll row editing, memo input, auto-scroll</td></tr>
         </tbody>
       </table>
     </div>
