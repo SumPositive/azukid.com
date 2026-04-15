@@ -5,6 +5,7 @@
 
 ## 2026 Update
    - [モチメモ／Packlin](https://apps.apple.com/jp/app/%E3%83%A2%E3%83%81%E3%83%A1%E3%83%A2/id495525984)
+   - [割勘／DialSplit](https://github.com/SumPositive/DialSplit)
 
 ## 2025 Update
    - [カルメモ／Calclin](https://apps.apple.com/jp/app/%E3%82%AB%E3%83%AB%E3%83%A1%E3%83%A2/id385216637)
@@ -39,6 +40,10 @@
 ## ● モチメモ／Packlin
    - [日本語](https://docs.azukid.com/jp/sumpo/Packlin/packlin)
    - [English](https://docs.azukid.com/en/sumpo/Packlin/packlin)
+
+## ● 割勘／DialSplit
+   - [日本語](https://docs.azukid.com/jp/sumpo/DialSplit/dialsplit)
+   - [English](https://docs.azukid.com/en/sumpo/DialSplit/dialsplit)
 
 
 <br><br>
