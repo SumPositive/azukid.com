@@ -162,6 +162,7 @@ body {
 }
 
 .app-card {
+  position: relative;
   background: var(--surface);
   border-radius: var(--radius);
   border: 1px solid var(--border-light);
@@ -170,6 +171,18 @@ body {
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+
+.app-card-link-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.app-card > :not(.app-card-link-overlay) {
+  position: relative;
+  z-index: 2;
 }
 
 .app-card-icon {
