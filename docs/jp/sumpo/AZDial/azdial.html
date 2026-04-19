@@ -44,10 +44,12 @@
   <section class="content-section">
     <h2>デモ</h2>
     <div style="display:flex; gap:16px; flex-wrap:wrap;">
-      <img src="images/demo-styles.png"
-           alt="ダイアルスタイル選択" style="width:45%; min-width:160px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,.15);">
-      <img src="images/demo-usage.png"
-           alt="小数・整数・ステッパー・幅・カスタムタイル" style="width:45%; min-width:160px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,.15);">
+      <img src="images/demo1.png"
+           alt="デモ 1" style="width:30%; min-width:120px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,.15);">
+      <img src="images/demo2.png"
+           alt="デモ 2" style="width:30%; min-width:120px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,.15);">
+      <img src="images/demo3.png"
+           alt="デモ 3" style="width:30%; min-width:120px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,.15);">
     </div>
   </section>
 
@@ -63,7 +65,12 @@
       <div class="feature-item">カスタム画像タイルに対応<small>自作の PDF / PNG アセットをタイル表示できる</small></div>
       <div class="feature-item">ダイアル幅を調整できる<small>80〜220 pt の範囲で指定可能</small></div>
       <div class="feature-item">ステッパーボタンを内蔵<small>ステップ量のラベル表示つき。0 指定で非表示</small></div>
-      <div class="feature-item">ドラッグ操作と触覚フィードバック<small>iOS では UISelectionFeedbackGenerator を使用</small></div>
+      <div class="feature-item">速度感応型ドラッグ＋惰性スクロール<small>フリックで慣性スクロール。低速/高速フリックでステップ倍率が変わる</small></div>
+      <div class="feature-item">ステップスナップ<small>指を離してもダイアルが動かない。丸め処理によるジャンプなし</small></div>
+      <div class="feature-item">操作感度チューニング<small>AZDialInteractionTuning で pitch・慣性・倍率を細かく調整</small></div>
+      <div class="feature-item">設定シート UI を内蔵<small>AZDialSettingsView をシートとして表示するだけで設定画面が完成</small></div>
+      <div class="feature-item">ナビゲーション戻るジェスチャーをブロック<small>ダイアル操作中のスワイプバックを自動ブロック（iOS）</small></div>
+      <div class="feature-item">触覚フィードバック<small>iOS では UISelectionFeedbackGenerator でステップごとにフィードバック</small></div>
       <div class="feature-item">VoiceOver / アクセシビリティ対応<small>accessibilityAdjustableAction で増減操作が可能</small></div>
       <div class="feature-item">ダークモード対応<small>全ビルトインスタイルがライト／ダーク両対応</small></div>
       <div class="feature-item">Pure SwiftUI<small>UIKit ラッパーなし。Canvas と GeometryReader のみで実装</small></div>
@@ -146,6 +153,8 @@ struct ContentView: View {
             <tr><td><code>decimals</code></td><td><code>Int</code></td><td><code>0</code></td><td>ステッパーラベルの小数点以下桁数</td></tr>
             <tr><td><code>style</code></td><td><code>DialStyle</code></td><td><code>.shape</code></td><td>ビジュアルスタイル</td></tr>
             <tr><td><code>dialWidth</code></td><td><code>CGFloat</code></td><td><code>220</code></td><td>ダイアル幅（80〜220 pt にクランプ）</td></tr>
+            <tr><td><code>tuning</code></td><td><code>AZDialInteractionTuning?</code></td><td><code>nil</code>（= .default）</td><td>操作感度チューニング。設定時は pitch より優先</td></tr>
+            <tr><td><code>pitch</code></td><td><code>CGFloat</code></td><td><code>20</code></td><td>tuning が nil のときの 1 ステップあたりのドラッグ距離（pt）</td></tr>
           </tbody>
         </table>
       </div>
@@ -206,6 +215,100 @@ let style = DialStyle.builtin(id: id) ?? .shape</pre>
   </section>
 
   <section class="content-section">
+    <h2>操作感度チューニング</h2>
+    <p><code>AZDialInteractionTuning</code> でドラッグ・惰性の全パラメータを調整できます。</p>
+
+    <div class="spec-group">
+      <p class="spec-group-title">基本的な使い方</p>
+      <pre>@State private var tuning = AZDialInteractionTuning.default
+
+AZDialView(value: $value, min: 0, max: 100, step: 1, stepperStep: 10,
+           tuning: tuning)</pre>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">パラメータ</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>プロパティ</th><th>デフォルト</th><th>説明</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>pitch</code></td><td><code>20</code></td><td>1 ステップあたりのドラッグ距離（pt）</td></tr>
+            <tr><td><code>velocitySmoothing</code></td><td><code>0.4</code></td><td>速度サンプルの平滑化係数（0〜1）</td></tr>
+            <tr><td><code>inertiaStartVelocity</code></td><td><code>200</code></td><td>惰性を開始する最小速度（pt/秒）</td></tr>
+            <tr><td><code>fastSwipeVelocity</code></td><td><code>1500</code></td><td>低速/高速倍率の境界速度（pt/秒）</td></tr>
+            <tr><td><code>slowSwipeMultiplier</code></td><td><code>10</code></td><td>低速フリック時のステップ倍率</td></tr>
+            <tr><td><code>fastSwipeMultiplier</code></td><td><code>100</code></td><td>高速フリック時のステップ倍率</td></tr>
+            <tr><td><code>inertiaDecay</code></td><td><code>0.94</code></td><td>惰性の 1 フレームあたりの速度減衰率（0.80〜0.99）</td></tr>
+            <tr><td><code>inertiaStopVelocity</code></td><td><code>15</code></td><td>惰性が止まる速度（pt/秒）</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">組み込みプリセット</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>プリセット</th><th>pitch</th><th>倍率（低速/高速）</th><th>用途</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.fine</code></td><td>36 pt</td><td>×3 / ×20</td><td>精密入力・誤操作防止</td></tr>
+            <tr><td><code>.mild</code></td><td>28 pt</td><td>×6 / ×50</td><td>控えめな動き</td></tr>
+            <tr><td><code>.standard</code></td><td>20 pt</td><td>×10 / ×100</td><td><strong>標準（デフォルト）</strong></td></tr>
+            <tr><td><code>.light</code></td><td>14 pt</td><td>×15 / ×130</td><td>軽快な操作感</td></tr>
+            <tr><td><code>.fast</code></td><td>9 pt</td><td>×20 / ×180</td><td>高速入力向け</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">チューニングの永続化</p>
+      <p><code>AZDialInteractionTuning</code> は <code>Codable</code> なので JSON でシリアライズできます。</p>
+      <pre>// 保存
+if let data = try? JSONEncoder().encode(tuning) {
+    UserDefaults.standard.set(data, forKey: "dialTuning")
+}
+
+// 復元
+if let data = UserDefaults.standard.data(forKey: "dialTuning"),
+   let saved = try? JSONDecoder().decode(AZDialInteractionTuning.self, from: data) {
+    tuning = saved
+}</pre>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>AZDialSettingsView（設定シート）</h2>
+    <p>スタイルと操作感度をユーザが調整できる設定シート UI です。<code>sheet</code> で表示するだけで設定画面が完成します。</p>
+
+    <div class="spec-group">
+      <p class="spec-group-title">基本的な使い方</p>
+      <pre>@State private var style   = DialStyle.shape
+@State private var tuning  = AZDialInteractionTuning.default
+@State private var showSettings = false
+
+Button("ダイアル設定") { showSettings = true }
+    .sheet(isPresented: $showSettings) {
+        AZDialSettingsView(tuning: $tuning, style: $style)
+    }</pre>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">カスタマイズ（AZDialSettingsConfiguration）</p>
+      <pre>let config = AZDialSettingsConfiguration(
+    title: "入力ホイール設定",
+    styleCandidates: [.shape, .chrome, .rubber],
+    testRange: 0...999
+)
+AZDialSettingsView(tuning: $tuning, style: $style, configuration: config)</pre>
+    </div>
+  </section>
+
+  <section class="content-section">
     <h2>AZDialSurface（背景のみ）</h2>
     <p>スクロールするリッジ背景だけが必要な場合（設定画面のプレビューなど）は <code>AZDialSurface</code> を単独で使えます。</p>
     <pre>AZDialSurface(offset: 0, tickGap: 10, style: .brass)
@@ -225,6 +328,7 @@ let style = DialStyle.builtin(id: id) ?? .shape</pre>
           <tr><td>2.x</td><td>SwiftUI で全面再実装。Canvas ベースのビルトインスタイルを追加</td></tr>
           <tr><td>3.0.4</td><td>2026/4/10 <code>AZDialBack</code> を <code>AZDialSurface</code> にリネーム。AZDialDemo の英語ローカライズ追加。Swift Package Index 公開</td></tr>
           <tr><td>3.0.5</td><td>2026/4/16 ビルトインスタイル <code>.shape</code> を追加。デフォルトスタイルを <code>.shape</code> に変更</td></tr>
+          <tr><td>3.1.0</td><td>2026/4/19 <code>AZDialInteractionTuning</code> による操作感度チューニング追加。フリック慣性スクロール・速度倍率対応。<code>AZDialSettingsView</code> 設定シート追加。ステップスナップ改善（離指時のジャンプなし）。ナビゲーション戻るジェスチャーのブロック対応</td></tr>
         </tbody>
       </table>
     </div>
