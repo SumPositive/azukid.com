@@ -44,10 +44,12 @@
   <section class="content-section">
     <h2>Demo</h2>
     <div style="display:flex; gap:16px; flex-wrap:wrap;">
-      <img src="images/demo-styles.png"
-           alt="Dial style picker" style="width:45%; min-width:160px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,.15);">
-      <img src="images/demo-usage.png"
-           alt="Decimal, integer, stepper, dialWidth, custom tile" style="width:45%; min-width:160px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,.15);">
+      <img src="images/demo1.png"
+           alt="Demo 1" style="width:30%; min-width:120px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,.15);">
+      <img src="images/demo2.png"
+           alt="Demo 2" style="width:30%; min-width:120px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,.15);">
+      <img src="images/demo3.png"
+           alt="Demo 3" style="width:30%; min-width:120px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,.15);">
     </div>
   </section>
 
@@ -63,10 +65,15 @@
       <div class="feature-item">Custom image tile support<small>Use your own PDF / PNG assets as a tiling background</small></div>
       <div class="feature-item">Adjustable dial width<small>Specify 80–220 pt</small></div>
       <div class="feature-item">Built-in stepper buttons<small>Step label included. Pass 0 to hide</small></div>
-      <div class="feature-item">Drag gesture with haptic feedback<small>Uses UISelectionFeedbackGenerator on iOS</small></div>
+      <div class="feature-item">Velocity-sensitive drag + inertia<small>Flick to coast; slow/fast flick applies different step multipliers</small></div>
+      <div class="feature-item">Step snapping<small>No visual jump on finger lift — rounding applied during drag only</small></div>
+      <div class="feature-item">Interaction tuning<small>AZDialInteractionTuning adjusts pitch, inertia, and multipliers</small></div>
+      <div class="feature-item">Built-in settings sheet<small>AZDialSettingsView provides a ready-made style and sensitivity panel</small></div>
+      <div class="feature-item">Navigation back-swipe blocking<small>Swipe-back is automatically suppressed during dial interaction (iOS)</small></div>
+      <div class="feature-item">Haptic feedback<small>Uses UISelectionFeedbackGenerator on each step (iOS)</small></div>
       <div class="feature-item">VoiceOver / Accessibility support<small>accessibilityAdjustableAction for increment/decrement</small></div>
       <div class="feature-item">Dark mode support<small>All built-in styles adapt to light and dark mode</small></div>
-      <div class="feature-item">Pure SwiftUI<small>No UIKit wrappers. Implemented with Canvas and GeometryReader</small></div>
+      <div class="feature-item">Pure SwiftUI<small>No UIKit wrappers required in your code</small></div>
     </div>
   </section>
 
@@ -146,6 +153,8 @@ struct ContentView: View {
             <tr><td><code>decimals</code></td><td><code>Int</code></td><td><code>0</code></td><td>Decimal places on stepper label</td></tr>
             <tr><td><code>style</code></td><td><code>DialStyle</code></td><td><code>.shape</code></td><td>Visual style</td></tr>
             <tr><td><code>dialWidth</code></td><td><code>CGFloat</code></td><td><code>220</code></td><td>Dial width in points (clamped to 80–220)</td></tr>
+            <tr><td><code>tuning</code></td><td><code>AZDialInteractionTuning?</code></td><td><code>nil</code> (= .default)</td><td>Interaction tuning; overrides <code>pitch</code> when set</td></tr>
+            <tr><td><code>pitch</code></td><td><code>CGFloat</code></td><td><code>20</code></td><td>Shorthand for <code>tuning.pitch</code> when <code>tuning</code> is <code>nil</code></td></tr>
           </tbody>
         </table>
       </div>
@@ -206,6 +215,100 @@ let style = DialStyle.builtin(id: id) ?? .shape</pre>
   </section>
 
   <section class="content-section">
+    <h2>Interaction Tuning</h2>
+    <p>Pass an <code>AZDialInteractionTuning</code> to control all drag and inertia parameters.</p>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Basic usage</p>
+      <pre>@State private var tuning = AZDialInteractionTuning.default
+
+AZDialView(value: $value, min: 0, max: 100, step: 1, stepperStep: 10,
+           tuning: tuning)</pre>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Parameters</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Property</th><th>Default</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>pitch</code></td><td><code>20</code></td><td>Points of horizontal drag per value step</td></tr>
+            <tr><td><code>velocitySmoothing</code></td><td><code>0.4</code></td><td>Weight of the newest velocity sample (0–1)</td></tr>
+            <tr><td><code>inertiaStartVelocity</code></td><td><code>200</code></td><td>Minimum velocity (pt/s) to start inertia after lift</td></tr>
+            <tr><td><code>fastSwipeVelocity</code></td><td><code>1500</code></td><td>Velocity boundary between slow and fast multiplier</td></tr>
+            <tr><td><code>slowSwipeMultiplier</code></td><td><code>10</code></td><td>Steps per pitch during slow inertia</td></tr>
+            <tr><td><code>fastSwipeMultiplier</code></td><td><code>100</code></td><td>Steps per pitch during fast inertia</td></tr>
+            <tr><td><code>inertiaDecay</code></td><td><code>0.94</code></td><td>Per-frame velocity multiplier during coast (0.80–0.99)</td></tr>
+            <tr><td><code>inertiaStopVelocity</code></td><td><code>15</code></td><td>Velocity at which inertia stops</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Built-in presets</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Preset</th><th>pitch</th><th>Multipliers (slow/fast)</th><th>Feel</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.fine</code></td><td>36 pt</td><td>×3 / ×20</td><td>Maximum precision, minimal inertia</td></tr>
+            <tr><td><code>.mild</code></td><td>28 pt</td><td>×6 / ×50</td><td>Controlled</td></tr>
+            <tr><td><code>.standard</code></td><td>20 pt</td><td>×10 / ×100</td><td><strong>Default</strong></td></tr>
+            <tr><td><code>.light</code></td><td>14 pt</td><td>×15 / ×130</td><td>Nimble</td></tr>
+            <tr><td><code>.fast</code></td><td>9 pt</td><td>×20 / ×180</td><td>High-speed entry</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Persistence</p>
+      <p><code>AZDialInteractionTuning</code> is <code>Codable</code> — round-trip it through UserDefaults or iCloud KVS:</p>
+      <pre>// Save
+if let data = try? JSONEncoder().encode(tuning) {
+    UserDefaults.standard.set(data, forKey: "dialTuning")
+}
+
+// Restore
+if let data = UserDefaults.standard.data(forKey: "dialTuning"),
+   let saved = try? JSONDecoder().decode(AZDialInteractionTuning.self, from: data) {
+    tuning = saved
+}</pre>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>AZDialSettingsView</h2>
+    <p>A ready-made settings sheet for choosing dial style and interaction sensitivity. Present it as a <code>sheet</code> and persist the bindings however your app prefers.</p>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Basic usage</p>
+      <pre>@State private var style   = DialStyle.shape
+@State private var tuning  = AZDialInteractionTuning.default
+@State private var showSettings = false
+
+Button("Dial Settings") { showSettings = true }
+    .sheet(isPresented: $showSettings) {
+        AZDialSettingsView(tuning: $tuning, style: $style)
+    }</pre>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Customization</p>
+      <pre>let config = AZDialSettingsConfiguration(
+    title: "Input Wheel",
+    styleCandidates: [.shape, .chrome, .rubber],
+    testRange: 0...999
+)
+AZDialSettingsView(tuning: $tuning, style: $style, configuration: config)</pre>
+    </div>
+  </section>
+
+  <section class="content-section">
     <h2>AZDialSurface (surface only)</h2>
     <p>Use <code>AZDialSurface</code> standalone when you need only the scrolling ridge background — for example, in a settings UI preview:</p>
     <pre>AZDialSurface(offset: 0, tickGap: 10, style: .brass)
@@ -225,6 +328,7 @@ let style = DialStyle.builtin(id: id) ?? .shape</pre>
           <tr><td>2.x</td><td>Full rewrite in SwiftUI. Canvas-based built-in styles added</td></tr>
           <tr><td>3.0.4</td><td>2026/4/10 Renamed <code>AZDialBack</code> to <code>AZDialSurface</code>. Added English localization to AZDialDemo. Published on Swift Package Index.</td></tr>
           <tr><td>3.0.5</td><td>2026/4/16 Added <code>.shape</code> built-in style. Changed default style to <code>.shape</code></td></tr>
+          <tr><td>3.1.0</td><td>2026/4/19 Added <code>AZDialInteractionTuning</code> for drag and inertia tuning. Flick inertia with velocity-based step multipliers. Added <code>AZDialSettingsView</code> settings sheet. Step snapping improved — no visual jump on finger lift. Navigation back-swipe blocking on iOS.</td></tr>
         </tbody>
       </table>
     </div>
