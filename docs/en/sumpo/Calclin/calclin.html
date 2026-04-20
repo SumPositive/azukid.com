@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calclin User Guide</title>
-  <meta name="description" content="User guide for Calclin, covering calculator features, history, units, and keyboard customization.">
+  <meta name="description" content="User guide for Calclin, covering paper-roll history, multiple calculation frames, calculator/formula input, PDF export, appearance modes, units, and keyboard customization.">
   <link rel="canonical" href="https://azukid.com/en/sumpo/Calclin/calclin.html">
   <link rel="alternate" href="https://azukid.com/jp/sumpo/Calclin/calclin.html" hreflang="ja">
   <link rel="alternate" href="https://azukid.com/en/sumpo/Calclin/calclin.html" hreflang="en">
@@ -12,7 +12,7 @@
   <meta property="og:type" content="article">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Calclin User Guide">
-  <meta property="og:description" content="How to use Calclin's calculator features, history, units, and keyboard customization.">
+  <meta property="og:description" content="How to use Calclin's paper-roll calculation history, PDF export, appearance modes, units, and keyboard customization.">
   <meta property="og:url" content="https://azukid.com/en/sumpo/Calclin/calclin.html">
   <link rel="stylesheet" href="../../../style.css">
 </head>
@@ -32,14 +32,14 @@
     <img class="page-header-icon" src="../../../images/icon-calclin.png" alt="Calclin">
     <div class="page-header-text">
       <h1>Calclin User Guide</h1>
-      <p class="page-tagline">Full-featured calculator app</p>
+      <p class="page-tagline">Calculator memo app with paper-roll history</p>
     </div>
   </div>
 
   <div class="lead">
-    <p>Tap the keys like a calculator to enter an expression. Tap <strong>[=]</strong> at the end to get the answer.</p>
-    <p>That's all for basic operation.</p>
-    <p>If you're curious, the features below are tucked away — try intuitive gestures to find and use them.</p>
+    <p>Tap the keys like a calculator to enter a calculation. Tap <strong>[=]</strong> at the end to get the answer.</p>
+    <p>Your calculation history stays visible like a paper roll. Use the <strong>Calculator/Formula</strong> button in the input row to switch calculation style, and the <strong>PDF</strong> button to export the current roll.</p>
+    <p>Multiple calculation frames, notes, appearance mode, decimal digits, rounding, and keyboard customization can be adjusted in Settings.</p>
   </div>
 
   <div class="pill-link-row">
@@ -54,9 +54,12 @@
     <h2>Features</h2>
     <div class="feature-grid">
       <div class="feature-item">Switch between Calculator mode and Formula mode<small>Calculator: left-to-right evaluation (5+5×2=20)<br>Formula: operator precedence (5+5×2=15), with parentheses and roots</small></div>
+      <div class="feature-item">Switch Calculator/Formula mode from the input row<small>Check and change the current calculation style without leaving the active input area</small></div>
       <div class="feature-item">See a running total while entering numbers<small>Calculator mode shows the running total on the current input row (when display width allows)</small></div>
+      <div class="feature-item">Paper-roll style history display<small>Subtle side lines and top shading make each roll easier to distinguish, especially with multiple frames</small></div>
       <div class="feature-item">Edit past roll rows and recalculate<small>In calculator mode, tap any roll row to edit and recalculate</small></div>
-      <div class="feature-item">Beginner mode with operation hints<small>Switch between Beginner and Master in Settings. Beginner mode shows labels and tips throughout the UI</small></div>
+      <div class="feature-item">Beginner mode with operation hints<small>Switch between Beginner and Expert in Settings. Beginner mode shows labels and tips throughout the UI</small></div>
+      <div class="feature-item">Choose the appearance mode<small>Auto, Light, or Dark. Auto follows the system setting; Light and Dark force the app appearance</small></div>
       <div class="feature-item">Choose the decimal point symbol<small>Default: [.] period</small></div>
       <div class="feature-item">Change the number of decimal digits shown<small>Default: 3 digits, up to 10 digits</small></div>
       <div class="feature-item">Choose a rounding mode<small>Default: round half to even (banker's rounding)</small></div>
@@ -66,11 +69,12 @@
       <div class="feature-item">History of expressions and answers<small>Swipe left: delete　Swipe right: add memo / copy expression / copy answer　Double-tap: copy expression</small></div>
       <div class="feature-item">Add notes to history entries</div>
       <div class="feature-item">Enlarge or reduce text size</div>
+      <div class="feature-item">Settings are saved<small>Display mode, appearance mode, text scale, scrolling, decimal point, grouping, rounding, and related options are restored on next launch</small></div>
       <div class="feature-item">Perform unit-aware calculations<small>Length, area, volume, weight</small></div>
       <div class="feature-item">Lay out the keyboard to your liking<small>Long-press any key to define it. Merge keys vertically or horizontally to create larger keys (vertical-priority). Undefined keys (nop) stay visible and can be long-pressed to redefine.</small></div>
       <div class="feature-item">Switch keyboards<small>5 layouts available (30 keys each)</small></div>
       <div class="feature-item">Export and import keyboard layouts<small>Export: choose your destination — AirDrop, Files, Mail, and more. Filename: CalclinKeyboard_yyyyMMdd.json<br>Import: load from any JSON file</small></div>
-      <div class="feature-item">Export the calculation roll as a PDF</div>
+      <div class="feature-item">Export the calculation roll as a PDF<small>The PDF button appears in the input row and hides automatically when the frame is too narrow</small></div>
     </div>
   </section>
 
@@ -108,6 +112,22 @@
 
     <div class="spec-group">
       <p class="spec-group-title">Numeric &amp; Display Settings</p>
+      <div class="spec-row">
+        <span class="spec-key">Display mode</span>
+        <span class="spec-val">Beginner / Expert</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Appearance mode</span>
+        <span class="spec-val">Auto / Light / Dark</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Auto-scroll</span>
+        <span class="spec-val">Off / On input / On total</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Text scale</span>
+        <span class="spec-val">0.5–3.0</span>
+      </div>
       <div class="spec-row">
         <span class="spec-key">Decimal digits</span>
         <span class="spec-val">0–10 (max 15)</span>
@@ -239,6 +259,7 @@
           <tr><td>2.0</td><td>2025/9/4</td><td>Xcode 16, iOS 18, Swift 6, SwiftUI, C/C++ — App name: Calclin / Karumemo</td></tr>
           <tr><td>2.0.2</td><td>2026/3/30</td><td>Xcode 26, iOS 26, Swift 6, SwiftUI, C/C++</td></tr>
           <tr><td>2.1.0</td><td>2026/4/13</td><td>Xcode 26, iOS 26 — Calculator mode, roll row editing, memo input, auto-scroll, keyboard key merging, improved keyboard export (share sheet, dated filename), PDF export</td></tr>
+          <tr><td>2.2.0</td><td>2026/4/20</td><td>Xcode 26, iOS 26 — improved paper-roll design, clearer frame separators for multiple calculators, Calculator/Formula and PDF controls in the input row, appearance modes, persistent settings, and a history-row deletion fix</td></tr>
         </tbody>
       </table>
     </div>

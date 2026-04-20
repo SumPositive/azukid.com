@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>カルメモ　取扱説明</title>
-  <meta name="description" content="カルメモ Calclin の取扱説明です。ロール式電卓/数式計算、履歴、単位計算、キーボード設定などを紹介します。">
+  <meta name="description" content="カルメモ Calclin の取扱説明です。ロール紙風の計算履歴、複数計算フレーム、電卓/数式入力、PDF出力、外観モード、キーボード設定などを紹介します。">
   <link rel="canonical" href="https://azukid.com/jp/sumpo/Calclin/calclin.html">
   <link rel="alternate" href="https://azukid.com/jp/sumpo/Calclin/calclin.html" hreflang="ja">
   <link rel="alternate" href="https://azukid.com/en/sumpo/Calclin/calclin.html" hreflang="en">
@@ -12,7 +12,7 @@
   <meta property="og:type" content="article">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:title" content="カルメモ 取扱説明">
-  <meta property="og:description" content="ロール式電卓/数式計算アプリ カルメモの機能、履歴、単位計算、キーボード設定などの使い方をまとめています。">
+  <meta property="og:description" content="ロール紙風の計算履歴を持つ電卓/数式計算アプリ カルメモの機能、履歴、PDF出力、外観モード、キーボード設定などをまとめています。">
   <meta property="og:url" content="https://azukid.com/jp/sumpo/Calclin/calclin.html">
   <link rel="stylesheet" href="../../../style.css">
 </head>
@@ -32,14 +32,14 @@
     <img class="page-header-icon" src="../../../images/icon-calclin.png" alt="カルメモ">
     <div class="page-header-text">
       <h1>カルメモ　取扱説明</h1>
-      <p class="page-tagline">ロール式電卓/数式計算アプリ</p>
+      <p class="page-tagline">ロール紙風の計算履歴を持つ電卓メモアプリ</p>
     </div>
   </div>
 
   <div class="lead">
     <p>電卓のようにキーをタップして計算してください。最後に <strong>[=]</strong> をタップすれば答えが出ます。</p>
-    <p>以上が基本操作です。</p>
-    <p>もし興味があれば、以下の機能が隠れていますので直感的に操作して見つけてお試しください。</p>
+    <p>計算履歴はロール紙のように残ります。必要に応じて、入力行の <strong>電卓/数式</strong> ボタンで計算方式を切り替え、<strong>PDF</strong> ボタンで現在のロールを書き出せます。</p>
+    <p>複数の計算フレーム、メモ、外観モード、表示桁数、丸め方式、キーボード編集などは設定から調整できます。</p>
   </div>
 
   <div class="pill-link-row">
@@ -54,9 +54,12 @@
     <h2>機能</h2>
     <div class="feature-grid">
       <div class="feature-item">電卓モードと数式モードを切り替えられる<small>電卓：左から順に計算（5+5×2=20）<br>数式：演算子の優先順位を守って計算（5+5×2=15）</small></div>
+      <div class="feature-item">入力行で電卓/数式を切り替えられる<small>計算中の視線を大きく動かさずに、現在の計算方式を確認・変更できる</small></div>
       <div class="feature-item">電卓モードで入力中に累計を確認できる<small>ロールの入力行に累計を常時表示（表示幅に余裕がある時）</small></div>
+      <div class="feature-item">ロール紙風の履歴表示<small>平面部と左右の線、上部のグラデーションで、複数フレームでも境目が分かりやすい表示</small></div>
       <div class="feature-item">電卓ロールの行を後から編集できる<small>電卓モードでロール行をタップすると編集して再計算できる</small></div>
       <div class="feature-item">初心者モード（操作ヒント付き）<small>設定で「初心者」「達人」を切り替え。初心者モードではボタンの役割説明を表示</small></div>
+      <div class="feature-item">外観モードを選択できる<small>自動・ライト・ダーク。自動ではシステム設定に従い、ライト/ダークではアプリ側で固定</small></div>
       <div class="feature-item">小数点の文字を選択できる<small>デフォルト：[.] ピリオド</small></div>
       <div class="feature-item">小数の表示桁数を変更できる<small>デフォルト 3桁、最大 10桁</small></div>
       <div class="feature-item">丸め処理を選択できる<small>デフォルト：五捨五超入（偶数丸め）</small></div>
@@ -66,11 +69,12 @@
       <div class="feature-item">計算式と答えの履歴が残る<small>左スワイプ：削除　右スワイプ：メモ／式コピー／答えコピー　ダブルタップ：式コピー</small></div>
       <div class="feature-item">履歴にメモを書き残せる</div>
       <div class="feature-item">文字サイズを拡大縮小できる</div>
+      <div class="feature-item">設定が保存される<small>表示モード、外観モード、表示倍率、スクロール、小数点、桁区切り、丸め方式などを次回起動時も維持</small></div>
       <div class="feature-item">単位付きの計算ができる<small>長さ・面積・体積・重量</small></div>
       <div class="feature-item">キーボードをお好みにレイアウトできる<small>キーを長押しして定義。縦・横に結合して大きなキーを作れる（縦優先）。未定義キー（nop）は見た目はそのままで長押しから再定義できる</small></div>
       <div class="feature-item">キーボードを切り替えられる<small>5種類のレイアウト（各30キー）</small></div>
       <div class="feature-item">キーボード配置をエクスポート／インポートできる<small>エクスポート：AirDrop・メール・Filesなど出力先を選択。ファイル名 CalclinKeyboard_yyyyMMdd.json<br>インポート：JSONファイルから読み込む</small></div>
-      <div class="feature-item">計算ロールをPDFに書き出せる</div>
+      <div class="feature-item">計算ロールをPDFに書き出せる<small>PDFボタンは入力行に表示。表示幅が狭いときは自動的に非表示</small></div>
     </div>
   </section>
 
@@ -104,6 +108,22 @@
 
     <div class="spec-group">
       <p class="spec-group-title">数値・表示設定</p>
+      <div class="spec-row">
+        <span class="spec-key">表示モード</span>
+        <span class="spec-val">初心者／達人</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">外観モード</span>
+        <span class="spec-val">自動／ライト／ダーク</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">自動スクロール</span>
+        <span class="spec-val">しない／入力時／＝合計時</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">表示倍率</span>
+        <span class="spec-val">0.5〜3.0</span>
+      </div>
       <div class="spec-row">
         <span class="spec-key">小数桁数</span>
         <span class="spec-val">0〜10（最大 15 桁）</span>
@@ -235,6 +255,7 @@
           <tr><td>2.0</td><td>2025/9/4</td><td>Xcode 16, iOS 18, Swift 6, SwiftUI, C/C++ — アプリ名: Calclin／カルメモ</td></tr>
           <tr><td>2.0.2</td><td>2026/3/30</td><td>Xcode 26, iOS 26, Swift 6, SwiftUI, C/C++</td></tr>
           <tr><td>2.1.0</td><td>2026/4/13</td><td>Xcode 26, iOS 26 — 電卓モード追加・ロール行編集・メモ入力・自動スクロール・キーボード結合表示・キーボードエクスポート改善（共有シート・日付入りファイル名）・PDF出力</td></tr>
+          <tr><td>2.2.0</td><td>2026/4/20</td><td>Xcode 26, iOS 26 — ロール紙風デザイン改善、複数計算フレームの境界表示改善、入力行内の電卓/数式・PDF操作、外観モード追加、設定永続化、履歴削除不具合修正</td></tr>
         </tbody>
       </table>
     </div>
