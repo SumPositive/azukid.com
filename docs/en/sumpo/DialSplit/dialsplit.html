@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DialSplit User Guide</title>
-  <meta name="description" content="User guide for DialSplit. Learn how to use dial controls to set people counts and amounts for bill splitting.">
+  <meta name="description" content="User guide for DialSplit. Learn how to split bills with dial controls, locks, appearance mode, and locale-aware currency handling.">
   <link rel="canonical" href="https://azukid.com/en/sumpo/DialSplit/dialsplit.html">
   <link rel="alternate" href="https://azukid.com/jp/sumpo/DialSplit/dialsplit.html" hreflang="ja">
   <link rel="alternate" href="https://azukid.com/en/sumpo/DialSplit/dialsplit.html" hreflang="en">
@@ -12,7 +12,7 @@
   <meta property="og:type" content="article">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="DialSplit User Guide">
-  <meta property="og:description" content="How to use DialSplit to split bills with dial-based people and amount controls.">
+  <meta property="og:description" content="How to use DialSplit with dial controls, locks, appearance mode, and locale-aware currency handling.">
   <meta property="og:url" content="https://azukid.com/en/sumpo/DialSplit/dialsplit.html">
   <link rel="stylesheet" href="../../../style.css">
 </head>
@@ -38,7 +38,7 @@
 
   <div class="lead">
     <p>DialSplit helps you split a total amount by adjusting people and amounts with tactile dial controls.</p>
-    <p>Set the total and panel values, then DialSplit automatically computes Panel A's amount.</p>
+    <p>Set the total and panel values, then DialSplit automatically computes Panel A's amount. Amounts follow the currency format of your device locale.</p>
   </div>
 
   <div class="pill-link-row">
@@ -55,11 +55,22 @@
       <div class="feature-item">Set the total amount<small>Use the total dial on the top panel, or tap the amount text to enter with the numpad.</small></div>
       <div class="feature-item">Set people counts<small>Use the left dial on each A/B/C/D panel. Panel A requires at least 1 person.</small></div>
       <div class="feature-item">Set amounts<small>Adjust amounts on B/C/D with the right dial. Panel A amount is auto-calculated.</small></div>
-      <div class="feature-item">Change dial step<small>Use Amount Dial Step to switch increments (JPY in Japanese UI, USD in English UI).</small></div>
+      <div class="feature-item">Change dial step<small>Use Amount Dial Step to switch the amount dial increment. Step labels are shown as numbers without a currency symbol.</small></div>
       <div class="feature-item">Tune panel style<small>Adjust panel brightness, text color, and tone from the Panel Style section.</small></div>
-      <div class="feature-item">Lock people count<small>Tap the lock button on a panel to freeze its people dial and prevent accidental changes.</small></div>
-      <div class="feature-item">Lock all controls<small>Use Lock All Controls to freeze every dial at once.</small></div>
+      <div class="feature-item">Lock people count<small>Use the lock button on the total panel to freeze people dials and prevent accidental changes.</small></div>
+      <div class="feature-item">Lock all controls<small>Use the lock button on Panel A to freeze every dial at once.</small></div>
       <div class="feature-item">Tune dial sensitivity<small>Open Dial Settings in Settings to adjust the dial sensitivity to your preference.</small></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Settings</h2>
+    <div class="feature-grid">
+      <div class="feature-item">Tiers<small>Choose a preset display name set, or edit the display names for A/B/C/D individually.</small></div>
+      <div class="feature-item">Dial Settings<small>Adjust the dial feel, brightness, and response from the settings sheet.</small></div>
+      <div class="feature-item">Appearance Mode<small>Choose Auto, Light, or Dark. Auto follows the system setting.</small></div>
+      <div class="feature-item">Background<small>Choose Monotone, Brown Leather, or Black Leather.</small></div>
+      <div class="feature-item">Amount Dial Step<small>Customize the five step definitions based on the smallest unit of the current currency.</small></div>
     </div>
   </section>
 
@@ -72,7 +83,11 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Amount range</span>
-        <span class="spec-val">0-999,900</span>
+        <span class="spec-val">0-999,900, with currency decimal digits based on locale</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Currency display</span>
+        <span class="spec-val">Follows the device locale. Decimal currencies are handled in their smallest currency unit.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Input methods</span>
@@ -98,7 +113,7 @@
           <tr><td>1.2.0</td><td>2017/4/19</td><td>Objective-C, Xcode 8, iOS 10</td></tr>
           <tr><td>2.0.0</td><td>2026/4/16</td><td>Swift 6 / SwiftUI, Xcode 26, iOS 26</td></tr>
           <tr><td>2.0.1</td><td>2026/4/17</td><td>Added tip and rewarded ad support for developer</td></tr>
-          <tr><td>2.1.0</td><td>2026/4/19</td><td>Added people lock, lock all controls, and dial settings (sensitivity tuning)</td></tr>
+          <tr><td>2.1.0</td><td>2026/4/22</td><td>Added people lock, lock all controls, dial settings, appearance mode, background settings, amount dial step settings, and locale-aware currency handling</td></tr>
         </tbody>
       </table>
     </div>

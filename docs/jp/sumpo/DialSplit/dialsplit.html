@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>割勘　取扱説明</title>
-  <meta name="description" content="割勘 DialSplit の取扱説明です。ダイアルで人数と金額を調整して割り勘計算する方法を案内します。">
+  <meta name="description" content="割勘 DialSplit の取扱説明です。ダイアルで人数と金額を調整し、ロック、外観モード、通貨ロケール対応を使って割り勘計算する方法を案内します。">
   <link rel="canonical" href="https://azukid.com/jp/sumpo/DialSplit/dialsplit.html">
   <link rel="alternate" href="https://azukid.com/jp/sumpo/DialSplit/dialsplit.html" hreflang="ja">
   <link rel="alternate" href="https://azukid.com/en/sumpo/DialSplit/dialsplit.html" hreflang="en">
@@ -12,7 +12,7 @@
   <meta property="og:type" content="article">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:title" content="割勘 取扱説明">
-  <meta property="og:description" content="ダイアル操作で人数と金額を調整して割り勘計算するアプリ DialSplit の使い方です。">
+  <meta property="og:description" content="ダイアル操作、ロック、外観モード、通貨ロケール対応を備えた割り勘計算アプリ DialSplit の使い方です。">
   <meta property="og:url" content="https://azukid.com/jp/sumpo/DialSplit/dialsplit.html">
   <link rel="stylesheet" href="../../../style.css">
 </head>
@@ -38,7 +38,7 @@
 
   <div class="lead">
     <p>割勘は、ダイアル操作で人数と金額を調整しながら配分を決めるアプリです。</p>
-    <p>合計金額と各パネルの人数を設定すると、A パネルの金額は自動で算出されます。</p>
+    <p>合計金額と各パネルの人数を設定すると、A パネルの金額は自動で算出されます。金額表示は端末の通貨ロケールに従います。</p>
   </div>
 
   <div class="pill-link-row">
@@ -55,11 +55,22 @@
       <div class="feature-item">合計金額を設定する<small>上段の合計パネルで金額ダイアルを回すか、金額表示をタップしてテンキー入力します。</small></div>
       <div class="feature-item">人数を設定する<small>A/B/C/D 各パネルの左ダイアルで人数を調整します。A は 1 人以上です。</small></div>
       <div class="feature-item">金額を設定する<small>B/C/D パネルの右ダイアルで金額を調整します。A 金額は自動計算です。</small></div>
-      <div class="feature-item">ステップを切り替える<small>金額ダイアルステップで 1 / 10 / 100 / 500 / 1000 円（英語UIではドル）を切り替えます。</small></div>
+      <div class="feature-item">ステップを切り替える<small>金額ダイアルステップで、金額ダイアルの増減幅を切り替えます。表示は通貨記号なしの数値です。</small></div>
       <div class="feature-item">表示スタイルを調整する<small>パネルスタイルでパネル明るさ、文字色、濃淡を調整できます。</small></div>
-      <div class="feature-item">人数をロックする<small>パネル上部のロックボタンで人数ダイアルを固定し、誤操作を防げます。</small></div>
-      <div class="feature-item">全操作をロックする<small>全操作ロックボタンですべてのダイアル操作を一括ロックします。</small></div>
+      <div class="feature-item">人数をロックする<small>合計パネルのロックボタンで人数ダイアルを固定し、誤操作を防げます。</small></div>
+      <div class="feature-item">全操作をロックする<small>A パネルのロックボタンですべてのダイアル操作を一括ロックします。</small></div>
       <div class="feature-item">ダイアル感度を調整する<small>設定のダイアル設定からダイアルの感度を自分好みに調整できます。</small></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>設定</h2>
+    <div class="feature-grid">
+      <div class="feature-item">区分<small>プリセット表示名称を選ぶか、A/B/C/D の表示名称を個別に変更できます。</small></div>
+      <div class="feature-item">ダイアル設定<small>ダイアルの操作感、明るさ、反応を設定シートで調整できます。</small></div>
+      <div class="feature-item">外観モード<small>自動 / ライト / ダークを選べます。自動はシステム設定に従います。</small></div>
+      <div class="feature-item">背景<small>モノトーン、ブラウンレザー、ブラックレザーから選べます。</small></div>
+      <div class="feature-item">金額ダイアルステップ<small>5つのステップ定義を、端末の通貨最小単位を基準に変更できます。</small></div>
     </div>
   </section>
 
@@ -72,7 +83,11 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">金額範囲</span>
-        <span class="spec-val">0〜999,900</span>
+        <span class="spec-val">0〜999,900（通貨ロケールの小数桁に対応）</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">通貨表示</span>
+        <span class="spec-val">端末のロケールに従います。小数通貨は最小通貨単位で扱います。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">入力方法</span>
@@ -98,7 +113,7 @@
           <tr><td>1.2.0</td><td>2017/4/19</td><td>Objective-C, Xcode 8, iOS 10</td></tr>
           <tr><td>2.0.0</td><td>2026/4/16</td><td>Swift 6 / SwiftUI, Xcode 26, iOS 26</td></tr>
           <tr><td>2.0.1</td><td>2026/4/17</td><td>開発者応援機能（投げ銭・広告）追加</td></tr>
-          <tr><td>2.1.0</td><td>2026/4/19</td><td>人数ロック・全操作ロック・ダイアル設定（感度調整）追加</td></tr>
+          <tr><td>2.1.0</td><td>2026/4/22</td><td>人数ロック・全操作ロック・ダイアル設定・外観モード・背景設定・金額ダイアルステップ設定・通貨ロケール対応を追加</td></tr>
         </tbody>
       </table>
     </div>
