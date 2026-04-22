@@ -60,7 +60,7 @@
       <div class="feature-item">目標値を設定できる<small>血圧・体重など各項目に目標を登録</small></div>
       <div class="feature-item">PDF・CSV・JSON で出力できる<small>PDF を印刷・CSV を Excel で読み込み・JSON はお好きにどうぞ</small></div>
       <div class="feature-item">表示項目と順序をカスタマイズできる<small>記録フォームとグラフそれぞれに設定可能</small></div>
-      <div class="feature-item">設定を iCloud で同期できる<small>複数端末で同じ設定を共有</small></div>
+      <div class="feature-item">表示と操作感を調整できる<small>外観モード、ダイアルの見た目と操作感を設定可能</small></div>
     </div>
   </section>
 
@@ -159,7 +159,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">カスタマイズ</span>
-        <span class="spec-val">グラフの表示・非表示と順序を変更可能</span>
+        <span class="spec-val">グラフの表示・非表示と順序を変更可能。平均血圧、体重移動平均などの補助グラフも個別に切り替え可能。</span>
       </div>
     </div>
 
@@ -215,14 +215,22 @@
     </div>
 
     <div class="spec-group">
-      <p class="spec-group-title">データベース・同期</p>
+      <p class="spec-group-title">表示・操作設定</p>
+      <div class="spec-row">
+        <span class="spec-key">外観モード</span>
+        <span class="spec-val">自動・ライト・ダークから選択可能</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">ダイアル設定</span>
+        <span class="spec-val">ダイアルのデザイン、回しやすさ、反応を調整可能</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">データベース・移行</p>
       <div class="spec-row">
         <span class="spec-key">データベース</span>
         <span class="spec-val">SwiftData (sqlite3)</span>
-      </div>
-      <div class="spec-row">
-        <span class="spec-key">設定同期</span>
-        <span class="spec-val">iCloud キーバリューストア</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">記録可能期間</span>
@@ -261,6 +269,7 @@
           <tr><td>1.2</td><td>2017/10/1</td><td>Xcode 9, iOS 11, Objective-C, Core Data, AZDial</td></tr>
           <tr><td>1.2.1</td><td>2017/10/23</td><td>Xcode 9, iOS 11, Objective-C, Core Data, AZDial</td></tr>
           <tr><td>2.0</td><td>2026/ /</td><td>Xcode 26, iOS 26, Swift 6, SwiftUI, SwiftData, HealthKit</td></tr>
+          <tr><td>2.1.0</td><td>2026/4/22</td><td>外観モード、ダイアル設定、グラフ表示設定、ローカライズ改善</td></tr>
         </tbody>
       </table>
     </div>
