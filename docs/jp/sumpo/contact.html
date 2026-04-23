@@ -92,6 +92,7 @@
       text-align: center;
     }
   </style>
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
 
@@ -100,6 +101,7 @@
     <a class="header-back" href="../index.html">ホーム</a>
     <span class="header-sep">/</span>
     <span class="site-logo">お問い合わせ</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
   </div>
 </header>
 
@@ -188,5 +190,6 @@
   });
 </script>
 
+<script src="../../theme.js"></script>
 </body>
 </html>
