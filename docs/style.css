@@ -243,8 +243,8 @@ body {
 }
 
 .app-card-btn-store {
-  background: #fff;
-  color: #000;
+  background: var(--surface-2);
+  color: var(--text);
   border: 1.5px solid var(--border);
   gap: 5px;
   border-radius: 20px;
@@ -265,7 +265,7 @@ body {
 }
 
 .app-card-btn-discord {
-  background: #fff;
+  background: var(--surface-2);
   color: #5865F2;
   border: 1.5px solid #5865F2;
   gap: 4px;
