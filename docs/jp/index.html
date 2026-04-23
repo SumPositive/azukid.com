@@ -16,6 +16,7 @@
   <meta property="og:description" content="iOS アプリ紹介、取扱説明、お問い合わせ、Swift Package の技術情報を掲載しています。">
   <meta property="og:url" content="https://azukid.com/jp/index.html">
   <link rel="stylesheet" href="../style.css">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
 
@@ -26,6 +27,7 @@
       <a class="lang-nav-pill current" href="#">日本語</a>
       <a class="lang-nav-pill" href="../en/index.html">English</a>
     </nav>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
   </div>
 </header>
 
@@ -181,5 +183,6 @@
   </section>
 
 </main>
+<script src="../theme.js"></script>
 </body>
 </html>

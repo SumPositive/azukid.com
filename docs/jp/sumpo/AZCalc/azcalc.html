@@ -15,6 +15,7 @@
   <meta property="og:description" content="十進演算と数式計算を提供する Swift Package、AZCalc の紹介ページです。">
   <meta property="og:url" content="https://azukid.com/jp/sumpo/AZCalc/azcalc.html">
   <link rel="stylesheet" href="../../../style.css">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
 
@@ -23,6 +24,7 @@
     <a class="header-back" href="../../index.html">ホーム</a>
     <span class="header-sep">/</span>
     <span class="site-logo">AZCalc</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
   </div>
 </header>
 
@@ -350,5 +352,6 @@ let rpn = AZFormula.toRPN(tokens)
   </section>
 
 </main>
+<script src="../../../theme.js"></script>
 </body>
 </html>
