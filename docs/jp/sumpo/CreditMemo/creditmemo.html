@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クレメモ　取扱説明</title>
+  <meta name="description" content="クレメモ CreditMemo の取扱説明です。後日口座から引き落とされる決済の記録、引き落とし状況、決済手段設定、JSON バックアップを案内します。">
+  <link rel="canonical" href="https://azukid.com/jp/sumpo/CreditMemo/creditmemo.html">
+  <link rel="alternate" href="https://azukid.com/jp/sumpo/CreditMemo/creditmemo.html" hreflang="ja">
+  <link rel="alternate" href="https://azukid.com/en/sumpo/CreditMemo/creditmemo.html" hreflang="en">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="クレメモ 取扱説明">
+  <meta property="og:description" content="後日口座から引き落とされる決済の記録、引き落とし状況、決済手段設定、JSON バックアップの使い方をまとめています。">
+  <meta property="og:url" content="https://azukid.com/jp/sumpo/CreditMemo/creditmemo.html">
+  <link rel="stylesheet" href="../../../style.css">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../index.html">ホーム</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">クレメモ</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <img class="page-header-icon" src="../../../images/icon-credit.png" alt="クレメモ">
+    <div class="page-header-text">
+      <h1>クレメモ　取扱説明</h1>
+      <p class="page-tagline">後日引き落とし型の支払い管理メモ</p>
+    </div>
+  </div>
+
+  <div class="lead">
+    <p>クレメモは、あとで口座から引き落とされる決済を記録するアプリです。クレジットカード利用、後払い、クレジット連携の決済などをまとめて管理できます。</p>
+    <p>現金払いや、チャージ済み残高から即時に減る支払いは対象外です。入力した決済明細から請求と引き落とし状況を自動で集計します。</p>
+  </div>
+
+  <div class="pill-link-row">
+    <a class="pill-link" href="https://apps.apple.com/jp/app/id432458298">App Store</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/EULA.html">エンドユーザー使用許諾契約</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/PrivacyPolicy.html">プライバシーポリシー</a>
+    <a class="pill-link" href="../index.html">作者自己紹介: sumpo</a>
+  </div>
+
+  <section class="content-section">
+    <h2>できること</h2>
+    <div class="feature-grid">
+      <div class="feature-item">新しい決済をすばやく入力<small>金額を先に入れて保存し、細かい情報はあとから補えます。</small></div>
+      <div class="feature-item">履歴をあとから修正<small>保存後の明細を開いて、ラベル・タグ・決済手段などを更新できます。</small></div>
+      <div class="feature-item">引き落とし予定をまとめて確認<small>直近の引き落とし合計と、未払・済みの状態を一覧できます。</small></div>
+      <div class="feature-item">口座別に集計<small>同じ引き落とし日でも、口座ごとに分けて把握できます。</small></div>
+      <div class="feature-item">決済手段ごとに支払日を管理<small>締日/支払日型と N日後型に対応します。</small></div>
+      <div class="feature-item">タグを複数付与<small>達人モードではタグ別の整理や再編集ができます。</small></div>
+      <div class="feature-item">JSON でエクスポート/インポート<small>バックアップや他端末への移行に使えます。</small></div>
+      <div class="feature-item">表示や保存後動作を調整<small>文字サイズ、起動時画面、保存後の戻り先などを設定できます。</small></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>画面構成</h2>
+    <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">新しい決済</span>
+        <span class="spec-val">新規の決済明細を入力します。起動時にこの画面を開く設定もできます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">履歴</span>
+        <span class="spec-val">保存済みの明細を一覧します。すべて、未選択あり、決済手段別で絞り込めます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">引き落とし状況</span>
+        <span class="spec-val">引き落とし前と引き落とし済みをまとめて表示します。タップで未払/済みを切り替えられます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">決済手段</span>
+        <span class="spec-val">カード名や後払い手段、締日/支払日、引き落とし口座を登録します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">引き落とし口座</span>
+        <span class="spec-val">引き落とし先の口座名を管理します。決済手段ごとに関連付けできます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">タグ</span>
+        <span class="spec-val">用途や分類のためのタグです。達人モードで利用できます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">設定</span>
+        <span class="spec-val">表示、保存後動作、バックアップ、サポート情報をまとめています。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>新しい決済を入力する</h2>
+    <div class="callout">
+      まずは <strong>金額を入れて保存</strong> してください。決済手段、ラベル、タグはあとから補完できます。初心者モードではこの流れに沿った案内を表示します。
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">基本入力</p>
+      <div class="spec-row">
+        <span class="spec-key">金額</span>
+        <span class="spec-val">専用テンキーで入力します。保存に必須です。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">利用日</span>
+        <span class="spec-val">カレンダーから選択します。引き落とし予定日は、決済手段の設定に基づいて自動計算されます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">決済手段</span>
+        <span class="spec-val">カードや後払い手段を選びます。未選択のまま保存し、あとで履歴から補うこともできます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">引き落とし口座</span>
+        <span class="spec-val">選んだ決済手段に口座が未設定のときだけ、この画面で口座を選べます。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">補足入力</p>
+      <div class="spec-row">
+        <span class="spec-key">決済ラベル</span>
+        <span class="spec-val">店名や用途など、一覧で見分けやすい短い名前を入れます。過去入力から候補も表示されます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">タグ</span>
+        <span class="spec-val">達人モードで複数選択できます。あとで変更や追加もできます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">繰り返し</span>
+        <span class="spec-val">達人モードの一括払いで使えます。対象の決済を引き落とし済みにしたとき、翌月など指定した間隔の新しい決済を自動追加します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">メモ</span>
+        <span class="spec-val">自由記入欄です。あとから見返したい補足情報を残せます。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">似た決済の流用</p>
+      <div class="spec-row">
+        <span class="spec-key">類似候補</span>
+        <span class="spec-val">新規入力では、金額を入れると過去 18 か月の類似決済候補が表示されます。タップするとラベル、決済手段、タグなどをまとめて流用できます。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>履歴を見直す</h2>
+    <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">並び順</span>
+        <span class="spec-val">通常は直近入力順です。利用日順ではありません。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">フィルター</span>
+        <span class="spec-val">すべて、未選択あり、決済手段別で絞り込めます。未選択ありでは、決済手段未設定・ラベル未設定・タグ未設定の明細を優先表示します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">編集</span>
+        <span class="spec-val">一覧の明細を開くと、内容の修正や削除ができます。すでに引き落とし済みの明細は、金額・利用日・決済手段など一部の中核項目が固定されます。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>引き落とし状況</h2>
+    <div class="callout">
+      引き落とし状況では、未払の予定と引き落とし済みを 1 つの流れで確認できます。引き落としを確認したら、その行をタップして <strong>済み</strong> に切り替えてください。必要なら未払へ戻すこともできます。
+    </div>
+
+    <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">未払の区分</span>
+        <span class="spec-val">当日以降の予定と、引き落とし日を過ぎた未払を分けて表示します。過去未払があるときは切り替えセグメントが表示されます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">直近合計</span>
+        <span class="spec-val">トップ画面には、設定した期間ぶんの直近引き落とし合計を表示します。期間は 1〜20 日または 1 か月で変更できます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">口座別集計</span>
+        <span class="spec-val">同じ日付でも口座が異なる請求は別の引き落としとして集計します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">明細表示</span>
+        <span class="spec-val">引き落とし行を開くと、その引き落としに含まれるカード別請求や元の決済明細を確認できます。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>決済手段・口座・タグ</h2>
+    <div class="spec-group">
+      <p class="spec-group-title">決済手段</p>
+      <div class="spec-row">
+        <span class="spec-key">用途</span>
+        <span class="spec-val">後日口座から引き落とされる決済手段だけを登録します。PayPay ならクレジット連携利用や残高チャージが対象で、チャージ済み残高の支払いは対象外です。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">請求方式</span>
+        <span class="spec-val">締日/支払日型と N日後型を選べます。締日が月末の場合は月末指定もできます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">口座関連付け</span>
+        <span class="spec-val">決済手段ごとに引き落とし口座を 1 つ設定します。変更すると、その決済手段に属する過去の請求や引き落としの所属も再計算されます。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">口座・タグ</p>
+      <div class="spec-row">
+        <span class="spec-key">口座</span>
+        <span class="spec-val">引き落とし先の口座名を管理します。プリセットから名前を引用することもできます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">タグ</span>
+        <span class="spec-val">タグ編集画面では、そのタグが付いた決済明細を一覧で見返せます。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>バックアップと設定</h2>
+    <div class="spec-group">
+      <p class="spec-group-title">JSON バックアップ</p>
+      <div class="spec-row">
+        <span class="spec-key">エクスポート</span>
+        <span class="spec-val">全データを JSON ファイルとして書き出せます。保存向けのコンパクト形式と、人が読みやすいプリティ形式を選べます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">インポート</span>
+        <span class="spec-val">書き出した JSON を読み込めます。同じデータを再読込しても、置換ではなく重複しない形で更新します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">古い履歴の整理</span>
+        <span class="spec-val">データ量が増えすぎた場合は、設定から古い決済を整理できます。運用上は 3 年程度を目安に保つ想定です。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">表示と操作</p>
+      <div class="spec-row">
+        <span class="spec-key">初心者/達人</span>
+        <span class="spec-val">初心者は説明を多めに表示し、達人ではタグや繰り返しなどの詳細項目を有効にします。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">文字サイズ</span>
+        <span class="spec-val">自動にすると iOS の文字サイズ設定に追従します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">起動時の動作</span>
+        <span class="spec-val">アプリ復帰時に「新しい決済」を自動で開く設定ができます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">保存後の動作</span>
+        <span class="spec-val">前画面に戻る、連続入力する、同じ日付と決済手段を保って連続入力する、履歴を表示する、から選べます。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>基本仕様</h2>
+    <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">対象</span>
+        <span class="spec-val">後日口座から引き落とされる決済</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">対応 OS</span>
+        <span class="spec-val">iOS 18 以降</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">金額上限</span>
+        <span class="spec-val">99,999,999</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">利用日範囲</span>
+        <span class="spec-val">2000/1/1 〜 2100/12/31</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+<script src="../../../theme.js"></script>
+</body>
+</html>

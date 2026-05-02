@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CreditMemo User Guide</title>
+  <meta name="description" content="User guide for CreditMemo. Learn how to track later-debited payments, review debit status, manage payment methods, and back up data with JSON export/import.">
+  <link rel="canonical" href="https://azukid.com/en/sumpo/CreditMemo/creditmemo.html">
+  <link rel="alternate" href="https://azukid.com/jp/sumpo/CreditMemo/creditmemo.html" hreflang="ja">
+  <link rel="alternate" href="https://azukid.com/en/sumpo/CreditMemo/creditmemo.html" hreflang="en">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="CreditMemo User Guide">
+  <meta property="og:description" content="How to track later-debited payments, review debit status, manage payment methods, and back up data in CreditMemo.">
+  <meta property="og:url" content="https://azukid.com/en/sumpo/CreditMemo/creditmemo.html">
+  <link rel="stylesheet" href="../../../style.css">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../index.html">Home</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">CreditMemo</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <img class="page-header-icon" src="../../../images/icon-credit.png" alt="CreditMemo">
+    <div class="page-header-text">
+      <h1>CreditMemo User Guide</h1>
+      <p class="page-tagline">Payment memo for later account debits</p>
+    </div>
+  </div>
+
+  <div class="lead">
+    <p>CreditMemo helps you track payments that will be debited from your bank account later. It works well for credit cards, buy-now-pay-later services, and other deferred payment methods.</p>
+    <p>Immediate cash spending or purchases paid from already topped-up balances are outside the scope. From each saved payment record, the app automatically builds invoices and debit-status totals.</p>
+  </div>
+
+  <div class="pill-link-row">
+    <a class="pill-link" href="https://apps.apple.com/us/app/id432458298">App Store</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/EULA_en.html">End User License Agreement</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/PrivacyPolicy_en.html">Privacy Policy</a>
+    <a class="pill-link" href="../index.html">Author Bio: sumpo</a>
+  </div>
+
+  <section class="content-section">
+    <h2>What It Does</h2>
+    <div class="feature-grid">
+      <div class="feature-item">Quick payment entry<small>Enter the amount first, save, and fill in the rest later if needed.</small></div>
+      <div class="feature-item">Edit saved history<small>Open any saved record and update its label, tags, or payment method.</small></div>
+      <div class="feature-item">Review upcoming debits<small>See your recent debit total and switch payments between unpaid and paid.</small></div>
+      <div class="feature-item">Group by account<small>Debits on the same date are separated by bank account.</small></div>
+      <div class="feature-item">Manage payment schedules<small>Supports both closing-day/payment-day rules and N-days-later rules.</small></div>
+      <div class="feature-item">Use multiple tags<small>Expert mode adds multi-tag classification and tag-based review.</small></div>
+      <div class="feature-item">Back up with JSON<small>Export or import your data for backup and migration.</small></div>
+      <div class="feature-item">Tune display behavior<small>Adjust text size, resume behavior, and what happens after saving.</small></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Main Screens</h2>
+    <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">New Payment</span>
+        <span class="spec-val">Create a new payment record. You can also make this screen open automatically when the app resumes.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">History</span>
+        <span class="spec-val">Browse saved records. Filter by all, incomplete, or payment method.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Debit Status</span>
+        <span class="spec-val">Review unpaid and paid debit groups. Tap a row to move it between unpaid and paid.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Pay Methods</span>
+        <span class="spec-val">Register card names or deferred payment methods, their schedule, and linked account.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Accounts</span>
+        <span class="spec-val">Manage destination accounts used for debit grouping.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Tags</span>
+        <span class="spec-val">Optional labels for classifying records in Expert mode.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Settings</span>
+        <span class="spec-val">Display options, post-save behavior, backup, and support links.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Entering a New Payment</h2>
+    <div class="callout">
+      Start by entering the <strong>amount</strong> and saving the record. You can fill in the payment method, label, and tags later. Beginner mode shows this workflow directly in the form.
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Basic Fields</p>
+      <div class="spec-row">
+        <span class="spec-key">Amount</span>
+        <span class="spec-val">Entered through the numeric keypad. This is required before saving.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Use Date</span>
+        <span class="spec-val">Selected from the calendar. The later debit date is calculated automatically from the chosen payment method.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Payment Method</span>
+        <span class="spec-val">Choose a card or other deferred method. You may also save it as unselected and fix it later from History.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Account</span>
+        <span class="spec-val">Shown only when the selected payment method has no linked account yet.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Optional Fields</p>
+      <div class="spec-row">
+        <span class="spec-key">Label</span>
+        <span class="spec-val">A short clue such as a shop or purpose. Past labels are suggested as you type.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Tags</span>
+        <span class="spec-val">Available in Expert mode. You can assign more than one tag and change them later.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Repeat</span>
+        <span class="spec-val">Available for lump-sum records in Expert mode. When the record is marked paid, the app can create the next monthly or periodic copy automatically.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Notes</span>
+        <span class="spec-val">Free-form notes for anything you want to keep with the record.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Similar Records</p>
+      <div class="spec-row">
+        <span class="spec-key">Reuse past input</span>
+        <span class="spec-val">After entering an amount, the app shows similar records from the last 18 months. Tapping one copies label, method, tags, and related values into the new form.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Reviewing History</h2>
+    <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">Order</span>
+        <span class="spec-val">The default list is sorted by recent input order, not by use date.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Incomplete Filter</span>
+        <span class="spec-val">The Incomplete filter prioritizes records missing a payment method, then a label, then tags.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Editing</span>
+        <span class="spec-val">Open any row to edit or delete it. Once a record is already fully paid, some core fields such as amount, date, and payment method are locked.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Debit Status</h2>
+    <div class="callout">
+      Debit Status combines upcoming debits and already-paid ones in one flow. When you confirm a bank debit, tap the row and move it to <strong>Paid</strong>. You can move it back to unpaid whenever needed.
+    </div>
+
+    <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">Unpaid Sections</span>
+        <span class="spec-val">Unpaid items are separated into upcoming and overdue groups. If overdue items exist, a segmented switch appears.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Recent Debit Total</span>
+        <span class="spec-val">The top menu shows the total for your configured debit range. You can choose 1-20 days or 1 month.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Grouped by Account</span>
+        <span class="spec-val">Even on the same debit date, items linked to different accounts are handled as separate debit groups.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Details</span>
+        <span class="spec-val">Open a debit row to inspect the card-level invoices and original payment records included in that debit.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Pay Methods, Accounts, and Tags</h2>
+    <div class="spec-group">
+      <p class="spec-group-title">Pay Methods</p>
+      <div class="spec-row">
+        <span class="spec-key">Scope</span>
+        <span class="spec-val">Register only payment methods that will debit your bank account later. For PayPay, credit-linked use and wallet top-up count, but spending already topped-up balance does not.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Schedule Types</span>
+        <span class="spec-val">Choose either Closing Day / Payment Day or N Days Later. Month-end can be used as the closing or payment day.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Linked Account</span>
+        <span class="spec-val">Each pay method can link to one account. Changing that link rebuilds the related historical invoice and debit grouping.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Accounts and Tags</p>
+      <div class="spec-row">
+        <span class="spec-key">Accounts</span>
+        <span class="spec-val">Store the names of debit destination accounts. You can also start from built-in presets.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Tags</span>
+        <span class="spec-val">Each tag can show the list of related payment records for review and cleanup.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Backup and Settings</h2>
+    <div class="spec-group">
+      <p class="spec-group-title">JSON Backup</p>
+      <div class="spec-row">
+        <span class="spec-key">Export</span>
+        <span class="spec-val">Export all data as a JSON file. Choose Compact for storage or Pretty for easier inspection.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Import</span>
+        <span class="spec-val">Import an exported JSON file. Re-importing the same data updates records without creating duplicates.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Pruning Old Data</span>
+        <span class="spec-val">If the database grows too large, you can prune older records from Settings. In practice, around three years of history is the intended working range.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Display and Workflow</p>
+      <div class="spec-row">
+        <span class="spec-key">Beginner / Expert</span>
+        <span class="spec-val">Beginner shows more explanations. Expert enables more detailed items such as tags and repeat settings.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Text Size</span>
+        <span class="spec-val">Auto follows your iOS text-size preference.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Resume Behavior</span>
+        <span class="spec-val">You can make the app open New Payment automatically when returning to the foreground.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">After Save</span>
+        <span class="spec-val">Choose whether saving goes back, clears for another entry, keeps the same date and method, or shows History.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Basic Specs</h2>
+    <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">Target Payments</span>
+        <span class="spec-val">Payments debited from your account later</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Platform</span>
+        <span class="spec-val">iOS 18 or later</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Maximum Amount</span>
+        <span class="spec-val">99,999,999</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Date Range</span>
+        <span class="spec-val">2000-01-01 to 2100-12-31</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+<script src="../../../theme.js"></script>
+</body>
+</html>
