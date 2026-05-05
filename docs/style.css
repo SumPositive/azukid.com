@@ -209,6 +209,25 @@ body {
   color: var(--text-2);
 }
 
+.app-card-note {
+  margin: 8px 0 0;
+  font-size: .75rem;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+.app-card-note a {
+  position: relative;
+  z-index: 2;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.app-card-note a:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
 .app-card-footer {
   display: flex;
   flex-wrap: wrap;

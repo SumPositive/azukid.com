@@ -12,7 +12,7 @@
 
 ## 2018 Update
    - [体調メモ／Condition](https://apps.apple.com/jp/app/%E4%BD%93%E8%AA%BF%E3%83%A1%E3%83%A2/id472914799)
-   - [クレメモ／PayNote](https://apps.apple.com/jp/app/%E3%82%AF%E3%83%AC%E3%83%A1%E3%83%A2/id432458298)
+   - [クレメモ／CreditMemo](https://apps.apple.com/jp/app/%E3%82%AF%E3%83%AC%E3%83%A1%E3%83%A2/id432458298)
 
 
 <br><br>
