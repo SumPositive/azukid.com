@@ -808,6 +808,62 @@ p:last-child { margin-bottom: 0; }
   line-height: 1.45;
 }
 
+/* ── 基本操作の流れ ── */
+.step-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.step-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 16px 14px;
+  box-shadow: var(--shadow);
+}
+
+.step-card:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  right: -13px;
+  transform: translateY(-50%);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.step-card strong {
+  display: block;
+  color: var(--text);
+  font-size: .9375rem;
+  line-height: 1.45;
+  margin-bottom: 4px;
+}
+
+.step-card p {
+  color: var(--text-2);
+  font-size: .8125rem;
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
 /* ── Spec groups ── */
 .spec-group {
   background: var(--surface);
@@ -1029,6 +1085,16 @@ p:last-child { margin-bottom: 0; }
   th, td { padding: 8px 10px; }
 
   .feature-grid { grid-template-columns: 1fr; }
+
+  .step-flow { grid-template-columns: 1fr; gap: 22px; }
+
+  .step-card:not(:last-child)::after {
+    top: auto;
+    right: 50%;
+    bottom: -22px;
+    transform: translateX(50%);
+    content: "↓";
+  }
 
   .spec-row { flex-direction: column; gap: 4px; }
 
