@@ -21,11 +21,16 @@
           "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --mono: "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
   --max: 800px;
+  /* アプリ内Web表示の文字サイズ指定を受ける倍率 */
+  --app-font-scale: 1;
 }
+
+:root[data-font-scale="large"] { --app-font-scale: 1.12; }
+:root[data-font-scale="xLarge"] { --app-font-scale: 1.25; }
 
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 16px; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+html { font-size: calc(16px * var(--app-font-scale)); -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 
 body {
   font-family: var(--font);
@@ -1065,7 +1070,7 @@ p:last-child { margin-bottom: 0; }
 
 /* ── Responsive ── */
 @media (max-width: 600px) {
-  html { font-size: 15px; }
+  html { font-size: calc(15px * var(--app-font-scale)); }
 
   .page { padding: 24px 16px 64px; }
 

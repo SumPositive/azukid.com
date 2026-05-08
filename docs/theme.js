@@ -1,3 +1,16 @@
+function applyFontScaleFromQuery() {
+  try {
+    // アプリから渡された文字サイズ指定をCSS属性へ反映する。
+    var params = new URLSearchParams(window.location.search);
+    var scale = params.get('fontScale');
+    if (scale === 'standard' || scale === 'large' || scale === 'xLarge') {
+      document.documentElement.setAttribute('data-font-scale', scale);
+    }
+  } catch (e) {}
+}
+
+applyFontScaleFromQuery();
+
 function toggleTheme() {
   var h = document.documentElement;
   var cur = h.getAttribute('data-theme');
