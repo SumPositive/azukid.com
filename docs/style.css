@@ -111,6 +111,55 @@ body {
   user-select: none;
 }
 
+.font-scale-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-2);
+  font-size: .75rem;
+  white-space: nowrap;
+}
+
+.site-header-inner:not(:has(.lang-nav)) .font-scale-control {
+  margin-left: auto;
+}
+
+.site-header-inner:not(:has(.lang-nav)) .font-scale-control + .theme-toggle {
+  margin-left: 0;
+}
+
+.font-scale-select {
+  appearance: none;
+  -webkit-appearance: none;
+  min-width: 4.5em;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: .75rem;
+  line-height: 1.2;
+  padding: 4px 22px 4px 10px;
+  cursor: pointer;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--text-2) 50%),
+    linear-gradient(135deg, var(--text-2) 50%, transparent 50%);
+  background-position:
+    calc(100% - 12px) 50%,
+    calc(100% - 8px) 50%;
+  background-size: 4px 4px, 4px 4px;
+  background-repeat: no-repeat;
+}
+
+.font-scale-select:hover {
+  border-color: var(--accent);
+}
+
+.font-scale-select:focus {
+  outline: 2px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  outline-offset: 2px;
+}
+
 /* ── Page wrapper ── */
 .page {
   max-width: var(--max);
@@ -1084,6 +1133,10 @@ p:last-child { margin-bottom: 0; }
   .doc-row { padding: 12px 16px; gap: 8px; }
 
   .link-item { padding: 10px 16px; }
+
+  .font-scale-label { display: none; }
+
+  .font-scale-select { min-width: 4.2em; }
 
   pre { font-size: .75rem; }
 
