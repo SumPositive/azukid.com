@@ -674,17 +674,6 @@ tr:last-child td { border-bottom: none; }
   text-decoration: none;
 }
 
-.pill-link-discord {
-  background: #fff;
-  color: #5865F2;
-  border-color: #5865F2;
-  box-shadow: 0 1px 3px rgba(0,0,0,.08);
-}
-
-.pill-link-discord:hover {
-  background: #5865F2;
-  color: #fff;
-}
 
 /* ── Utility ── */
 a { color: var(--accent); text-decoration: none; }
