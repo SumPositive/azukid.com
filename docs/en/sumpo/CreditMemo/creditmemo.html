@@ -39,7 +39,7 @@
   </div>
 
   <div class="lead">
-    <p>CreditMemo helps you track payments that will be debited from your bank account later. It covers credit-card spending, credit-linked e-money top-ups, N-days-later debits, fixed-date debits, and similar deferred payment methods.</p>
+    <p>CreditMemo helps you track payments that will be debited from your bank account later. It covers credit-card spending, credit-linked wallet top-ups, N-days-later debits, fixed-date debits, and similar deferred payment methods. Immediate debit-card payments, cash top-ups, and other payments that settle right away are outside the scope.</p>
   </div>
 
   <section class="content-section">
@@ -81,7 +81,7 @@
     <h2>What It Does</h2>
     <div class="feature-grid">
       <div class="feature-item">Quick payment entry<small>Enter the amount first, save, and fill in the rest later if needed.</small></div>
-      <div class="feature-item">Edit saved history<small>Open any saved record and update its label, tags, or payment method.</small></div>
+      <div class="feature-item">Edit saved history<small>Open any saved record and update its label, tags, payment method, or account.</small></div>
       <div class="feature-item">Review upcoming debits<small>See your recent debit total and switch payments between unpaid and paid.</small></div>
       <div class="feature-item">Group by account<small>Debits on the same date are separated by bank account.</small></div>
       <div class="feature-item">Manage payment schedules<small>Supports both closing-day/payment-day rules and N-days-later rules.</small></div>
@@ -100,23 +100,23 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">History</span>
-        <span class="spec-val">Browse saved records. Filter by all, incomplete, or payment method.</span>
+        <span class="spec-val">Browse saved records. Filter by all, has blanks, or payment method.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Debit Status</span>
-        <span class="spec-val">Review unpaid and paid debit groups. Tap a row to move it between unpaid and paid.</span>
+        <span class="spec-val">Review unpaid and paid debit groups. Use the arrow icon to move an account group between unpaid and paid, and tap a row to open details.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Pay Methods</span>
-        <span class="spec-val">Register card names or deferred payment methods, their schedule, and linked account.</span>
+        <span class="spec-val">Register card names or deferred payment methods, their schedule, and linked account. In Beginner mode this screen is hidden from the top menu and appears when needed from the entry flow.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Accounts</span>
-        <span class="spec-val">Manage destination accounts used for debit grouping.</span>
+        <span class="spec-val">Manage destination accounts used for debit grouping. In Beginner mode this screen is hidden from the top menu.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Tags</span>
-        <span class="spec-val">Optional labels for classifying records in Expert mode.</span>
+        <span class="spec-val">Optional labels for classifying records. The top-menu entry appears in Expert mode.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Settings</span>
@@ -189,7 +189,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Incomplete Filter</span>
-        <span class="spec-val">The Incomplete filter prioritizes records missing a payment method, then a label, then tags.</span>
+        <span class="spec-val">The Has Blanks filter prioritizes records missing a payment method, then a label, then tags.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Editing</span>
@@ -201,7 +201,7 @@
   <section class="content-section">
     <h2>Debit Status</h2>
     <div class="callout">
-      Debit Status combines upcoming debits and already-paid ones in one flow. When you confirm a bank debit, tap the row and move it to <strong>Paid</strong>. You can move it back to unpaid whenever needed.
+      Debit Status combines upcoming debits and already-paid ones in one flow. When you confirm a bank debit, use the arrow icon to move that account group to <strong>Paid</strong>. You can move it back to unpaid whenever needed.
     </div>
 
     <div class="spec-group">
@@ -219,7 +219,11 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Details</span>
-        <span class="spec-val">Open a debit row to inspect the card-level invoices and original payment records included in that debit.</span>
+        <span class="spec-val">Open a debit row to inspect the payment-method sections and original payment records included in that debit.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Item-level adjustment</span>
+        <span class="spec-val">In Debit Details, you can move a single item between unpaid and paid. Use this when only one near-cutoff item is debited next time.</span>
       </div>
     </div>
   </section>
@@ -238,7 +242,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Linked Account</span>
-        <span class="spec-val">Each pay method can link to one account. Changing that link rebuilds the related historical invoice and debit grouping.</span>
+        <span class="spec-val">Each pay method can link to one account. Changing that link rebuilds the related historical invoice and debit grouping so old account groups do not remain behind.</span>
       </div>
     </div>
 
@@ -265,7 +269,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Import</span>
-        <span class="spec-val">Import an exported JSON file. Re-importing the same data updates records without creating duplicates.</span>
+        <span class="spec-val">Import an exported JSON file. Re-importing the same data updates records without creating duplicates. Invoice and debit paid states are restored as well.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Pruning Old Data</span>
@@ -277,7 +281,7 @@
       <p class="spec-group-title">Display and Workflow</p>
       <div class="spec-row">
         <span class="spec-key">Beginner / Expert</span>
-        <span class="spec-val">Beginner shows more explanations. Expert enables more detailed items such as tags and repeat settings.</span>
+        <span class="spec-val">Beginner shows more explanations and keeps the top menu focused on basic actions. Expert enables detailed items such as payment methods, accounts, tags, and repeat settings.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Text Size</span>
@@ -290,6 +294,10 @@
       <div class="spec-row">
         <span class="spec-key">After Save</span>
         <span class="spec-val">Choose whether saving goes back, clears for another entry, keeps the same date and method, or shows History.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Guide and Support</span>
+        <span class="spec-val">Open this user guide inside the app from Settings. The support section also offers tips and rewarded video ads.</span>
       </div>
     </div>
   </section>
@@ -335,7 +343,7 @@
           <tr><td>1.1.12</td><td>2012/10/26</td><td>Xcode 4, iOS 6, Objective-C, Core Data</td></tr>
           <tr><td>1.2.0</td><td>2017/9/12</td><td>Xcode 9, iOS 10, Objective-C, Core Data</td></tr>
           <tr><td>1.2.4</td><td>2018/9/4</td><td>Xcode 9, iOS 11, Objective-C, Core Data</td></tr>
-          <tr><td>2.0.0</td><td>2026/5/x</td><td>Xcode 26, iOS 26, Swift 6, SwiftData</td></tr>
+          <tr><td>2.0.0</td><td>2026/5/x</td><td>Xcode 26, iOS 18+, Swift 6, SwiftData</td></tr>
         </tbody>
       </table>
     </div>
