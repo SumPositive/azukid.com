@@ -90,6 +90,7 @@
       <div class="feature-item">目標値を設定できる<small>血圧・体重など各項目に目標を登録</small></div>
       <div class="feature-item">PDF・CSV・JSON で出力できる<small>PDF を印刷・CSV を Excel で読み込み・JSON はお好きにどうぞ</small></div>
       <div class="feature-item">表示項目と順序をカスタマイズできる<small>記録フォームとグラフそれぞれに設定可能</small></div>
+      <div class="feature-item">文字サイズに対応している<small>iOS の文字サイズ設定に連動してアプリ全体の表示が変わる</small></div>
       <div class="feature-item">表示と操作感を調整できる<small>外観モード、ダイアルの見た目と操作感を設定可能</small></div>
     </div>
   </section>
@@ -188,6 +189,10 @@
         </span>
       </div>
       <div class="spec-row">
+        <span class="spec-key">目標ライン</span>
+        <span class="spec-val">目標値を設定するとグラフに目標ラインと「目標」ラベルを表示</span>
+      </div>
+      <div class="spec-row">
         <span class="spec-key">カスタマイズ</span>
         <span class="spec-val">グラフの表示・非表示と順序を変更可能。平均血圧、体重移動平均などの補助グラフも個別に切り替え可能。</span>
       </div>
@@ -203,10 +208,12 @@
         <span class="spec-key">分析項目</span>
         <span class="spec-val">
           <ul class="option-list">
+            <li>血圧サマリー</li>
             <li>血圧分布</li>
             <li>血圧 JSH ガイドライン準拠比率</li>
             <li>血圧と測定タイミングの相関</li>
             <li>24時間血圧分布</li>
+            <li>体重×血圧 相関散布図（ピアソン相関係数付き）</li>
             <li>体重サマリー</li>
             <li>体温サマリー</li>
             <li>24時間体温分布</li>
@@ -249,6 +256,10 @@
       <div class="spec-row">
         <span class="spec-key">外観モード</span>
         <span class="spec-val">自動・ライト・ダークから選択可能</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">文字サイズ</span>
+        <span class="spec-val">iOS の文字サイズ設定に連動（Dynamic Type 対応）</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">ダイアル設定</span>
@@ -300,6 +311,7 @@
           <tr><td>1.2.1</td><td>2017/10/23</td><td>Xcode 9, iOS 11, Objective-C, Core Data, AZDial</td></tr>
           <tr><td>2.0.0</td><td>2026/4/1</td><td>Xcode 26, iOS 26, Swift 6, SwiftUI, SwiftData, HealthKit</td></tr>
           <tr><td>2.1.0</td><td>2026/4/22</td><td>外観モード、ダイアル設定、グラフ表示設定、ローカライズ改善</td></tr>
+          <tr><td>2.2.0</td><td>2026/5/10</td><td>体重×血圧相関散布図、グラフ目標ラインラベル、文字サイズ対応、初心者ヘルプバナー</td></tr>
         </tbody>
       </table>
     </div>

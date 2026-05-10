@@ -90,6 +90,7 @@
       <div class="feature-item">Set personal goals<small>Target values for BP, weight, and other metrics</small></div>
       <div class="feature-item">Export to PDF, CSV, or JSON<small>Print as PDF · open CSV in Excel · do what you like with JSON</small></div>
       <div class="feature-item">Customize displayed fields and order<small>Configure separately for the record form and graphs</small></div>
+      <div class="feature-item">Dynamic Type support<small>App-wide text size follows the iOS system text size setting</small></div>
       <div class="feature-item">Tune display and controls<small>Set appearance mode and adjust the dial feel</small></div>
     </div>
   </section>
@@ -188,6 +189,10 @@
         </span>
       </div>
       <div class="spec-row">
+        <span class="spec-key">Goal line</span>
+        <span class="spec-val">When a goal value is set, a labelled goal line is drawn on the graph</span>
+      </div>
+      <div class="spec-row">
         <span class="spec-key">Customization</span>
         <span class="spec-val">Toggle graph visibility and reorder as preferred. Auxiliary graphs such as mean BP and weight moving average can be switched separately.</span>
       </div>
@@ -203,10 +208,12 @@
         <span class="spec-key">Sections</span>
         <span class="spec-val">
           <ul class="option-list">
+            <li>Blood pressure summary</li>
             <li>Blood pressure distribution</li>
             <li>BP / JSH guideline compliance ratio</li>
             <li>BP / measurement timing correlation</li>
             <li>24-hour blood pressure distribution</li>
+            <li>Weight × blood pressure scatter plot (with Pearson correlation coefficient)</li>
             <li>Weight summary statistics</li>
             <li>Temperature summary</li>
             <li>24-hour temperature distribution</li>
@@ -249,6 +256,10 @@
       <div class="spec-row">
         <span class="spec-key">Appearance mode</span>
         <span class="spec-val">Choose Auto, Light, or Dark</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Text size</span>
+        <span class="spec-val">Follows the iOS system text size setting (Dynamic Type)</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Dial settings</span>
@@ -300,6 +311,7 @@
           <tr><td>1.2.1</td><td>2017/10/23</td><td>Xcode 9, iOS 11, Objective-C, Core Data, AZDial</td></tr>
           <tr><td>2.0.0</td><td>2026/4/1</td><td>Xcode 26, iOS 26, Swift 6, SwiftUI, SwiftData, HealthKit</td></tr>
           <tr><td>2.1.0</td><td>2026/4/22</td><td>Appearance mode, dial settings, graph display settings, localization updates</td></tr>
+          <tr><td>2.2.0</td><td>2026/5/10</td><td>Weight × BP scatter plot, goal line labels on graphs, Dynamic Type support, beginner help banners</td></tr>
         </tbody>
       </table>
     </div>
