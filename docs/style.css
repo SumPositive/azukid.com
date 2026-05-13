@@ -504,6 +504,15 @@ a.link-item:hover { background: var(--surface-2); text-decoration: none; }
   flex-shrink: 0;
 }
 
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,.14);
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
 .page-header-text h1 {
   font-size: clamp(1.5rem, 4.5vw, 2rem);
   font-weight: 700;
