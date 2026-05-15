@@ -513,6 +513,14 @@ a.link-item:hover { background: var(--surface-2); text-decoration: none; }
   object-fit: cover;
 }
 
+.page-header-profile {
+  align-items: center;
+}
+
+.page-header-profile .page-header-text {
+  flex: 1;
+}
+
 .page-header-text h1 {
   font-size: clamp(1.5rem, 4.5vw, 2rem);
   font-weight: 700;
