@@ -274,7 +274,7 @@ body {
   white-space: nowrap;
 }
 .app-card-version-live { color: var(--accent); }
-.app-card-version-review { color: var(--text-3); }
+.app-card-version-review { color: var(--yellow); }
 
 .app-card-name {
   font-size: 1rem;
