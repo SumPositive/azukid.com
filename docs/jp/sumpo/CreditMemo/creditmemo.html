@@ -100,23 +100,23 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">履歴</span>
-        <span class="spec-val">保存済みの明細を一覧します。すべて、未入力あり、決済手段別で絞り込めます。</span>
+        <span class="spec-val">保存済みの明細を一覧します。対象期間、未入力あり、決済手段、口座、タグで絞り込み、日付や金額で並べ替えできます。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">引き落とし状況</span>
-        <span class="spec-val">引き落とし前と引き落とし済みをまとめて表示します。矢印アイコンで口座単位の未払/済みを切り替え、行タップで明細を開きます。</span>
+        <span class="spec-val">引き落とし前と引き落とし済みをまとめて表示します。日付、決済手段、口座の集計を切り替え、手段や口座で絞り込めます。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">決済手段</span>
-        <span class="spec-val">カード名や後払い手段、締日/支払日、引き落とし口座を登録します。初心者モードではトップ画面からは隠し、必要になった時に入力画面から選べます。</span>
+        <span class="spec-val">カード名や後払い手段、締日/支払日、引き落とし口座を登録します。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">引き落とし口座</span>
-        <span class="spec-val">引き落とし先の口座名を管理します。決済手段ごとに関連付けできます。初心者モードではトップ画面からは隠します。</span>
+        <span class="spec-val">引き落とし先の口座名を管理します。決済手段ごとに関連付けできます。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">タグ</span>
-        <span class="spec-val">用途や分類のためのタグです。達人モードでトップ画面に表示されます。</span>
+        <span class="spec-val">用途や分類のためのタグです。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">設定</span>
@@ -149,14 +149,14 @@
         <span class="spec-key">引き落とし口座</span>
         <span class="spec-val">選んだ決済手段に口座が未設定のときだけ、この画面で口座を選べます。</span>
       </div>
+      <div class="spec-row">
+        <span class="spec-key">ラベル</span>
+        <span class="spec-val">店名や用途など、一覧で見分けやすい短い名前を入れます。過去入力から候補も表示されます。</span>
+      </div>
     </div>
 
     <div class="spec-group">
       <p class="spec-group-title">補足入力</p>
-      <div class="spec-row">
-        <span class="spec-key">決済ラベル</span>
-        <span class="spec-val">店名や用途など、一覧で見分けやすい短い名前を入れます。過去入力から候補も表示されます。</span>
-      </div>
       <div class="spec-row">
         <span class="spec-key">タグ</span>
         <span class="spec-val">達人モードで複数選択できます。あとで変更や追加もできます。</span>
@@ -185,11 +185,11 @@
     <div class="spec-group">
       <div class="spec-row">
         <span class="spec-key">並び順</span>
-        <span class="spec-val">通常は直近入力順です。利用日順ではありません。</span>
+        <span class="spec-val">日付または金額で並べ替えできます。それぞれ昇順/降順を切り替えられます。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">フィルター</span>
-        <span class="spec-val">すべて、未入力あり、決済手段別で絞り込めます。未入力ありでは、決済手段未設定・ラベル未設定・タグ未設定の明細を優先表示します。</span>
+        <span class="spec-val">対象期間は 3ヶ月、1年、3年、全期間から選べます。さらに、すべて、未入力あり、決済手段、口座、タグ複数選択で絞り込めます。未入力ありは、決済手段未設定・決済ラベル未入力の明細です。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">編集</span>
@@ -215,7 +215,11 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">口座別集計</span>
-        <span class="spec-val">同じ日付でも口座が異なる請求は別の引き落としとして集計します。</span>
+        <span class="spec-val">同じ日付でも口座が異なる請求は別の引き落としとして集計します。集計は日付、決済手段、口座で切り替えられます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">絞り込み</span>
+        <span class="spec-val">すべて、決済手段、口座から選べます。手段や口座を指定すると、時系列で確認しやすいよう日付集計へ切り替わります。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">明細表示</span>
@@ -224,6 +228,10 @@
       <div class="spec-row">
         <span class="spec-key">明細ごとの調整</span>
         <span class="spec-val">引き落とし明細では、明細単位で未払/済みを切り替えられます。締切に間に合わず次回に引き落とされる明細だけを移す時に使います。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">ロックトグル</span>
+        <span class="spec-val">引き落とし明細では、明細ごとにロックできます。旧アプリの確認チェック機能を、チェックマークではなくロックマークとして実装したものです。通帳や明細書と照合済みであることを残すために使います。</span>
       </div>
     </div>
   </section>
@@ -243,6 +251,10 @@
       <div class="spec-row">
         <span class="spec-key">口座関連付け</span>
         <span class="spec-val">決済手段ごとに引き落とし口座を 1 つ設定します。変更すると、その決済手段に属する過去の請求や引き落としの所属も再計算され、古い口座側に残らないよう整理されます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">一覧から編集</span>
+        <span class="spec-val">決済手段一覧で行を選ぶと、その決済手段の編集画面を開きます。状況確認は引き落とし状況の集計・絞り込みで行います。</span>
       </div>
     </div>
 
@@ -281,11 +293,11 @@
       <p class="spec-group-title">表示と操作</p>
       <div class="spec-row">
         <span class="spec-key">初心者/達人</span>
-        <span class="spec-val">初心者は説明を多めに表示し、トップ画面も基本操作に絞ります。達人では決済手段、口座、タグ、繰り返しなどの詳細項目を有効にします。</span>
+        <span class="spec-val">初心者は説明を多めに表示します。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">文字サイズ</span>
-        <span class="spec-val">自動にすると iOS の文字サイズ設定に追従します。</span>
+        <span class="spec-val">自動にすると iOSの文字サイズ設定に追従します。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">起動時の動作</span>
@@ -344,6 +356,7 @@
           <tr><td>1.2.0</td><td>2017/9/12</td><td>Xcode 9, iOS 10, Objective-C, Core Data</td></tr>
           <tr><td>1.2.4</td><td>2018/9/4</td><td>Xcode 9, iOS 11, Objective-C, Core Data</td></tr>
           <tr><td>2.0.0</td><td>2026/5/13</td><td>Xcode 26, iOS 18+, Swift 6, SwiftData</td></tr>
+          <tr><td>2.1.0</td><td>2026/5/15</td><td>旧アプリの確認チェックをロックトグルとして復活、履歴の対象期間・複合フィルター・並び順、引き落とし状況の集計/絞り込み表示を改善</td></tr>
         </tbody>
       </table>
     </div>

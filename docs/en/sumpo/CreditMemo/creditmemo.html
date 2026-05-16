@@ -100,23 +100,23 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">History</span>
-        <span class="spec-val">Browse saved records. Filter by all, has blanks, or payment method.</span>
+        <span class="spec-val">Browse saved records. Limit the period, filter by blanks, method, account, or multiple tags, and sort by date or amount.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Debit Status</span>
-        <span class="spec-val">Review unpaid and paid debit groups. Use the arrow icon to move an account group between unpaid and paid, and tap a row to open details.</span>
+        <span class="spec-val">Review unpaid and paid debit groups. Switch grouping by date, payment method, or account, and filter by method or account.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Pay Methods</span>
-        <span class="spec-val">Register card names or deferred payment methods, their schedule, and linked account. In Beginner mode this screen is hidden from the top menu and appears when needed from the entry flow.</span>
+        <span class="spec-val">Register card names or deferred payment methods, their schedule, and linked account.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Accounts</span>
-        <span class="spec-val">Manage destination accounts used for debit grouping. In Beginner mode this screen is hidden from the top menu.</span>
+        <span class="spec-val">Manage destination accounts used for debit grouping.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Tags</span>
-        <span class="spec-val">Optional labels for classifying records. The top-menu entry appears in Expert mode.</span>
+        <span class="spec-val">Optional labels for classifying records.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Settings</span>
@@ -149,14 +149,14 @@
         <span class="spec-key">Account</span>
         <span class="spec-val">Shown only when the selected payment method has no linked account yet.</span>
       </div>
-    </div>
-
-    <div class="spec-group">
-      <p class="spec-group-title">Optional Fields</p>
       <div class="spec-row">
         <span class="spec-key">Label</span>
         <span class="spec-val">A short clue such as a shop or purpose. Past labels are suggested as you type.</span>
       </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Optional Fields</p>
       <div class="spec-row">
         <span class="spec-key">Tags</span>
         <span class="spec-val">Available in Expert mode. You can assign more than one tag and change them later.</span>
@@ -185,11 +185,11 @@
     <div class="spec-group">
       <div class="spec-row">
         <span class="spec-key">Order</span>
-        <span class="spec-val">The default list is sorted by recent input order, not by use date.</span>
+        <span class="spec-val">Sort by date or amount. Each sort can be toggled between descending and ascending order.</span>
       </div>
       <div class="spec-row">
-        <span class="spec-key">Incomplete Filter</span>
-        <span class="spec-val">The Has Blanks filter prioritizes records missing a payment method, then a label, then tags.</span>
+        <span class="spec-key">Filters</span>
+        <span class="spec-val">Choose the period from 3 months, 1 year, 3 years, or all time. You can also filter by all, has blanks, payment method, account, or multiple tags. Has Blanks includes records missing a payment method or label.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Editing</span>
@@ -215,7 +215,11 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Grouped by Account</span>
-        <span class="spec-val">Even on the same debit date, items linked to different accounts are handled as separate debit groups.</span>
+        <span class="spec-val">Even on the same debit date, items linked to different accounts are handled as separate debit groups. You can switch grouping by date, payment method, or account.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Filters</span>
+        <span class="spec-val">Choose all, payment method, or account. When you pick a method or account, the grouping switches to date so the timeline is easier to read.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Details</span>
@@ -224,6 +228,10 @@
       <div class="spec-row">
         <span class="spec-key">Item-level adjustment</span>
         <span class="spec-val">In Debit Details, you can move a single item between unpaid and paid. Use this when only one near-cutoff item is debited next time.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Lock Toggle</span>
+        <span class="spec-val">Debit Details also include a lock toggle for each item. This restores the old app's confirmation check feature, but uses a lock icon instead of a checkmark. A locked item means you have already verified it against your statement or passbook.</span>
       </div>
     </div>
   </section>
@@ -243,6 +251,10 @@
       <div class="spec-row">
         <span class="spec-key">Linked Account</span>
         <span class="spec-val">Each pay method can link to one account. Changing that link rebuilds the related historical invoice and debit grouping so old account groups do not remain behind.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Open to Edit</span>
+        <span class="spec-val">Tapping a row in the Pay Methods list opens the edit screen. Status review is handled from Debit Status grouping and filters.</span>
       </div>
     </div>
 
@@ -281,7 +293,7 @@
       <p class="spec-group-title">Display and Workflow</p>
       <div class="spec-row">
         <span class="spec-key">Beginner / Expert</span>
-        <span class="spec-val">Beginner shows more explanations and keeps the top menu focused on basic actions. Expert enables detailed items such as payment methods, accounts, tags, and repeat settings.</span>
+        <span class="spec-val">Beginner shows more explanations.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Text Size</span>
@@ -344,6 +356,7 @@
           <tr><td>1.2.0</td><td>2017/9/12</td><td>Xcode 9, iOS 10, Objective-C, Core Data</td></tr>
           <tr><td>1.2.4</td><td>2018/9/4</td><td>Xcode 9, iOS 11, Objective-C, Core Data</td></tr>
           <tr><td>2.0.0</td><td>2026/5/13</td><td>Xcode 26, iOS 18+, Swift 6, SwiftData</td></tr>
+          <tr><td>2.1.0</td><td>2026/5/15</td><td>Restored legacy features, including the confirmation check as a lock toggle; improved History period/filter/sort controls and Debit Status grouping/filter controls</td></tr>
         </tbody>
       </table>
     </div>
