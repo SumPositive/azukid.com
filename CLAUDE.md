@@ -22,7 +22,10 @@
 ```
 - `app-card-version-live` — 青（accent）：「公開中 / Live」
 - `app-card-version-review` — オレンジ（yellow）：「審査中 / In Review」
-- 審査中がない時はコメントアウトしてプレースホルダ `x.x.x` で残す
+- `app-card-version-working` — グレー（text-3）：「作業中 / Working」（実装中・未提出）
+- 該当しない状態はコメントアウトしてプレースホルダ `x.x.x` で残す
+
+状態の進行順：作業中（gray）→ 審査提出中／審査中（orange）→ 公開中（blue）
 
 ### よくある依頼パターン
 
@@ -42,6 +45,7 @@
 | 公開中 | Live |
 | 審査中 | In Review |
 | 審査提出中 | Submitted |
+| 作業中 | Working |
 | βテスト中 | Beta |
 
 ## 取扱説明ページの履歴テーブル

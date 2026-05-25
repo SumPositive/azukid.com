@@ -275,6 +275,7 @@ body {
 }
 .app-card-version-live { color: var(--accent); }
 .app-card-version-review { color: var(--yellow); }
+.app-card-version-working { color: var(--text-3); }
 /* 作業中バージョン */
 .app-card-version-working { color: var(--text-2); }
 
