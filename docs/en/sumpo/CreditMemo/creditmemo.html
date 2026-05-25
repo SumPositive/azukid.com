@@ -174,8 +174,8 @@
     <div class="spec-group">
       <p class="spec-group-title">Similar Records</p>
       <div class="spec-row">
-        <span class="spec-key">Reuse past input</span>
-        <span class="spec-val">After entering an amount, the app shows similar records from the last 18 months. Tapping one copies label, method, tags, and related values into the new form.</span>
+        <span class="spec-key">Copy from existing</span>
+        <span class="spec-val">From History, pick a matching-amount record or a recently edited record and copy it into a new payment. You can also copy from Pay Methods, or copy the debit date + method from Debit Status.</span>
       </div>
     </div>
   </section>
@@ -304,6 +304,10 @@
         <span class="spec-val">You can make the app open New Payment automatically when returning to the foreground.</span>
       </div>
       <div class="spec-row">
+        <span class="spec-key">Auto-open Keypad</span>
+        <span class="spec-val">When opening New Payment with no amount entered, the numeric keypad opens automatically. This can be toggled on/off in Settings.</span>
+      </div>
+      <div class="spec-row">
         <span class="spec-key">After Save</span>
         <span class="spec-val">Choose whether saving goes back, clears for another entry, keeps the same date and method, or shows History.</span>
       </div>
@@ -357,6 +361,7 @@
           <tr><td>1.2.4</td><td>2018/9/4</td><td>Xcode 9, iOS 11, Objective-C, Core Data</td></tr>
           <tr><td>2.0.0</td><td>2026/5/13</td><td>Xcode 26, iOS 18+, Swift 6, SwiftData</td></tr>
           <tr><td>2.1.0</td><td>2026/5/15</td><td>Restored legacy features, including the confirmation check as a lock toggle; improved History period/filter/sort controls and Debit Status grouping/filter controls</td></tr>
+          <tr><td>2.2.0</td><td>TBD</td><td>Added on/off setting for auto-open numeric keypad; expanded paths to copy from existing records (matching-amount or recently edited from History, from Pay Methods, and debit date + method from Debit Status)</td></tr>
         </tbody>
       </table>
     </div>

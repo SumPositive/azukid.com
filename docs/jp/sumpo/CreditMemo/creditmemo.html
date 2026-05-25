@@ -174,8 +174,8 @@
     <div class="spec-group">
       <p class="spec-group-title">似た決済の流用</p>
       <div class="spec-row">
-        <span class="spec-key">類似候補</span>
-        <span class="spec-val">新規入力では、金額を入れると過去 18 か月の類似決済候補が表示されます。タップするとラベル、決済手段、タグなどをまとめて流用できます。</span>
+        <span class="spec-key">既存明細からコピー</span>
+        <span class="spec-val">決済一覧で金額一致の明細・最近編集した明細を一覧から選んでコピー、決済手段一覧の明細をコピー、引き落とし明細の引き落とし日＋決済手段をコピー、を新規決済に反映できます。</span>
       </div>
     </div>
   </section>
@@ -304,6 +304,10 @@
         <span class="spec-val">アプリ復帰時に「新しい決済」を自動で開く設定ができます。</span>
       </div>
       <div class="spec-row">
+        <span class="spec-key">テンキー自動表示</span>
+        <span class="spec-val">「新しい決済」を開いた時に金額が未入力なら、テンキーを自動で開きます。設定で ON/OFF を切り替えできます。</span>
+      </div>
+      <div class="spec-row">
         <span class="spec-key">保存後の動作</span>
         <span class="spec-val">前画面に戻る、連続入力する、同じ日付と決済手段を保って連続入力する、履歴を表示する、から選べます。</span>
       </div>
@@ -357,6 +361,7 @@
           <tr><td>1.2.4</td><td>2018/9/4</td><td>Xcode 9, iOS 11, Objective-C, Core Data</td></tr>
           <tr><td>2.0.0</td><td>2026/5/13</td><td>Xcode 26, iOS 18+, Swift 6, SwiftData</td></tr>
           <tr><td>2.1.0</td><td>2026/5/15</td><td>旧アプリの確認チェックをロックトグルとして復活、履歴の対象期間・複合フィルター・並び順、引き落とし状況の集計/絞り込み表示を改善</td></tr>
+          <tr><td>2.2.0</td><td>TBD</td><td>テンキー自動表示の ON/OFF 設定を追加、新規決済を既存明細からコピーする経路を拡充（決済一覧の同額／最近編集、決済手段一覧、引き落とし明細から）</td></tr>
         </tbody>
       </table>
     </div>
