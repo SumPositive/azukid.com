@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DialSplit User Guide</title>
-  <meta name="description" content="User guide for DialSplit. Learn how to split bills by adjusting people and amounts with dial controls, locks, appearance mode, and locale-aware currency handling.">
+  <meta name="description" content="A visual user guide for DialSplit. Learn the main screen, lock behavior, settings, and locale-aware currency handling through diagrams.">
   <link rel="canonical" href="https://azukid.com/en/sumpo/DialSplit/dialsplit.html">
   <link rel="alternate" href="https://azukid.com/jp/sumpo/DialSplit/dialsplit.html" hreflang="ja">
   <link rel="alternate" href="https://azukid.com/en/sumpo/DialSplit/dialsplit.html" hreflang="en">
@@ -12,9 +12,9 @@
   <meta property="og:type" content="article">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="DialSplit User Guide">
-  <meta property="og:description" content="How to use DialSplit, a bill splitting app that adjusts people and amounts with dial controls.">
+  <meta property="og:description" content="A visual guide to the DialSplit main screen, lock controls, settings, and locale-aware currency handling.">
   <meta property="og:url" content="https://azukid.com/en/sumpo/DialSplit/dialsplit.html">
-  <link rel="stylesheet" href="../../../style.css?v=20260508">
+  <link rel="stylesheet" href="../../../style.css?v=20260604">
   <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
@@ -34,38 +34,103 @@
     <img class="page-header-icon" src="../../../images/icon-dialsplit.png" alt="DialSplit">
     <div class="page-header-text">
       <h1>DialSplit User Guide</h1>
-      <p class="page-tagline">Dial-style bill splitting app</p>
+      <p class="page-tagline">A visual guide built around screen structure</p>
     </div>
   </div>
 
-  <div class="lead">
-    <p>Adjust people and amounts with dial controls to quickly decide how a payment should be split.</p>
-    <p>Review the total, people, and each panel amount while adjusting values. Amounts follow the currency format of your device locale.</p>
-  </div>
+  <section class="guide-hero">
+    <div class="guide-hero-copy">
+      <p>DialSplit helps you decide bill splits by adjusting people counts and amounts with tactile dials</p>
+      <p>This guide is organized around visual structure first, so you can understand the main screen, locks, settings, and currency behavior at a glance</p>
+      <div class="guide-kpis">
+        <div class="guide-kpi">
+          <strong>4 Tiers</strong>
+          <span>Adjust A / B / C / D independently</span>
+        </div>
+        <div class="guide-kpi">
+          <strong>2 Locks</strong>
+          <span>People lock and full control lock</span>
+        </div>
+        <div class="guide-kpi">
+          <strong>Locale Aware</strong>
+          <span>Currency display follows your device</span>
+        </div>
+      </div>
+    </div>
 
-  <section class="content-section">
-    <h2>Basic Flow</h2>
-    <div class="step-flow">
-      <div class="step-card">
-        <span class="step-number">1</span>
-        <strong>Enter Total</strong>
-        <p>Set the total amount with the top-panel dial or the numpad.</p>
+    <div class="guide-panel">
+      <div class="guide-panel-title">
+        <h3>Main screen</h3>
+        <p>Tap a marker to open its explanation</p>
       </div>
-      <div class="step-card">
-        <span class="step-number">2</span>
-        <strong>Set People</strong>
-        <p>Use the people dial on each A/B/C/D panel to adjust counts.</p>
+      <div class="shot-frame" aria-label="Main screen">
+        <img src="images/main-overview-en.png" alt="DialSplit main screen">
+        <!-- 主画面の注釈 -->
+        <div class="hotspot-anchor" style="top: 18.5%; left: 15%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="en-main-1">1</button>
+          <div class="hotspot-popover is-right" id="en-main-1">
+            <strong>Total people</strong>
+            <small>Check the total number of people</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 24%; left: 15%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="en-main-2">2</button>
+          <div class="hotspot-popover is-right" id="en-main-2">
+            <strong>Total panel lock</strong>
+            <small>Lock the people dials to prevent accidental changes</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 32.5%; left: 39%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="en-main-3">3</button>
+          <div class="hotspot-popover is-right" id="en-main-3">
+            <strong>Panel A</strong>
+            <small>In Panel A, specify only the number of people. The amount is calculated automatically</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 21%; left: 75%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="en-main-4">4</button>
+          <div class="hotspot-popover is-left" id="en-main-4">
+            <strong>Total amount</strong>
+            <small>Enter the total payment first. Tap the number to enter it with the numpad</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 87.5%; left: 50%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="en-main-5">5</button>
+          <div class="hotspot-popover is-top" id="en-main-5">
+            <strong>Amount dial step</strong>
+            <small>Switch the amount dial increment. Press and hold to set its value</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 46.5%; left: 40%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="en-main-6">6</button>
+          <div class="hotspot-popover is-right" id="en-main-6">
+            <strong>Panels B / C / D</strong>
+            <small>In Panels B / C / D, specify the people and amount. Any difference is assigned to Panel A</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 97.5%; left: 35%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="en-main-7">7</button>
+          <div class="hotspot-popover is-top" id="en-main-7">
+            <strong>Panel style</strong>
+            <small>Customize the look of this screen. It does not affect the bill split</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 9.5%; left: 92%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="en-main-8">8</button>
+          <div class="hotspot-popover is-left" id="en-main-8">
+            <strong>Settings</strong>
+            <small>Open the settings screen</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 38%; left: 74%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="en-main-9">9</button>
+          <div class="hotspot-popover is-left" id="en-main-9">
+            <strong>Full control lock</strong>
+            <small>Lock everything to prevent accidental changes</small>
+          </div>
+        </div>
       </div>
-      <div class="step-card">
-        <span class="step-number">3</span>
-        <strong>Adjust Amounts</strong>
-        <p>Adjust B/C/D amounts, and Panel A is calculated automatically.</p>
-      </div>
-      <div class="step-card">
-        <span class="step-number">4</span>
-        <strong>Check Result</strong>
-        <p>Confirm the people and amounts, then lock the dials if needed.</p>
-      </div>
+      <p class="hotspot-tip">Tap outside the markers to close the bubble</p>
     </div>
   </section>
 
@@ -78,52 +143,139 @@
   </div>
 
   <section class="content-section">
-    <h2>Basic Usage</h2>
-    <div class="feature-grid">
-      <div class="feature-item">Set the total amount<small>Use the total dial on the top panel, or tap the amount text to enter with the numpad.</small></div>
-      <div class="feature-item">Set people counts<small>Use the left dial on each A/B/C/D panel. Panel A requires at least 1 person.</small></div>
-      <div class="feature-item">Set amounts<small>Adjust amounts on B/C/D with the right dial. Panel A amount is auto-calculated.</small></div>
-      <div class="feature-item">Change dial step<small>Use Amount Dial Step to switch the amount dial increment. Step labels are shown as numbers without a currency symbol.</small></div>
-      <div class="feature-item">Tune panel style<small>Adjust panel brightness, text color, and tone from the Panel Style section.</small></div>
-      <div class="feature-item">Lock people count<small>Use the lock button on the total panel to freeze people dials and prevent accidental changes.</small></div>
-      <div class="feature-item">Lock all controls<small>Use the lock button on Panel A to freeze every dial at once.</small></div>
-      <div class="feature-item">Tune dial sensitivity<small>Open Dial Settings in Settings to adjust the dial sensitivity to your preference.</small></div>
+    <h2>Usage flow</h2>
+    <div class="step-flow">
+      <div class="step-card">
+        <span class="step-number">1</span>
+        <strong>Enter the total</strong>
+        <p>Set the bill total from the top panel with the dial or the numpad</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">2</span>
+        <strong>Set people counts</strong>
+        <p>Adjust people for A / B / C / D with the left-side dials</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">3</span>
+        <strong>Adjust amounts</strong>
+        <p>Tune B / C / D amounts and let Panel A update automatically</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">4</span>
+        <strong>Lock if needed</strong>
+        <p>Freeze people only or freeze all controls to avoid accidental changes</p>
+      </div>
     </div>
   </section>
 
   <section class="content-section">
-    <h2>Settings</h2>
-    <div class="feature-grid">
-      <div class="feature-item">Tiers<small>Choose a preset display name set, or edit the display names for A/B/C/D individually.</small></div>
-      <div class="feature-item">Dial Settings<small>Adjust the dial feel, brightness, and response from the settings sheet.</small></div>
-      <div class="feature-item">Appearance Mode<small>Choose Auto, Light, or Dark. Auto follows the system setting.</small></div>
-      <div class="feature-item">Background<small>Choose Monotone, Brown Leather, or Black Leather.</small></div>
-      <div class="feature-item">Amount Dial Step<small>Customize the five step definitions based on the smallest unit of the current currency.</small></div>
+    <h2>Settings map</h2>
+    <div class="guide-panel screen-size">
+      <div class="guide-panel-title">
+        <h3>Settings screen</h3>
+        <p>Tap a marker to open what each row does</p>
+      </div>
+      <div class="shot-frame" aria-label="Settings screen">
+        <img src="images/settings-overview-en.png" alt="Settings screen">
+        <!-- 設定画面の注釈 -->
+        <div class="hotspot-anchor" style="top: 22.5%; left: 55%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="en-settings-1">1</button>
+          <div class="hotspot-popover is-bottom" id="en-settings-1">
+            <strong>Preset</strong>
+            <small>Select the A/B/C/D panel names from presets</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 77.5%; left: 45%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="en-settings-2">2</button>
+          <div class="hotspot-popover is-top" id="en-settings-2">
+            <strong>Dial settings</strong>
+            <small>Open the dedicated dial settings sheet, including fine sensitivity adjustment</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 84%; left: 40%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="en-settings-3">3</button>
+          <div class="hotspot-popover is-top" id="en-settings-3">
+            <strong>Appearance mode</strong>
+            <small>Auto follows the system setting</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 96.5%; left: 40%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="en-settings-4">4</button>
+          <div class="hotspot-popover is-top" id="en-settings-4">
+            <strong>Text size</strong>
+            <small>Auto follows the system Larger Text setting. Large is 1.5 times standard and Extra Large is 2 times standard</small>
+          </div>
+        </div>
+      </div>
+      <p class="hotspot-tip">You can also confirm the same items in the screenshot gallery below</p>
     </div>
   </section>
 
   <section class="content-section">
-    <h2>Specifications</h2>
-    <div class="spec-group">
-      <div class="spec-row">
-        <span class="spec-key">People range</span>
-        <span class="spec-val">A: 1-99, B/C/D: 0-99</span>
+    <h2>Locale-aware currency handling</h2>
+    <div class="locale-grid">
+      <div class="locale-card">
+        <h3>Japanese / Japan</h3>
+        <div class="locale-sample">
+          <strong>¥12,000</strong>
+          <span>Dial step examples: 1 / 10 / 100 / 500 / 1000</span>
+        </div>
+        <p>Handled as an integer currency. Step labels are shown without a currency symbol</p>
       </div>
-      <div class="spec-row">
-        <span class="spec-key">Amount range</span>
-        <span class="spec-val">0-999,900, with currency decimal digits based on locale</span>
+      <div class="locale-card">
+        <h3>English / United States</h3>
+        <div class="locale-sample">
+          <strong>$12.00</strong>
+          <span>Dial step examples: 0.01 / 0.10 / 1.00 / 5.00 / 10.00</span>
+        </div>
+        <p>For two-decimal currencies, values are stored using the smallest currency unit</p>
       </div>
-      <div class="spec-row">
-        <span class="spec-key">Currency display</span>
-        <span class="spec-val">Follows the device locale. Decimal currencies are handled in their smallest currency unit.</span>
+      <div class="locale-card">
+        <h3>English / Kuwait</h3>
+        <div class="locale-sample">
+          <strong>KWD 1.000</strong>
+          <span>Dial step examples: 0.001 / 0.010 / 0.100 / 0.500 / 1.000</span>
+        </div>
+        <p>Three-decimal currencies are also supported without mismatch between display and internal units</p>
       </div>
-      <div class="spec-row">
-        <span class="spec-key">Input methods</span>
-        <span class="spec-val">Dial input + direct numpad input</span>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Additional screenshots</h2>
+    <div class="shot-grid">
+      <div class="shot-card">
+        <h3>Dial Settings entry</h3>
+        <div class="shot-frame compact">
+          <img src="images/settings-dial-en.png" alt="Dial settings row in the settings screen">
+        </div>
+        <p class="shot-caption">Open the dial settings sheet from this row to tune interaction feel and appearance</p>
       </div>
-      <div class="spec-row">
-        <span class="spec-key">Languages</span>
-        <span class="spec-val">Japanese / English</span>
+      <div class="shot-card">
+        <h3>Appearance Mode</h3>
+        <div class="shot-frame compact">
+          <img src="images/settings-appearance-en.png" alt="Appearance mode in the settings screen">
+        </div>
+        <p class="shot-caption">Choose Auto, Light, or Dark. Auto follows the system appearance</p>
+      </div>
+      <div class="shot-card">
+        <h3>Dark appearance</h3>
+        <div class="shot-frame compact">
+          <img src="images/appearance-dark-en.png" alt="Dark appearance of the main screen">
+        </div>
+        <p class="shot-caption">Dark appearance keeps the dials and labels readable in low-light use</p>
+      </div>
+      <div class="shot-card">
+        <h3>Background variants</h3>
+        <div class="shot-grid">
+          <div class="shot-frame compact">
+            <img src="images/background-brown-en.png" alt="Brown leather background">
+          </div>
+          <div class="shot-frame compact">
+            <img src="images/background-black-en.png" alt="Black leather background">
+          </div>
+        </div>
+        <p class="shot-caption">Brown Leather and Black Leather can be selected from Settings. Monotone is also available in the same section</p>
       </div>
     </div>
   </section>
@@ -149,5 +301,112 @@
 
 </main>
 <script src="../../../theme.js"></script>
+<script>
+  // タップした注釈だけを開く
+  (() => {
+    const anchors = [...document.querySelectorAll('.hotspot-anchor')]
+
+    // 上下の広い方へ吹き出し、左右端ではフレーム内へ寄せる
+    const placePopover = (anchor) => {
+      const frame = anchor.closest('.shot-frame')
+      const popover = anchor.querySelector('.hotspot-popover')
+      if (!frame || !popover) {
+        return
+      }
+
+      popover.classList.remove('is-right', 'is-left', 'is-top', 'is-bottom')
+      const anchorY = anchor.offsetTop
+      popover.classList.add(anchorY < frame.clientHeight / 2 ? 'is-bottom' : 'is-top')
+
+      const margin = 8
+      const anchorX = anchor.offsetLeft
+      const halfWidth = popover.offsetWidth / 2
+      const popoverCenter = Math.min(
+        Math.max(anchorX, halfWidth + margin),
+        frame.clientWidth - halfWidth - margin
+      )
+      popover.style.setProperty('--popover-shift-x', `${popoverCenter - anchorX}px`)
+    }
+
+    const closeAll = () => {
+      anchors.forEach((anchor) => {
+        anchor.classList.remove('is-open')
+        const button = anchor.querySelector('.hotspot-toggle')
+        if (button) {
+          button.setAttribute('aria-expanded', 'false')
+        }
+      })
+    }
+
+    anchors.forEach((anchor) => {
+      const button = anchor.querySelector('.hotspot-toggle')
+      if (!button) {
+        return
+      }
+
+      // 番号を表示せず説明名を読み上げる
+      const title = anchor.querySelector('.hotspot-popover strong')
+      if (title) {
+        button.setAttribute('aria-label', title.textContent)
+      }
+
+      placePopover(anchor)
+
+      button.addEventListener('click', (event) => {
+        event.stopPropagation()
+        const isOpen = anchor.classList.contains('is-open')
+        closeAll()
+        if (!isOpen) {
+          placePopover(anchor)
+          anchor.classList.add('is-open')
+          button.setAttribute('aria-expanded', 'true')
+        }
+      })
+    })
+
+    window.addEventListener('resize', () => {
+      anchors.forEach(placePopover)
+    })
+
+    document.addEventListener('click', closeAll)
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeAll()
+      }
+    })
+
+    // URLにgrid=1がある場合だけ座標メッシュを表示する
+    if (new URLSearchParams(window.location.search).get('grid') === '1') {
+      document.querySelectorAll('.shot-frame').forEach((frame) => {
+        if (!frame.querySelector('.hotspot')) {
+          return
+        }
+
+        const grid = document.createElement('div')
+        grid.className = 'debug-coordinate-grid'
+        grid.setAttribute('aria-hidden', 'true')
+
+        for (let x = 0; x <= 10; x += 1) {
+          const label = document.createElement('span')
+          label.className = `debug-coordinate-label is-x${x === 0 ? ' is-start' : ''}${x === 10 ? ' is-end' : ''}`
+          label.style.left = `${x * 10}%`
+          label.textContent = `X${x}`
+          grid.appendChild(label)
+        }
+
+        for (let y = 0; y <= 20; y += 1) {
+          const label = document.createElement('span')
+          label.className = `debug-coordinate-label is-y${y === 0 ? ' is-start' : ''}${y === 20 ? ' is-end' : ''}`
+          label.style.top = `${y * 5}%`
+          label.textContent = `Y${y}`
+          grid.appendChild(label)
+        }
+
+        frame.appendChild(grid)
+      })
+    }
+  })()
+</script>
 </body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>割勘　取扱説明</title>
-  <meta name="description" content="割勘 DialSplit の取扱説明です。人数と金額をダイアルで調整し、ロック、外観モード、通貨ロケール対応を使って割り勘計算する方法を案内します。">
+  <meta name="description" content="割勘 DialSplit の図解中心の取扱説明です。主画面、ロック、設定、通貨ロケール対応を画面構成ベースで案内します。">
   <link rel="canonical" href="https://azukid.com/jp/sumpo/DialSplit/dialsplit.html">
   <link rel="alternate" href="https://azukid.com/jp/sumpo/DialSplit/dialsplit.html" hreflang="ja">
   <link rel="alternate" href="https://azukid.com/en/sumpo/DialSplit/dialsplit.html" hreflang="en">
@@ -12,9 +12,9 @@
   <meta property="og:type" content="article">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:title" content="割勘 取扱説明">
-  <meta property="og:description" content="人数と金額をダイアルで調整できる割り勘計算アプリ DialSplit の使い方です。">
+  <meta property="og:description" content="主画面、ロック、設定、通貨ロケール対応を図解で確認できる割勘 DialSplit の取扱説明です。">
   <meta property="og:url" content="https://azukid.com/jp/sumpo/DialSplit/dialsplit.html">
-  <link rel="stylesheet" href="../../../style.css?v=20260508">
+  <link rel="stylesheet" href="../../../style.css?v=20260604">
   <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
@@ -34,38 +34,103 @@
     <img class="page-header-icon" src="../../../images/icon-dialsplit.png" alt="割勘 DialSplit">
     <div class="page-header-text">
       <h1>割勘　取扱説明</h1>
-      <p class="page-tagline">ダイアル式割り勘計算アプリ</p>
+      <p class="page-tagline">画面を見ながら使える、図解中心のガイド</p>
     </div>
   </div>
 
-  <div class="lead">
-    <p>人数と金額をダイアルで調整しながら、支払いの配分をすばやく決めるアプリです。</p>
-    <p>合計金額、人数、各パネルの金額を見ながら調整でき、端末の通貨ロケールに合わせた表示で割り勘計算できます。</p>
-  </div>
+  <section class="guide-hero">
+    <div class="guide-hero-copy">
+      <p>割勘は、人数と金額をダイアルで調整しながら支払い配分を決めるアプリです</p>
+      <p>このページでは、文字を追うよりも先に画面全体の役割がつかめるよう、主画面、ロック、設定、通貨表示を図版中心でまとめています</p>
+      <div class="guide-kpis">
+        <div class="guide-kpi">
+          <strong>4区分</strong>
+          <span>A / B / C / D を個別に調整</span>
+        </div>
+        <div class="guide-kpi">
+          <strong>2ロック</strong>
+          <span>人数ロックと全操作ロック</span>
+        </div>
+        <div class="guide-kpi">
+          <strong>通貨対応</strong>
+          <span>ロケールに合わせて自動表示</span>
+        </div>
+      </div>
+    </div>
 
-  <section class="content-section">
-    <h2>基本操作の流れ</h2>
-    <div class="step-flow">
-      <div class="step-card">
-        <span class="step-number">1</span>
-        <strong>合計金額を入れる</strong>
-        <p>合計パネルのダイアルまたはテンキーで、支払い総額を設定します。</p>
+    <div class="guide-panel">
+      <div class="guide-panel-title">
+        <h3>主画面</h3>
+        <p>丸をタップすると、その場所の説明が開きます</p>
       </div>
-      <div class="step-card">
-        <span class="step-number">2</span>
-        <strong>人数を合わせる</strong>
-        <p>A/B/C/D 各パネルの人数ダイアルで、人数を調整します。</p>
+      <div class="shot-frame" aria-label="主画面">
+        <img src="images/main-overview-ja.png" alt="割勘の主画面">
+        <!-- 主画面の注釈 -->
+        <div class="hotspot-anchor" style="top: 18.5%; left: 15%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="jp-main-1">1</button>
+          <div class="hotspot-popover is-right" id="jp-main-1">
+            <strong>参加人数</strong>
+            <small>人数の合計を確認できます</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 24%; left: 15%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="jp-main-2">2</button>
+          <div class="hotspot-popover is-right" id="jp-main-2">
+            <strong>合計パネルのロック</strong>
+            <small>人数ダイアルをロックして不意の変化を防ぎます</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 32.5%; left: 39%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="jp-main-3">3</button>
+          <div class="hotspot-popover is-right" id="jp-main-3">
+            <strong>Aパネル</strong>
+            <small>Aパネルでは、人数だけを指定、金額は自動計算します</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 21%; left: 75%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="jp-main-4">4</button>
+          <div class="hotspot-popover is-left" id="jp-main-4">
+            <strong>支払い総額</strong>
+            <small>まず合計（支払総額）を入れます。数字をタップすればテンキー入力できます</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 87.5%; left: 50%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="jp-main-5">5</button>
+          <div class="hotspot-popover is-top" id="jp-main-5">
+            <strong>金額ダイアルステップ</strong>
+            <small>金額ダイアルの増減幅を切り替えます。長押しで値を設定できます</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 46.5%; left: 40%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="jp-main-6">6</button>
+          <div class="hotspot-popover is-right" id="jp-main-6">
+            <strong>B / C / Dパネル</strong>
+            <small>B/C/Dパネルでは、人数と金額を指定、過不足金額がAに割り当てられます</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 97.5%; left: 35%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="jp-main-7">7</button>
+          <div class="hotspot-popover is-top" id="jp-main-7">
+            <strong>パネルスタイル</strong>
+            <small>この画面の見栄えをカスタマイズします。割勘処理には影響しません</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 9.5%; left: 92%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="jp-main-8">8</button>
+          <div class="hotspot-popover is-left" id="jp-main-8">
+            <strong>設定</strong>
+            <small>設定画面を開きます</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 38%; left: 74%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="jp-main-9">9</button>
+          <div class="hotspot-popover is-left" id="jp-main-9">
+            <strong>全操作ロック</strong>
+            <small>全部ロックして不意の変化を防ぎます</small>
+          </div>
+        </div>
       </div>
-      <div class="step-card">
-        <span class="step-number">3</span>
-        <strong>金額を調整する</strong>
-        <p>B/C/D の金額を調整すると、A の金額が自動で計算されます。</p>
-      </div>
-      <div class="step-card">
-        <span class="step-number">4</span>
-        <strong>結果を確認する</strong>
-        <p>各パネルの人数と金額を確認し、必要ならダイアルをロックします。</p>
-      </div>
+      <p class="hotspot-tip">空いている場所をタップすると説明を閉じます</p>
     </div>
   </section>
 
@@ -78,52 +143,139 @@
   </div>
 
   <section class="content-section">
-    <h2>基本操作</h2>
-    <div class="feature-grid">
-      <div class="feature-item">合計金額を設定する<small>上段の合計パネルで金額ダイアルを回すか、金額表示をタップしてテンキー入力します。</small></div>
-      <div class="feature-item">人数を設定する<small>A/B/C/D 各パネルの左ダイアルで人数を調整します。A は 1 人以上です。</small></div>
-      <div class="feature-item">金額を設定する<small>B/C/D パネルの右ダイアルで金額を調整します。A 金額は自動計算です。</small></div>
-      <div class="feature-item">ステップを切り替える<small>金額ダイアルステップで、金額ダイアルの増減幅を切り替えます。表示は通貨記号なしの数値です。</small></div>
-      <div class="feature-item">表示スタイルを調整する<small>パネルスタイルでパネル明るさ、文字色、濃淡を調整できます。</small></div>
-      <div class="feature-item">人数をロックする<small>合計パネルのロックボタンで人数ダイアルを固定し、誤操作を防げます。</small></div>
-      <div class="feature-item">全操作をロックする<small>A パネルのロックボタンですべてのダイアル操作を一括ロックします。</small></div>
-      <div class="feature-item">ダイアル感度を調整する<small>設定のダイアル設定からダイアルの感度を自分好みに調整できます。</small></div>
+    <h2>使い方の流れ</h2>
+    <div class="step-flow">
+      <div class="step-card">
+        <span class="step-number">1</span>
+        <strong>合計金額を入れる</strong>
+        <p>上段の合計金額を回すか、金額表示をタップしてテンキーで入力します</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">2</span>
+        <strong>人数を合わせる</strong>
+        <p>A / B / C / D の人数ダイアルで区分ごとの人数を決めます</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">3</span>
+        <strong>金額を寄せる</strong>
+        <p>B / C / D の金額を調整すると、A の金額が自動計算されます</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">4</span>
+        <strong>必要ならロック</strong>
+        <p>人数だけ固定するか、全操作を固定して誤操作を防ぎます</p>
+      </div>
     </div>
   </section>
 
   <section class="content-section">
-    <h2>設定</h2>
-    <div class="feature-grid">
-      <div class="feature-item">区分<small>プリセット表示名称を選ぶか、A/B/C/D の表示名称を個別に変更できます。</small></div>
-      <div class="feature-item">ダイアル設定<small>ダイアルの操作感、明るさ、反応を設定シートで調整できます。</small></div>
-      <div class="feature-item">外観モード<small>自動 / ライト / ダークを選べます。自動はシステム設定に従います。</small></div>
-      <div class="feature-item">背景<small>モノトーン、ブラウンレザー、ブラックレザーから選べます。</small></div>
-      <div class="feature-item">金額ダイアルステップ<small>5つのステップ定義を、端末の通貨最小単位を基準に変更できます。</small></div>
+    <h2>設定画面の見方</h2>
+    <div class="guide-panel screen-size">
+      <div class="guide-panel-title">
+        <h3>設定画面</h3>
+        <p>丸をタップすると、項目の役割が開きます</p>
+      </div>
+      <div class="shot-frame" aria-label="設定画面">
+        <img src="images/settings-overview-ja.png" alt="設定画面">
+        <!-- 設定画面の注釈 -->
+        <div class="hotspot-anchor" style="top: 22.5%; left: 55%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="jp-settings-1">1</button>
+          <div class="hotspot-popover is-bottom" id="jp-settings-1">
+            <strong>プリセット</strong>
+            <small>A/B/C/Dパネル名をプリセットから選択します</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 77.5%; left: 45%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="jp-settings-2">2</button>
+          <div class="hotspot-popover is-top" id="jp-settings-2">
+            <strong>ダイアル設定</strong>
+            <small>ダイアル専用の設定シートが開きます。感度の微調整も可能です</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 84%; left: 40%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="jp-settings-3">3</button>
+          <div class="hotspot-popover is-top" id="jp-settings-3">
+            <strong>外観モード</strong>
+            <small>自動では、システム設定に従います</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 96.5%; left: 40%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="jp-settings-4">4</button>
+          <div class="hotspot-popover is-top" id="jp-settings-4">
+            <strong>文字サイズ</strong>
+            <small>自動では、システム設定のより大きな文字に従います。大は標準の1.5倍、特大は2倍です</small>
+          </div>
+        </div>
+      </div>
+      <p class="hotspot-tip">設定の詳細は、下の補足キャプチャでも確認できます</p>
     </div>
   </section>
 
   <section class="content-section">
-    <h2>仕様</h2>
-    <div class="spec-group">
-      <div class="spec-row">
-        <span class="spec-key">人数範囲</span>
-        <span class="spec-val">A: 1〜99人、B/C/D: 0〜99人</span>
+    <h2>通貨ロケール対応</h2>
+    <div class="locale-grid">
+      <div class="locale-card">
+        <h3>日本語 / 日本</h3>
+        <div class="locale-sample">
+          <strong>¥12,000</strong>
+          <span>ダイアルステップ例: 1 / 10 / 100 / 500 / 1000</span>
+        </div>
+        <p>整数通貨として扱います。ステップ表示は通貨記号なしの数値です</p>
       </div>
-      <div class="spec-row">
-        <span class="spec-key">金額範囲</span>
-        <span class="spec-val">0〜999,900（通貨ロケールの小数桁に対応）</span>
+      <div class="locale-card">
+        <h3>英語 / 米国</h3>
+        <div class="locale-sample">
+          <strong>$12.00</strong>
+          <span>ダイアルステップ例: 0.01 / 0.10 / 1.00 / 5.00 / 10.00</span>
+        </div>
+        <p>小数2桁の通貨では、最小通貨単位を基準に金額を保持します</p>
       </div>
-      <div class="spec-row">
-        <span class="spec-key">通貨表示</span>
-        <span class="spec-val">端末のロケールに従います。小数通貨は最小通貨単位で扱います。</span>
+      <div class="locale-card">
+        <h3>英語 / クウェート</h3>
+        <div class="locale-sample">
+          <strong>KWD 1.000</strong>
+          <span>ダイアルステップ例: 0.001 / 0.010 / 0.100 / 0.500 / 1.000</span>
+        </div>
+        <p>小数3桁の通貨にも対応し、表示と内部単位がずれないよう扱います</p>
       </div>
-      <div class="spec-row">
-        <span class="spec-key">入力方法</span>
-        <span class="spec-val">ダイアル入力 + テンキー直接入力</span>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>画面キャプチャの補足</h2>
+    <div class="shot-grid">
+      <div class="shot-card">
+        <h3>外観とダイアル設定</h3>
+        <div class="shot-frame compact">
+          <img src="images/settings-dial-ja.png" alt="ダイアル設定のある設定画面">
+        </div>
+        <p class="shot-caption">ダイアル設定の行から、感度や見え方の調整シートを開けます</p>
       </div>
-      <div class="spec-row">
-        <span class="spec-key">対応言語</span>
-        <span class="spec-val">日本語 / 英語</span>
+      <div class="shot-card">
+        <h3>外観モード</h3>
+        <div class="shot-frame compact">
+          <img src="images/settings-appearance-ja.png" alt="外観モードのある設定画面">
+        </div>
+        <p class="shot-caption">自動、ライト、ダークを選べます。自動はシステム設定に従います</p>
+      </div>
+      <div class="shot-card">
+        <h3>ダーク表示</h3>
+        <div class="shot-frame compact">
+          <img src="images/appearance-dark-ja.png" alt="ダーク表示の主画面">
+        </div>
+        <p class="shot-caption">暗い環境ではダーク表示へ切り替えて見やすさを保てます</p>
+      </div>
+      <div class="shot-card">
+        <h3>背景バリエーション</h3>
+        <div class="shot-grid">
+          <div class="shot-frame compact">
+            <img src="images/background-brown-ja.png" alt="ブラウンレザー背景">
+          </div>
+          <div class="shot-frame compact">
+            <img src="images/background-black-ja.png" alt="ブラックレザー背景">
+          </div>
+        </div>
+        <p class="shot-caption">背景はブラウンレザーとブラックレザーを切り替えられます。モノトーンは設定から選択できます</p>
       </div>
     </div>
   </section>
@@ -149,5 +301,112 @@
 
 </main>
 <script src="../../../theme.js"></script>
+<script>
+  // タップした注釈だけを開く
+  (() => {
+    const anchors = [...document.querySelectorAll('.hotspot-anchor')]
+
+    // 上下の広い方へ吹き出し、左右端ではフレーム内へ寄せる
+    const placePopover = (anchor) => {
+      const frame = anchor.closest('.shot-frame')
+      const popover = anchor.querySelector('.hotspot-popover')
+      if (!frame || !popover) {
+        return
+      }
+
+      popover.classList.remove('is-right', 'is-left', 'is-top', 'is-bottom')
+      const anchorY = anchor.offsetTop
+      popover.classList.add(anchorY < frame.clientHeight / 2 ? 'is-bottom' : 'is-top')
+
+      const margin = 8
+      const anchorX = anchor.offsetLeft
+      const halfWidth = popover.offsetWidth / 2
+      const popoverCenter = Math.min(
+        Math.max(anchorX, halfWidth + margin),
+        frame.clientWidth - halfWidth - margin
+      )
+      popover.style.setProperty('--popover-shift-x', `${popoverCenter - anchorX}px`)
+    }
+
+    const closeAll = () => {
+      anchors.forEach((anchor) => {
+        anchor.classList.remove('is-open')
+        const button = anchor.querySelector('.hotspot-toggle')
+        if (button) {
+          button.setAttribute('aria-expanded', 'false')
+        }
+      })
+    }
+
+    anchors.forEach((anchor) => {
+      const button = anchor.querySelector('.hotspot-toggle')
+      if (!button) {
+        return
+      }
+
+      // 番号を表示せず説明名を読み上げる
+      const title = anchor.querySelector('.hotspot-popover strong')
+      if (title) {
+        button.setAttribute('aria-label', title.textContent)
+      }
+
+      placePopover(anchor)
+
+      button.addEventListener('click', (event) => {
+        event.stopPropagation()
+        const isOpen = anchor.classList.contains('is-open')
+        closeAll()
+        if (!isOpen) {
+          placePopover(anchor)
+          anchor.classList.add('is-open')
+          button.setAttribute('aria-expanded', 'true')
+        }
+      })
+    })
+
+    window.addEventListener('resize', () => {
+      anchors.forEach(placePopover)
+    })
+
+    document.addEventListener('click', closeAll)
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeAll()
+      }
+    })
+
+    // URLにgrid=1がある場合だけ座標メッシュを表示する
+    if (new URLSearchParams(window.location.search).get('grid') === '1') {
+      document.querySelectorAll('.shot-frame').forEach((frame) => {
+        if (!frame.querySelector('.hotspot')) {
+          return
+        }
+
+        const grid = document.createElement('div')
+        grid.className = 'debug-coordinate-grid'
+        grid.setAttribute('aria-hidden', 'true')
+
+        for (let x = 0; x <= 10; x += 1) {
+          const label = document.createElement('span')
+          label.className = `debug-coordinate-label is-x${x === 0 ? ' is-start' : ''}${x === 10 ? ' is-end' : ''}`
+          label.style.left = `${x * 10}%`
+          label.textContent = `X${x}`
+          grid.appendChild(label)
+        }
+
+        for (let y = 0; y <= 20; y += 1) {
+          const label = document.createElement('span')
+          label.className = `debug-coordinate-label is-y${y === 0 ? ' is-start' : ''}${y === 20 ? ' is-end' : ''}`
+          label.style.top = `${y * 5}%`
+          label.textContent = `Y${y}`
+          grid.appendChild(label)
+        }
+
+        frame.appendChild(grid)
+      })
+    }
+  })()
+</script>
 </body>
 </html>
