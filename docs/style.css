@@ -1305,8 +1305,9 @@ p:last-child { margin-bottom: 0; }
   display: block;
   margin: 0;
   font-size: .74rem;
+  font-weight: 600;
   line-height: 1.5;
-  color: var(--text-2);
+  color: #1d1d1f;
 }
 
 .hotspot-popover::after {
