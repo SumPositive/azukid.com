@@ -178,6 +178,37 @@
         <span class="spec-val">From History, pick a matching-amount record or a recently edited record and copy it into a new payment. You can also copy from Pay Methods, or copy the debit date + method from Debit Status.</span>
       </div>
     </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Debit Date — Automatic / Manual</p>
+      <div class="spec-row">
+        <span class="spec-key">
+          <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="vertical-align:-4px;margin-right:4px">
+            <path fill="#0A84FF" d="M12 3a9 9 0 0 1 9 9 9 9 0 0 1-2.64 6.36l-1.42-1.42A7 7 0 0 0 19 12a7 7 0 0 0-7-7 7 7 0 0 0-7 7 7 7 0 0 0 2.06 4.94l1.06-1.06.71 4.24-4.24-.71 1.06-1.06A9 9 0 0 1 3 12a9 9 0 0 1 9-9z"/>
+            <text x="12" y="15.5" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#0A84FF">A</text>
+          </svg>
+          Auto
+        </span>
+        <span class="spec-val">The debit date is computed automatically from the use date and the payment method (closing day / payment day / payment month, or N-days-later type). It updates automatically when you change the use date or payment method. In Japan locale, with the setting on, dates that fall on a weekend or national holiday are shifted to the next business day.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">
+          <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="vertical-align:-4px;margin-right:4px">
+            <path fill="#34C759" d="M12 1.5a1.5 1.5 0 0 0-1.5 1.5v7.5h-1V4.5a1.5 1.5 0 0 0-3 0v9.25l-1.4-1.4a1.5 1.5 0 0 0-2.12 2.12L7.5 19a6 6 0 0 0 10.5-4V6a1.5 1.5 0 0 0-3 0v4.5h-1V3a1.5 1.5 0 0 0-1.5-1.5z"/>
+          </svg>
+          Manual
+        </span>
+        <span class="spec-val">Tap the icon to fix the date at that moment. From then on, changing the use date or payment method does not move the debit date. Useful for shifting a payment that missed a cutoff into the next debit cycle. Tap the date to pick a date from the calendar, or use the "Prev / Next due date" buttons to jump by one payment cycle.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Fix to Manual when paid</span>
+        <span class="spec-val">When you mark an item as paid, its debit date automatically switches to Manual and is fixed so it doesn't drift when you change the use date or payment method later. The fixed state stays even if you move the item back to unpaid, but you can tap the icon to switch back to Auto.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">2-installment payment</span>
+        <span class="spec-val">The debit date is shown on two rows (1st and 2nd installment), and the Auto / Manual icon toggles both rows together. The amount is split automatically; tap an amount to redistribute manually within the range of 1 to (total − 1), with the other side updating accordingly. The 2nd installment's date is constrained to fall after the 1st; if you move the 1st past the 2nd, the app shifts the 2nd to the following month automatically. Once the 1st installment is marked as paid, fields other than the 2nd installment's date (amount, use date, payment method, etc.) become read-only. Enable "Use 2-installment payment" in Settings to make this option available for new entries — existing 2-installment records remain visible and editable even when the setting is off.</span>
+      </div>
+    </div>
   </section>
 
   <section class="content-section">
@@ -323,7 +354,7 @@
     <div class="spec-group">
       <div class="spec-row">
         <span class="spec-key">Target Payments</span>
-        <span class="spec-val">Payments debited from your account later</span>
+        <span class="spec-val">Payments debited from your account on a later date (instant-debit cards and cash top-ups are out of scope)</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Platform</span>
@@ -336,6 +367,70 @@
       <div class="spec-row">
         <span class="spec-key">Date Range</span>
         <span class="spec-val">2000-01-01 to 2100-12-31</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Label Length</span>
+        <span class="spec-val">Up to 50 characters</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Note Length</span>
+        <span class="spec-val">Up to 200 characters</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Payment Methods</span>
+        <span class="spec-val">Lump sum or 2-payment installment (interest-free, fee-free assumed). Three or more installments and bonus payments are not supported</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Debit Date Calculation</span>
+        <span class="spec-val">Computed automatically from closing day / payment month / payment day. N-days-later cards use use-date + N days. When no payment method is selected, the debit date equals the use date</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Weekend/Holiday Shift</span>
+        <span class="spec-val">Japan locale only. With the setting on (default), closing/payment-day cards have their debit date shifted to the next business day when it falls on a Saturday, Sunday, or Japanese national holiday. Covers holidays from the 1948 law to 2099, including special transfers, substitute holidays, and national holidays</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Debit Date Lock</span>
+        <span class="spec-val">Switch each item between manual and automatic. Items marked paid are locked automatically</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Repeat</span>
+        <span class="spec-val">1 to 99 months. When marked paid, a copy is generated automatically for the next cycle</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Tags</span>
+        <span class="spec-val">Multiple tags per item. Used for filtering and summary in lists</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Debit Total Period</span>
+        <span class="spec-val">Recent 1 to 20 days, 30, 35, 40, 50, or 60 days (default 15 days)</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Data Storage</span>
+        <span class="spec-val">On-device only (SwiftData). No cloud sync. You can back up the device itself via iCloud Backup</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Backup / Restore</span>
+        <span class="spec-val">Export / import the entire dataset as JSON from Settings (compact or pretty format)</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">JSON Import Policy</span>
+        <span class="spec-val">Merge (upsert) by id. Restores masters (accounts, methods, tags), records, paid/unpaid state, and debit-date locks. Missing array keys are treated as unspecified and skipped. If a save fails partway, all changes are rolled back so the database stays consistent</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">JSON Import Normalization</span>
+        <span class="spec-val">Payment method is normalized to 1 (lump sum) or 2 (2-payment); anything else becomes lump sum. For N-days-later cards, payment month is normalized to 0. Manually adjusted amounts in a 2-payment record are preserved on import. Amounts that fail to parse are imported as 0 and a warning is logged</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Legacy Migration</span>
+        <span class="spec-val">Auto-migrates from the legacy Core Data file (AzCredit.sqlite). On failure, the next launch retries automatically. Missing WAL/SHM after iCloud restore is auto-repaired</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Prune Old Records</span>
+        <span class="spec-val">Settings can bulk-delete records older than a chosen number of years</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Privacy</span>
+        <span class="spec-val">No data is sent to any external server. The local database is not encrypted, so the app is designed not to store sensitive personal information</span>
       </div>
     </div>
   </section>
@@ -361,7 +456,8 @@
           <tr><td>1.2.4</td><td>2018/9/4</td><td>Xcode 9, iOS 11, Objective-C, Core Data</td></tr>
           <tr><td>2.0.0</td><td>2026/5/13</td><td>Xcode 26, iOS 18+, Swift 6, SwiftData</td></tr>
           <tr><td>2.1.0</td><td>2026/5/15</td><td>Restored legacy features, including the confirmation check as a lock toggle; improved History period/filter/sort controls and Debit Status grouping/filter controls</td></tr>
-          <tr><td>2.2.0</td><td>TBD</td><td>Added on/off setting for auto-open numeric keypad; expanded paths to copy from existing records (matching-amount or recently edited from History, from Pay Methods, and debit date + method from Debit Status)</td></tr>
+          <tr><td>2.2.0</td><td>2026/5/27</td><td>Added on/off setting for auto-open numeric keypad; expanded paths to copy from existing records (matching-amount or recently edited from History, from Pay Methods, and debit date + method from Debit Status)</td></tr>
+          <tr><td>2.3.0</td><td>2026/6/8</td><td>Unified draft entry flow for new and copy; bulk change in Debit Statement; weekend/holiday shift to next business day (jp); jump to prev/next due-date cycle; revived 2-payment installment; improved beginner help; total period now editable on Debit Status screen</td></tr>
         </tbody>
       </table>
     </div>

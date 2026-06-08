@@ -178,6 +178,39 @@
         <span class="spec-val">決済一覧で金額一致の明細・最近編集した明細を一覧から選んでコピー、決済手段一覧の明細をコピー、引き落とし明細の引き落とし日＋決済手段をコピー、を新規決済に反映できます。</span>
       </div>
     </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">引き落とし日（支払日）の自動／手動</p>
+      <div class="spec-row">
+        <span class="spec-key">
+          <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="vertical-align:-4px;margin-right:4px">
+            <!-- autostartstop 風: 円弧矢印 + 中央A -->
+            <path fill="#0A84FF" d="M12 3a9 9 0 0 1 9 9 9 9 0 0 1-2.64 6.36l-1.42-1.42A7 7 0 0 0 19 12a7 7 0 0 0-7-7 7 7 0 0 0-7 7 7 7 0 0 0 2.06 4.94l1.06-1.06.71 4.24-4.24-.71 1.06-1.06A9 9 0 0 1 3 12a9 9 0 0 1 9-9z"/>
+            <text x="12" y="15.5" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#0A84FF">A</text>
+          </svg>
+          自動
+        </span>
+        <span class="spec-val">利用日と決済手段（締日／支払日／支払月／N日後型）から引き落とし日を自動計算します。利用日や決済手段を変更すると自動的に追従します。日本ロケールで設定 ON のときは、土日祝に当たる場合は翌営業日へ繰延します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">
+          <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="vertical-align:-4px;margin-right:4px">
+            <!-- hand.raised 風: 5本指の手のひら -->
+            <path fill="#34C759" d="M12 1.5a1.5 1.5 0 0 0-1.5 1.5v7.5h-1V4.5a1.5 1.5 0 0 0-3 0v9.25l-1.4-1.4a1.5 1.5 0 0 0-2.12 2.12L7.5 19a6 6 0 0 0 10.5-4V6a1.5 1.5 0 0 0-3 0v4.5h-1V3a1.5 1.5 0 0 0-1.5-1.5z"/>
+          </svg>
+          手動
+        </span>
+        <span class="spec-val">アイコンをタップすると、その時点の日付に固定されます。以降は利用日や決済手段を変えても引き落とし日は変わりません。締切に間に合わなかった決済を翌回引き落としへずらしたい場合などに使います。日付タップでカレンダー選択、または「前支払日へ／翌支払日へ」ボタンで支払サイクル単位の移動ができます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">済みで手動に固定</span>
+        <span class="spec-val">明細を「引き落とし済み」にすると、その明細の引き落とし日は自動的に「手動」に切り替わって固定されます（誤って利用日や決済手段の変更で動かないようにするため）。未払に戻しても固定は保持されますが、アイコンをタップすれば「自動」に戻せます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">2回払い</span>
+        <span class="spec-val">引き落とし日が 1回目・2回目の 2 行で表示され、自動／手動のアイコンは 2 行まとめて切り替わります。分割金額は自動で配分されますが、金額をタップすれば 1円〜総額-1円 の範囲で手動配分でき、もう一方に振り分けられます。2回目の支払日は 1回目の翌日以降に制限され、1回目を変更して 2回目以降になった場合は 2回目を翌月へ自動補正します。1回目を「引き落とし済み」にすると、2回目の引き落とし日以外（金額・利用日・決済手段など）は編集不可になります。設定の「2回払いを利用する」を ON にすると新規入力で選べるようになります（既存の 2回払いは設定 OFF でも表示・編集を維持）。</span>
+      </div>
+    </div>
   </section>
 
   <section class="content-section">
@@ -323,7 +356,7 @@
     <div class="spec-group">
       <div class="spec-row">
         <span class="spec-key">対象</span>
-        <span class="spec-val">後日口座から引き落とされる決済</span>
+        <span class="spec-val">後日口座から引き落とされる決済（即時引き落としのデビット、現金チャージは対象外）</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">対応 OS</span>
@@ -336,6 +369,70 @@
       <div class="spec-row">
         <span class="spec-key">利用日範囲</span>
         <span class="spec-val">2000/1/1 〜 2100/12/31</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">ラベル文字数</span>
+        <span class="spec-val">50 文字まで</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">メモ文字数</span>
+        <span class="spec-val">200 文字まで</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">支払方法</span>
+        <span class="spec-val">一括／2回払い（無利息・手数料無料の範囲を想定）。3回以上の分割やボーナス払いは未対応</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">引き落とし日計算</span>
+        <span class="spec-val">締日／支払月／支払日から自動計算。N日後型カードは利用日＋N日。決済手段未選択時は利用日と同日</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">土日祝の繰延</span>
+        <span class="spec-val">日本のロケールのみ、設定 ON（既定）で締日／支払日型のカードについて土日祝なら翌営業日へ繰延。1948年法施行〜2099年までの祝日に対応（特例措置・振替休日・国民の休日を含む）</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">引き落とし日のロック</span>
+        <span class="spec-val">明細単位で手動指定／自動計算を切替。済みにした明細は自動的にロックされる</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">繰り返し</span>
+        <span class="spec-val">1〜99 ヶ月の間隔で「済みにした時に翌月以降のコピーを自動生成」</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">タグ</span>
+        <span class="spec-val">1 明細に複数タグ。一覧の絞り込み・集計に利用</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">引き落とし合計期間</span>
+        <span class="spec-val">直近 1〜20 日、30 日、35 日、40 日、50 日、60 日（既定 15 日）</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">データ保存</span>
+        <span class="spec-val">端末ローカル（SwiftData）。クラウド同期なし。iCloud バックアップで端末ごと退避は可能</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">バックアップ／復元</span>
+        <span class="spec-val">設定画面から全データ JSON のエキスポート／インポート（コンパクト形式・プリティ形式）</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">JSON インポート方針</span>
+        <span class="spec-val">追記マージ（id 単位）方式。マスタ（口座・決済手段・タグ）／明細／状態（未払・済み）／引き落とし日ロック を保持。配列キーが欠けている場合は未指定として無視。途中で失敗した場合は変更を巻き戻して安全に終了</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">JSON インポート正規化</span>
+        <span class="spec-val">支払方法は 1（一括）または 2（2回払い）以外を一括へ正規化。N日後型カードの支払月は 0 に正規化。2回払いで手動配分した金額は復元時に保持。金額の解析に失敗した値は 0 として取り込み警告ログを出力</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">旧アプリ移行</span>
+        <span class="spec-val">旧 Core Data ファイル（AzCredit.sqlite）から自動移行。失敗時は次回起動で自動再試行。iCloud 復元で WAL/SHM が欠けても自動補修</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">古い履歴の整理</span>
+        <span class="spec-val">設定から指定年数より古い明細を一括削除可能</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">プライバシー</span>
+        <span class="spec-val">外部サーバーへの送信なし。ローカル DB は暗号化していないため、機微情報は記録しない設計</span>
       </div>
     </div>
   </section>
@@ -361,7 +458,8 @@
           <tr><td>1.2.4</td><td>2018/9/4</td><td>Xcode 9, iOS 11, Objective-C, Core Data</td></tr>
           <tr><td>2.0.0</td><td>2026/5/13</td><td>Xcode 26, iOS 18+, Swift 6, SwiftData</td></tr>
           <tr><td>2.1.0</td><td>2026/5/15</td><td>旧アプリの確認チェックをロックトグルとして復活、履歴の対象期間・複合フィルター・並び順、引き落とし状況の集計/絞り込み表示を改善</td></tr>
-          <tr><td>2.2.0</td><td>TBD</td><td>テンキー自動表示の ON/OFF 設定を追加、新規決済を既存明細からコピーする経路を拡充（決済一覧の同額／最近編集、決済手段一覧、引き落とし明細から）</td></tr>
+          <tr><td>2.2.0</td><td>2026/5/27</td><td>テンキー自動表示の ON/OFF 設定を追加、新規決済を既存明細からコピーする経路を拡充（決済一覧の同額／最近編集、決済手段一覧、引き落とし明細から）</td></tr>
+          <tr><td>2.3.0</td><td>2026/6/8</td><td>仮明細方式（新しい決済／コピー）に統一、引き落とし明細にまとめて変更ボタン、土日祝の翌営業日繰延（jp）、引き落とし日の前/翌支払日へ移動、2回払い復活、初心者ヘルプ改善、引き落とし合計期間を引き落とし状況画面で変更</td></tr>
         </tbody>
       </table>
     </div>
