@@ -80,6 +80,7 @@
   <section class="content-section">
     <h2>What It Does</h2>
     <div class="feature-grid">
+      <div class="feature-item">New payment by voice [β]<small>Speak the amount and label to create a record. Optionally dictate the payment method too.</small></div>
       <div class="feature-item">Quick payment entry<small>Enter the amount first, save, and fill in the rest later if needed.</small></div>
       <div class="feature-item">Edit saved history<small>Open any saved record and update its label, tags, payment method, or account.</small></div>
       <div class="feature-item">Review upcoming debits<small>See your recent debit total and switch payments between unpaid and paid.</small></div>
@@ -94,6 +95,10 @@
   <section class="content-section">
     <h2>Main Screens</h2>
     <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">New Payment by Voice [β]</span>
+        <span class="spec-val">Create a record with the microphone. Speak the amount and label first, then optionally switch to dictating the payment method. The detected method is tappable, so you can pick a different one from the list.</span>
+      </div>
       <div class="spec-row">
         <span class="spec-key">New Payment</span>
         <span class="spec-val">Create a new payment record. You can also make this screen open automatically when the app resumes.</span>
@@ -339,6 +344,10 @@
         <span class="spec-val">When opening New Payment with no amount entered, the numeric keypad opens automatically. This can be toggled on/off in Settings.</span>
       </div>
       <div class="spec-row">
+        <span class="spec-key">Use Voice Input [β]</span>
+        <span class="spec-val">Toggle whether "New Payment by Voice" appears in the main menu. The option is only shown when your device locale is supported by speech recognition (default on).</span>
+      </div>
+      <div class="spec-row">
         <span class="spec-key">After Save</span>
         <span class="spec-val">Choose whether saving goes back, clears for another entry, keeps the same date and method, or shows History.</span>
       </div>
@@ -458,6 +467,7 @@
           <tr><td>2.1.0</td><td>2026/5/15</td><td>Restored legacy features, including the confirmation check as a lock toggle; improved History period/filter/sort controls and Debit Status grouping/filter controls</td></tr>
           <tr><td>2.2.0</td><td>2026/5/27</td><td>Added on/off setting for auto-open numeric keypad; expanded paths to copy from existing records (matching-amount or recently edited from History, from Pay Methods, and debit date + method from Debit Status)</td></tr>
           <tr><td>2.3.0</td><td>2026/6/8</td><td>Unified draft entry flow for new and copy; bulk change in Debit Statement; weekend/holiday shift to next business day (jp); jump to prev/next due-date cycle; revived 2-payment installment; improved beginner help; total period now editable on Debit Status screen</td></tr>
+          <tr><td>2.4.0</td><td>TBD</td><td>Added "New Payment by Voice" [β] (two-phase flow: amount/label then payment method, with tap-to-pick from the full list, learning the spoken token as a future alias); added "Use voice input" setting; refreshed Debit Status colors to blue / gray; updated menu icon palette to indigo / brown / orange; refreshed app icon with the new palette and a stronger glowing center boundary</td></tr>
         </tbody>
       </table>
     </div>

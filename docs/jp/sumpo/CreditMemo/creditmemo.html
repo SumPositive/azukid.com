@@ -80,6 +80,7 @@
   <section class="content-section">
     <h2>できること</h2>
     <div class="feature-grid">
+      <div class="feature-item">音声で新しい決済 [β]<small>金額とラベルを話すだけで明細を作成。続けて決済手段も発話で指定できます。</small></div>
       <div class="feature-item">新しい決済をすばやく入力<small>金額を先に入れて保存し、細かい情報はあとから補えます。</small></div>
       <div class="feature-item">履歴をあとから修正<small>保存後の明細を開いて、ラベル・タグ・決済手段・口座などを更新できます。</small></div>
       <div class="feature-item">引き落とし予定をまとめて確認<small>直近の引き落とし合計と、未払・済みの状態を一覧できます。</small></div>
@@ -94,6 +95,10 @@
   <section class="content-section">
     <h2>画面構成</h2>
     <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">音声で新しい決済 [β]</span>
+        <span class="spec-val">マイクで明細を作成します。最初に金額とラベルを話し、必要に応じて決済手段も話して指定できます。検出した手段はタップで一覧から選び直せます。</span>
+      </div>
       <div class="spec-row">
         <span class="spec-key">新しい決済</span>
         <span class="spec-val">新規の決済明細を入力します。起動時にこの画面を開く設定もできます。</span>
@@ -341,6 +346,10 @@
         <span class="spec-val">「新しい決済」を開いた時に金額が未入力なら、テンキーを自動で開きます。設定で ON/OFF を切り替えできます。</span>
       </div>
       <div class="spec-row">
+        <span class="spec-key">音声入力を使う [β]</span>
+        <span class="spec-val">メインメニューに「音声で新しい決済」を表示するかを切り替えます。端末ロケールが音声認識に対応している場合のみ表示されます（既定 ON）。</span>
+      </div>
+      <div class="spec-row">
         <span class="spec-key">保存後の動作</span>
         <span class="spec-val">前画面に戻る、連続入力する、同じ日付と決済手段を保って連続入力する、履歴を表示する、から選べます。</span>
       </div>
@@ -460,6 +469,7 @@
           <tr><td>2.1.0</td><td>2026/5/15</td><td>旧アプリの確認チェックをロックトグルとして復活、履歴の対象期間・複合フィルター・並び順、引き落とし状況の集計/絞り込み表示を改善</td></tr>
           <tr><td>2.2.0</td><td>2026/5/27</td><td>テンキー自動表示の ON/OFF 設定を追加、新規決済を既存明細からコピーする経路を拡充（決済一覧の同額／最近編集、決済手段一覧、引き落とし明細から）</td></tr>
           <tr><td>2.3.0</td><td>2026/6/8</td><td>仮明細方式（新しい決済／コピー）に統一、引き落とし明細にまとめて変更ボタン、土日祝の翌営業日繰延（jp）、引き落とし日の前/翌支払日へ移動、2回払い復活、初心者ヘルプ改善、引き落とし合計期間を引き落とし状況画面で変更</td></tr>
+          <tr><td>2.4.0</td><td>TBD</td><td>音声で新しい決済 [β] を追加（金額/ラベル → 手段の2段階、手段は一覧から選び直し可能、選択結果を音声候補として学習）、設定に「音声入力を使う」を追加、引き落とし状況の配色を青/グレーに刷新、メニューアイコン色をインディゴ/ブラウン/オレンジに更新、アプリアイコンを新配色＋強調された境界線に刷新</td></tr>
         </tbody>
       </table>
     </div>
