@@ -63,14 +63,15 @@
   <section class="content-section">
     <h2>特長</h2>
     <div class="feature-grid">
-      <div class="feature-item">9 種類のビルトインスタイル<small>Regacy・Midnight・Brass・Ocean・Shape・Varnia・Chrome・Hairline・Rubber</small></div>
-      <div class="feature-item">カスタム画像タイルに対応<small>自作の PDF / PNG アセットをタイル表示できる</small></div>
+      <div class="feature-item">12 種類のビルトインスタイル<small>Rhombus・Braid・Cobble・Regacy・Midnight・Brass・Ocean・Shape・Varnia・Chrome・Hairline・Rubber</small></div>
+      <div class="feature-item">カスタムタイルに対応<small>自作の PDF / PNG 画像、または CoreGraphics 描画クロージャでスタイルを指定できる</small></div>
       <div class="feature-item">ダイアル幅を調整できる<small>80〜220 pt の範囲で指定可能</small></div>
-      <div class="feature-item">ステッパーボタンを内蔵<small>ステップ量のラベル表示つき。0 指定で非表示</small></div>
+      <div class="feature-item">ステッパーボタンを内蔵<small>ステップ量のラベル表示つき。上下左右どこにでも配置でき、0 指定で非表示</small></div>
       <div class="feature-item">速度感応型ドラッグ＋惰性スクロール<small>フリックで慣性スクロール。低速/高速フリックでステップ倍率が変わる</small></div>
       <div class="feature-item">ステップスナップ<small>指を離してもダイアルが動かない。丸め処理によるジャンプなし</small></div>
       <div class="feature-item">操作感度チューニング<small>AZDialInteractionTuning で pitch・慣性・倍率を細かく調整</small></div>
       <div class="feature-item">設定シート UI を内蔵<small>AZDialSettingsView をシートとして表示するだけで設定画面が完成</small></div>
+      <div class="feature-item">縦操作を親ビューへパススルー<small>横ドラッグはダイアル操作、縦スワイプは親の List / ScrollView へ伝わる（iOS）</small></div>
       <div class="feature-item">ナビゲーション戻るジェスチャーをブロック<small>ダイアル操作中のスワイプバックを自動ブロック（iOS）</small></div>
       <div class="feature-item">触覚フィードバック<small>iOS では UISelectionFeedbackGenerator でステップごとにフィードバック</small></div>
       <div class="feature-item">VoiceOver / アクセシビリティ対応<small>accessibilityAdjustableAction で増減操作が可能</small></div>
@@ -151,7 +152,8 @@ struct ContentView: View {
             <tr><td><code>min</code></td><td><code>Int</code></td><td>—</td><td>最小値</td></tr>
             <tr><td><code>max</code></td><td><code>Int</code></td><td>—</td><td>最大値</td></tr>
             <tr><td><code>step</code></td><td><code>Int</code></td><td>—</td><td>ドラッグ 1 ステップあたりの変化量</td></tr>
-            <tr><td><code>stepperStep</code></td><td><code>Int</code></td><td>—</td><td>ステッパーボタンの変化量（0 で非表示）</td></tr>
+            <tr><td><code>stepperStep</code></td><td><code>Int?</code></td><td><code>nil</code>（= step）</td><td>ステッパーボタンの変化量（0 で非表示）</td></tr>
+            <tr><td><code>stepperPosition</code></td><td><code>AZDialStepperPosition</code></td><td><code>.left</code></td><td>ステッパーの表示位置（<code>.left</code> / <code>.right</code> / <code>.top</code> / <code>.bottom</code>）</td></tr>
             <tr><td><code>decimals</code></td><td><code>Int</code></td><td><code>0</code></td><td>ステッパーラベルの小数点以下桁数</td></tr>
             <tr><td><code>style</code></td><td><code>DialStyle</code></td><td><code>.shape</code></td><td>ビジュアルスタイル</td></tr>
             <tr><td><code>dialWidth</code></td><td><code>CGFloat</code></td><td><code>220</code></td><td>ダイアル幅（80〜220 pt にクランプ）</td></tr>
@@ -174,6 +176,9 @@ struct ContentView: View {
             <tr><th>スタイル</th><th>説明</th></tr>
           </thead>
           <tbody>
+            <tr><td><code>.rhombus</code></td><td>流れる波状の溝と細いサイプ（CoreGraphics 生成）</td></tr>
+            <tr><td><code>.braid</code></td><td><code>.rhombus</code> をより細かく密に織り込んだ変種</td></tr>
+            <tr><td><code>.cobble</code></td><td>互い違いに噛み合う角張った隆起ブロック</td></tr>
             <tr><td><code>.regacy</code></td><td>クラシック AZDial ナーリング — Objective-C 版の復刻デザイン</td></tr>
             <tr><td><code>.midnight</code></td><td>ガンメタル地にシルバーのハイコントラスト</td></tr>
             <tr><td><code>.brass</code></td><td>ウォームブラス地にシャンパンゴールドのハイライト</td></tr>
@@ -202,6 +207,23 @@ struct ContentView: View {
     )
 )</pre>
       <p>Swift Package 内のアセットには <code>bundle: .module</code> を指定してください。</p>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">カスタム CoreGraphics タイル</p>
+      <p>画像アセットを用意せず、CoreGraphics の描画クロージャで手続き的にスタイルを定義できます。生成したタイルは <code>(id, カラースキーム, ダイアル高さ)</code> ごとにキャッシュされ、各組み合わせで一度だけ描画されます。コンテキストは<strong>左上原点・ポイント単位</strong>で、<code>size</code> はタイルサイズ（高さはダイアルに一致）、<code>Bool</code> はダークモード判定です。</p>
+      <pre>AZDialView(
+    value: $value,
+    min: 0, max: 100,
+    step: 1, stepperStep: 10,
+    style: .drawn(id: "myStripes", tileWidth: 12) { ctx, size, isDark in
+        ctx.setFillColor((isDark ? UIColor.black : UIColor.gray).cgColor)
+        ctx.fill(CGRect(origin: .zero, size: size))
+        ctx.setFillColor(UIColor.white.cgColor)
+        ctx.fill(CGRect(x: size.width / 2 - 1, y: 0, width: 2, height: size.height))
+    }
+)</pre>
+      <p><code>id</code> はキャッシュキー兼永続化 ID です。外観ごとに一意にしてください。</p>
     </div>
 
     <div class="spec-group">
@@ -258,8 +280,8 @@ AZDialView(value: $value, min: 0, max: 100, step: 1, stepperStep: 10,
           </thead>
           <tbody>
             <tr><td><code>.fine</code></td><td>36 pt</td><td>×3 / ×20</td><td>精密入力・誤操作防止</td></tr>
-            <tr><td><code>.mild</code></td><td>28 pt</td><td>×6 / ×50</td><td>控えめな動き</td></tr>
-            <tr><td><code>.standard</code></td><td>20 pt</td><td>×10 / ×100</td><td><strong>標準（デフォルト）</strong></td></tr>
+            <tr><td><code>.mild</code></td><td>28 pt</td><td>×6 / ×50</td><td>控えめな動き <strong>（デフォルト）</strong></td></tr>
+            <tr><td><code>.standard</code></td><td>20 pt</td><td>×10 / ×100</td><td>標準・バランス</td></tr>
             <tr><td><code>.light</code></td><td>14 pt</td><td>×15 / ×130</td><td>軽快な操作感</td></tr>
             <tr><td><code>.fast</code></td><td>9 pt</td><td>×20 / ×180</td><td>高速入力向け</td></tr>
           </tbody>
@@ -332,6 +354,7 @@ AZDialSettingsView(tuning: $tuning, style: $style, configuration: config)</pre>
           <tr><td>3.0.5</td><td>2026/4/16 ビルトインスタイル <code>.shape</code> を追加。デフォルトスタイルを <code>.shape</code> に変更</td></tr>
           <tr><td>3.1.0</td><td>2026/4/17 <code>pitch</code> パラメータを追加しステップ動作フィールを改善。フリック速度に応じた ×10 / ×100 ステップ惰性動作を追加</td></tr>
           <tr><td>3.2.0</td><td>2026/4/19 <code>AZDialInteractionTuning</code> による操作感度チューニング追加。フリック慣性スクロール・速度倍率対応。<code>AZDialSettingsView</code> 設定シート追加。ステップスナップ改善（離指時のジャンプなし）。ナビゲーション戻るジェスチャーのブロック対応</td></tr>
+          <tr><td>3.3.0</td><td>2026/6/22 ステッパーを上下左右に配置可能に（<code>stepperPosition</code>）。スタイル 3 種追加（<code>.rhombus</code> / <code>.braid</code> / <code>.cobble</code>）。既存スタイルの立体感を改善。カスタムスタイルを画像タイルに加え CoreGraphics キャッシュ方式（<code>.drawn</code>）でも指定可能に。ダイアル領域での縦操作を親ビューへパススルー（横=ダイアル / 縦=親スクロール）。操作感度のデフォルトを「控えめ」に変更</td></tr>
         </tbody>
       </table>
     </div>

@@ -39,7 +39,7 @@
   </div>
 
   <div class="lead">
-    <p>A Swift package providing <strong>AZDecimal</strong> — a floating-point-free BCD decimal type with 60-digit precision and 7 rounding modes — and <strong>AZFormula</strong> — an infix formula string evaluator built on the Shunting Yard algorithm.</p>
+    <p>A Swift package providing <strong>AZDecimal</strong> — a floating-point-free BCD decimal type with 60-digit precision and 8 rounding modes — and <strong>AZFormula</strong> — an infix formula string evaluator built on the Shunting Yard algorithm.</p>
     <p>The sbcd library at the heart of this package was originally written in C/C++ in <strong>1998</strong> and has been <strong>embedded in Calclin (CalcRoll) since its earliest days</strong>. It was born from a single conviction: a calculator app must never use floating-point arithmetic. That principle has driven over 25 years of real-world use. In 2026 it was extracted and published as a Swift 6–ready Swift Package.</p>
   </div>
 
@@ -65,7 +65,7 @@
     <div class="feature-grid">
       <div class="feature-item">No floating-point errors<small>BCD arithmetic guarantees 0.1+0.2=0.3</small></div>
       <div class="feature-item">60-digit precision (default definition)<small>Up to 30 integer digits + 30 decimal digits. This significant-digit count can be changed with a build flag (<code>-DSBCD_PRECISION=</code>). The value must be even. The upper bound is whatever stack consumption permits for the fixed C array (<code>char digit[SBCD_PRECISION+1]</code>).</small></div>
-      <div class="feature-item">7 rounding modes<small>Round half up, banker's rounding, ceiling, floor, and more</small></div>
+      <div class="feature-item">8 rounding modes<small>Round half up, banker's rounding, ceiling, floor, and more</small></div>
       <div class="feature-item">Formula evaluator<small>Infix parsing via Shunting Yard algorithm</small></div>
       <div class="feature-item">Context-sensitive % operator<small>100+5% → 105 (add) / 100×5% → 5 (ratio)</small></div>
       <div class="feature-item">Flexible number formatting<small>Thousands, fours, Indian grouping with custom separators</small></div>
@@ -104,7 +104,7 @@
     <div class="spec-group">
       <p class="spec-group-title">Package.swift</p>
       <pre>dependencies: [
-    .package(url: "https://github.com/SumPositive/AZCalc", from: "1.0.0")
+    .package(url: "https://github.com/SumPositive/AZCalc", from: "2.0.0")
 ]
 
 // Add to your target
@@ -147,7 +147,35 @@ AZDecimal.one         // AZDecimal("1")
 let v: AZDecimal = "-3.14"
 v.isZero              // false
 v.isNegative          // true
-v.abs                 // AZDecimal("3.14")</pre>
+v.abs                 // AZDecimal("3.14")
+
+// Division by zero / overflow returns NaN (like Double) (2.0.0+)
+let bad = AZDecimal("1") / AZDecimal("0")
+bad.isNaN             // true
+bad == bad            // false (NaN is not equal to itself)</pre>
+      <p><small>Note: NaN representation via <code>isNaN</code> is available from 2.0.0. Earlier versions returned the internal <code>"-0"</code> sentinel.</small></p>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Power and remainder (2.0.0+)</p>
+      <pre>AZDecimal("2").power(10)                   // 1024 (BCD-exact for integer exponents)
+AZDecimal("2").power(-3)                    // 0.125
+AZDecimal("10").remainder(dividingBy: "3") // 1 (quotient truncated toward zero)
+AZDecimal("42").integerValue               // Optional(42)
+AZDecimal("3.5").integerValue              // nil</pre>
+      <p><small>NaN, 0 raised to a negative power, and remainder by zero all return NaN.</small></p>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Codable (2.0.0+)</p>
+      <p><code>AZDecimal</code> conforms to <code>Codable</code>, encoded as a single string (its value). Persisting calculator state, history, or amounts becomes a one-liner (NaN round-trips correctly).</p>
+      <pre>struct Receipt: Codable { let total: AZDecimal }
+
+let data = try JSONEncoder().encode(Receipt(total: "1234.56"))
+// {"total":"1234.56"}
+
+let restored = try JSONDecoder().decode(Receipt.self, from: data)
+restored.total   // AZDecimal("1234.56")</pre>
     </div>
 
     <div class="spec-group">
@@ -178,10 +206,13 @@ print(value.rounded(config).formatted(config))
             <tr><td><code>.r55</code></td><td>Round Half Even</td><td>Round half to even — Banker's rounding</td><td>JIS Z 8401 Rule A · IEEE 754: roundTiesToEven</td></tr>
             <tr><td><code>.r65</code></td><td>Round Half Down</td><td>5 rounds down, 6+ rounds up</td><td>—</td></tr>
             <tr><td><code>.rMinus</code></td><td>Round toward −∞</td><td>Round toward negative infinity</td><td>IEEE 754: roundTowardNegative</td></tr>
-            <tr><td><code>.truncate</code></td><td>Truncate</td><td>No rounding — return raw value</td><td>IEEE 754: roundTowardZero</td></tr>
+            <tr><td><code>.truncateToDigits</code> (2.0.0+)</td><td>Truncate to digits</td><td>Truncate the value to <code>decimalDigits</code></td><td>IEEE 754: roundTowardZero</td></tr>
+            <tr><td><code>.keepFull</code> (2.0.0+)</td><td>Keep full</td><td>No rounding — return the raw value at full precision</td><td>—</td></tr>
           </tbody>
         </table>
       </div>
+      <p><small>Renamed in 2.0.0: the former <code>.truncate</code> is split into <code>.truncateToDigits</code> (truncates the value) and <code>.keepFull</code> (no rounding). The old <code>.truncate</code> behaved like <code>.keepFull</code>.</small></p>
+      <p><small>When to use <code>.keepFull</code>: preserve full precision through chained calculations. The internal value stays at maximum precision while display truncation is left to <code>formatted()</code> (e.g. a calculator accumulator).</small></p>
     </div>
 
     <div class="spec-group">
@@ -258,6 +289,7 @@ let result = AZFormula.evaluate("1 ÷ 3", config: config)
           </thead>
           <tbody>
             <tr><td><code>+ - × ÷</code></td><td>Basic arithmetic (<code>* /</code> also accepted)</td></tr>
+            <tr><td><code>^</code> (2.0.0+)</td><td>Power (integer exponent only, right-associative, binds tighter than <code>× ÷</code>)</td></tr>
             <tr><td><code>√</code></td><td>Square root</td></tr>
             <tr><td><code>∛</code></td><td>Cube root</td></tr>
             <tr><td><code>( )</code></td><td>Parentheses</td></tr>
@@ -284,6 +316,7 @@ let result = AZFormula.evaluate("1 ÷ 3", config: config)
           </tbody>
         </table>
       </div>
+      <p><small>The percent symbols and divisors are exposed via <code>AZFormula.percentDivisors</code> (2.0.0+; default: <code>% → 100</code>, <code>割 → 10</code>, <code>分 → 100</code>, <code>厘 → 1000</code>). To disable the Japanese notation, narrow it to <code>%</code> only: <code>AZFormula.percentDivisors = ["%": "100"]</code>. Restore the default with <code>AZFormula.defaultPercentDivisors</code>.</small></p>
     </div>
 
     <div class="spec-group">
@@ -296,7 +329,11 @@ let result = AZFormula.evaluate("1 ÷ 3", config: config)
           <tbody>
             <tr><td><code>.tooLong</code></td><td>Formula exceeds <code>AZFormula.maxFormulaLength</code> (default: 200; settable at runtime)</td></tr>
             <tr><td><code>.negativeSqrt</code></td><td>√ applied to a negative number</td></tr>
-            <tr><td><code>.invalidExpression</code></td><td>Mismatched parentheses, consecutive operators, etc.</td></tr>
+            <tr><td><code>.zeroDivision</code></td><td>Division by zero (2.0.0+)</td></tr>
+            <tr><td><code>.overflow</code></td><td>Exceeded the precision digit limit / overflow (2.0.0+)</td></tr>
+            <tr><td><code>.unmatchedParenthesis</code></td><td>Mismatched parentheses (2.0.0+)</td></tr>
+            <tr><td><code>.missingOperand</code></td><td>Operator without enough operands (2.0.0+)</td></tr>
+            <tr><td><code>.invalidExpression</code></td><td>Anything else that cannot be evaluated (unknown token, etc.)</td></tr>
           </tbody>
         </table>
       </div>
@@ -322,7 +359,7 @@ let rpn = AZFormula.toRPN(tokens)
       </div>
       <div class="spec-row">
         <span class="spec-key">Rounding tab</span>
-        <span class="spec-val">Side-by-side comparison of all 7 rounding modes</span>
+        <span class="spec-val">Side-by-side comparison of all 8 rounding modes</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Format tab</span>
@@ -342,6 +379,7 @@ let rpn = AZFormula.toRPN(tokens)
         <tbody>
           <tr><td>1.0.0</td><td>2026/4/5 Initial release. Includes AZDecimal (arithmetic, rounding, formatting) and AZFormula (formula evaluation), plus fluent config, convenience properties, and a bilingual (ja/en) SwiftUI demo app. Published on Swift Package Index.</td></tr>
           <tr><td>1.2.2</td><td>2026/4/16</td></tr>
+          <tr><td>2.0.0</td><td>TBD &lt;Breaking change&gt; Reworked error handling. Division by zero and overflow are now represented by <code>AZDecimal.isNaN</code> (NaN) instead of the internal <code>"-0"</code> sentinel (Double semantics: NaN is not equal to itself). Added <code>.zeroDivision</code> / <code>.overflow</code> errors to AZFormula. √ of a negative value now returns NaN instead of crashing. The <code>.truncate</code> rounding mode is split into <code>.truncateToDigits</code> (truncates the value to the digit count) and <code>.keepFull</code> (no rounding, full precision). Added power: <code>AZDecimal.power(_:)</code> / <code>remainder(dividingBy:)</code> / <code>integerValue</code>, and the <code>^</code> operator in AZFormula. <code>AZDecimal</code> now conforms to <code>Codable</code> (encoded as a single value string). AZFormula errors are more granular (added <code>.unmatchedParenthesis</code> / <code>.missingOperand</code>). Percent symbols and divisors are now exposed and configurable via <code>AZFormula.percentDivisors</code>.</td></tr>
         </tbody>
       </table>
     </div>

@@ -63,14 +63,15 @@
   <section class="content-section">
     <h2>Features</h2>
     <div class="feature-grid">
-      <div class="feature-item">9 built-in visual styles<small>Regacy, Midnight, Brass, Ocean, Shape, Varnia, Chrome, Hairline, Rubber</small></div>
-      <div class="feature-item">Custom image tile support<small>Use your own PDF / PNG assets as a tiling background</small></div>
+      <div class="feature-item">12 built-in visual styles<small>Rhombus, Braid, Cobble, Regacy, Midnight, Brass, Ocean, Shape, Varnia, Chrome, Hairline, Rubber</small></div>
+      <div class="feature-item">Custom tile support<small>Supply your own PDF / PNG image, or a CoreGraphics drawing closure</small></div>
       <div class="feature-item">Adjustable dial width<small>Specify 80–220 pt</small></div>
-      <div class="feature-item">Built-in stepper buttons<small>Step label included. Pass 0 to hide</small></div>
+      <div class="feature-item">Built-in stepper buttons<small>Step label included. Placeable on any edge; pass 0 to hide</small></div>
       <div class="feature-item">Velocity-sensitive drag + inertia<small>Flick to coast; slow/fast flick applies different step multipliers</small></div>
       <div class="feature-item">Step snapping<small>No visual jump on finger lift — rounding applied during drag only</small></div>
       <div class="feature-item">Interaction tuning<small>AZDialInteractionTuning adjusts pitch, inertia, and multipliers</small></div>
       <div class="feature-item">Built-in settings sheet<small>AZDialSettingsView provides a ready-made style and sensitivity panel</small></div>
+      <div class="feature-item">Vertical drag passthrough<small>Horizontal drag drives the dial; vertical drag scrolls the enclosing List / ScrollView (iOS)</small></div>
       <div class="feature-item">Navigation back-swipe blocking<small>Swipe-back is automatically suppressed during dial interaction (iOS)</small></div>
       <div class="feature-item">Haptic feedback<small>Uses UISelectionFeedbackGenerator on each step (iOS)</small></div>
       <div class="feature-item">VoiceOver / Accessibility support<small>accessibilityAdjustableAction for increment/decrement</small></div>
@@ -151,7 +152,8 @@ struct ContentView: View {
             <tr><td><code>min</code></td><td><code>Int</code></td><td>—</td><td>Minimum value</td></tr>
             <tr><td><code>max</code></td><td><code>Int</code></td><td>—</td><td>Maximum value</td></tr>
             <tr><td><code>step</code></td><td><code>Int</code></td><td>—</td><td>Value increment per drag step</td></tr>
-            <tr><td><code>stepperStep</code></td><td><code>Int</code></td><td>—</td><td>Stepper button increment (0 = hidden)</td></tr>
+            <tr><td><code>stepperStep</code></td><td><code>Int?</code></td><td><code>nil</code> (= step)</td><td>Stepper button increment (0 = hidden)</td></tr>
+            <tr><td><code>stepperPosition</code></td><td><code>AZDialStepperPosition</code></td><td><code>.left</code></td><td>Stepper placement (<code>.left</code> / <code>.right</code> / <code>.top</code> / <code>.bottom</code>)</td></tr>
             <tr><td><code>decimals</code></td><td><code>Int</code></td><td><code>0</code></td><td>Decimal places on stepper label</td></tr>
             <tr><td><code>style</code></td><td><code>DialStyle</code></td><td><code>.shape</code></td><td>Visual style</td></tr>
             <tr><td><code>dialWidth</code></td><td><code>CGFloat</code></td><td><code>220</code></td><td>Dial width in points (clamped to 80–220)</td></tr>
@@ -174,6 +176,9 @@ struct ContentView: View {
             <tr><th>Style</th><th>Description</th></tr>
           </thead>
           <tbody>
+            <tr><td><code>.rhombus</code></td><td>Flowing wavy grooves with fine sipes (CoreGraphics-generated)</td></tr>
+            <tr><td><code>.braid</code></td><td>Denser, tighter-weaving variant of <code>.rhombus</code></td></tr>
+            <tr><td><code>.cobble</code></td><td>Interlocking angular lugs with carved grooves</td></tr>
             <tr><td><code>.regacy</code></td><td>Classic AZDial knurling — reproduction of the original Objective-C design</td></tr>
             <tr><td><code>.midnight</code></td><td>Dark gunmetal with high-contrast silver highlights</td></tr>
             <tr><td><code>.brass</code></td><td>Warm brass with champagne gold highlights</td></tr>
@@ -202,6 +207,23 @@ struct ContentView: View {
     )
 )</pre>
       <p>For assets in your own Swift Package, pass <code>bundle: .module</code>.</p>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Custom CoreGraphics tile</p>
+      <p>For a procedural surface without image assets, use <code>.drawn</code>. Your closure renders one tile with CoreGraphics, and the result is cached per <code>(id, colorScheme, dialHeight)</code> so it runs only once per combination. The context has a <strong>top-left origin</strong> and uses <strong>point</strong> coordinates; <code>size</code> is the tile size (its height matches the dial) and the <code>Bool</code> is <code>true</code> in dark mode.</p>
+      <pre>AZDialView(
+    value: $value,
+    min: 0, max: 100,
+    step: 1, stepperStep: 10,
+    style: .drawn(id: "myStripes", tileWidth: 12) { ctx, size, isDark in
+        ctx.setFillColor((isDark ? UIColor.black : UIColor.gray).cgColor)
+        ctx.fill(CGRect(origin: .zero, size: size))
+        ctx.setFillColor(UIColor.white.cgColor)
+        ctx.fill(CGRect(x: size.width / 2 - 1, y: 0, width: 2, height: size.height))
+    }
+)</pre>
+      <p><code>id</code> is the cache key and the persistence id — keep it unique per distinct appearance.</p>
     </div>
 
     <div class="spec-group">
@@ -258,8 +280,8 @@ AZDialView(value: $value, min: 0, max: 100, step: 1, stepperStep: 10,
           </thead>
           <tbody>
             <tr><td><code>.fine</code></td><td>36 pt</td><td>×3 / ×20</td><td>Maximum precision, minimal inertia</td></tr>
-            <tr><td><code>.mild</code></td><td>28 pt</td><td>×6 / ×50</td><td>Controlled</td></tr>
-            <tr><td><code>.standard</code></td><td>20 pt</td><td>×10 / ×100</td><td><strong>Default</strong></td></tr>
+            <tr><td><code>.mild</code></td><td>28 pt</td><td>×6 / ×50</td><td>Controlled <strong>(Default)</strong></td></tr>
+            <tr><td><code>.standard</code></td><td>20 pt</td><td>×10 / ×100</td><td>Balanced</td></tr>
             <tr><td><code>.light</code></td><td>14 pt</td><td>×15 / ×130</td><td>Nimble</td></tr>
             <tr><td><code>.fast</code></td><td>9 pt</td><td>×20 / ×180</td><td>High-speed entry</td></tr>
           </tbody>
@@ -332,6 +354,7 @@ AZDialSettingsView(tuning: $tuning, style: $style, configuration: config)</pre>
           <tr><td>3.0.5</td><td>2026/4/16 Added <code>.shape</code> built-in style. Changed default style to <code>.shape</code></td></tr>
           <tr><td>3.1.0</td><td>2026/4/17 Added <code>pitch</code> parameter for configurable step distance. Improved step-snap feel. Added velocity-based ×10 / ×100 step multipliers on flick inertia.</td></tr>
           <tr><td>3.2.0</td><td>2026/4/19 Added <code>AZDialInteractionTuning</code> for drag and inertia tuning. Flick inertia with velocity-based step multipliers. Added <code>AZDialSettingsView</code> settings sheet. Step snapping improved — no visual jump on finger lift. Navigation back-swipe blocking on iOS.</td></tr>
+          <tr><td>3.3.0</td><td>2026/6/22 Stepper can be placed on any edge (<code>stepperPosition</code>). Three new styles (<code>.rhombus</code> / <code>.braid</code> / <code>.cobble</code>). Improved 3-D depth of existing styles. Custom styles can now be supplied via CoreGraphics (<code>.drawn</code>) in addition to image tiles. Vertical drag over the dial passes through to the parent view (horizontal = dial, vertical = parent scroll). Default sensitivity changed to "Mild".</td></tr>
         </tbody>
       </table>
     </div>
