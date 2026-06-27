@@ -39,7 +39,7 @@
   </div>
 
   <div class="lead">
-    <p>浮動小数点誤差のない BCD（Binary Coded Decimal）演算型 <strong>AZDecimal</strong> と、中置記法の数式文字列を評価する <strong>AZFormula</strong> を一つのパッケージで提供します。整数部・小数部それぞれ最大 30 桁（合計 60 桁）の精度を持ち、7 種の丸めモードに対応しています。</p>
+    <p>浮動小数点誤差のない BCD（Binary Coded Decimal）演算型 <strong>AZDecimal</strong> と、中置記法の数式文字列を評価する <strong>AZFormula</strong> を一つのパッケージで提供します。整数部・小数部それぞれ最大 30 桁（合計 60 桁）の精度を持ち、8 種の丸めモードに対応しています。</p>
     <p>このパッケージの中核にある sbcd ライブラリは <strong>1998 年</strong>に C/C++ で開発され、<strong>カルメモ（CalcRoll）創期から組み込まれてきた演算エンジン</strong>です。浮動小数点演算の誤差が許されない用途にご利用ください。2026 年に Swift 6 対応の Swift Package として独立公開しました。</p>
   </div>
 
@@ -65,7 +65,7 @@
     <div class="feature-grid">
       <div class="feature-item">浮動小数点誤差なし<small>BCD（2進化10進数）演算で 0.1+0.2=0.3 が保証される</small></div>
       <div class="feature-item">60 桁の精度（初期定義）<small>整数部・小数部それぞれ最大 30 桁。この有効桁数は、ビルドフラグ（<code>-DSBCD_PRECISION=</code>）で変更可能。値は偶数に限る。上限は固定 C 配列（<code>char digit[SBCD_PRECISION+1]</code>）のスタック消費が許される限りです。</small></div>
-      <div class="feature-item">7 種の丸めモード<small>四捨五入・銀行家の丸め・切り上げ・切り捨てなど</small></div>
+      <div class="feature-item">8 種の丸めモード<small>四捨五入・銀行家の丸め・切り上げ・切り捨てなど</small></div>
       <div class="feature-item">数式評価エンジン<small>Shunting Yard アルゴリズムによる中置記法の解析</small></div>
       <div class="feature-item">% 演算子の文脈依存展開<small>100+5% → 105（増量）/ 100×5% → 5（比率）</small></div>
       <div class="feature-item">桁区切りフォーマット<small>3桁・4桁・インド式・任意セパレータに対応</small></div>
@@ -104,7 +104,7 @@
     <div class="spec-group">
       <p class="spec-group-title">Package.swift に追記</p>
       <pre>dependencies: [
-    .package(url: "https://github.com/SumPositive/AZCalc", from: "1.0.0")
+    .package(url: "https://github.com/SumPositive/AZCalc", from: "2.0.0")
 ]
 
 // ターゲットへの追加
@@ -147,7 +147,35 @@ AZDecimal.one         // AZDecimal("1")
 let v: AZDecimal = "-3.14"
 v.isZero              // false
 v.isNegative          // true
-v.abs                 // AZDecimal("3.14")</pre>
+v.abs                 // AZDecimal("3.14")
+
+// ゼロ除算・オーバーフローは NaN を返す（Double と同じ）（2.0.0 以降）
+let bad = AZDecimal("1") / AZDecimal("0")
+bad.isNaN             // true
+bad == bad            // false（NaN は自身とも等しくない）</pre>
+      <p><small>※ <code>isNaN</code> による NaN 表現は 2.0.0 以降。2.0.0 未満では内部番兵 <code>"-0"</code> を返していました。</small></p>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">べき乗・剰余（2.0.0 以降）</p>
+      <pre>AZDecimal("2").power(10)                   // 1024（整数指数は BCD 厳密）
+AZDecimal("2").power(-3)                    // 0.125
+AZDecimal("10").remainder(dividingBy: "3") // 1（商を0方向に切り捨て）
+AZDecimal("42").integerValue               // Optional(42)
+AZDecimal("3.5").integerValue              // nil</pre>
+      <p><small>NaN・0 の負べき・0 での剰余は NaN を返します。</small></p>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Codable（2.0.0 以降）</p>
+      <p><code>AZDecimal</code> は <code>Codable</code> に準拠し、内部値文字列1本で符号化されます。計算状態・履歴・金額などの永続化が簡潔に書けます（NaN も正しく往復します）。</p>
+      <pre>struct Receipt: Codable { let total: AZDecimal }
+
+let data = try JSONEncoder().encode(Receipt(total: "1234.56"))
+// {"total":"1234.56"}
+
+let restored = try JSONDecoder().decode(Receipt.self, from: data)
+restored.total   // AZDecimal("1234.56")</pre>
     </div>
 
     <div class="spec-group">
@@ -182,10 +210,13 @@ print(value.rounded(config).formatted(config))
             <tr><td><code>.r55</code></td><td>五捨五超入</td><td>偶数丸め・銀行家の丸め</td><td>JIS Z 8401 規則A · IEEE 754: roundTiesToEven</td></tr>
             <tr><td><code>.r65</code></td><td>五捨六入</td><td>5は切り捨て・6以上で切り上げ</td><td>—</td></tr>
             <tr><td><code>.rMinus</code></td><td>負方向丸め</td><td>負の無限大方向に丸める</td><td>IEEE 754: roundTowardNegative</td></tr>
-            <tr><td><code>.truncate</code></td><td>切り捨て</td><td>丸めなし・生の値を返す</td><td>IEEE 754: roundTowardZero</td></tr>
+            <tr><td><code>.truncateToDigits</code>（2.0.0 以降）</td><td>桁数で切り捨て</td><td>値を <code>decimalDigits</code> に切り捨てる</td><td>IEEE 754: roundTowardZero</td></tr>
+            <tr><td><code>.keepFull</code>（2.0.0 以降）</td><td>全桁保持</td><td>丸めなし・生の値を全桁返す</td><td>—</td></tr>
           </tbody>
         </table>
       </div>
+      <p><small>※ 2.0.0 で旧 <code>.truncate</code> を <code>.truncateToDigits</code>（値を切り捨て）と <code>.keepFull</code>（丸めなし）に分離しました。旧 <code>.truncate</code> は <code>.keepFull</code> 相当です。</small></p>
+      <p><small><code>.keepFull</code> の用途: 連鎖計算で中間値の精度を落としたくない場合に有効です。内部値は最大精度のまま保持し、表示は <code>formatted()</code> の桁切りに任せます（電卓のアキュムレータなど）。</small></p>
     </div>
 
     <div class="spec-group">
@@ -262,6 +293,7 @@ let result = AZFormula.evaluate("1 ÷ 3", config: config)
           </thead>
           <tbody>
             <tr><td><code>+ - × ÷</code></td><td>四則演算（<code>* /</code> も受け付ける）</td></tr>
+            <tr><td><code>^</code>（2.0.0 以降）</td><td>べき乗（整数指数のみ・右結合・<code>× ÷</code> より優先）</td></tr>
             <tr><td><code>√</code></td><td>平方根</td></tr>
             <tr><td><code>∛</code></td><td>立方根</td></tr>
             <tr><td><code>( )</code></td><td>括弧</td></tr>
@@ -288,6 +320,7 @@ let result = AZFormula.evaluate("1 ÷ 3", config: config)
           </tbody>
         </table>
       </div>
+      <p><small>パーセント記号と除数は <code>AZFormula.percentDivisors</code> で公開・変更できます（2.0.0 以降。既定: <code>% → 100</code>、<code>割 → 10</code>、<code>分 → 100</code>、<code>厘 → 1000</code>）。日本式表記を無効化したい場合は <code>AZFormula.percentDivisors = ["%": "100"]</code> のように <code>%</code> のみへ絞れます。<code>AZFormula.defaultPercentDivisors</code> で既定へ戻せます。</small></p>
     </div>
 
     <div class="spec-group">
@@ -300,7 +333,11 @@ let result = AZFormula.evaluate("1 ÷ 3", config: config)
           <tbody>
             <tr><td><code>.tooLong</code></td><td>数式が <code>AZFormula.maxFormulaLength</code> を超えた（デフォルト 200 文字。実行時に変更可能）</td></tr>
             <tr><td><code>.negativeSqrt</code></td><td>√ に負の値を適用した</td></tr>
-            <tr><td><code>.invalidExpression</code></td><td>括弧の不一致・演算子の連続など</td></tr>
+            <tr><td><code>.zeroDivision</code></td><td>ゼロで除算した（2.0.0 以降）</td></tr>
+            <tr><td><code>.overflow</code></td><td>精度桁数を超えた（オーバーフロー）（2.0.0 以降）</td></tr>
+            <tr><td><code>.unmatchedParenthesis</code></td><td>括弧の対応が取れていない（2.0.0 以降）</td></tr>
+            <tr><td><code>.missingOperand</code></td><td>演算子に対してオペランドが不足（2.0.0 以降）</td></tr>
+            <tr><td><code>.invalidExpression</code></td><td>上記以外の評価できない式（不正トークンなど）</td></tr>
           </tbody>
         </table>
       </div>
@@ -326,7 +363,7 @@ let rpn = AZFormula.toRPN(tokens)
       </div>
       <div class="spec-row">
         <span class="spec-key">Rounding タブ</span>
-        <span class="spec-val">7種の丸めモードを一覧比較</span>
+        <span class="spec-val">8種の丸めモードを一覧比較</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Format タブ</span>
@@ -346,6 +383,7 @@ let rpn = AZFormula.toRPN(tokens)
         <tbody>
           <tr><td>1.0.0</td><td>2026/4/5 初回公開。AZDecimal（演算・丸め・書式化）と AZFormula（数式評価）を収録。フルエント設定・便利プロパティ・日英ローカライズ対応デモアプリ付属。Swift Package Index 公開</td></tr>
           <tr><td>1.2.2</td><td>2026/4/16</td></tr>
+          <tr><td>2.0.0</td><td>TBD ＜破壊的変更＞ エラー表現を刷新。ゼロ除算・オーバーフローは内部番兵 <code>"-0"</code> ではなく <code>AZDecimal.isNaN</code>（NaN）で表現（Double 準拠：NaN は自身とも等しくない）。AZFormula に <code>.zeroDivision</code> / <code>.overflow</code> エラーを追加。負値の √ はクラッシュせず NaN を返す。丸めモード <code>.truncate</code> を <code>.truncateToDigits</code>（値を桁数で切り捨て）と <code>.keepFull</code>（丸めなし全桁保持）に分離。べき乗を追加（<code>AZDecimal.power(_:)</code> / <code>remainder(dividingBy:)</code> / <code>integerValue</code>、AZFormula の <code>^</code> 演算子）。<code>AZDecimal</code> を <code>Codable</code> 準拠（値文字列1本で符号化）。AZFormula のエラーを細分化（<code>.unmatchedParenthesis</code> / <code>.missingOperand</code> を追加）。パーセント記号と除数を <code>AZFormula.percentDivisors</code> で公開・変更可能に</td></tr>
         </tbody>
       </table>
     </div>

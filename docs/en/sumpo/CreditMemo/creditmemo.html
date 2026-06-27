@@ -38,6 +38,15 @@
     </div>
   </div>
 
+  <div class="notice" role="alert">
+    <span class="notice-icon" aria-hidden="true">📣</span>
+    <div>
+      <span class="notice-title">Known Issue</span>
+      The "lock" icon in the debit details has become invisible. You can still unlock it by tapping where it should be.
+      <span class="notice-sub">This occurs on iOS 18 and 25. A fix update has been submitted for release.</span>
+    </div>
+  </div>
+
   <div class="lead">
     <p>CreditMemo helps you track payments that will be debited from your bank account later. It covers credit-card spending, credit-linked wallet top-ups, N-days-later debits, fixed-date debits, and similar deferred payment methods. Immediate debit-card payments, cash top-ups, and other payments that settle right away are outside the scope.</p>
   </div>
@@ -472,8 +481,9 @@
           <tr><td>2.0.0</td><td>2026/5/13</td><td>Xcode 26, iOS 18+, Swift 6, SwiftData</td></tr>
           <tr><td>2.1.0</td><td>2026/5/15</td><td>Restored legacy features, including the confirmation check as a lock toggle; improved History period/filter/sort controls and Debit Status grouping/filter controls</td></tr>
           <tr><td>2.2.0</td><td>2026/5/27</td><td>Added on/off setting for auto-open numeric keypad; expanded paths to copy from existing records (matching-amount or recently edited from History, from Pay Methods, and debit date + method from Debit Status)</td></tr>
-          <tr><td>2.3.0</td><td>2026/6/8</td><td>Unified draft entry flow for new and copy; bulk change in Debit Statement; weekend/holiday shift to next business day (jp); jump to prev/next due-date cycle; revived 2-payment installment; improved beginner help; total period now editable on Debit Status screen</td></tr>
+          <tr><td>2.3.0</td><td>2026/6/8</td><td>Xcode 26.5; unified draft entry flow for new and copy; bulk change in Debit Statement; weekend/holiday shift to next business day (jp); jump to prev/next due-date cycle; revived 2-payment installment; improved beginner help; total period now editable on Debit Status screen</td></tr>
           <tr><td>2.4.0</td><td>2026/6/20</td><td>Added "New Payment by Voice" (two-phase flow: amount/label then payment method, with tap-to-pick from the full list, learning the spoken token as a future alias); Siri / Shortcuts support ("Hey Siri, voice input in CreditMemo" launches the app into voice mode); 12 color presets for Debit Status and menu icons, also reflected on the app icon; JSON import improvements (more tolerant partial-JSON intake, auto-normalization of payment-method billing format, deduplication of invoice/payment keys)</td></tr>
+          <tr><td>2.4.1</td><td>2026/6/24</td><td>Fixed a bug where the Debit Status filter (by payment method / account) was not applied to the debit detail list</td></tr>
         </tbody>
       </table>
     </div>
