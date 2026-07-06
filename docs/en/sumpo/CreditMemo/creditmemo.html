@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CreditMemo User Guide</title>
-  <meta name="description" content="User guide for CreditMemo. Learn how to track later-debited payments, review debit status, manage payment methods, and back up data with JSON export/import.">
+  <title>CrediMemo User Guide</title>
+  <meta name="description" content="User guide for CrediMemo. Learn how to track later-debited payments, review debit status, manage payment methods, and back up data with JSON export/import.">
   <link rel="canonical" href="https://azukid.com/en/sumpo/CreditMemo/creditmemo.html">
   <link rel="alternate" href="https://azukid.com/jp/sumpo/CreditMemo/creditmemo.html" hreflang="ja">
   <link rel="alternate" href="https://azukid.com/en/sumpo/CreditMemo/creditmemo.html" hreflang="en">
   <meta name="theme-color" content="#f5f5f7">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="CreditMemo User Guide">
-  <meta property="og:description" content="How to track later-debited payments, review debit status, manage payment methods, and back up data in CreditMemo.">
+  <meta property="og:title" content="CrediMemo User Guide">
+  <meta property="og:description" content="How to track later-debited payments, review debit status, manage payment methods, and back up data in CrediMemo.">
   <meta property="og:url" content="https://azukid.com/en/sumpo/CreditMemo/creditmemo.html">
   <link rel="stylesheet" href="../../../style.css?v=20260508">
   <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
@@ -23,7 +23,7 @@
   <div class="site-header-inner">
     <a class="header-back" href="../../index.html">Home</a>
     <span class="header-sep">/</span>
-    <span class="site-logo">CreditMemo</span>
+    <span class="site-logo">CrediMemo</span>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
   </div>
 </header>
@@ -31,24 +31,15 @@
 <main class="page">
 
   <div class="page-header">
-    <img class="page-header-icon" src="../../../images/icon-credit.png" alt="CreditMemo">
+    <img class="page-header-icon" src="../../../images/icon-credit.png" alt="CrediMemo">
     <div class="page-header-text">
-      <h1>CreditMemo User Guide</h1>
+      <h1>CrediMemo User Guide</h1>
       <p class="page-tagline">Payment memo for later account debits</p>
     </div>
   </div>
 
-  <div class="notice" role="alert">
-    <span class="notice-icon" aria-hidden="true">📣</span>
-    <div>
-      <span class="notice-title">Known Issue</span>
-      The "lock" icon in the debit details has become invisible. You can still unlock it by tapping where it should be.
-      <span class="notice-sub">This occurred on iOS 18–25. It is fixed in version 2.4.2 — please update to the latest version.</span>
-    </div>
-  </div>
-
   <div class="lead">
-    <p>CreditMemo helps you track payments that will be debited from your bank account later. It covers credit-card spending, credit-linked wallet top-ups, N-days-later debits, fixed-date debits, and similar deferred payment methods. Immediate debit-card payments, cash top-ups, and other payments that settle right away are outside the scope.</p>
+    <p>CrediMemo helps you track payments that will be debited from your bank account later. It covers credit-card spending, credit-linked wallet top-ups, N-days-later debits, fixed-date debits, and similar deferred payment methods. Immediate debit-card payments, cash top-ups, and other payments that settle right away are outside the scope.</p>
   </div>
 
   <section class="content-section">
@@ -90,7 +81,7 @@
     <h2>What It Does</h2>
     <div class="feature-grid">
       <div class="feature-item">New payment by voice<small>Speak the amount and label to create a record. Optionally dictate the payment method too.</small></div>
-      <div class="feature-item">Siri voice input<small>Say "Hey Siri, voice input in CreditMemo" to launch the app and start voice input.</small></div>
+      <div class="feature-item">Siri voice input<small>Say "Hey Siri, voice input in CrediMemo" to launch the app and start voice input.</small></div>
       <div class="feature-item">12 color presets<small>Pick a palette for Debit Status and menu icons from 12 presets. The app icon updates to match.</small></div>
       <div class="feature-item">Quick payment entry<small>Enter the amount first, save, and fill in the rest later if needed.</small></div>
       <div class="feature-item">Edit saved history<small>Open any saved record and update its label, tags, payment method, or account.</small></div>
@@ -108,7 +99,7 @@
     <div class="spec-group">
       <div class="spec-row">
         <span class="spec-key">New Payment by Voice</span>
-        <span class="spec-val">Create a record with the microphone. Speak the amount and label first, then optionally switch to dictating the payment method. The detected method is tappable, so you can pick a different one from the list. You can also launch it with "Hey Siri, voice input in CreditMemo".</span>
+        <span class="spec-val">Create a record with the microphone. Speak the amount and label first, then optionally switch to dictating the payment method. The detected method is tappable, so you can pick a different one from the list. You can also launch it with "Hey Siri, voice input in CrediMemo".</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">New Payment</span>
@@ -482,7 +473,7 @@
           <tr><td>2.1.0</td><td>2026/5/15</td><td>Restored legacy features, including the confirmation check as a lock toggle; improved History period/filter/sort controls and Debit Status grouping/filter controls</td></tr>
           <tr><td>2.2.0</td><td>2026/5/27</td><td>Added on/off setting for auto-open numeric keypad; expanded paths to copy from existing records (matching-amount or recently edited from History, from Pay Methods, and debit date + method from Debit Status)</td></tr>
           <tr><td>2.3.0</td><td>2026/6/8</td><td>Xcode 26.5; unified draft entry flow for new and copy; bulk change in Debit Statement; weekend/holiday shift to next business day (jp); jump to prev/next due-date cycle; revived 2-payment installment; improved beginner help; total period now editable on Debit Status screen</td></tr>
-          <tr><td>2.4.0</td><td>2026/6/20</td><td>Added "New Payment by Voice" (two-phase flow: amount/label then payment method, with tap-to-pick from the full list, learning the spoken token as a future alias); Siri / Shortcuts support ("Hey Siri, voice input in CreditMemo" launches the app into voice mode); 12 color presets for Debit Status and menu icons, also reflected on the app icon; JSON import improvements (more tolerant partial-JSON intake, auto-normalization of payment-method billing format, deduplication of invoice/payment keys)</td></tr>
+          <tr><td>2.4.0</td><td>2026/6/20</td><td>Added "New Payment by Voice" (two-phase flow: amount/label then payment method, with tap-to-pick from the full list, learning the spoken token as a future alias); Siri / Shortcuts support ("Hey Siri, voice input in CrediMemo" launches the app into voice mode); 12 color presets for Debit Status and menu icons, also reflected on the app icon; JSON import improvements (more tolerant partial-JSON intake, auto-normalization of payment-method billing format, deduplication of invoice/payment keys)</td></tr>
           <tr><td>2.4.1</td><td>2026/6/24</td><td>Fixed a bug where the Debit Status filter (by payment method / account) was not applied to the debit detail list</td></tr>
           <tr><td>2.4.2</td><td>2026/6/27</td><td>Fixed a bug where the lock icon in the debit details became invisible and could not be unlocked (occurred on iOS 18–25, caused by using an SF Symbol added in iOS 26)</td></tr>
         </tbody>
