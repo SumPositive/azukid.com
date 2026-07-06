@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>體徵記錄 使用說明</title>
+  <meta name="description" content="記錄並回顧血壓、心率、體溫、體重等每日健康數據的體徵記錄使用說明。">
+  <link rel="canonical" href="https://azukid.com/zh-Hant/sumpo/Condition/condition.html">
+  <link rel="alternate" href="https://azukid.com/jp/sumpo/Condition/condition.html" hreflang="ja">
+  <link rel="alternate" href="https://azukid.com/en/sumpo/Condition/condition.html" hreflang="en">
+  <link rel="alternate" href="https://azukid.com/ko/sumpo/Condition/condition.html" hreflang="ko">
+  <link rel="alternate" href="https://azukid.com/zh-Hant/sumpo/Condition/condition.html" hreflang="zh-Hant">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:title" content="體徵記錄 使用說明">
+  <meta property="og:description" content="記錄並回顧每日健康數據的體徵記錄使用方式。">
+  <meta property="og:url" content="https://azukid.com/zh-Hant/sumpo/Condition/condition.html">
+  <link rel="stylesheet" href="../../../style.css?v=20260508">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../index.html">首頁</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">體徵記錄</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <img class="page-header-icon" src="../../../images/icon-condition.png" alt="體徵記錄">
+    <div class="page-header-text">
+      <h1>體徵記錄 使用說明</h1>
+      <p class="page-tagline">健康管理記錄 App</p>
+    </div>
+  </div>
+
+  <div class="lead">
+    <p>記錄並回顧血壓、心率、體溫、體重等每日的健康數據。</p>
+    <p>測量時段（起床、運動後等）會依輸入時間自動分類。以圖表掌握趨勢、進行統計分析，並可與 Apple 健康 App 連動。</p>
+  </div>
+
+  <section class="content-section">
+    <h2>基本流程</h2>
+    <div class="step-flow">
+      <div class="step-card">
+        <span class="step-number">1</span>
+        <strong>記錄</strong>
+        <p>輸入血壓、心率、體溫、體重等所需項目。</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">2</span>
+        <strong>查看圖表</strong>
+        <p>在 1 週至 1 年之間切換期間，查看身體狀況的變化。</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">3</span>
+        <strong>統計分析</strong>
+        <p>利用血壓分布與基準比例等統計來檢視趨勢。</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">4</span>
+        <strong>匯出或連動</strong>
+        <p>依需要使用 PDF·CSV·JSON 匯出，或 Apple 健康連動。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="callout">⚠️ 資料未加密。請勿儲存個人或機密資訊。</div>
+
+  <div class="pill-link-row">
+    <a class="pill-link" href="https://apps.apple.com/tw/app/id472914799">App Store</a>
+    <a class="pill-link pill-link-discord" href="https://discord.gg/gkRrm5kjED" target="_blank" rel="noopener noreferrer">Discord 論壇</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/EULA_en.html">使用者授權合約</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/PrivacyPolicy_en.html">隱私權政策</a>
+    <a class="pill-link" href="../index.html">作者簡介：sumpo</a>
+  </div>
+
+  <section class="content-section">
+    <h2>功能</h2>
+    <div class="feature-grid">
+      <div class="feature-item">記錄 6 種健康數據<small>血壓、心率、體溫、體重、體脂率、骨骼肌率</small></div>
+      <div class="feature-item">測量時段自動分類<small>起床、安靜、睡前等 — 依輸入時間判定</small></div>
+      <div class="feature-item">以圖表查看趨勢<small>在 1 週至 1 年之間切換期間</small></div>
+      <div class="feature-item">統計分析<small>血壓分布、JSH 基準比例、脈壓分析等</small></div>
+      <div class="feature-item">與 Apple 健康連動<small>可選擇僅寫入、僅讀取或雙向連動</small></div>
+      <div class="feature-item">設定個人目標<small>血壓、體重等的目標值</small></div>
+      <div class="feature-item">匯出為 PDF·CSV·JSON<small>PDF 列印 · CSV 於 Excel 開啟 · JSON 自由運用</small></div>
+      <div class="feature-item">自訂顯示項目與順序<small>記錄畫面與圖表可分別設定</small></div>
+      <div class="feature-item">支援 Dynamic Type<small>全 App 文字大小連動 iOS 系統文字大小設定</small></div>
+      <div class="feature-item">調整顯示與操作<small>設定外觀模式並調整轉盤操作感</small></div>
+      <div class="feature-item">多次測量並儲存平均<small>以表格連續輸入後，將平均與標準差存為一筆記錄</small></div>
+      <div class="feature-item">調整圖表與統計面板高度<small>上下拖曳下緣的把手</small></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>規格</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">記錄項目與輸入範圍</p>
+      <div class="spec-row">
+        <span class="spec-key">收縮壓</span>
+        <span class="spec-val">30–300 mmHg</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">舒張壓</span>
+        <span class="spec-val">20–200 mmHg</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">心率</span>
+        <span class="spec-val">10–200 bpm</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">體溫</span>
+        <span class="spec-val">31.0–42.9 °C</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">體重</span>
+        <span class="spec-val">0.0–200.0 kg</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">體脂率</span>
+        <span class="spec-val">0.0–100.0 %</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">骨骼肌率</span>
+        <span class="spec-val">0.0–100.0 %</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">測量時段（自動分類）</p>
+      <div class="spec-row">
+        <span class="spec-key">方式</span>
+        <span class="spec-val">依輸入時間自動分類。各時段的對應可在設定中自訂。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">類別</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>起床 — 剛起床時</li>
+            <li>安靜 — 安靜狀態</li>
+            <li>睡前 — 就寢前</li>
+            <li>睡眠中</li>
+            <li>運動前 — 開始運動前</li>
+            <li>運動後 — 結束運動後</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">預設時段對應</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>0–2 時：睡眠中</li>
+            <li>3–7 時：起床</li>
+            <li>8–10 時：安靜</li>
+            <li>11–13 時：運動前</li>
+            <li>14–16 時：運動後</li>
+            <li>17–19 時：安靜</li>
+            <li>20–21 時：睡前</li>
+            <li>22–23 時：睡眠中</li>
+          </ul>
+        </span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">圖表</p>
+      <div class="spec-row">
+        <span class="spec-key">顯示期間</span>
+        <span class="spec-val">1 週、1 個月、3 個月、6 個月、1 年</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">圖表類型</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>血壓（收縮壓 / 舒張壓）</li>
+            <li>脈壓（收縮壓 − 舒張壓）</li>
+            <li>心率</li>
+            <li>體溫</li>
+            <li>體重</li>
+            <li>體重變化量</li>
+            <li>體脂率</li>
+            <li>骨骼肌率</li>
+            <li>BMI（需設定身高）</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">目標線</span>
+        <span class="spec-val">設定目標值後，圖表上會繪製附標籤的目標線</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">自訂</span>
+        <span class="spec-val">可切換圖表顯示與否並自由調整順序。平均血壓、體重移動平均等輔助圖表可分別切換。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">統計分析</p>
+      <div class="spec-row">
+        <span class="spec-key">統計期間</span>
+        <span class="spec-val">1 週、1 個月、3 個月、6 個月、1 年</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">項目</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>血壓摘要</li>
+            <li>血壓分布</li>
+            <li>血壓 / JSH 基準符合比例</li>
+            <li>血壓 / 測量時段相關</li>
+            <li>24 小時血壓分布</li>
+            <li>體重 × 血壓散佈圖（含皮爾森相關係數）</li>
+            <li>體重摘要統計</li>
+            <li>體溫摘要</li>
+            <li>24 小時體溫分布</li>
+            <li>體溫次數分布</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">自訂</span>
+        <span class="spec-val">可切換項目顯示與否並自由調整順序</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Apple 健康連動</p>
+      <div class="spec-row">
+        <span class="spec-key">連動方向</span>
+        <span class="spec-val">僅寫入、僅讀取或雙向</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">連動時機</span>
+        <span class="spec-val">自動（儲存時 / 顯示時）或手動（按鈕）</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">支援數據</span>
+        <span class="spec-val">血壓、心率、體溫、體重、體脂率（不支援骨骼肌率）</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">資料匯出</p>
+      <div class="spec-row">
+        <span class="spec-key">格式</span>
+        <span class="spec-val">PDF、CSV（UTF-8 含 BOM，相容 Excel）、JSON</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">顯示與操作</p>
+      <div class="spec-row">
+        <span class="spec-key">外觀模式</span>
+        <span class="spec-val">可選擇自動、淺色或深色</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">文字大小</span>
+        <span class="spec-val">連動 iOS 系統文字大小設定（Dynamic Type）</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">轉盤設定</span>
+        <span class="spec-val">調整轉盤樣式、拖曳操作感與反應</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">資料庫與轉移</p>
+      <div class="spec-row">
+        <span class="spec-key">資料庫</span>
+        <span class="spec-val">SwiftData (sqlite3)</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">最大記錄日期</span>
+        <span class="spec-val">2090/12/31</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">資料轉移</span>
+        <span class="spec-val">自舊版本（Core Data）自動轉移</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">App 資訊</p>
+      <div class="spec-row">
+        <span class="spec-key">版本 x.y.z</span>
+        <span class="spec-val">x：大幅改版 / 全面重新設計　y：功能新增或變更　z：小幅調整 / 修正錯誤</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">支援 ID</span>
+        <span class="spec-val">8–12 位英數字串。無法識別個人。於需要調查伺服器日誌時使用。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>歷程</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>版本</th><th>公開日</th><th>開發環境</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0.8</td><td>2012/1/14</td><td>Xcode 4, iOS 5, Objective-C, Core Data, AZDial</td></tr>
+          <tr><td>1.0</td><td>2012/7/17</td><td>Xcode 4, iOS 5, Objective-C, Core Data, AZDial</td></tr>
+          <tr><td>1.1</td><td>2017/5/6</td><td>Xcode 8, iOS 10, Objective-C, Core Data, AZDial</td></tr>
+          <tr><td>1.2</td><td>2017/10/1</td><td>Xcode 9, iOS 11, Objective-C, Core Data, AZDial</td></tr>
+          <tr><td>1.2.1</td><td>2017/10/23</td><td>Xcode 9, iOS 11, Objective-C, Core Data, AZDial</td></tr>
+          <tr><td>2.0.0</td><td>2026/4/1</td><td>Xcode 26, iOS 26, Swift 6, SwiftUI, SwiftData, HealthKit</td></tr>
+          <tr><td>2.1.0</td><td>2026/4/22</td><td>外觀模式、轉盤設定、圖表顯示設定、在地化改善</td></tr>
+          <tr><td>2.2.0</td><td>2026/5/13</td><td>支援 Dynamic Type、體重 × 血壓散佈圖</td></tr>
+          <tr><td>2.3.0</td><td>2026/5/19</td><td>支援 iOS 26.5、新增合併記錄功能（連續新增時可選〔兩者/前次/本次/平均〕）</td></tr>
+          <tr><td>2.4.0</td><td>2026/5/27</td><td>新記錄新增「新增測量」功能（最多彙整 5 次顯示平均），將「測量裝置」改為「測量地點・裝置」並可從預設（家中/醫院/健身房）與歷史選擇</td></tr>
+          <tr><td>2.5.0</td><td>2026/6/3</td><td>類別推估（依星期與時段）、可自訂類別圖示・名稱・顏色、新增類別 7・類別 8、新增測量：還原最後一次、圖表（血壓/心率/脈壓）與統計（血壓分布）新增類別選擇、改善新手說明</td></tr>
+          <tr><td>2.6.0</td><td>2026/6/20</td><td>Xcode 26.5、多次測量工作表（以表格連續輸入並儲存平均值）、圖表・統計面板可用下緣把手調整高度</td></tr>
+          <tr><td>2.7.0</td><td>2026/7/6</td><td>類別重新排序（反映於選單・圖表）、圖表（心率・脈壓）說明解說、記錄清單的類別篩選（亦套用於 PDF 匯出）、新增韓文與繁體中文</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+
+</main>
+<script src="../../../theme.js"></script>
+</body>
+</html>
