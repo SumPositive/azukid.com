@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divigo 使用說明</title>
+  <meta name="description" content="Divigo 以圖解為主的使用說明，透過畫面結構介紹主畫面、鎖定、設定與依地區語言的貨幣處理。">
+  <link rel="canonical" href="https://azukid.com/zh-Hant/sumpo/DialSplit/dialsplit.html">
+  <link rel="alternate" href="https://azukid.com/jp/sumpo/DialSplit/dialsplit.html" hreflang="ja">
+  <link rel="alternate" href="https://azukid.com/en/sumpo/DialSplit/dialsplit.html" hreflang="en">
+  <link rel="alternate" href="https://azukid.com/de/sumpo/DialSplit/dialsplit.html" hreflang="de">
+  <link rel="alternate" href="https://azukid.com/es/sumpo/DialSplit/dialsplit.html" hreflang="es">
+  <link rel="alternate" href="https://azukid.com/fr/sumpo/DialSplit/dialsplit.html" hreflang="fr">
+  <link rel="alternate" href="https://azukid.com/it/sumpo/DialSplit/dialsplit.html" hreflang="it">
+  <link rel="alternate" href="https://azukid.com/ko/sumpo/DialSplit/dialsplit.html" hreflang="ko">
+  <link rel="alternate" href="https://azukid.com/zh-Hant/sumpo/DialSplit/dialsplit.html" hreflang="zh-Hant">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:title" content="Divigo 使用說明">
+  <meta property="og:description" content="以圖解確認 Divigo 主畫面、鎖定、設定與依地區語言貨幣處理的使用說明。">
+  <meta property="og:url" content="https://azukid.com/zh-Hant/sumpo/DialSplit/dialsplit.html">
+  <link rel="stylesheet" href="../../../style.css?v=20260604">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../index.html">首頁</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">Divigo</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <img class="page-header-icon" src="../../../images/icon-dialsplit.png" alt="Divigo">
+    <div class="page-header-text">
+      <h1>Divigo 使用說明</h1>
+      <p class="page-tagline">以畫面結構為主軸的圖解指南</p>
+    </div>
+  </div>
+
+  <section class="guide-hero">
+    <div class="guide-hero-copy">
+      <p>Divigo 讓您透過轉盤調整人數與金額，決定付款分攤</p>
+      <p>本頁以視覺結構為先，讓您在閱讀文字之前，就能一眼掌握主畫面、鎖定、設定與貨幣顯示</p>
+      <div class="guide-kpis">
+        <div class="guide-kpi">
+          <strong>4 個分類</strong>
+          <span>可個別調整 A / B / C / D</span>
+        </div>
+        <div class="guide-kpi">
+          <strong>2 種鎖定</strong>
+          <span>人數鎖定與全部操作鎖定</span>
+        </div>
+        <div class="guide-kpi">
+          <strong>對應地區</strong>
+          <span>貨幣顯示會依裝置設定自動調整</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-panel">
+      <div class="guide-panel-title">
+        <h3>主畫面</h3>
+        <p>點按圓點即可開啟該處的說明</p>
+      </div>
+      <div class="shot-frame" aria-label="主畫面">
+        <img src="images/main-overview-en.png" alt="Divigo 主畫面">
+        <!-- 主画面の注釈 -->
+        <div class="hotspot-anchor" style="top: 18.5%; left: 15%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="zh-Hant-main-1">1</button>
+          <div class="hotspot-popover is-right" id="zh-Hant-main-1">
+            <strong>參加人數</strong>
+            <small>可確認人數的合計</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 24%; left: 15%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="zh-Hant-main-2">2</button>
+          <div class="hotspot-popover is-right" id="zh-Hant-main-2">
+            <strong>合計面板鎖定</strong>
+            <small>鎖定人數轉盤，避免意外變動</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 32.5%; left: 39%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="zh-Hant-main-3">3</button>
+          <div class="hotspot-popover is-right" id="zh-Hant-main-3">
+            <strong>A 面板</strong>
+            <small>在 A 面板只需指定人數，金額會自動計算</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 21%; left: 75%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="zh-Hant-main-4">4</button>
+          <div class="hotspot-popover is-left" id="zh-Hant-main-4">
+            <strong>付款總額</strong>
+            <small>請先輸入合計（付款總額）。點按數字即可用數字鍵盤輸入</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 87.5%; left: 50%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="zh-Hant-main-5">5</button>
+          <div class="hotspot-popover is-top" id="zh-Hant-main-5">
+            <strong>金額轉盤級距</strong>
+            <small>切換金額轉盤的增減幅度。長按可設定數值</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 46.5%; left: 40%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="zh-Hant-main-6">6</button>
+          <div class="hotspot-popover is-right" id="zh-Hant-main-6">
+            <strong>B / C / D 面板</strong>
+            <small>在 B / C / D 面板指定人數與金額，過與不足的金額會分配至 A</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 97.5%; left: 35%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="zh-Hant-main-7">7</button>
+          <div class="hotspot-popover is-top" id="zh-Hant-main-7">
+            <strong>面板樣式</strong>
+            <small>自訂此畫面的外觀。不會影響分攤計算</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 9.5%; left: 92%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="zh-Hant-main-8">8</button>
+          <div class="hotspot-popover is-left" id="zh-Hant-main-8">
+            <strong>設定</strong>
+            <small>開啟設定畫面</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 38%; left: 74%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="zh-Hant-main-9">9</button>
+          <div class="hotspot-popover is-left" id="zh-Hant-main-9">
+            <strong>全部操作鎖定</strong>
+            <small>全部鎖定，避免意外變動</small>
+          </div>
+        </div>
+      </div>
+      <p class="hotspot-tip">點按圓點以外的空白處即可關閉說明</p>
+    </div>
+  </section>
+
+  <div class="pill-link-row">
+    <a class="pill-link" href="https://apps.apple.com/tw/app/id467941202">App Store</a>
+    <a class="pill-link" href="https://discord.com/channels/1489165729269022720/1495313401121996830" target="_blank" rel="noopener noreferrer">Discord 論壇</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/EULA_en.html">使用者授權合約</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/PrivacyPolicy_en.html">隱私權政策</a>
+    <a class="pill-link" href="../index.html">作者介紹：sumpo</a>
+  </div>
+
+  <section class="content-section">
+    <h2>使用流程</h2>
+    <div class="step-flow">
+      <div class="step-card">
+        <span class="step-number">1</span>
+        <strong>輸入合計金額</strong>
+        <p>在上方面板轉動轉盤，或點按金額顯示以數字鍵盤輸入</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">2</span>
+        <strong>設定人數</strong>
+        <p>用左側的轉盤決定 A / B / C / D 各分類的人數</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">3</span>
+        <strong>調整金額</strong>
+        <p>調整 B / C / D 的金額後，A 的金額會自動更新</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">4</span>
+        <strong>視需要鎖定</strong>
+        <p>可只固定人數，或固定全部操作以避免誤觸</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>設定畫面說明</h2>
+    <div class="guide-panel screen-size">
+      <div class="guide-panel-title">
+        <h3>設定畫面</h3>
+        <p>點按圓點即可開啟各項目的作用</p>
+      </div>
+      <div class="shot-frame" aria-label="設定畫面">
+        <img src="images/settings-overview-en.png" alt="設定畫面">
+        <!-- 設定画面の注釈 -->
+        <div class="hotspot-anchor" style="top: 22.5%; left: 55%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="zh-Hant-settings-1">1</button>
+          <div class="hotspot-popover is-bottom" id="zh-Hant-settings-1">
+            <strong>預設組合</strong>
+            <small>從預設組合選擇 A/B/C/D 各分類的名稱</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 77.5%; left: 45%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="zh-Hant-settings-2">2</button>
+          <div class="hotspot-popover is-top" id="zh-Hant-settings-2">
+            <strong>轉盤設定</strong>
+            <small>開啟轉盤專用的設定表單，也可微調靈敏度</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 84%; left: 40%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="zh-Hant-settings-3">3</button>
+          <div class="hotspot-popover is-top" id="zh-Hant-settings-3">
+            <strong>外觀模式</strong>
+            <small>自動時會依照系統設定</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 96.5%; left: 40%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="zh-Hant-settings-4">4</button>
+          <div class="hotspot-popover is-top" id="zh-Hant-settings-4">
+            <strong>文字大小</strong>
+            <small>自動時會依照系統的較大文字設定。大為標準的 1.5 倍，特大為 2 倍</small>
+          </div>
+        </div>
+      </div>
+      <p class="hotspot-tip">設定的細節也可在下方的補充截圖確認</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>依地區語言的貨幣處理</h2>
+    <div class="locale-grid">
+      <div class="locale-card">
+        <h3>日文 / 日本</h3>
+        <div class="locale-sample">
+          <strong>¥12,000</strong>
+          <span>轉盤級距範例：1 / 10 / 100 / 500 / 1000</span>
+        </div>
+        <p>以整數貨幣處理。級距顯示為不含貨幣符號的數值</p>
+      </div>
+      <div class="locale-card">
+        <h3>英文 / 美國</h3>
+        <div class="locale-sample">
+          <strong>$12.00</strong>
+          <span>轉盤級距範例：0.01 / 0.10 / 1.00 / 5.00 / 10.00</span>
+        </div>
+        <p>對於小數兩位的貨幣，會以最小貨幣單位為基準保存金額</p>
+      </div>
+      <div class="locale-card">
+        <h3>英文 / 科威特</h3>
+        <div class="locale-sample">
+          <strong>KWD 1.000</strong>
+          <span>轉盤級距範例：0.001 / 0.010 / 0.100 / 0.500 / 1.000</span>
+        </div>
+        <p>同樣支援小數三位的貨幣，並確保顯示與內部單位不會產生偏差</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>畫面截圖補充</h2>
+    <div class="shot-grid">
+      <div class="shot-card">
+        <h3>進入轉盤設定</h3>
+        <div class="shot-frame compact">
+          <img src="images/settings-dial-en.png" alt="含轉盤設定項目的設定畫面">
+        </div>
+        <p class="shot-caption">從轉盤設定該列可開啟表單，調整操作手感與外觀</p>
+      </div>
+      <div class="shot-card">
+        <h3>外觀模式</h3>
+        <div class="shot-frame compact">
+          <img src="images/settings-appearance-en.png" alt="含外觀模式的設定畫面">
+        </div>
+        <p class="shot-caption">可選擇自動、淺色或深色。自動會依照系統外觀</p>
+      </div>
+      <div class="shot-card">
+        <h3>深色顯示</h3>
+        <div class="shot-frame compact">
+          <img src="images/appearance-dark-en.png" alt="深色顯示的主畫面">
+        </div>
+        <p class="shot-caption">在昏暗環境下可切換為深色顯示，維持清晰易讀</p>
+      </div>
+      <div class="shot-card">
+        <h3>背景變化</h3>
+        <div class="shot-grid">
+          <div class="shot-frame compact">
+            <img src="images/background-brown-en.png" alt="棕色皮革背景">
+          </div>
+          <div class="shot-frame compact">
+            <img src="images/background-black-en.png" alt="黑色皮革背景">
+          </div>
+        </div>
+        <p class="shot-caption">背景可在棕色皮革與黑色皮革之間切換。單色也可在同一區塊選擇</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>版本紀錄</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>版本</th><th>發布日期</th><th>開發環境</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1.0.0</td><td>2011/10/4</td><td>初版發行 — Objective-C, Xcode 4, iOS 4</td></tr>
+          <tr><td>1.1.0</td><td>2012/4/10</td><td>Objective-C, Xcode 4, iOS 5</td></tr>
+          <tr><td>1.2.0</td><td>2017/4/19</td><td>Objective-C, Xcode 8, iOS 10</td></tr>
+          <tr><td>2.0.0</td><td>2026/4/16</td><td>Swift 6 / SwiftUI, Xcode 26, iOS 26</td></tr>
+          <tr><td>2.0.1</td><td>2026/4/17</td><td>新增支持開發者功能（打賞・廣告）</td></tr>
+          <tr><td>2.1.0</td><td>2026/4/22</td><td>新增人數鎖定、全部操作鎖定、轉盤設定、外觀模式、背景設定、金額轉盤級距設定與依地區語言的貨幣處理</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+<script src="../../../theme.js"></script>
+<script>
+  // タップした注釈だけを開く
+  (() => {
+    const anchors = [...document.querySelectorAll('.hotspot-anchor')]
+
+    // 上下の広い方へ吹き出し、左右端ではフレーム内へ寄せる
+    const placePopover = (anchor) => {
+      const frame = anchor.closest('.shot-frame')
+      const popover = anchor.querySelector('.hotspot-popover')
+      if (!frame || !popover) {
+        return
+      }
+
+      popover.classList.remove('is-right', 'is-left', 'is-top', 'is-bottom')
+      const anchorY = anchor.offsetTop
+      popover.classList.add(anchorY < frame.clientHeight / 2 ? 'is-bottom' : 'is-top')
+
+      const margin = 8
+      const anchorX = anchor.offsetLeft
+      const halfWidth = popover.offsetWidth / 2
+      const popoverCenter = Math.min(
+        Math.max(anchorX, halfWidth + margin),
+        frame.clientWidth - halfWidth - margin
+      )
+      popover.style.setProperty('--popover-shift-x', `${popoverCenter - anchorX}px`)
+    }
+
+    const closeAll = () => {
+      anchors.forEach((anchor) => {
+        anchor.classList.remove('is-open')
+        const button = anchor.querySelector('.hotspot-toggle')
+        if (button) {
+          button.setAttribute('aria-expanded', 'false')
+        }
+      })
+    }
+
+    anchors.forEach((anchor) => {
+      const button = anchor.querySelector('.hotspot-toggle')
+      if (!button) {
+        return
+      }
+
+      // 番号を表示せず説明名を読み上げる
+      const title = anchor.querySelector('.hotspot-popover strong')
+      if (title) {
+        button.setAttribute('aria-label', title.textContent)
+      }
+
+      placePopover(anchor)
+
+      button.addEventListener('click', (event) => {
+        event.stopPropagation()
+        const isOpen = anchor.classList.contains('is-open')
+        closeAll()
+        if (!isOpen) {
+          placePopover(anchor)
+          anchor.classList.add('is-open')
+          button.setAttribute('aria-expanded', 'true')
+        }
+      })
+    })
+
+    window.addEventListener('resize', () => {
+      anchors.forEach(placePopover)
+    })
+
+    document.addEventListener('click', closeAll)
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeAll()
+      }
+    })
+
+    // URLにgrid=1がある場合だけ座標メッシュを表示する
+    if (new URLSearchParams(window.location.search).get('grid') === '1') {
+      document.querySelectorAll('.shot-frame').forEach((frame) => {
+        if (!frame.querySelector('.hotspot')) {
+          return
+        }
+
+        const grid = document.createElement('div')
+        grid.className = 'debug-coordinate-grid'
+        grid.setAttribute('aria-hidden', 'true')
+
+        for (let x = 0; x <= 10; x += 1) {
+          const label = document.createElement('span')
+          label.className = `debug-coordinate-label is-x${x === 0 ? ' is-start' : ''}${x === 10 ? ' is-end' : ''}`
+          label.style.left = `${x * 10}%`
+          label.textContent = `X${x}`
+          grid.appendChild(label)
+        }
+
+        for (let y = 0; y <= 20; y += 1) {
+          const label = document.createElement('span')
+          label.className = `debug-coordinate-label is-y${y === 0 ? ' is-start' : ''}${y === 20 ? ' is-end' : ''}`
+          label.style.top = `${y * 5}%`
+          label.textContent = `Y${y}`
+          grid.appendChild(label)
+        }
+
+        frame.appendChild(grid)
+      })
+    }
+  })()
+</script>
+</body>
+</html>

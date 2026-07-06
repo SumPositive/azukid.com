@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>바이탈로그 사용 설명서</title>
+  <meta name="description" content="혈압·심박·체온·체중 등 매일의 건강 데이터를 기록하고 되돌아보는 바이탈로그 사용 설명서입니다.">
+  <link rel="canonical" href="https://azukid.com/ko/sumpo/Condition/condition.html">
+  <link rel="alternate" href="https://azukid.com/jp/sumpo/Condition/condition.html" hreflang="ja">
+  <link rel="alternate" href="https://azukid.com/en/sumpo/Condition/condition.html" hreflang="en">
+  <link rel="alternate" href="https://azukid.com/ko/sumpo/Condition/condition.html" hreflang="ko">
+  <link rel="alternate" href="https://azukid.com/zh-Hant/sumpo/Condition/condition.html" hreflang="zh-Hant">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="바이탈로그 사용 설명서">
+  <meta property="og:description" content="매일의 건강 기록과 되돌아보기를 위한 바이탈로그 사용 방법입니다.">
+  <meta property="og:url" content="https://azukid.com/ko/sumpo/Condition/condition.html">
+  <link rel="stylesheet" href="../../../style.css?v=20260508">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../index.html">홈</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">바이탈로그</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <img class="page-header-icon" src="../../../images/icon-condition.png" alt="바이탈로그">
+    <div class="page-header-text">
+      <h1>바이탈로그 사용 설명서</h1>
+      <p class="page-tagline">건강 기록 앱</p>
+    </div>
+  </div>
+
+  <div class="lead">
+    <p>혈압·심박수·체온·체중 등 매일의 건강 데이터를 기록하고 되돌아봅니다.</p>
+    <p>측정 시점(기상·운동 후 등)은 입력 시각으로부터 자동으로 분류됩니다. 그래프로 추이를 확인하고, 통계로 분석하며, Apple 건강 앱과 연동할 수 있습니다.</p>
+  </div>
+
+  <section class="content-section">
+    <h2>기본 흐름</h2>
+    <div class="step-flow">
+      <div class="step-card">
+        <span class="step-number">1</span>
+        <strong>기록</strong>
+        <p>혈압·심박수·체온·체중 등 필요한 항목을 입력합니다.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">2</span>
+        <strong>그래프 확인</strong>
+        <p>1주에서 1년까지 기간을 전환하며 몸 상태의 변화를 확인합니다.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">3</span>
+        <strong>통계 분석</strong>
+        <p>혈압 분포나 기준 비율 등의 통계로 추이를 살펴봅니다.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">4</span>
+        <strong>내보내기·연동</strong>
+        <p>필요에 따라 PDF·CSV·JSON 내보내기나 Apple 건강 연동을 사용합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="callout">⚠️ 데이터는 암호화되지 않습니다. 개인정보나 기밀 정보는 저장하지 마세요.</div>
+
+  <div class="pill-link-row">
+    <a class="pill-link" href="https://apps.apple.com/kr/app/id472914799">App Store</a>
+    <a class="pill-link pill-link-discord" href="https://discord.gg/gkRrm5kjED" target="_blank" rel="noopener noreferrer">Discord 포럼</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/EULA_en.html">최종 사용자 사용권 계약</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/PrivacyPolicy_en.html">개인정보 처리방침</a>
+    <a class="pill-link" href="../index.html">작성자 소개: sumpo</a>
+  </div>
+
+  <section class="content-section">
+    <h2>기능</h2>
+    <div class="feature-grid">
+      <div class="feature-item">6종류의 건강 데이터 기록<small>혈압, 심박수, 체온, 체중, 체지방률, 골격근률</small></div>
+      <div class="feature-item">측정 시점 자동 분류<small>기상·안정·취침 전 등 — 입력 시각으로부터 판정</small></div>
+      <div class="feature-item">그래프로 추이 확인<small>1주에서 1년까지 기간 전환</small></div>
+      <div class="feature-item">통계 분석<small>혈압 분포, JSH 기준 비율, 맥압 분석 등</small></div>
+      <div class="feature-item">Apple 건강 연동<small>쓰기 전용·읽기 전용·양방향 중 선택</small></div>
+      <div class="feature-item">개인 목표 설정<small>혈압·체중 등의 목표값</small></div>
+      <div class="feature-item">PDF·CSV·JSON 내보내기<small>PDF로 인쇄 · CSV는 Excel에서 열기 · JSON은 자유롭게 활용</small></div>
+      <div class="feature-item">표시 항목과 순서 커스터마이즈<small>기록 화면과 그래프를 각각 설정</small></div>
+      <div class="feature-item">Dynamic Type 대응<small>앱 전체 글자 크기가 iOS 시스템 글자 크기 설정에 연동</small></div>
+      <div class="feature-item">표시와 조작 조정<small>외관 모드 설정과 다이얼 조작감 조정</small></div>
+      <div class="feature-item">여러 번 측정해 평균 저장<small>표 형식으로 연속 입력한 뒤 평균과 표준편차를 한 건으로 저장</small></div>
+      <div class="feature-item">그래프·통계 패널 높이 조절<small>아래쪽 가장자리의 핸들을 위아래로 드래그</small></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>사양</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">기록 항목 및 입력 범위</p>
+      <div class="spec-row">
+        <span class="spec-key">수축기 혈압</span>
+        <span class="spec-val">30–300 mmHg</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">이완기 혈압</span>
+        <span class="spec-val">20–200 mmHg</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">심박수</span>
+        <span class="spec-val">10–200 bpm</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">체온</span>
+        <span class="spec-val">31.0–42.9 °C</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">체중</span>
+        <span class="spec-val">0.0–200.0 kg</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">체지방률</span>
+        <span class="spec-val">0.0–100.0 %</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">골격근률</span>
+        <span class="spec-val">0.0–100.0 %</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">측정 시점(자동 분류)</p>
+      <div class="spec-row">
+        <span class="spec-key">방식</span>
+        <span class="spec-val">입력 시각으로부터 자동 분류됩니다. 시간대별 배정은 설정에서 커스터마이즈할 수 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">구분</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>기상 — 일어난 직후</li>
+            <li>안정 — 안정된 상태</li>
+            <li>취침 전 — 잠자리에 들기 직전</li>
+            <li>취침 중</li>
+            <li>운동 전 — 운동 시작 전</li>
+            <li>운동 후 — 운동 종료 후</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">기본 시간대 맵</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>0–2시: 취침 중</li>
+            <li>3–7시: 기상</li>
+            <li>8–10시: 안정</li>
+            <li>11–13시: 운동 전</li>
+            <li>14–16시: 운동 후</li>
+            <li>17–19시: 안정</li>
+            <li>20–21시: 취침 전</li>
+            <li>22–23시: 취침 중</li>
+          </ul>
+        </span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">그래프</p>
+      <div class="spec-row">
+        <span class="spec-key">표시 기간</span>
+        <span class="spec-val">1주, 1개월, 3개월, 6개월, 1년</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">그래프 종류</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>혈압(수축기 / 이완기)</li>
+            <li>맥압(수축기 − 이완기)</li>
+            <li>심박수</li>
+            <li>체온</li>
+            <li>체중</li>
+            <li>체중 변화량</li>
+            <li>체지방률</li>
+            <li>골격근률</li>
+            <li>BMI(신장 설정 필요)</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">목표 라인</span>
+        <span class="spec-val">목표값을 설정하면 그래프에 라벨이 붙은 목표 라인이 그려집니다</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">커스터마이즈</span>
+        <span class="spec-val">그래프 표시 여부를 전환하고 순서를 원하는 대로 바꿀 수 있습니다. 평균 혈압·체중 이동 평균 등 보조 그래프는 별도로 전환할 수 있습니다.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">통계 분석</p>
+      <div class="spec-row">
+        <span class="spec-key">집계 기간</span>
+        <span class="spec-val">1주, 1개월, 3개월, 6개월, 1년</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">항목</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>혈압 요약</li>
+            <li>혈압 분포</li>
+            <li>혈압 / JSH 기준 준수 비율</li>
+            <li>혈압 / 측정 시점 상관</li>
+            <li>24시간 혈압 분포</li>
+            <li>체중 × 혈압 산점도(피어슨 상관계수 포함)</li>
+            <li>체중 요약 통계</li>
+            <li>체온 요약</li>
+            <li>24시간 체온 분포</li>
+            <li>체온 도수 분포</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">커스터마이즈</span>
+        <span class="spec-val">항목 표시 여부를 전환하고 순서를 원하는 대로 바꿀 수 있습니다</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Apple 건강 연동</p>
+      <div class="spec-row">
+        <span class="spec-key">연동 방향</span>
+        <span class="spec-val">쓰기 전용, 읽기 전용, 양방향</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">연동 시점</span>
+        <span class="spec-val">자동(저장 시 / 표시 시) 또는 수동(버튼)</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">지원 데이터</span>
+        <span class="spec-val">혈압, 심박수, 체온, 체중, 체지방률(골격근률은 미지원)</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">데이터 내보내기</p>
+      <div class="spec-row">
+        <span class="spec-key">형식</span>
+        <span class="spec-val">PDF, CSV(UTF-8 BOM 포함, Excel 호환), JSON</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">표시 및 조작</p>
+      <div class="spec-row">
+        <span class="spec-key">외관 모드</span>
+        <span class="spec-val">자동, 라이트, 다크 중 선택</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">글자 크기</span>
+        <span class="spec-val">iOS 시스템 글자 크기 설정(Dynamic Type)에 연동</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">다이얼 설정</span>
+        <span class="spec-val">다이얼 스타일, 드래그 조작감, 반응을 조정</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">데이터베이스 및 이전</p>
+      <div class="spec-row">
+        <span class="spec-key">데이터베이스</span>
+        <span class="spec-val">SwiftData (sqlite3)</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">최대 기록 날짜</span>
+        <span class="spec-val">2090/12/31</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">데이터 이전</span>
+        <span class="spec-val">이전 버전(Core Data)에서 자동 이전</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">앱 정보</p>
+      <div class="spec-row">
+        <span class="spec-key">버전 x.y.z</span>
+        <span class="spec-val">x: 대규모 개편 / 전면 재설계　y: 기능 추가·변경　z: 소규모 조정 / 버그 수정</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">지원 ID</span>
+        <span class="spec-val">8–12자리 영숫자 문자열입니다. 개인을 식별할 수 없습니다. 서버 로그 조사가 필요할 때 사용합니다.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>이력</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>버전</th><th>공개일</th><th>개발 환경</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0.8</td><td>2012/1/14</td><td>Xcode 4, iOS 5, Objective-C, Core Data, AZDial</td></tr>
+          <tr><td>1.0</td><td>2012/7/17</td><td>Xcode 4, iOS 5, Objective-C, Core Data, AZDial</td></tr>
+          <tr><td>1.1</td><td>2017/5/6</td><td>Xcode 8, iOS 10, Objective-C, Core Data, AZDial</td></tr>
+          <tr><td>1.2</td><td>2017/10/1</td><td>Xcode 9, iOS 11, Objective-C, Core Data, AZDial</td></tr>
+          <tr><td>1.2.1</td><td>2017/10/23</td><td>Xcode 9, iOS 11, Objective-C, Core Data, AZDial</td></tr>
+          <tr><td>2.0.0</td><td>2026/4/1</td><td>Xcode 26, iOS 26, Swift 6, SwiftUI, SwiftData, HealthKit</td></tr>
+          <tr><td>2.1.0</td><td>2026/4/22</td><td>외관 모드, 다이얼 설정, 그래프 표시 설정, 로컬라이제이션 개선</td></tr>
+          <tr><td>2.2.0</td><td>2026/5/13</td><td>Dynamic Type 대응, 체중 × 혈압 산점도</td></tr>
+          <tr><td>2.3.0</td><td>2026/5/19</td><td>iOS 26.5 대응, 기록을 묶는 기능 추가(연속 추가 시 〔둘 다/직전/이번/평균〕 선택)</td></tr>
+          <tr><td>2.4.0</td><td>2026/5/27</td><td>새 기록에 「측정 추가」 기능 추가(최대 5회까지 집계해 평균 표시), 「측정 기기」를 「측정 장소·기기」로 변경하고 프리셋(자택/병원/헬스장)과 이력에서 선택 가능</td></tr>
+          <tr><td>2.5.0</td><td>2026/6/3</td><td>구분 추정(요일과 시간대로 추정), 구분의 아이콘·명칭·색 커스터마이즈, 새 구분7·구분8 추가, 측정 추가: 최종 회 취소, 그래프(혈압/심박수/맥압)와 통계(혈압 분포)에 구분 선택 추가, 초보자 도움말 개선</td></tr>
+          <tr><td>2.6.0</td><td>2026/6/20</td><td>Xcode 26.5, 여러 번 측정 시트(표 형식으로 연속 입력하고 평균값을 저장), 그래프·통계 패널을 아래쪽 핸들로 높이 조절</td></tr>
+          <tr><td>2.7.0</td><td>2026/7/6</td><td>구분 정렬(선택 목록·그래프에 반영), 그래프(심박수·맥압) 도움말 해설, 기록 목록의 구분 필터(PDF 내보내기에도 반영), 한국어·번체 중국어 대응</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+
+</main>
+<script src="../../../theme.js"></script>
+</body>
+</html>
