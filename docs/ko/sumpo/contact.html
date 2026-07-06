@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문의 — sumpo products</title>
+  <meta name="description" content="sumpo products 문의 페이지입니다. 질문, 버그 신고, 기능 요청을 이메일 양식으로 보낼 수 있습니다.">
+  <link rel="canonical" href="https://azukid.com/ko/sumpo/contact.html">
+  <link rel="alternate" href="https://azukid.com/jp/sumpo/contact.html" hreflang="ja">
+  <link rel="alternate" href="https://azukid.com/en/sumpo/contact.html" hreflang="en">
+  <link rel="alternate" href="https://azukid.com/de/sumpo/contact.html" hreflang="de">
+  <link rel="alternate" href="https://azukid.com/es/sumpo/contact.html" hreflang="es">
+  <link rel="alternate" href="https://azukid.com/fr/sumpo/contact.html" hreflang="fr">
+  <link rel="alternate" href="https://azukid.com/it/sumpo/contact.html" hreflang="it">
+  <link rel="alternate" href="https://azukid.com/ko/sumpo/contact.html" hreflang="ko">
+  <link rel="alternate" href="https://azukid.com/zh-Hant/sumpo/contact.html" hreflang="zh-Hant">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="문의 — sumpo products">
+  <meta property="og:description" content="질문, 버그 신고, 기능 요청을 보내 주시면 이메일로 답변해 드립니다.">
+  <meta property="og:url" content="https://azukid.com/ko/sumpo/contact.html">
+  <link rel="stylesheet" href="../../style.css?v=20260508">
+  <style>
+    .contact-form {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 28px 24px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: .8125rem;
+      font-weight: 600;
+      color: var(--text-2);
+      margin-bottom: 6px;
+      letter-spacing: .02em;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font);
+      font-size: .9375rem;
+      color: var(--text);
+      background: var(--bg);
+      transition: border-color .15s;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      background: var(--surface);
+    }
+    .form-group textarea {
+      min-height: 160px;
+      resize: vertical;
+      line-height: 1.65;
+    }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%236e6e73' d='M8 10.5L3 5.5h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 36px;
+    }
+    .form-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 32px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      font-family: var(--font);
+      font-size: .9375rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .15s;
+      width: 100%;
+    }
+    .form-submit:hover { background: var(--accent-dark); }
+    .form-note {
+      font-size: .8125rem;
+      color: var(--text-3);
+      margin-top: 14px;
+      line-height: 1.6;
+      text-align: center;
+    }
+  </style>
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../index.html">홈</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">문의</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <div class="page-header-text">
+      <h1>문의</h1>
+      <p class="page-tagline">sumpo products에 대한 질문과 의견</p>
+    </div>
+  </div>
+
+  <div class="lead">
+    <p>질문, 버그 신고, 기능 요청을 보내 주세요. 메시지를 확인한 후 이메일로 답변해 드립니다.</p>
+  </div>
+
+  <section class="content-section">
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xqeglybk" method="post" accept-charset="UTF-8">
+      <div class="form-group">
+        <label for="app">앱</label>
+        <select id="app" name="app">
+          <option value="">앱을 선택하세요</option>
+          <option value="Packlin">Packlin</option>
+          <option value="Condition">Condition</option>
+          <option value="Calclin">Calclin</option>
+          <option value="CreditMemo">CreditMemo</option>
+          <option value="DialSplit">DialSplit</option>
+          <option value="Other">기타</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="email">이메일 주소 <span style="color:red">*</span></label>
+        <input type="email" id="email" name="email" placeholder="답변받을 이메일 주소" required>
+      </div>
+      <div class="form-group">
+        <label for="subject">제목</label>
+        <input type="text" id="subject" name="subject" placeholder="예: 구매 관련 문의" maxlength="100">
+      </div>
+      <div class="form-group">
+        <label for="body">메시지</label>
+        <textarea id="body" name="body" placeholder="질문, 문제, 요청 사항을 자세히 적어 주세요."></textarea>
+      </div>
+      <button type="submit" class="form-submit" id="submitBtn">보내기</button>
+      <p class="form-note" id="formNote" role="status" aria-live="polite">메시지를 확인한 후 이메일로 답변해 드립니다. 이메일 주소는 지원 답변 용도로만 사용됩니다.</p>
+    </form>
+  </section>
+
+</main>
+
+<script>
+  document.getElementById('app').addEventListener('change', function() {
+    const app = this.value;
+    const subjectField = document.getElementById('subject');
+    subjectField.value = app ? app + ' — 문의' : '';
+  });
+
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    const note = document.getElementById('formNote');
+    this.setAttribute('aria-busy', 'true');
+    btn.disabled = true;
+    btn.textContent = '보내는 중…';
+
+    const data = new FormData(this);
+    try {
+      const res = await fetch('https://formspree.io/f/xqeglybk', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        this.innerHTML = '<p role="status" aria-live="polite" style="text-align:center; padding: 32px 0; font-size:1rem; color:var(--accent);">메시지를 보냈습니다. 문의해 주셔서 감사합니다!</p>';
+      } else {
+        this.removeAttribute('aria-busy');
+        btn.disabled = false;
+        btn.textContent = '보내기';
+        note.textContent = '전송에 실패했습니다. 잠시 후 다시 시도해 주세요.';
+        note.style.color = 'red';
+      }
+    } catch {
+      this.removeAttribute('aria-busy');
+      btn.disabled = false;
+      btn.textContent = '보내기';
+      note.textContent = '전송에 실패했습니다. 네트워크 연결을 확인해 주세요.';
+      note.style.color = 'red';
+    }
+  });
+</script>
+
+<script src="../../theme.js"></script>
+</body>
+</html>

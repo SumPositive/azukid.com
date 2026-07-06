@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DialSplit Bedienungsanleitung</title>
+  <meta name="description" content="Eine visuelle Bedienungsanleitung für DialSplit. Lerne den Hauptbildschirm, das Sperrverhalten, die Einstellungen und die gebietsschema-abhängige Währungsdarstellung anhand von Diagrammen kennen.">
+  <link rel="canonical" href="https://azukid.com/de/sumpo/DialSplit/dialsplit.html">
+  <link rel="alternate" href="https://azukid.com/jp/sumpo/DialSplit/dialsplit.html" hreflang="ja">
+  <link rel="alternate" href="https://azukid.com/en/sumpo/DialSplit/dialsplit.html" hreflang="en">
+  <link rel="alternate" href="https://azukid.com/de/sumpo/DialSplit/dialsplit.html" hreflang="de">
+  <link rel="alternate" href="https://azukid.com/es/sumpo/DialSplit/dialsplit.html" hreflang="es">
+  <link rel="alternate" href="https://azukid.com/fr/sumpo/DialSplit/dialsplit.html" hreflang="fr">
+  <link rel="alternate" href="https://azukid.com/it/sumpo/DialSplit/dialsplit.html" hreflang="it">
+  <link rel="alternate" href="https://azukid.com/ko/sumpo/DialSplit/dialsplit.html" hreflang="ko">
+  <link rel="alternate" href="https://azukid.com/zh-Hant/sumpo/DialSplit/dialsplit.html" hreflang="zh-Hant">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="DialSplit Bedienungsanleitung">
+  <meta property="og:description" content="Eine visuelle Anleitung zum DialSplit-Hauptbildschirm, den Sperrfunktionen, den Einstellungen und der gebietsschema-abhängigen Währungsdarstellung.">
+  <meta property="og:url" content="https://azukid.com/de/sumpo/DialSplit/dialsplit.html">
+  <link rel="stylesheet" href="../../../style.css?v=20260604">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../index.html">Startseite</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">DialSplit</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <img class="page-header-icon" src="../../../images/icon-dialsplit.png" alt="DialSplit">
+    <div class="page-header-text">
+      <h1>DialSplit Bedienungsanleitung</h1>
+      <p class="page-tagline">Eine visuelle Anleitung, aufgebaut um die Bildschirmstruktur</p>
+    </div>
+  </div>
+
+  <section class="guide-hero">
+    <div class="guide-hero-copy">
+      <p>DialSplit hilft dir, Rechnungen aufzuteilen, indem du Personenzahl und Beträge mit haptischen Dials anpasst</p>
+      <p>Diese Anleitung orientiert sich zuerst an der visuellen Struktur, damit du Hauptbildschirm, Sperren, Einstellungen und Währungsverhalten auf einen Blick verstehst</p>
+      <div class="guide-kpis">
+        <div class="guide-kpi">
+          <strong>4 Ebenen</strong>
+          <span>A / B / C / D unabhängig voneinander anpassen</span>
+        </div>
+        <div class="guide-kpi">
+          <strong>2 Sperren</strong>
+          <span>Personensperre und Komplettsperre</span>
+        </div>
+        <div class="guide-kpi">
+          <strong>Gebietsschema-bewusst</strong>
+          <span>Währungsanzeige folgt den Geräteeinstellungen</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-panel">
+      <div class="guide-panel-title">
+        <h3>Hauptbildschirm</h3>
+        <p>Tippe auf eine Markierung, um die Erklärung zu öffnen</p>
+      </div>
+      <div class="shot-frame" aria-label="Hauptbildschirm">
+        <img src="images/main-overview-en.png" alt="DialSplit Hauptbildschirm">
+        <!-- 主画面の注釈 -->
+        <div class="hotspot-anchor" style="top: 18.5%; left: 15%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="de-main-1">1</button>
+          <div class="hotspot-popover is-right" id="de-main-1">
+            <strong>Gesamtzahl Personen</strong>
+            <small>Prüfe die Gesamtzahl der Personen</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 24%; left: 15%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="de-main-2">2</button>
+          <div class="hotspot-popover is-right" id="de-main-2">
+            <strong>Sperre für das Gesamt-Panel</strong>
+            <small>Sperrt die Personen-Dials, um versehentliche Änderungen zu verhindern</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 32.5%; left: 39%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="de-main-3">3</button>
+          <div class="hotspot-popover is-right" id="de-main-3">
+            <strong>Panel A</strong>
+            <small>In Panel A gibst du nur die Personenzahl an. Der Betrag wird automatisch berechnet</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 21%; left: 75%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="de-main-4">4</button>
+          <div class="hotspot-popover is-left" id="de-main-4">
+            <strong>Gesamtbetrag</strong>
+            <small>Gib zuerst den Gesamtbetrag ein. Tippe auf die Zahl, um sie über das Nummernfeld einzugeben</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 87.5%; left: 50%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="de-main-5">5</button>
+          <div class="hotspot-popover is-top" id="de-main-5">
+            <strong>Schrittweite des Betrags-Dials</strong>
+            <small>Wechselt die Schrittweite des Betrags-Dials. Zum Festlegen des Werts gedrückt halten</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 46.5%; left: 40%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="de-main-6">6</button>
+          <div class="hotspot-popover is-right" id="de-main-6">
+            <strong>Panels B / C / D</strong>
+            <small>In den Panels B / C / D gibst du Personenzahl und Betrag an. Die Differenz wird automatisch Panel A zugewiesen</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 97.5%; left: 35%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="de-main-7">7</button>
+          <div class="hotspot-popover is-top" id="de-main-7">
+            <strong>Panel-Stil</strong>
+            <small>Passt das Erscheinungsbild dieses Bildschirms an. Beeinflusst die Rechnungsaufteilung nicht</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 9.5%; left: 92%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="de-main-8">8</button>
+          <div class="hotspot-popover is-left" id="de-main-8">
+            <strong>Einstellungen</strong>
+            <small>Öffnet den Einstellungsbildschirm</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 38%; left: 74%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="de-main-9">9</button>
+          <div class="hotspot-popover is-left" id="de-main-9">
+            <strong>Komplettsperre</strong>
+            <small>Sperrt alles, um versehentliche Änderungen zu verhindern</small>
+          </div>
+        </div>
+      </div>
+      <p class="hotspot-tip">Tippe außerhalb der Markierungen, um die Sprechblase zu schließen</p>
+    </div>
+  </section>
+
+  <div class="pill-link-row">
+    <a class="pill-link" href="https://apps.apple.com/de/app/id467941202">App Store</a>
+    <a class="pill-link" href="https://discord.com/channels/1489165729269022720/1495313401121996830" target="_blank" rel="noopener noreferrer">Discord-Forum</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/EULA_en.html">Endnutzer-Lizenzvereinbarung</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/PrivacyPolicy_en.html">Datenschutzerklärung</a>
+    <a class="pill-link" href="../index.html">Über den Autor: sumpo</a>
+  </div>
+
+  <section class="content-section">
+    <h2>Nutzungsablauf</h2>
+    <div class="step-flow">
+      <div class="step-card">
+        <span class="step-number">1</span>
+        <strong>Gesamtbetrag eingeben</strong>
+        <p>Lege den Rechnungsbetrag im oberen Panel per Dial oder Nummernfeld fest</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">2</span>
+        <strong>Personenzahl festlegen</strong>
+        <p>Passe die Personenzahl für A / B / C / D mit den Dials auf der linken Seite an</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">3</span>
+        <strong>Beträge anpassen</strong>
+        <p>Feinjustiere die Beträge für B / C / D — Panel A aktualisiert sich automatisch</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">4</span>
+        <strong>Bei Bedarf sperren</strong>
+        <p>Sperre nur die Personenzahl oder alle Bedienelemente, um versehentliche Änderungen zu vermeiden</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Einstellungsübersicht</h2>
+    <div class="guide-panel screen-size">
+      <div class="guide-panel-title">
+        <h3>Einstellungsbildschirm</h3>
+        <p>Tippe auf eine Markierung, um zu sehen, was die jeweilige Zeile bewirkt</p>
+      </div>
+      <div class="shot-frame" aria-label="Einstellungsbildschirm">
+        <img src="images/settings-overview-en.png" alt="Einstellungsbildschirm">
+        <!-- 設定画面の注釈 -->
+        <div class="hotspot-anchor" style="top: 22.5%; left: 55%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="de-settings-1">1</button>
+          <div class="hotspot-popover is-bottom" id="de-settings-1">
+            <strong>Voreinstellung</strong>
+            <small>Wähle die Namen der Ebenen A/B/C/D aus Voreinstellungen</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 77.5%; left: 45%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="de-settings-2">2</button>
+          <div class="hotspot-popover is-top" id="de-settings-2">
+            <strong>Dial-Einstellungen</strong>
+            <small>Öffnet das eigene Einstellungsblatt für die Dials, inklusive Feinabstimmung der Empfindlichkeit</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 84%; left: 40%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="de-settings-3">3</button>
+          <div class="hotspot-popover is-top" id="de-settings-3">
+            <strong>Erscheinungsbild</strong>
+            <small>„Automatisch" folgt der Systemeinstellung</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 96.5%; left: 40%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="de-settings-4">4</button>
+          <div class="hotspot-popover is-top" id="de-settings-4">
+            <strong>Textgröße</strong>
+            <small>„Automatisch" folgt der Systemeinstellung „Größerer Text". Groß entspricht dem 1,5-Fachen und Extragroß dem 2-Fachen der Standardgröße</small>
+          </div>
+        </div>
+      </div>
+      <p class="hotspot-tip">Die gleichen Punkte findest du auch in der Screenshot-Galerie weiter unten</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Gebietsschema-abhängige Währungsdarstellung</h2>
+    <div class="locale-grid">
+      <div class="locale-card">
+        <h3>Japanisch / Japan</h3>
+        <div class="locale-sample">
+          <strong>¥12,000</strong>
+          <span>Beispiele für Dial-Schrittweiten: 1 / 10 / 100 / 500 / 1000</span>
+        </div>
+        <p>Wird als Ganzzahlwährung behandelt. Schrittwerte werden ohne Währungssymbol angezeigt</p>
+      </div>
+      <div class="locale-card">
+        <h3>Englisch / USA</h3>
+        <div class="locale-sample">
+          <strong>$12.00</strong>
+          <span>Beispiele für Dial-Schrittweiten: 0.01 / 0.10 / 1.00 / 5.00 / 10.00</span>
+        </div>
+        <p>Bei Währungen mit zwei Nachkommastellen werden Werte in der kleinsten Währungseinheit gespeichert</p>
+      </div>
+      <div class="locale-card">
+        <h3>Englisch / Kuwait</h3>
+        <div class="locale-sample">
+          <strong>KWD 1.000</strong>
+          <span>Beispiele für Dial-Schrittweiten: 0.001 / 0.010 / 0.100 / 0.500 / 1.000</span>
+        </div>
+        <p>Auch Währungen mit drei Nachkommastellen werden unterstützt, ohne dass Anzeige und interne Einheiten auseinanderlaufen</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Weitere Screenshots</h2>
+    <div class="shot-grid">
+      <div class="shot-card">
+        <h3>Eintrag Dial-Einstellungen</h3>
+        <div class="shot-frame compact">
+          <img src="images/settings-dial-en.png" alt="Zeile für Dial-Einstellungen im Einstellungsbildschirm">
+        </div>
+        <p class="shot-caption">Öffne über diese Zeile das Einstellungsblatt für die Dials, um Bedienverhalten und Erscheinungsbild anzupassen</p>
+      </div>
+      <div class="shot-card">
+        <h3>Erscheinungsbild</h3>
+        <div class="shot-frame compact">
+          <img src="images/settings-appearance-en.png" alt="Erscheinungsbild-Einstellung im Einstellungsbildschirm">
+        </div>
+        <p class="shot-caption">Wähle zwischen Automatisch, Hell oder Dunkel. „Automatisch" folgt dem Systemerscheinungsbild</p>
+      </div>
+      <div class="shot-card">
+        <h3>Dunkles Erscheinungsbild</h3>
+        <div class="shot-frame compact">
+          <img src="images/appearance-dark-en.png" alt="Dunkles Erscheinungsbild des Hauptbildschirms">
+        </div>
+        <p class="shot-caption">Das dunkle Erscheinungsbild hält Dials und Beschriftungen auch bei wenig Licht gut lesbar</p>
+      </div>
+      <div class="shot-card">
+        <h3>Hintergrundvarianten</h3>
+        <div class="shot-grid">
+          <div class="shot-frame compact">
+            <img src="images/background-brown-en.png" alt="Braunes Leder-Hintergrundbild">
+          </div>
+          <div class="shot-frame compact">
+            <img src="images/background-black-en.png" alt="Schwarzes Leder-Hintergrundbild">
+          </div>
+        </div>
+        <p class="shot-caption">Braunes Leder und Schwarzes Leder lassen sich in den Einstellungen auswählen. Einfarbig ist im selben Bereich ebenfalls verfügbar</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Versionsverlauf</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Version</th><th>Veröffentlichungsdatum</th><th>Entwicklungsumgebung</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1.0.0</td><td>2011/10/4</td><td>Erstveröffentlichung — Objective-C, Xcode 4, iOS 4</td></tr>
+          <tr><td>1.1.0</td><td>2012/4/10</td><td>Objective-C, Xcode 4, iOS 5</td></tr>
+          <tr><td>1.2.0</td><td>2017/4/19</td><td>Objective-C, Xcode 8, iOS 10</td></tr>
+          <tr><td>2.0.0</td><td>2026/4/16</td><td>Swift 6 / SwiftUI, Xcode 26, iOS 26</td></tr>
+          <tr><td>2.0.1</td><td>2026/4/17</td><td>Trinkgeld- und Rewarded-Ad-Unterstützung für den Entwickler hinzugefügt</td></tr>
+          <tr><td>2.1.0</td><td>2026/4/22</td><td>Personensperre, Komplettsperre, Dial-Einstellungen, Erscheinungsbild, Hintergrundeinstellungen, Einstellungen für die Betrags-Dial-Schrittweite sowie gebietsschema-abhängige Währungsdarstellung hinzugefügt</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+<script src="../../../theme.js"></script>
+<script>
+  // タップした注釈だけを開く
+  (() => {
+    const anchors = [...document.querySelectorAll('.hotspot-anchor')]
+
+    // 上下の広い方へ吹き出し、左右端ではフレーム内へ寄せる
+    const placePopover = (anchor) => {
+      const frame = anchor.closest('.shot-frame')
+      const popover = anchor.querySelector('.hotspot-popover')
+      if (!frame || !popover) {
+        return
+      }
+
+      popover.classList.remove('is-right', 'is-left', 'is-top', 'is-bottom')
+      const anchorY = anchor.offsetTop
+      popover.classList.add(anchorY < frame.clientHeight / 2 ? 'is-bottom' : 'is-top')
+
+      const margin = 8
+      const anchorX = anchor.offsetLeft
+      const halfWidth = popover.offsetWidth / 2
+      const popoverCenter = Math.min(
+        Math.max(anchorX, halfWidth + margin),
+        frame.clientWidth - halfWidth - margin
+      )
+      popover.style.setProperty('--popover-shift-x', `${popoverCenter - anchorX}px`)
+    }
+
+    const closeAll = () => {
+      anchors.forEach((anchor) => {
+        anchor.classList.remove('is-open')
+        const button = anchor.querySelector('.hotspot-toggle')
+        if (button) {
+          button.setAttribute('aria-expanded', 'false')
+        }
+      })
+    }
+
+    anchors.forEach((anchor) => {
+      const button = anchor.querySelector('.hotspot-toggle')
+      if (!button) {
+        return
+      }
+
+      // 番号を表示せず説明名を読み上げる
+      const title = anchor.querySelector('.hotspot-popover strong')
+      if (title) {
+        button.setAttribute('aria-label', title.textContent)
+      }
+
+      placePopover(anchor)
+
+      button.addEventListener('click', (event) => {
+        event.stopPropagation()
+        const isOpen = anchor.classList.contains('is-open')
+        closeAll()
+        if (!isOpen) {
+          placePopover(anchor)
+          anchor.classList.add('is-open')
+          button.setAttribute('aria-expanded', 'true')
+        }
+      })
+    })
+
+    window.addEventListener('resize', () => {
+      anchors.forEach(placePopover)
+    })
+
+    document.addEventListener('click', closeAll)
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeAll()
+      }
+    })
+
+    // URLにgrid=1がある場合だけ座標メッシュを表示する
+    if (new URLSearchParams(window.location.search).get('grid') === '1') {
+      document.querySelectorAll('.shot-frame').forEach((frame) => {
+        if (!frame.querySelector('.hotspot')) {
+          return
+        }
+
+        const grid = document.createElement('div')
+        grid.className = 'debug-coordinate-grid'
+        grid.setAttribute('aria-hidden', 'true')
+
+        for (let x = 0; x <= 10; x += 1) {
+          const label = document.createElement('span')
+          label.className = `debug-coordinate-label is-x${x === 0 ? ' is-start' : ''}${x === 10 ? ' is-end' : ''}`
+          label.style.left = `${x * 10}%`
+          label.textContent = `X${x}`
+          grid.appendChild(label)
+        }
+
+        for (let y = 0; y <= 20; y += 1) {
+          const label = document.createElement('span')
+          label.className = `debug-coordinate-label is-y${y === 0 ? ' is-start' : ''}${y === 20 ? ' is-end' : ''}`
+          label.style.top = `${y * 5}%`
+          label.textContent = `Y${y}`
+          grid.appendChild(label)
+        }
+
+        frame.appendChild(grid)
+      })
+    }
+  })()
+</script>
+</body>
+</html>

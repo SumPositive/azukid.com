@@ -8,6 +8,12 @@
   <link rel="canonical" href="https://azukid.com/">
   <link rel="alternate" href="https://azukid.com/jp/index.html" hreflang="ja">
   <link rel="alternate" href="https://azukid.com/en/index.html" hreflang="en">
+  <link rel="alternate" href="https://azukid.com/de/index.html" hreflang="de">
+  <link rel="alternate" href="https://azukid.com/es/index.html" hreflang="es">
+  <link rel="alternate" href="https://azukid.com/fr/index.html" hreflang="fr">
+  <link rel="alternate" href="https://azukid.com/it/index.html" hreflang="it">
+  <link rel="alternate" href="https://azukid.com/ko/index.html" hreflang="ko">
+  <link rel="alternate" href="https://azukid.com/zh-Hant/index.html" hreflang="zh-Hant">
   <link rel="alternate" href="https://azukid.com/" hreflang="x-default">
   <meta name="theme-color" content="#f5f5f7">
   <meta property="og:type" content="website">
@@ -16,13 +22,27 @@
   <meta property="og:url" content="https://azukid.com/">
   <script>
     var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-    location.replace(lang.startsWith('ja') ? 'jp/index.html' : 'en/index.html');
+    var byPrefix = {
+      ja: 'jp/index.html',
+      de: 'de/index.html',
+      es: 'es/index.html',
+      fr: 'fr/index.html',
+      it: 'it/index.html',
+      ko: 'ko/index.html'
+    };
+    var target = 'en/index.html';
+    if (lang.startsWith('zh-hant') || lang === 'zh-tw' || lang === 'zh-hk') {
+      target = 'zh-Hant/index.html';
+    } else if (byPrefix[lang.slice(0, 2)]) {
+      target = byPrefix[lang.slice(0, 2)];
+    }
+    location.replace(target);
   </script>
   <noscript>
     <meta http-equiv="refresh" content="0; url=en/index.html">
   </noscript>
 </head>
 <body>
-  <a href="jp/index.html">日本語</a> / <a href="en/index.html">English</a>
+  <a href="jp/index.html">日本語</a> / <a href="en/index.html">English</a> / <a href="de/index.html">Deutsch</a> / <a href="es/index.html">Español</a> / <a href="fr/index.html">Français</a> / <a href="it/index.html">Italiano</a> / <a href="ko/index.html">한국어</a> / <a href="zh-Hant/index.html">繁體中文</a>
 </body>
 </html>

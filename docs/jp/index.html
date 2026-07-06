@@ -8,6 +8,12 @@
   <link rel="canonical" href="https://azukid.com/jp/index.html">
   <link rel="alternate" href="https://azukid.com/jp/index.html" hreflang="ja">
   <link rel="alternate" href="https://azukid.com/en/index.html" hreflang="en">
+  <link rel="alternate" href="https://azukid.com/de/index.html" hreflang="de">
+  <link rel="alternate" href="https://azukid.com/es/index.html" hreflang="es">
+  <link rel="alternate" href="https://azukid.com/fr/index.html" hreflang="fr">
+  <link rel="alternate" href="https://azukid.com/it/index.html" hreflang="it">
+  <link rel="alternate" href="https://azukid.com/ko/index.html" hreflang="ko">
+  <link rel="alternate" href="https://azukid.com/zh-Hant/index.html" hreflang="zh-Hant">
   <link rel="alternate" href="https://azukid.com/" hreflang="x-default">
   <meta name="theme-color" content="#f5f5f7">
   <meta property="og:type" content="website">
@@ -24,8 +30,16 @@
   <div class="site-header-inner">
     <span class="site-logo">sumpo / azukid.com</span>
     <nav class="lang-nav">
-      <a class="lang-nav-pill current" href="#">日本語</a>
-      <a class="lang-nav-pill" href="../en/index.html">English</a>
+      <select class="lang-select" aria-label="Language" onchange="location.href=this.value">
+        <option value="../jp/index.html" selected>日本語</option>
+        <option value="../en/index.html">English</option>
+        <option value="../de/index.html">Deutsch</option>
+        <option value="../es/index.html">Español</option>
+        <option value="../fr/index.html">Français</option>
+        <option value="../it/index.html">Italiano</option>
+        <option value="../ko/index.html">한국어</option>
+        <option value="../zh-Hant/index.html">繁體中文</option>
+      </select>
     </nav>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
   </div>
@@ -112,7 +126,7 @@
         <div class="app-card-top">
           <img class="app-card-icon" src="../images/icon-condition.png" alt="体調メモ Condition">
           <div class="app-card-versions">
-            <span class="app-card-version app-card-version-live">2.6.0 公開中</span>
+            <span class="app-card-version app-card-version-live">2.7.0 公開中</span>
             <!-- 作業中バージョン -->
             <!-- <span class="app-card-version app-card-version-working">x.x.x 作業中</span> -->
             <!-- 審査中バージョン -->

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — sumpo products</title>
+  <meta name="description" content="Página de contacto de sumpo products. Envía preguntas, informes de errores o solicitudes de funciones mediante un formulario de correo electrónico.">
+  <link rel="canonical" href="https://azukid.com/es/sumpo/contact.html">
+  <link rel="alternate" href="https://azukid.com/jp/sumpo/contact.html" hreflang="ja">
+  <link rel="alternate" href="https://azukid.com/en/sumpo/contact.html" hreflang="en">
+  <link rel="alternate" href="https://azukid.com/de/sumpo/contact.html" hreflang="de">
+  <link rel="alternate" href="https://azukid.com/es/sumpo/contact.html" hreflang="es">
+  <link rel="alternate" href="https://azukid.com/fr/sumpo/contact.html" hreflang="fr">
+  <link rel="alternate" href="https://azukid.com/it/sumpo/contact.html" hreflang="it">
+  <link rel="alternate" href="https://azukid.com/ko/sumpo/contact.html" hreflang="ko">
+  <link rel="alternate" href="https://azukid.com/zh-Hant/sumpo/contact.html" hreflang="zh-Hant">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Contacto — sumpo products">
+  <meta property="og:description" content="Envíanos tus preguntas, informes de errores o solicitudes de funciones, y te responderemos por correo electrónico.">
+  <meta property="og:url" content="https://azukid.com/es/sumpo/contact.html">
+  <link rel="stylesheet" href="../../style.css?v=20260508">
+  <style>
+    .contact-form {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 28px 24px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: .8125rem;
+      font-weight: 600;
+      color: var(--text-2);
+      margin-bottom: 6px;
+      letter-spacing: .02em;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font);
+      font-size: .9375rem;
+      color: var(--text);
+      background: var(--bg);
+      transition: border-color .15s;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      background: var(--surface);
+    }
+    .form-group textarea {
+      min-height: 160px;
+      resize: vertical;
+      line-height: 1.65;
+    }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%236e6e73' d='M8 10.5L3 5.5h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 36px;
+    }
+    .form-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 32px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      font-family: var(--font);
+      font-size: .9375rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .15s;
+      width: 100%;
+    }
+    .form-submit:hover { background: var(--accent-dark); }
+    .form-note {
+      font-size: .8125rem;
+      color: var(--text-3);
+      margin-top: 14px;
+      line-height: 1.6;
+      text-align: center;
+    }
+  </style>
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../index.html">Inicio</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">Contacto</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar modo oscuro"></button>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <div class="page-header-text">
+      <h1>Contacto</h1>
+      <p class="page-tagline">Preguntas y comentarios sobre los productos de sumpo</p>
+    </div>
+  </div>
+
+  <div class="lead">
+    <p>Envíanos tus preguntas, informes de errores o solicitudes de funciones. Te responderemos por correo electrónico después de revisar tu mensaje.</p>
+  </div>
+
+  <section class="content-section">
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xqeglybk" method="post" accept-charset="UTF-8">
+      <div class="form-group">
+        <label for="app">Aplicación</label>
+        <select id="app" name="app">
+          <option value="">Selecciona una app</option>
+          <option value="Packlin">Packlin</option>
+          <option value="Condition">Condition</option>
+          <option value="Calclin">Calclin</option>
+          <option value="CreditMemo">CreditMemo</option>
+          <option value="DialSplit">DialSplit</option>
+          <option value="Otra">Otra</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="email">Correo electrónico <span style="color:red">*</span></label>
+        <input type="email" id="email" name="email" placeholder="Tu dirección de correo para la respuesta" required>
+      </div>
+      <div class="form-group">
+        <label for="subject">Asunto</label>
+        <input type="text" id="subject" name="subject" placeholder="p. ej. Pregunta sobre una compra" maxlength="100">
+      </div>
+      <div class="form-group">
+        <label for="body">Mensaje</label>
+        <textarea id="body" name="body" placeholder="Describe tu pregunta, problema o solicitud con el mayor detalle posible."></textarea>
+      </div>
+      <button type="submit" class="form-submit" id="submitBtn">Enviar</button>
+      <p class="form-note" id="formNote" role="status" aria-live="polite">Te responderemos por correo electrónico después de revisar tu mensaje. Tu dirección de correo electrónico solo se usa para responder a tu consulta.</p>
+    </form>
+  </section>
+
+</main>
+
+<script>
+  document.getElementById('app').addEventListener('change', function() {
+    const app = this.value;
+    const subjectField = document.getElementById('subject');
+    subjectField.value = app ? app + ' — Contacto' : '';
+  });
+
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    const note = document.getElementById('formNote');
+    this.setAttribute('aria-busy', 'true');
+    btn.disabled = true;
+    btn.textContent = 'Enviando…';
+
+    const data = new FormData(this);
+    try {
+      const res = await fetch('https://formspree.io/f/xqeglybk', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        this.innerHTML = '<p role="status" aria-live="polite" style="text-align:center; padding: 32px 0; font-size:1rem; color:var(--accent);">Mensaje enviado. ¡Gracias por contactarnos!</p>';
+      } else {
+        this.removeAttribute('aria-busy');
+        btn.disabled = false;
+        btn.textContent = 'Enviar';
+        note.textContent = 'No se pudo enviar el formulario. Inténtalo de nuevo más tarde.';
+        note.style.color = 'red';
+      }
+    } catch {
+      this.removeAttribute('aria-busy');
+      btn.disabled = false;
+      btn.textContent = 'Enviar';
+      note.textContent = 'No se pudo enviar el formulario. Comprueba tu conexión.';
+      note.style.color = 'red';
+    }
+  });
+</script>
+
+<script src="../../theme.js"></script>
+</body>
+</html>

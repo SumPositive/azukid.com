@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide d'utilisation DialSplit</title>
+  <meta name="description" content="Un guide d'utilisation visuel de DialSplit. Découvrez l'écran principal, le comportement des verrous, les réglages et la gestion des devises selon la langue régionale, à l'aide de schémas.">
+  <link rel="canonical" href="https://azukid.com/fr/sumpo/DialSplit/dialsplit.html">
+  <link rel="alternate" href="https://azukid.com/jp/sumpo/DialSplit/dialsplit.html" hreflang="ja">
+  <link rel="alternate" href="https://azukid.com/en/sumpo/DialSplit/dialsplit.html" hreflang="en">
+  <link rel="alternate" href="https://azukid.com/de/sumpo/DialSplit/dialsplit.html" hreflang="de">
+  <link rel="alternate" href="https://azukid.com/es/sumpo/DialSplit/dialsplit.html" hreflang="es">
+  <link rel="alternate" href="https://azukid.com/fr/sumpo/DialSplit/dialsplit.html" hreflang="fr">
+  <link rel="alternate" href="https://azukid.com/it/sumpo/DialSplit/dialsplit.html" hreflang="it">
+  <link rel="alternate" href="https://azukid.com/ko/sumpo/DialSplit/dialsplit.html" hreflang="ko">
+  <link rel="alternate" href="https://azukid.com/zh-Hant/sumpo/DialSplit/dialsplit.html" hreflang="zh-Hant">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Guide d'utilisation DialSplit">
+  <meta property="og:description" content="Un guide visuel de l'écran principal, des verrous, des réglages et de la gestion des devises selon la langue régionale de DialSplit.">
+  <meta property="og:url" content="https://azukid.com/fr/sumpo/DialSplit/dialsplit.html">
+  <link rel="stylesheet" href="../../../style.css?v=20260604">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../index.html">Accueil</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">DialSplit</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <img class="page-header-icon" src="../../../images/icon-dialsplit.png" alt="DialSplit">
+    <div class="page-header-text">
+      <h1>Guide d'utilisation DialSplit</h1>
+      <p class="page-tagline">Un guide visuel organisé autour de la structure de l'écran</p>
+    </div>
+  </div>
+
+  <section class="guide-hero">
+    <div class="guide-hero-copy">
+      <p>DialSplit vous aide à répartir une addition en ajustant le nombre de personnes et les montants à l'aide de molettes tactiles</p>
+      <p>Ce guide est d'abord organisé autour de la structure visuelle, afin que vous puissiez comprendre l'écran principal, les verrous, les réglages et le comportement des devises en un coup d'œil</p>
+      <div class="guide-kpis">
+        <div class="guide-kpi">
+          <strong>4 niveaux</strong>
+          <span>Ajustez A / B / C / D indépendamment</span>
+        </div>
+        <div class="guide-kpi">
+          <strong>2 verrous</strong>
+          <span>Verrou des personnes et verrou complet</span>
+        </div>
+        <div class="guide-kpi">
+          <strong>Sensible à la langue régionale</strong>
+          <span>L'affichage des devises suit votre appareil</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-panel">
+      <div class="guide-panel-title">
+        <h3>Écran principal</h3>
+        <p>Touchez un repère pour afficher son explication</p>
+      </div>
+      <div class="shot-frame" aria-label="Écran principal">
+        <img src="images/main-overview-en.png" alt="Écran principal de DialSplit">
+        <!-- 主画面の注釈 -->
+        <div class="hotspot-anchor" style="top: 18.5%; left: 15%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="fr-main-1">1</button>
+          <div class="hotspot-popover is-right" id="fr-main-1">
+            <strong>Nombre total de personnes</strong>
+            <small>Vérifiez le nombre total de personnes</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 24%; left: 15%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="fr-main-2">2</button>
+          <div class="hotspot-popover is-right" id="fr-main-2">
+            <strong>Verrou du panneau total</strong>
+            <small>Verrouillez les molettes de personnes pour éviter les modifications accidentelles</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 32.5%; left: 39%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="fr-main-3">3</button>
+          <div class="hotspot-popover is-right" id="fr-main-3">
+            <strong>Panneau A</strong>
+            <small>Dans le panneau A, indiquez uniquement le nombre de personnes. Le montant est calculé automatiquement</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 21%; left: 75%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="fr-main-4">4</button>
+          <div class="hotspot-popover is-left" id="fr-main-4">
+            <strong>Montant total</strong>
+            <small>Saisissez d'abord le montant total à payer. Touchez le nombre pour le saisir avec le pavé numérique</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 87.5%; left: 50%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="fr-main-5">5</button>
+          <div class="hotspot-popover is-top" id="fr-main-5">
+            <strong>Pas de la molette de montant</strong>
+            <small>Change l'incrément de la molette de montant. Maintenez pour définir sa valeur</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 46.5%; left: 40%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="fr-main-6">6</button>
+          <div class="hotspot-popover is-right" id="fr-main-6">
+            <strong>Panneaux B / C / D</strong>
+            <small>Dans les panneaux B / C / D, indiquez les personnes et le montant. Toute différence est attribuée au panneau A</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 97.5%; left: 35%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="fr-main-7">7</button>
+          <div class="hotspot-popover is-top" id="fr-main-7">
+            <strong>Style du panneau</strong>
+            <small>Personnalisez l'apparence de cet écran. Cela n'affecte pas le partage de l'addition</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 9.5%; left: 92%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="fr-main-8">8</button>
+          <div class="hotspot-popover is-left" id="fr-main-8">
+            <strong>Réglages</strong>
+            <small>Ouvrez l'écran des réglages</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 38%; left: 74%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="fr-main-9">9</button>
+          <div class="hotspot-popover is-left" id="fr-main-9">
+            <strong>Verrou complet</strong>
+            <small>Verrouillez tout pour éviter les modifications accidentelles</small>
+          </div>
+        </div>
+      </div>
+      <p class="hotspot-tip">Touchez en dehors des repères pour fermer la bulle</p>
+    </div>
+  </section>
+
+  <div class="pill-link-row">
+    <a class="pill-link" href="https://apps.apple.com/fr/app/id467941202">App Store</a>
+    <a class="pill-link" href="https://discord.com/channels/1489165729269022720/1495313401121996830" target="_blank" rel="noopener noreferrer">Forum Discord</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/EULA_en.html">Contrat de licence utilisateur final</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/PrivacyPolicy_en.html">Politique de confidentialité</a>
+    <a class="pill-link" href="../index.html">Biographie de l'auteur : sumpo</a>
+  </div>
+
+  <section class="content-section">
+    <h2>Parcours d'utilisation</h2>
+    <div class="step-flow">
+      <div class="step-card">
+        <span class="step-number">1</span>
+        <strong>Saisir le total</strong>
+        <p>Définissez le montant total de l'addition depuis le panneau supérieur avec la molette ou le pavé numérique</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">2</span>
+        <strong>Définir le nombre de personnes</strong>
+        <p>Ajustez le nombre de personnes pour A / B / C / D avec les molettes de gauche</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">3</span>
+        <strong>Ajuster les montants</strong>
+        <p>Réglez les montants B / C / D et laissez le panneau A se mettre à jour automatiquement</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">4</span>
+        <strong>Verrouiller si nécessaire</strong>
+        <p>Figez uniquement les personnes, ou figez tous les contrôles pour éviter les modifications accidentelles</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Plan des réglages</h2>
+    <div class="guide-panel screen-size">
+      <div class="guide-panel-title">
+        <h3>Écran des réglages</h3>
+        <p>Touchez un repère pour afficher le rôle de chaque ligne</p>
+      </div>
+      <div class="shot-frame" aria-label="Écran des réglages">
+        <img src="images/settings-overview-en.png" alt="Écran des réglages">
+        <!-- 設定画面の注釈 -->
+        <div class="hotspot-anchor" style="top: 22.5%; left: 55%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="fr-settings-1">1</button>
+          <div class="hotspot-popover is-bottom" id="fr-settings-1">
+            <strong>Préréglage</strong>
+            <small>Sélectionnez les noms des niveaux A/B/C/D parmi des préréglages</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 77.5%; left: 45%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="fr-settings-2">2</button>
+          <div class="hotspot-popover is-top" id="fr-settings-2">
+            <strong>Réglages de la molette</strong>
+            <small>Ouvrez la feuille de réglages dédiée à la molette, y compris l'ajustement fin de la sensibilité</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 84%; left: 40%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="fr-settings-3">3</button>
+          <div class="hotspot-popover is-top" id="fr-settings-3">
+            <strong>Mode d'apparence</strong>
+            <small>Le mode automatique suit le réglage du système</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 96.5%; left: 40%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="fr-settings-4">4</button>
+          <div class="hotspot-popover is-top" id="fr-settings-4">
+            <strong>Taille du texte</strong>
+            <small>Le mode automatique suit le réglage système Texte plus grand. Grand correspond à 1,5 fois la taille standard et Très grand à 2 fois la taille standard</small>
+          </div>
+        </div>
+      </div>
+      <p class="hotspot-tip">Vous pouvez également retrouver ces mêmes éléments dans la galerie de captures d'écran ci-dessous</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Gestion des devises selon la langue régionale</h2>
+    <div class="locale-grid">
+      <div class="locale-card">
+        <h3>Japonais / Japon</h3>
+        <div class="locale-sample">
+          <strong>¥12,000</strong>
+          <span>Exemples de pas de molette : 1 / 10 / 100 / 500 / 1000</span>
+        </div>
+        <p>Traité comme une devise entière. Les valeurs de pas sont affichées sans symbole monétaire</p>
+      </div>
+      <div class="locale-card">
+        <h3>Anglais / États-Unis</h3>
+        <div class="locale-sample">
+          <strong>$12.00</strong>
+          <span>Exemples de pas de molette : 0.01 / 0.10 / 1.00 / 5.00 / 10.00</span>
+        </div>
+        <p>Pour les devises à deux décimales, les valeurs sont stockées dans la plus petite unité monétaire</p>
+      </div>
+      <div class="locale-card">
+        <h3>Anglais / Koweït</h3>
+        <div class="locale-sample">
+          <strong>KWD 1.000</strong>
+          <span>Exemples de pas de molette : 0.001 / 0.010 / 0.100 / 0.500 / 1.000</span>
+        </div>
+        <p>Les devises à trois décimales sont également prises en charge, sans décalage entre l'affichage et les unités internes</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Captures d'écran supplémentaires</h2>
+    <div class="shot-grid">
+      <div class="shot-card">
+        <h3>Entrée Réglages de la molette</h3>
+        <div class="shot-frame compact">
+          <img src="images/settings-dial-en.png" alt="Ligne des réglages de la molette dans l'écran des réglages">
+        </div>
+        <p class="shot-caption">Ouvrez la feuille de réglages de la molette depuis cette ligne pour ajuster la sensation d'interaction et l'apparence</p>
+      </div>
+      <div class="shot-card">
+        <h3>Mode d'apparence</h3>
+        <div class="shot-frame compact">
+          <img src="images/settings-appearance-en.png" alt="Mode d'apparence dans l'écran des réglages">
+        </div>
+        <p class="shot-caption">Choisissez Automatique, Clair ou Sombre. Le mode automatique suit l'apparence du système</p>
+      </div>
+      <div class="shot-card">
+        <h3>Apparence sombre</h3>
+        <div class="shot-frame compact">
+          <img src="images/appearance-dark-en.png" alt="Apparence sombre de l'écran principal">
+        </div>
+        <p class="shot-caption">L'apparence sombre garde les molettes et les libellés lisibles en usage peu éclairé</p>
+      </div>
+      <div class="shot-card">
+        <h3>Variantes d'arrière-plan</h3>
+        <div class="shot-grid">
+          <div class="shot-frame compact">
+            <img src="images/background-brown-en.png" alt="Arrière-plan cuir brun">
+          </div>
+          <div class="shot-frame compact">
+            <img src="images/background-black-en.png" alt="Arrière-plan cuir noir">
+          </div>
+        </div>
+        <p class="shot-caption">Cuir brun et Cuir noir sont sélectionnables depuis les réglages. Monochrome est également disponible dans la même section</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Historique des versions</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Version</th><th>Date de sortie</th><th>Environnement de développement</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1.0.0</td><td>2011/10/4</td><td>Version initiale — Objective-C, Xcode 4, iOS 4</td></tr>
+          <tr><td>1.1.0</td><td>2012/4/10</td><td>Objective-C, Xcode 4, iOS 5</td></tr>
+          <tr><td>1.2.0</td><td>2017/4/19</td><td>Objective-C, Xcode 8, iOS 10</td></tr>
+          <tr><td>2.0.0</td><td>2026/4/16</td><td>Swift 6 / SwiftUI, Xcode 26, iOS 26</td></tr>
+          <tr><td>2.0.1</td><td>2026/4/17</td><td>Ajout du pourboire et des publicités récompensées pour soutenir le développeur</td></tr>
+          <tr><td>2.1.0</td><td>2026/4/22</td><td>Ajout du verrou des personnes, du verrou complet, des réglages de la molette, du mode d'apparence, des réglages d'arrière-plan, des réglages du pas de la molette de montant, et de la gestion des devises selon la langue régionale</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+<script src="../../../theme.js"></script>
+<script>
+  // タップした注釈だけを開く
+  (() => {
+    const anchors = [...document.querySelectorAll('.hotspot-anchor')]
+
+    // 上下の広い方へ吹き出し、左右端ではフレーム内へ寄せる
+    const placePopover = (anchor) => {
+      const frame = anchor.closest('.shot-frame')
+      const popover = anchor.querySelector('.hotspot-popover')
+      if (!frame || !popover) {
+        return
+      }
+
+      popover.classList.remove('is-right', 'is-left', 'is-top', 'is-bottom')
+      const anchorY = anchor.offsetTop
+      popover.classList.add(anchorY < frame.clientHeight / 2 ? 'is-bottom' : 'is-top')
+
+      const margin = 8
+      const anchorX = anchor.offsetLeft
+      const halfWidth = popover.offsetWidth / 2
+      const popoverCenter = Math.min(
+        Math.max(anchorX, halfWidth + margin),
+        frame.clientWidth - halfWidth - margin
+      )
+      popover.style.setProperty('--popover-shift-x', `${popoverCenter - anchorX}px`)
+    }
+
+    const closeAll = () => {
+      anchors.forEach((anchor) => {
+        anchor.classList.remove('is-open')
+        const button = anchor.querySelector('.hotspot-toggle')
+        if (button) {
+          button.setAttribute('aria-expanded', 'false')
+        }
+      })
+    }
+
+    anchors.forEach((anchor) => {
+      const button = anchor.querySelector('.hotspot-toggle')
+      if (!button) {
+        return
+      }
+
+      // 番号を表示せず説明名を読み上げる
+      const title = anchor.querySelector('.hotspot-popover strong')
+      if (title) {
+        button.setAttribute('aria-label', title.textContent)
+      }
+
+      placePopover(anchor)
+
+      button.addEventListener('click', (event) => {
+        event.stopPropagation()
+        const isOpen = anchor.classList.contains('is-open')
+        closeAll()
+        if (!isOpen) {
+          placePopover(anchor)
+          anchor.classList.add('is-open')
+          button.setAttribute('aria-expanded', 'true')
+        }
+      })
+    })
+
+    window.addEventListener('resize', () => {
+      anchors.forEach(placePopover)
+    })
+
+    document.addEventListener('click', closeAll)
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeAll()
+      }
+    })
+
+    // URLにgrid=1がある場合だけ座標メッシュを表示する
+    if (new URLSearchParams(window.location.search).get('grid') === '1') {
+      document.querySelectorAll('.shot-frame').forEach((frame) => {
+        if (!frame.querySelector('.hotspot')) {
+          return
+        }
+
+        const grid = document.createElement('div')
+        grid.className = 'debug-coordinate-grid'
+        grid.setAttribute('aria-hidden', 'true')
+
+        for (let x = 0; x <= 10; x += 1) {
+          const label = document.createElement('span')
+          label.className = `debug-coordinate-label is-x${x === 0 ? ' is-start' : ''}${x === 10 ? ' is-end' : ''}`
+          label.style.left = `${x * 10}%`
+          label.textContent = `X${x}`
+          grid.appendChild(label)
+        }
+
+        for (let y = 0; y <= 20; y += 1) {
+          const label = document.createElement('span')
+          label.className = `debug-coordinate-label is-y${y === 0 ? ' is-start' : ''}${y === 20 ? ' is-end' : ''}`
+          label.style.top = `${y * 5}%`
+          label.textContent = `Y${y}`
+          grid.appendChild(label)
+        }
+
+        frame.appendChild(grid)
+      })
+    }
+  })()
+</script>
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DialSplit 사용 설명서</title>
+  <meta name="description" content="DialSplit의 그림 중심 사용 설명서입니다. 메인 화면, 잠금 동작, 설정, 지역별 통화 처리를 도표로 확인할 수 있습니다.">
+  <link rel="canonical" href="https://azukid.com/ko/sumpo/DialSplit/dialsplit.html">
+  <link rel="alternate" href="https://azukid.com/jp/sumpo/DialSplit/dialsplit.html" hreflang="ja">
+  <link rel="alternate" href="https://azukid.com/en/sumpo/DialSplit/dialsplit.html" hreflang="en">
+  <link rel="alternate" href="https://azukid.com/de/sumpo/DialSplit/dialsplit.html" hreflang="de">
+  <link rel="alternate" href="https://azukid.com/es/sumpo/DialSplit/dialsplit.html" hreflang="es">
+  <link rel="alternate" href="https://azukid.com/fr/sumpo/DialSplit/dialsplit.html" hreflang="fr">
+  <link rel="alternate" href="https://azukid.com/it/sumpo/DialSplit/dialsplit.html" hreflang="it">
+  <link rel="alternate" href="https://azukid.com/ko/sumpo/DialSplit/dialsplit.html" hreflang="ko">
+  <link rel="alternate" href="https://azukid.com/zh-Hant/sumpo/DialSplit/dialsplit.html" hreflang="zh-Hant">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="DialSplit 사용 설명서">
+  <meta property="og:description" content="DialSplit의 메인 화면, 잠금, 설정, 지역별 통화 처리를 그림으로 확인할 수 있는 사용 설명서입니다.">
+  <meta property="og:url" content="https://azukid.com/ko/sumpo/DialSplit/dialsplit.html">
+  <link rel="stylesheet" href="../../../style.css?v=20260604">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../index.html">홈</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">DialSplit</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <img class="page-header-icon" src="../../../images/icon-dialsplit.png" alt="DialSplit">
+    <div class="page-header-text">
+      <h1>DialSplit 사용 설명서</h1>
+      <p class="page-tagline">화면 구성 중심으로 만든 시각적 가이드</p>
+    </div>
+  </div>
+
+  <section class="guide-hero">
+    <div class="guide-hero-copy">
+      <p>DialSplit은 인원수와 금액을 다이얼로 조절하면서 결제 분담을 정하는 앱입니다</p>
+      <p>이 가이드는 글을 읽기보다 먼저 화면 전체의 역할을 파악할 수 있도록, 메인 화면, 잠금, 설정, 통화 표시를 도표 중심으로 정리했습니다</p>
+      <div class="guide-kpis">
+        <div class="guide-kpi">
+          <strong>4개 구분</strong>
+          <span>A / B / C / D를 개별적으로 조절</span>
+        </div>
+        <div class="guide-kpi">
+          <strong>잠금 2종</strong>
+          <span>인원 잠금과 전체 조작 잠금</span>
+        </div>
+        <div class="guide-kpi">
+          <strong>지역 대응</strong>
+          <span>통화 표시가 기기 설정을 따릅니다</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-panel">
+      <div class="guide-panel-title">
+        <h3>메인 화면</h3>
+        <p>표시를 탭하면 해당 위치의 설명이 열립니다</p>
+      </div>
+      <div class="shot-frame" aria-label="메인 화면">
+        <img src="images/main-overview-en.png" alt="DialSplit 메인 화면">
+        <!-- 主画面の注釈 -->
+        <div class="hotspot-anchor" style="top: 18.5%; left: 15%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="ko-main-1">1</button>
+          <div class="hotspot-popover is-right" id="ko-main-1">
+            <strong>참여 인원수</strong>
+            <small>전체 인원수를 확인할 수 있습니다</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 24%; left: 15%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="ko-main-2">2</button>
+          <div class="hotspot-popover is-right" id="ko-main-2">
+            <strong>합계 패널 잠금</strong>
+            <small>인원 다이얼을 잠가 의도치 않은 변경을 방지합니다</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 32.5%; left: 39%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="ko-main-3">3</button>
+          <div class="hotspot-popover is-right" id="ko-main-3">
+            <strong>A 패널</strong>
+            <small>A 패널에서는 인원수만 지정하며, 금액은 자동으로 계산됩니다</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 21%; left: 75%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="ko-main-4">4</button>
+          <div class="hotspot-popover is-left" id="ko-main-4">
+            <strong>결제 총액</strong>
+            <small>먼저 총액(결제 총액)을 입력합니다. 숫자를 탭하면 키패드로 입력할 수 있습니다</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 87.5%; left: 50%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="ko-main-5">5</button>
+          <div class="hotspot-popover is-top" id="ko-main-5">
+            <strong>금액 다이얼 단위</strong>
+            <small>금액 다이얼의 증감 폭을 전환합니다. 길게 누르면 값을 설정할 수 있습니다</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 46.5%; left: 40%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="ko-main-6">6</button>
+          <div class="hotspot-popover is-right" id="ko-main-6">
+            <strong>B / C / D 패널</strong>
+            <small>B / C / D 패널에서는 인원수와 금액을 지정하며, 과부족 금액은 A에 배정됩니다</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 97.5%; left: 35%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="ko-main-7">7</button>
+          <div class="hotspot-popover is-top" id="ko-main-7">
+            <strong>패널 스타일</strong>
+            <small>이 화면의 외관을 사용자화합니다. 정산 처리에는 영향을 주지 않습니다</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 9.5%; left: 92%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="ko-main-8">8</button>
+          <div class="hotspot-popover is-left" id="ko-main-8">
+            <strong>설정</strong>
+            <small>설정 화면을 엽니다</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 38%; left: 74%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="ko-main-9">9</button>
+          <div class="hotspot-popover is-left" id="ko-main-9">
+            <strong>전체 조작 잠금</strong>
+            <small>전부 잠가 의도치 않은 변경을 방지합니다</small>
+          </div>
+        </div>
+      </div>
+      <p class="hotspot-tip">표시 바깥의 빈 곳을 탭하면 설명이 닫힙니다</p>
+    </div>
+  </section>
+
+  <div class="pill-link-row">
+    <a class="pill-link" href="https://apps.apple.com/kr/app/id467941202">App Store</a>
+    <a class="pill-link" href="https://discord.com/channels/1489165729269022720/1495313401121996830" target="_blank" rel="noopener noreferrer">Discord 포럼</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/EULA_en.html">최종 사용자 사용권 계약</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/PrivacyPolicy_en.html">개인정보 처리방침</a>
+    <a class="pill-link" href="../index.html">개발자 소개: sumpo</a>
+  </div>
+
+  <section class="content-section">
+    <h2>사용 흐름</h2>
+    <div class="step-flow">
+      <div class="step-card">
+        <span class="step-number">1</span>
+        <strong>합계 금액 입력</strong>
+        <p>상단 패널에서 다이얼을 돌리거나 키패드로 총액을 입력합니다</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">2</span>
+        <strong>인원수 맞추기</strong>
+        <p>왼쪽의 다이얼로 A / B / C / D 각 구분의 인원수를 정합니다</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">3</span>
+        <strong>금액 조정</strong>
+        <p>B / C / D 금액을 조정하면 A 금액이 자동으로 갱신됩니다</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">4</span>
+        <strong>필요하면 잠금</strong>
+        <p>인원만 고정하거나 전체 조작을 고정해 오조작을 방지합니다</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>설정 화면 보기</h2>
+    <div class="guide-panel screen-size">
+      <div class="guide-panel-title">
+        <h3>설정 화면</h3>
+        <p>표시를 탭하면 각 항목의 역할이 열립니다</p>
+      </div>
+      <div class="shot-frame" aria-label="설정 화면">
+        <img src="images/settings-overview-en.png" alt="설정 화면">
+        <!-- 設定画面の注釈 -->
+        <div class="hotspot-anchor" style="top: 22.5%; left: 55%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="ko-settings-1">1</button>
+          <div class="hotspot-popover is-bottom" id="ko-settings-1">
+            <strong>프리셋</strong>
+            <small>A/B/C/D 구분 이름을 프리셋에서 선택합니다</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 77.5%; left: 45%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="ko-settings-2">2</button>
+          <div class="hotspot-popover is-top" id="ko-settings-2">
+            <strong>다이얼 설정</strong>
+            <small>다이얼 전용 설정 시트가 열립니다. 감도의 미세 조정도 가능합니다</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 84%; left: 40%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="ko-settings-3">3</button>
+          <div class="hotspot-popover is-top" id="ko-settings-3">
+            <strong>화면 모드</strong>
+            <small>자동에서는 시스템 설정을 따릅니다</small>
+          </div>
+        </div>
+        <div class="hotspot-anchor" style="top: 96.5%; left: 40%;">
+          <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="ko-settings-4">4</button>
+          <div class="hotspot-popover is-top" id="ko-settings-4">
+            <strong>글자 크기</strong>
+            <small>자동에서는 시스템의 더 큰 텍스트 설정을 따릅니다. 대는 표준의 1.5배, 특대는 2배입니다</small>
+          </div>
+        </div>
+      </div>
+      <p class="hotspot-tip">설정의 세부 사항은 아래 보조 캡처에서도 확인할 수 있습니다</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>지역별 통화 처리</h2>
+    <div class="locale-grid">
+      <div class="locale-card">
+        <h3>일본어 / 일본</h3>
+        <div class="locale-sample">
+          <strong>¥12,000</strong>
+          <span>다이얼 단위 예: 1 / 10 / 100 / 500 / 1000</span>
+        </div>
+        <p>정수 통화로 처리합니다. 단위 표시는 통화 기호 없이 숫자로만 표시됩니다</p>
+      </div>
+      <div class="locale-card">
+        <h3>영어 / 미국</h3>
+        <div class="locale-sample">
+          <strong>$12.00</strong>
+          <span>다이얼 단위 예: 0.01 / 0.10 / 1.00 / 5.00 / 10.00</span>
+        </div>
+        <p>소수점 두 자리 통화에서는 최소 통화 단위를 기준으로 금액을 저장합니다</p>
+      </div>
+      <div class="locale-card">
+        <h3>영어 / 쿠웨이트</h3>
+        <div class="locale-sample">
+          <strong>KWD 1.000</strong>
+          <span>다이얼 단위 예: 0.001 / 0.010 / 0.100 / 0.500 / 1.000</span>
+        </div>
+        <p>소수점 세 자리 통화도 지원하며, 표시와 내부 단위가 어긋나지 않도록 처리합니다</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>화면 캡처 보충</h2>
+    <div class="shot-grid">
+      <div class="shot-card">
+        <h3>다이얼 설정 진입</h3>
+        <div class="shot-frame compact">
+          <img src="images/settings-dial-en.png" alt="다이얼 설정 항목이 있는 설정 화면">
+        </div>
+        <p class="shot-caption">다이얼 설정 항목에서 감도와 외관을 조정하는 시트를 열 수 있습니다</p>
+      </div>
+      <div class="shot-card">
+        <h3>화면 모드</h3>
+        <div class="shot-frame compact">
+          <img src="images/settings-appearance-en.png" alt="화면 모드가 있는 설정 화면">
+        </div>
+        <p class="shot-caption">자동, 라이트, 다크를 선택할 수 있습니다. 자동은 시스템 설정을 따릅니다</p>
+      </div>
+      <div class="shot-card">
+        <h3>다크 표시</h3>
+        <div class="shot-frame compact">
+          <img src="images/appearance-dark-en.png" alt="다크 표시의 메인 화면">
+        </div>
+        <p class="shot-caption">어두운 환경에서는 다크 표시로 전환해 가독성을 유지할 수 있습니다</p>
+      </div>
+      <div class="shot-card">
+        <h3>배경 변형</h3>
+        <div class="shot-grid">
+          <div class="shot-frame compact">
+            <img src="images/background-brown-en.png" alt="브라운 가죽 배경">
+          </div>
+          <div class="shot-frame compact">
+            <img src="images/background-black-en.png" alt="블랙 가죽 배경">
+          </div>
+        </div>
+        <p class="shot-caption">배경은 브라운 가죽과 블랙 가죽을 전환할 수 있습니다. 모노톤은 같은 섹션에서 선택할 수 있습니다</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>버전 기록</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>버전</th><th>출시일</th><th>개발 환경</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1.0.0</td><td>2011/10/4</td><td>초기 릴리스 — Objective-C, Xcode 4, iOS 4</td></tr>
+          <tr><td>1.1.0</td><td>2012/4/10</td><td>Objective-C, Xcode 4, iOS 5</td></tr>
+          <tr><td>1.2.0</td><td>2017/4/19</td><td>Objective-C, Xcode 8, iOS 10</td></tr>
+          <tr><td>2.0.0</td><td>2026/4/16</td><td>Swift 6 / SwiftUI, Xcode 26, iOS 26</td></tr>
+          <tr><td>2.0.1</td><td>2026/4/17</td><td>개발자 응원 기능(후원·광고) 추가</td></tr>
+          <tr><td>2.1.0</td><td>2026/4/22</td><td>인원 잠금, 전체 조작 잠금, 다이얼 설정, 화면 모드, 배경 설정, 금액 다이얼 단위 설정, 지역별 통화 처리 추가</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+<script src="../../../theme.js"></script>
+<script>
+  // タップした注釈だけを開く
+  (() => {
+    const anchors = [...document.querySelectorAll('.hotspot-anchor')]
+
+    // 上下の広い方へ吹き出し、左右端ではフレーム内へ寄せる
+    const placePopover = (anchor) => {
+      const frame = anchor.closest('.shot-frame')
+      const popover = anchor.querySelector('.hotspot-popover')
+      if (!frame || !popover) {
+        return
+      }
+
+      popover.classList.remove('is-right', 'is-left', 'is-top', 'is-bottom')
+      const anchorY = anchor.offsetTop
+      popover.classList.add(anchorY < frame.clientHeight / 2 ? 'is-bottom' : 'is-top')
+
+      const margin = 8
+      const anchorX = anchor.offsetLeft
+      const halfWidth = popover.offsetWidth / 2
+      const popoverCenter = Math.min(
+        Math.max(anchorX, halfWidth + margin),
+        frame.clientWidth - halfWidth - margin
+      )
+      popover.style.setProperty('--popover-shift-x', `${popoverCenter - anchorX}px`)
+    }
+
+    const closeAll = () => {
+      anchors.forEach((anchor) => {
+        anchor.classList.remove('is-open')
+        const button = anchor.querySelector('.hotspot-toggle')
+        if (button) {
+          button.setAttribute('aria-expanded', 'false')
+        }
+      })
+    }
+
+    anchors.forEach((anchor) => {
+      const button = anchor.querySelector('.hotspot-toggle')
+      if (!button) {
+        return
+      }
+
+      // 番号を表示せず説明名を読み上げる
+      const title = anchor.querySelector('.hotspot-popover strong')
+      if (title) {
+        button.setAttribute('aria-label', title.textContent)
+      }
+
+      placePopover(anchor)
+
+      button.addEventListener('click', (event) => {
+        event.stopPropagation()
+        const isOpen = anchor.classList.contains('is-open')
+        closeAll()
+        if (!isOpen) {
+          placePopover(anchor)
+          anchor.classList.add('is-open')
+          button.setAttribute('aria-expanded', 'true')
+        }
+      })
+    })
+
+    window.addEventListener('resize', () => {
+      anchors.forEach(placePopover)
+    })
+
+    document.addEventListener('click', closeAll)
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeAll()
+      }
+    })
+
+    // URLにgrid=1がある場合だけ座標メッシュを表示する
+    if (new URLSearchParams(window.location.search).get('grid') === '1') {
+      document.querySelectorAll('.shot-frame').forEach((frame) => {
+        if (!frame.querySelector('.hotspot')) {
+          return
+        }
+
+        const grid = document.createElement('div')
+        grid.className = 'debug-coordinate-grid'
+        grid.setAttribute('aria-hidden', 'true')
+
+        for (let x = 0; x <= 10; x += 1) {
+          const label = document.createElement('span')
+          label.className = `debug-coordinate-label is-x${x === 0 ? ' is-start' : ''}${x === 10 ? ' is-end' : ''}`
+          label.style.left = `${x * 10}%`
+          label.textContent = `X${x}`
+          grid.appendChild(label)
+        }
+
+        for (let y = 0; y <= 20; y += 1) {
+          const label = document.createElement('span')
+          label.className = `debug-coordinate-label is-y${y === 0 ? ' is-start' : ''}${y === 20 ? ' is-end' : ''}`
+          label.style.top = `${y * 5}%`
+          label.textContent = `Y${y}`
+          grid.appendChild(label)
+        }
+
+        frame.appendChild(grid)
+      })
+    }
+  })()
+</script>
+</body>
+</html>
