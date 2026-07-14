@@ -101,6 +101,7 @@
       <div class="feature-item">Redo：最大 10 回 Undo 前の状態に進める</div>
       <div class="feature-item">パックを書き出し・読み込みできる<small>他の端末や友人と共有</small></div>
       <div class="feature-item">全パックを一括バックアップ・復元できる<small>機種変更やデータ保全に</small></div>
+      <div class="feature-item">パックをクラウドに公開できる<small>他の利用者が公開したパックを取り込むことも可能</small></div>
       <div class="feature-item">AI がパックを提案してくれる（オプション）<small>利用券が必要。購入または広告視聴で入手</small></div>
     </div>
   </section>
@@ -206,6 +207,49 @@
         <span class="spec-key">ファイル判別</span>
         <span class="spec-val">拡張子ではなく JSON の内容で単体／バックアップを自動判別します。</span>
       </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>パック公開</h2>
+    <div class="callout">
+      作成したパックをクラウドに保存して公開できます。公開したパックは他の利用者が閲覧・取り込みでき、便利な持ち物リストをみんなで共有できます。他の利用者が公開したパックを自分のパックとして取り込むこともできます。<br><br>
+      ⚠️ 公開したパックの内容は誰でも閲覧できます。<strong>個人情報や秘密情報は含めないでください。</strong>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">公開する</p>
+      <div class="spec-row">
+        <span class="spec-key">操作</span>
+        <span class="spec-val">パック編集画面のメニューから「公開する」を選ぶと、そのパックをクラウドに保存して公開できます。公開時に表示する作者ニックネームを設定できます（空欄の場合は「匿名」で公開されます）。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">再公開・取り消し</span>
+        <span class="spec-val">同じパックを再度公開すると内容が上書きされます。公開の取り消し（削除）は公開パック一覧の画面から行えます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">公開中の表示</span>
+        <span class="spec-val">公開中のパックは、一覧のバッグアイコンの下に「公開中」バッジが表示されます。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">取り込む</p>
+      <div class="spec-row">
+        <span class="spec-key">操作</span>
+        <span class="spec-val">パックリストの画面から公開パック一覧を開き、気に入ったパックを自分のパックとして取り込めます。人気順・新着順の並べ替えとキーワード検索に対応しています。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">広告について</span>
+        <span class="spec-val">公開パックの取り込みは、一定回数ごとにリワード広告の視聴をお願いしています（運営支援のため）。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>iCloud バックアップ</h2>
+    <div class="callout">
+      AI 利用券やパック公開用の ID を iCloud に自動でバックアップします。iCloud を有効にしていれば、端末を交換しても利用券や公開状態が復元されます。ログインや個人情報の登録は不要です。
     </div>
   </section>
 
@@ -423,7 +467,9 @@
           <tr><td>3.1.0</td><td>2026/2/3</td><td>Xcode 26, iOS 26, SwiftUI, SwiftData</td></tr>
           <tr><td>3.1.1</td><td>2026/4/17</td><td>Xcode 26, iOS 26, SwiftUI, SwiftData</td></tr>
           <tr><td>3.2.0</td><td>2026/4/21</td><td>Xcode 26, iOS 26, SwiftUI, SwiftData</td></tr>
-          <tr><td>3.3.0</td><td>TBD</td><td>文字サイズ選択（自動/標準/大/特大）、アイテム一覧に「まとめて移動」を追加</td></tr>
+          <tr><td>3.3.0</td><td>2026/5/24</td><td>文字サイズ選択（自動/標準/大/特大）、アイテム一覧に「まとめて移動」を追加</td></tr>
+          <tr><td>3.3.1</td><td>2026/6/9</td><td>一覧の広告表示を見直し、細かな表示調整と安定性の改善</td></tr>
+          <tr><td>3.4.0</td><td>2026/7/14</td><td>パック公開機能、AI利用券・公開IDのiCloudバックアップ、アプリアイコン刷新</td></tr>
         </tbody>
       </table>
     </div>
