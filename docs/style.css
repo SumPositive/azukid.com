@@ -1012,6 +1012,12 @@ p:last-child { margin-bottom: 0; }
   min-width: 0;
 }
 
+/* 所属セクション：key 列を内容幅に合わせて広げる */
+.affiliations .spec-key {
+  width: auto;
+  white-space: nowrap;
+}
+
 /* ── DialSplit guide diagrams ── */
 .guide-hero {
   display: grid;
@@ -1948,6 +1954,9 @@ p:last-child { margin-bottom: 0; }
   .spec-row { flex-direction: column; gap: 4px; }
 
   .spec-key { width: auto; }
+
+  /* 狭い画面では所属の法人名も折り返し可に */
+  .affiliations .spec-key { white-space: normal; }
 
   .limit-grid { grid-template-columns: repeat(3, 1fr); }
 
