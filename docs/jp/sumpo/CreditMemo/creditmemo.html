@@ -34,7 +34,7 @@
     <img class="page-header-icon" src="../../../images/icon-credit.png" alt="クレメモ">
     <div class="page-header-text">
       <h1>クレメモ　取扱説明</h1>
-      <p class="page-tagline">後日引き落とし記録アプリ</p>
+      <p class="page-tagline">後日引き落とし確認アプリ</p>
     </div>
   </div>
 
@@ -84,6 +84,7 @@
       <div class="feature-item">Siri で音声入力<small>「Hey Siri クレメモで音声入力」と話すだけで、アプリを開いて音声入力を開始できます。</small></div>
       <div class="feature-item">配色プリセット 12 種<small>引き落とし状況とメニューアイコンの配色を 12 種類から選べます。アプリアイコンにも反映されます。</small></div>
       <div class="feature-item">新しい決済をすばやく入力<small>金額を先に入れて保存し、細かい情報はあとから補えます。</small></div>
+      <div class="feature-item">よくある決済でまとめて入力<small>よく使うラベルを選ぶと決済手段とタグが入ります。同じ金額で3回以上使ったラベルは金額も入ります。</small></div>
       <div class="feature-item">履歴をあとから修正<small>保存後の明細を開いて、ラベル・タグ・決済手段・口座などを更新できます。</small></div>
       <div class="feature-item">引き落とし予定をまとめて確認<small>直近の引き落とし合計と、未払・済みの状態を一覧できます。</small></div>
       <div class="feature-item">口座別に集計<small>同じ引き落とし日でも、口座ごとに分けて把握できます。</small></div>
@@ -135,14 +136,18 @@
   <section class="content-section">
     <h2>新しい決済を入力する</h2>
     <div class="callout">
-      まずは <strong>金額を入れて保存</strong> してください。決済手段、ラベル、タグはあとから補完できます。初心者モードではこの流れに沿った案内を表示します。
+      まずは <strong>金額を入れて保存</strong>、または <strong>「よくある決済」から選んで保存</strong> してください。足りない情報はあとから補完できます。初心者モードではこの流れに沿った案内を表示します。
     </div>
 
     <div class="spec-group">
       <p class="spec-group-title">基本入力</p>
       <div class="spec-row">
+        <span class="spec-key">よくある決済</span>
+        <span class="spec-val">金額欄の上に、よく使う決済がボタンで並びます。選ぶとラベル・決済手段・タグがまとめて入り、同じ金額で3回以上使ったラベルは金額も入ります。もう一度押すと解除。ハンドルの上下ドラッグで表示行数を変えられます。設定で「決済一覧からコピー」や「なし」に切り替えできます。</span>
+      </div>
+      <div class="spec-row">
         <span class="spec-key">金額</span>
-        <span class="spec-val">専用テンキーで入力します。保存に必須です。</span>
+        <span class="spec-val">専用テンキーで入力します。金額または「よくある決済」の選択のどちらかがあれば保存できます（金額なしは下書きとして保存し、あとで金額を入れられます）。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">利用日</span>
@@ -481,6 +486,7 @@
           <tr><td>2.5.0</td><td>2026/7/6</td><td>N回払い（分割払い）を 1〜12回 のリスト選択に拡張（jp は従来通り最大2回）、ドイツ語・韓国語・繁体中国語のロケールに対応、引き落とし確認待ちの条件を「本日以前の未払」に改善</td></tr>
           <tr><td>2.5.1</td><td>2026/7/14</td><td>英語版アプリ名を「Deferin」に変更（日本語名は「クレメモ」のまま）、Siri は「Deferin」「ディファリン」「クレメモ」「CrediMemo」のいずれでも起動可能</td></tr>
           <tr><td>2.5.2</td><td>2026/7/20</td><td>設定「起動時に開く」を追加（何もしない／主画面／音声で新しい決済／新しい決済／決済一覧 から選択）、明細のコピーで金額も引き継ぐように改善、「決済一覧からコピー」欄の開閉状態を保持、保存前のコピー明細の案内を明確化</td></tr>
+          <tr><td>2.6.0</td><td>TBD</td><td>新しい決済の入力補助「よくある決済」を追加（よく使うラベルから決済手段・タグ・3回以上同額の金額をプリセット、設定で「決済一覧からコピー」「なし」に切替可）、音声で新しい決済でもラベルから同様にプリセット、引き落とし済みで3年より古いデータの整理を案内、引き落とし状況で1年より古い未払を注意アイコンで通知</td></tr>
         </tbody>
       </table>
     </div>
