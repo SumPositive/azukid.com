@@ -182,7 +182,7 @@
       <p class="spec-group-title">Similar Records</p>
       <div class="spec-row">
         <span class="spec-key">Copy from existing</span>
-        <span class="spec-val">From History, pick a matching-amount record or a recently edited record and copy it into a new payment. You can also copy from Pay Methods, or copy the debit date + method from Debit Status.</span>
+        <span class="spec-val">From History, pick a matching-amount record or a recently edited record and copy it into a new payment. You can also copy from Pay Methods, or copy the debit date + method from Debit Status. Copying now carries over the amount as well. The draft created by a copy is confirmed once you tap to edit and save it; if you don't save, the draft disappears automatically.</span>
       </div>
     </div>
 
@@ -338,8 +338,8 @@
         <span class="spec-val">Auto follows your iOS text-size preference.</span>
       </div>
       <div class="spec-row">
-        <span class="spec-key">Resume Behavior</span>
-        <span class="spec-val">You can make the app open New Payment automatically when returning to the foreground.</span>
+        <span class="spec-key">Open on Launch</span>
+        <span class="spec-val">Choose which screen opens automatically on launch or when returning to the app: Do Nothing, Main Menu, New Payment by Voice, New Payment, or Payment List (default is Do Nothing). It never interrupts while you are editing.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Auto-open Keypad</span>
@@ -477,6 +477,8 @@
           <tr><td>2.4.1</td><td>2026/6/24</td><td>Fixed a bug where the Debit Status filter (by payment method / account) was not applied to the debit detail list</td></tr>
           <tr><td>2.4.2</td><td>2026/6/27</td><td>Fixed a bug where the lock icon in the debit details became invisible and could not be unlocked (occurred on iOS 18–25, caused by using an SF Symbol added in iOS 26)</td></tr>
           <tr><td>2.5.0</td><td>2026/7/6</td><td>Extended installment payments to a 1–12 count selection (jp remains limited to 2 as before); added German, Korean, and Traditional Chinese locales; improved the "awaiting debit confirmation" condition to "unpaid on or before today"</td></tr>
+          <tr><td>2.5.1</td><td>2026/7/14</td><td>Renamed the English app name to "Deferin" (the Japanese name stays "Crememo"); Siri still launches with "Deferin," "CrediMemo," or the old names</td></tr>
+          <tr><td>2.5.2</td><td>2026/7/20</td><td>Added the "Open on Launch" setting (Do Nothing / Main Menu / New Payment by Voice / New Payment / Payment List); copying a record now carries over the amount; the "Copy from list" panel remembers its open/closed state; clearer guidance for unsaved copied drafts</td></tr>
         </tbody>
       </table>
     </div>
