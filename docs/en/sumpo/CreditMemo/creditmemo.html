@@ -34,7 +34,7 @@
     <img class="page-header-icon" src="../../../images/icon-credit.png" alt="Deferin">
     <div class="page-header-text">
       <h1>Deferin User Guide</h1>
-      <p class="page-tagline">Payment memo for later account debits</p>
+      <p class="page-tagline">Deferred Payment Checker</p>
     </div>
   </div>
 
@@ -84,6 +84,7 @@
       <div class="feature-item">Siri voice input<small>Say "Hey Siri, voice input in Deferin" to launch the app and start voice input.</small></div>
       <div class="feature-item">12 color presets<small>Pick a palette for Debit Status and menu icons from 12 presets. The app icon updates to match.</small></div>
       <div class="feature-item">Quick payment entry<small>Enter the amount first, save, and fill in the rest later if needed.</small></div>
+      <div class="feature-item">Fill in with Frequent Payments<small>Pick a frequently used label to fill in the payment method and tags. Labels used with the same amount three or more times fill in the amount too.</small></div>
       <div class="feature-item">Edit saved history<small>Open any saved record and update its label, tags, payment method, or account.</small></div>
       <div class="feature-item">Review upcoming debits<small>See your recent debit total and switch payments between unpaid and paid.</small></div>
       <div class="feature-item">Group by account<small>Debits on the same date are separated by bank account.</small></div>
@@ -135,14 +136,18 @@
   <section class="content-section">
     <h2>Entering a New Payment</h2>
     <div class="callout">
-      Start by entering the <strong>amount</strong> and saving the record. You can fill in the payment method, label, and tags later. Beginner mode shows this workflow directly in the form.
+      Start by entering the <strong>amount</strong> — or <strong>picking a Frequent Payment</strong> — and saving the record. You can fill in the rest later. Beginner mode shows this workflow directly in the form.
     </div>
 
     <div class="spec-group">
       <p class="spec-group-title">Basic Fields</p>
       <div class="spec-row">
+        <span class="spec-key">Frequent Payments</span>
+        <span class="spec-val">Your most-used payments appear as buttons above the amount field. Tap one to fill in the label, payment method, and tags at once; labels used with the same amount three or more times fill in the amount too. Tap again to clear. Drag the handle to change how many rows show. In Settings you can switch to "Copy from Payment List" or "None".</span>
+      </div>
+      <div class="spec-row">
         <span class="spec-key">Amount</span>
-        <span class="spec-val">Entered through the numeric keypad. This is required before saving.</span>
+        <span class="spec-val">Entered through the numeric keypad. You can save with either the amount or a Frequent Payment selection (with no amount, it saves as a draft you can complete later).</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Use Date</span>
@@ -479,6 +484,7 @@
           <tr><td>2.5.0</td><td>2026/7/6</td><td>Extended installment payments to a 1–12 count selection (jp remains limited to 2 as before); added German, Korean, and Traditional Chinese locales; improved the "awaiting debit confirmation" condition to "unpaid on or before today"</td></tr>
           <tr><td>2.5.1</td><td>2026/7/14</td><td>Renamed the English app name to "Deferin" (the Japanese name stays "Crememo"); Siri still launches with "Deferin," "CrediMemo," or the old names</td></tr>
           <tr><td>2.5.2</td><td>2026/7/20</td><td>Added the "Open on Launch" setting (Do Nothing / Main Menu / New Payment by Voice / New Payment / Payment List); copying a record now carries over the amount; the "Copy from list" panel remembers its open/closed state; clearer guidance for unsaved copied drafts</td></tr>
+          <tr><td>2.6.0</td><td>2026/7/27</td><td>Added "Frequent Payments" as an input aid (fills the payment method, tags, and amounts used three or more times from a frequently used label; switchable to "Copy from Payment List" or "None" in Settings); New Payment by Voice fills in the same way from the label; suggests tidying up paid records older than three years; flags unpaid items older than one year with a caution icon in Payment Status</td></tr>
         </tbody>
       </table>
     </div>
