@@ -58,6 +58,31 @@
 
 en 側にも対応する英訳行を追加する。日付未定なら `TBD`。
 
+## BYOD の説明資料（PDF）
+
+`docs/jp/sumpo/BYOD/slide/*.pdf` は **`GitLocal/BYOD/slide/` のコピー**。原本を更新したらコピーし直す。
+
+```
+cp ~/GitLocal/BYOD/slide/*.pdf ~/GitLocal/azukid.com/docs/jp/sumpo/BYOD/slide/
+chmod 644 ~/GitLocal/azukid.com/docs/jp/sumpo/BYOD/slide/*.pdf
+```
+
+原本は mode 700 のため、**コピー後に 644 へ変更**しないと GitHub Pages で配信されない。
+
+## BYOD の設計書
+
+`docs/jp/sumpo/BYOD/DESIGN.md` は **`GitLocal/BYOD/DESIGN.md` のコピー**。原本を更新したらコピーし直す。
+
+```
+cp ~/GitLocal/BYOD/DESIGN.md ~/GitLocal/azukid.com/docs/jp/sumpo/BYOD/DESIGN.md
+```
+
+`design.html` が同ディレクトリの `DESIGN.md` を fetch して描画する（インライン JS の簡易 Markdown レンダラ、外部ライブラリなし）。
+`.nojekyll` のため `.md` は GitHub Pages で描画されず、直接開くとプレーンテキストになる。
+
+- 対応記法は DESIGN.md で実際に使っているものだけ（見出し / 表 / コードブロック / 引用 / リスト / 強調 / リンク / 水平線）
+- **コードブロック内で `**` を使わない**（リテラルのまま表示される）
+
 ## テーマ切替
 
 - `data-theme="light" | "dark"` 属性 + `localStorage` で永続化

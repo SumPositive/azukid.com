@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BYOD　取扱説明</title>
+  <meta name="description" content="BYOD の取扱説明です。中小企業や個人商店を対象とした BYOD による IT/DX 推進のためのサンプルアプリと、技術編・制度待遇編の説明資料を掲載しています。">
+  <link rel="canonical" href="https://azukid.com/jp/sumpo/BYOD/byod.html">
+  <link rel="alternate" href="https://azukid.com/jp/sumpo/BYOD/byod.html" hreflang="ja">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="BYOD 取扱説明">
+  <meta property="og:description" content="中小企業や個人商店を対象とした BYOD による IT/DX を推進するためのサンプルアプリです。">
+  <meta property="og:url" content="https://azukid.com/jp/sumpo/BYOD/byod.html">
+  <link rel="stylesheet" href="../../../style.css?v=20260508">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+  <style>
+    /* 資料リンクの補足行（.feature-item small と同じ見え方に揃える） */
+    .link-item-label small {
+      display: block;
+      font-size: .8rem;
+      font-weight: 400;
+      color: var(--text-2);
+      margin-top: 2px;
+      line-height: 1.45;
+    }
+    /* 体制表：項目名を折り返さない（.affiliations と同じ扱い） */
+    .roles .spec-key {
+      width: auto;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../index.html">ホーム</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">BYOD</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <div class="page-header-text">
+      <h1>BYOD　取扱説明</h1>
+      <p class="page-tagline">Bring Your Own Device BaseKit.</p>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <h2>はじめに</h2>
+    <div class="lead">
+      <p>中小企業や個人商店を対象とした &quot;BYODによるIT/DX&quot; を推進するためのサンプルアプリです。</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>BYODの説明資料</h2>
+    <p>技術で「安全に使える」ように、制度で「喜んで使える」ように。BYOD を定着させるための考え方をまとめた資料です。</p>
+    <div class="link-list">
+      <a class="link-item" href="slide/byod_summary.pdf">
+        <span class="link-item-label">サマリー — 技術と制度の両輪<small>技術編・制度編の要点を1本にまとめた概要版　PDF・6ページ</small></span>
+        <span class="link-item-arrow">›</span>
+      </a>
+      <a class="link-item" href="slide/byod_proposal.pdf">
+        <span class="link-item-label">技術編 — Webアプリ優先で解く<small>端末にデータを残さない設計、1コードで全OS対応、弱点は専用アプリで補う　PDF・6ページ</small></span>
+        <span class="link-item-arrow">›</span>
+      </a>
+      <a class="link-item" href="slide/byod_seido_taigu.pdf">
+        <span class="link-item-label">制度・待遇編 — 3つの不安をなくす<small>費用・プライバシー・ルール／労務の不安を制度で解消する　PDF・7ページ</small></span>
+        <span class="link-item-arrow">›</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>BYODの「落とし穴」</h2>
+    <p>BYOD で本当に難しいのは、機能を作ることではありません。<strong>多種多様な端末と通信環境に、実際に動くものを届けること</strong>です。</p>
+
+    <div class="feature-grid">
+      <div class="feature-item">機種・画面サイズがばらばら<small>新しい端末から数年前の端末まで混在する。小さい画面でも文字が読めて、操作できる必要がある</small></div>
+      <div class="feature-item">OS・ブラウザのバージョンが揃わない<small>最新版だけを想定すると、古い端末を持つ人が使えない。どこまで対応するかの線引きが要る</small></div>
+      <div class="feature-item">文字サイズ・表示設定が人それぞれ<small>端末側で文字を大きくしている利用者は珍しくない。レイアウトが崩れれば業務が止まる</small></div>
+      <div class="feature-item">通信環境が一定でない<small>現場・移動中・屋内で電波状況が変わる。遅い回線でも待たされない設計が要る</small></div>
+      <div class="feature-item">ダークモード・明るさ・屋外の視認性<small>現場では直射日光の下で画面を見ることもある</small></div>
+      <div class="feature-item">利用者のITスキルに幅がある<small>説明書を読まなくても使えることが、そのまま定着率になる</small></div>
+    </div>
+
+    <p>これらは、社内向けシステムではあまり問われません。端末を会社が配れば揃えられるからです。<strong>しかし BYOD では揃えられません。</strong></p>
+  </section>
+
+  <section class="content-section">
+    <h2>公開アプリのノウハウが活きる</h2>
+    <p>そして、この「揃わない相手に届ける」という課題は、<strong>App Store や Google Play で一般公開するアプリがずっと向き合ってきたもの</strong>と同じです。</p>
+
+    <div class="lead">
+      <p>不特定多数の利用者に、どの端末・どの環境でも動くものを届け、審査を通し、改善を重ねて公開し続ける。BYOD が直面する落とし穴は、公開アプリの世界では日常の前提条件です。</p>
+    </div>
+
+    <p>このサンプルは、<a href="../../index.html">公開中の5本のアプリ</a>で積み上げてきた次のような知見を土台にしています。</p>
+
+    <div class="feature-grid">
+      <div class="feature-item">幅広い端末での実機検証<small>新旧の端末・画面サイズで実際に確認する進め方</small></div>
+      <div class="feature-item">文字サイズ変更への対応<small>利用者が文字を大きくしても崩れないレイアウト設計</small></div>
+      <div class="feature-item">ダークモード対応<small>明暗どちらの環境でも読めるようにする配色の考え方</small></div>
+      <div class="feature-item">多言語・多通貨対応<small>表示が伸び縮みしても破綻しない設計。外国人労働者のいる職場にも応用できる</small></div>
+      <div class="feature-item">説明書なしで使える画面<small>公開アプリで問われ続けてきた、迷わせない導線の作り方</small></div>
+      <div class="feature-item">継続的な改善と保守<small>公開して終わりにせず、使われながら直していく運用</small></div>
+    </div>
+
+    <p>BYOD 向けのシステムを、社内システムの延長ではなく<strong>公開アプリと同じ基準で作る</strong> — それがこのサンプルの立ち位置です。</p>
+  </section>
+
+  <section class="content-section">
+    <h2>設計書</h2>
+    <div class="link-list">
+      <a class="link-item" href="design.html">
+        <span class="link-item-label">DESIGN.md — 設計書</span>
+        <span class="link-item-arrow">›</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>体制とお問い合わせ</h2>
+    <div class="spec-group roles">
+      <div class="spec-row">
+        <span class="spec-key">アイデア・PDCAサイクル</span>
+        <span class="spec-val"><a href="../index.html">sumpo</a> が担当します</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">営業・カスタマイズ</span>
+        <span class="spec-val"><a href="https://info.engineer.co.jp/jp/index.html" target="_blank" rel="noopener noreferrer">エンジニア合同会社</a>が担当します。<a href="../contact.html">お問い合わせ</a>いただければ連絡いたします</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>履歴</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Version</th><th>公開日</th><th>開発環境等</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0.1.0</td><td>TBD</td><td>準備中</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+<script src="../../../theme.js"></script>
+</body>
+</html>
