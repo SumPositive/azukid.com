@@ -95,7 +95,7 @@
       <div class="feature-item">Dynamic Type support<small>App-wide text size follows the iOS system text size setting</small></div>
       <div class="feature-item">Tune display and controls<small>Set appearance mode and adjust the dial feel</small></div>
       <div class="feature-item">Record multiple measurements and save the average<small>Enter consecutive readings in a table, then save or edit one record with the average and standard deviation</small></div>
-      <div class="feature-item">Record the blood pressure site (left/right)<small>Specify the left/right arm or wrist as “L・R”, shown in the record list, with left–right difference in stats</small></div>
+      <div class="feature-item">Record the blood pressure site (left/right)<small>Specify the left/right arm or wrist as “L・R”; stats calculate differences from left/right measurement pairs</small></div>
       <div class="feature-item">Choose the screen opened at launch<small>Pick from new record, record list, graph, or stats</small></div>
       <div class="feature-item">Resize graph and statistics panels<small>Drag the handle at the bottom edge up or down</small></div>
     </div>
@@ -218,6 +218,7 @@
             <li>Blood pressure distribution</li>
             <li>BP / JSH guideline compliance ratio</li>
             <li>BP / measurement timing correlation</li>
+            <li>Left–right blood pressure difference (calculated from paired measurements only)</li>
             <li>24-hour blood pressure distribution</li>
             <li>Weight × blood pressure scatter plot (with Pearson correlation coefficient)</li>
             <li>Weight summary statistics</li>
@@ -242,6 +243,10 @@
       <div class="spec-row">
         <span class="spec-key">Sync timing</span>
         <span class="spec-val">Automatic (on save / on view) or manual (button)</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Bidirectional sync</span>
+        <span class="spec-val">Deletion state is also synchronized so records deleted in the app are not imported again</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Supported data</span>
@@ -326,6 +331,7 @@
           <tr><td>2.7.1</td><td>2026/7/8</td><td>Added Korean and Traditional Chinese, English app name changed to Vitalin</td></tr>
           <tr><td>2.7.2</td><td>2026/7/12</td><td>Number pad entry now confirms automatically and advances to the next field, refreshed app icon</td></tr>
           <tr><td>2.8.0</td><td>2026/7/25</td><td>Save and edit multiple readings per record, specify the blood pressure site (left/right) as “L・R” (shown in the record list, with a left–right difference panel in stats), choose the screen opened at launch, and unified dial/stepper increments to the smallest unit</td></tr>
+          <tr><td>2.8.1</td><td>In Review</td><td>Fixed the left–right statistics summary to use paired measurements only, refreshed the date/time and category after relaunching with the New Record sheet open, improved deletion handling in bidirectional Apple Health sync, and fixed potential issues</td></tr>
         </tbody>
       </table>
     </div>
