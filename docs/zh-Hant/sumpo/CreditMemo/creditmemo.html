@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deferin 使用說明</title>
+  <meta name="description" content="Deferin 使用說明：記錄延後扣款的支出、確認扣款狀況、管理支付方式，並以 JSON 備份資料。">
+  <link rel="canonical" href="https://azukid.com/zh-Hant/sumpo/CreditMemo/creditmemo.html">
+  <link rel="alternate" href="https://azukid.com/jp/sumpo/CreditMemo/creditmemo.html" hreflang="ja">
+  <link rel="alternate" href="https://azukid.com/en/sumpo/CreditMemo/creditmemo.html" hreflang="en">
+  <link rel="alternate" href="https://azukid.com/de/sumpo/CreditMemo/creditmemo.html" hreflang="de">
+  <link rel="alternate" href="https://azukid.com/ko/sumpo/CreditMemo/creditmemo.html" hreflang="ko">
+  <link rel="alternate" href="https://azukid.com/zh-Hant/sumpo/CreditMemo/creditmemo.html" hreflang="zh-Hant">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:title" content="Deferin 使用說明">
+  <meta property="og:description" content="在 Deferin 中記錄延後扣款的支出、確認扣款狀況、管理支付方式並備份資料的方法。">
+  <meta property="og:url" content="https://azukid.com/zh-Hant/sumpo/CreditMemo/creditmemo.html">
+  <link rel="stylesheet" href="../../../style.css?v=20260508">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../index.html">首頁</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">Deferin</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <img class="page-header-icon" src="../../../images/icon-credit.png" alt="Deferin">
+    <div class="page-header-text">
+      <h1>Deferin 使用說明</h1>
+      <p class="page-tagline">延後扣款確認 App</p>
+    </div>
+  </div>
+
+  <div class="lead">
+    <p>Deferin 用來追蹤日後才會從帳戶扣款的支出，涵蓋信用卡消費、綁定信用的電子錢包儲值、N 天後扣款、指定日扣款等延後付款方式。當場即時扣款的金融卡消費、現金儲值等已完成結算的付款不在範圍內。</p>
+  </div>
+
+  <section class="content-section">
+    <h2>基本流程</h2>
+    <div class="step-flow">
+      <div class="step-card">
+        <span class="step-number">1</span>
+        <strong>記錄消費</strong>
+        <p>輸入金額，需要時再補上標籤或標記。</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">2</span>
+        <strong>選擇支付方式</strong>
+        <p>選擇決定扣款時程的卡片或延後付款方式。</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">3</span>
+        <strong>確認扣款</strong>
+        <p>查看未扣款與已扣款項目，並依帳戶檢視即將到來的扣款。</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">4</span>
+        <strong>修改或備份</strong>
+        <p>需要時修改紀錄，或匯出 JSON 進行備份。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="callout">⚠️ 資料不會加密，請勿存入個人資料或機密資訊。</div>
+
+  <div class="pill-link-row">
+    <a class="pill-link" href="https://apps.apple.com/tw/app/id432458298">App Store</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/EULA_en.html">使用者授權合約</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/PrivacyPolicy_en.html">隱私權政策</a>
+    <a class="pill-link" href="../index.html">作者介紹：sumpo</a>
+  </div>
+
+  <section class="content-section">
+    <h2>功能</h2>
+    <div class="feature-grid">
+      <div class="feature-item">用語音新增消費<small>說出金額與標籤即可建立明細，接著也能用語音指定支付方式。</small></div>
+      <div class="feature-item">用 Siri 語音輸入<small>說「Hey Siri，在 Deferin 語音輸入」就能開啟 App 並開始語音輸入。</small></div>
+      <div class="feature-item">12 種配色<small>扣款狀況與選單圖示的配色可從 12 種中選擇，App 圖示也會跟著改變。</small></div>
+      <div class="feature-item">快速輸入新消費<small>先輸入金額存檔，其餘資訊可以之後再補。</small></div>
+      <div class="feature-item">用常用消費自動填入<small>選擇常用標籤即可帶入支付方式與標記；同一金額用過三次以上的標籤也會一併帶入金額。</small></div>
+      <div class="feature-item">事後修改紀錄<small>開啟已存明細，可更新標籤、標記、支付方式與帳戶。</small></div>
+      <div class="feature-item">確認即將到來的扣款<small>檢視近期扣款總額，並在未扣款與已扣款之間切換。</small></div>
+      <div class="feature-item">依帳戶彙整<small>即使扣款日相同，也會依銀行帳戶分開呈現。</small></div>
+      <div class="feature-item">管理扣款時程<small>支援結帳日/付款日與 N 天後兩種方式。</small></div>
+      <div class="feature-item">可加上多個標記<small>達人模式支援多重標記與依標記整理。</small></div>
+      <div class="feature-item">用 JSON 備份<small>可用於備份或轉移到其他裝置。</small></div>
+      <div class="feature-item">調整顯示與行為<small>可設定文字大小、開啟時的畫面、存檔後的動作等。</small></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>畫面結構</h2>
+    <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">用語音新增消費</span>
+        <span class="spec-val">用麥克風建立明細。先說出金額與標籤，需要時再用語音指定支付方式。辨識到的支付方式可點按，從清單改選其他項目。也可以說「Hey Siri，在 Deferin 語音輸入」來啟動。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">新增消費</span>
+        <span class="spec-val">輸入新的消費明細。也可設定為開啟 App 時自動顯示此畫面。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">紀錄</span>
+        <span class="spec-val">列出已儲存的明細。可限定期間，依未填項目、支付方式、帳戶或多個標記篩選，並依日期或金額排序。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">扣款狀況</span>
+        <span class="spec-val">將尚未扣款與已扣款一併顯示。可切換依日期、支付方式或帳戶彙整，並依支付方式或帳戶篩選。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">支付方式</span>
+        <span class="spec-val">登錄卡片名稱或延後付款方式、結帳日/付款日與扣款帳戶。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">扣款帳戶</span>
+        <span class="spec-val">管理扣款帳戶的名稱，可與各支付方式建立關聯。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">標記</span>
+        <span class="spec-val">用來分類明細的選用項目。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">設定</span>
+        <span class="spec-val">顯示選項、存檔後行為、備份與支援連結。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>輸入新消費</h2>
+    <div class="callout">
+      先輸入<strong>金額</strong>，或選擇一筆<strong>常用消費</strong>，然後存檔即可。其餘資訊可以之後再補。新手模式會直接在輸入畫面說明這個流程。
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">基本欄位</p>
+      <div class="spec-row">
+        <span class="spec-key">常用消費</span>
+        <span class="spec-val">最常使用的消費會以按鈕顯示在金額欄上方。點一下即可同時帶入標籤、支付方式與標記；同一金額用過三次以上的標籤也會帶入金額。再點一下可取消。拖曳把手可改變顯示行數。在設定中可切換為「從消費清單複製」或「無」。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">金額</span>
+        <span class="spec-val">以數字鍵盤輸入。只要輸入金額或選了常用消費就能存檔（若沒有金額，會存成之後可以補完的草稿）。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">使用日期</span>
+        <span class="spec-val">從日曆選擇。日後的扣款日會依所選支付方式自動計算。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">支付方式</span>
+        <span class="spec-val">選擇卡片或其他延後付款方式。也可以先不選擇就存檔，之後再從紀錄補上。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">帳戶</span>
+        <span class="spec-val">僅在所選支付方式尚未關聯帳戶時顯示。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">標籤</span>
+        <span class="spec-val">店名或用途等簡短說明。輸入時會提示過去使用過的標籤。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">選用欄位</p>
+      <div class="spec-row">
+        <span class="spec-key">標記</span>
+        <span class="spec-val">達人模式可用。可指定多個標記，之後也能變更。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">重複</span>
+        <span class="spec-val">達人模式中可用於一次付清的明細。標記為已扣款時，App 可自動建立下個月或下個週期的複本。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">備註</span>
+        <span class="spec-val">可自由填寫想與明細一起保留的內容。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">相似明細</p>
+      <div class="spec-row">
+        <span class="spec-key">從既有明細複製</span>
+        <span class="spec-val">可在紀錄中挑選金額相同或最近編輯過的明細，複製成新的消費。也能從支付方式清單複製，或從扣款狀況複製扣款日與支付方式。複製時金額也會一併帶入。複製產生的草稿在點按編輯並存檔後才會確定；若未存檔，草稿會自動消失。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">扣款日 — 自動／手動</p>
+      <div class="spec-row">
+        <span class="spec-key">
+          <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="vertical-align:-4px;margin-right:4px">
+            <path fill="#0A84FF" d="M12 3a9 9 0 0 1 9 9 9 9 0 0 1-2.64 6.36l-1.42-1.42A7 7 0 0 0 19 12a7 7 0 0 0-7-7 7 7 0 0 0-7 7 7 7 0 0 0 2.06 4.94l1.06-1.06.71 4.24-4.24-.71 1.06-1.06A9 9 0 0 1 3 12a9 9 0 0 1 9-9z"/>
+            <text x="12" y="15.5" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#0A84FF">A</text>
+          </svg>
+          自動
+        </span>
+        <span class="spec-val">扣款日會依使用日期與支付方式（結帳日／付款日／付款月，或 N 天後方式）自動計算。變更使用日期或支付方式時會自動更新。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">
+          <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="vertical-align:-4px;margin-right:4px">
+            <path fill="#34C759" d="M12 1.5a1.5 1.5 0 0 0-1.5 1.5v7.5h-1V4.5a1.5 1.5 0 0 0-3 0v9.25l-1.4-1.4a1.5 1.5 0 0 0-2.12 2.12L7.5 19a6 6 0 0 0 10.5-4V6a1.5 1.5 0 0 0-3 0v4.5h-1V3a1.5 1.5 0 0 0-1.5-1.5z"/>
+          </svg>
+          手動
+        </span>
+        <span class="spec-val">點按圖示即可將日期固定在當下的值。之後變更使用日期或支付方式時，扣款日都不會移動。適合把錯過結帳日的消費挪到下一個扣款週期。點按日期可從日曆選擇，或用「上一個／下一個付款日」按鈕依付款週期跳動。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">標記已扣款時固定為手動</span>
+        <span class="spec-val">將項目標記為已扣款時，其扣款日會自動切換為手動並固定，之後變更使用日期或支付方式也不會移動。即使改回未扣款，固定狀態仍會保留，但可點按圖示切回自動。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">分期付款</span>
+        <span class="spec-val">分期期數可選 1～12 期。扣款日會依每一期各列一行顯示，自動／手動圖示會一併切換所有行。金額會自動分攤；點按金額可手動調整，其餘各期會隨之更新。後一期的日期必須晚於前一期，若把前一期移到後一期之後，App 會自動將後續各期順延到下個月。一旦某一期被標記為已扣款，除了尚未扣款各期的日期以外的欄位（金額、使用日期、支付方式等）將變為唯讀。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>檢視紀錄</h2>
+    <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">排序</span>
+        <span class="spec-val">可依日期或金額排序，每種排序都能在遞減與遞增之間切換。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">篩選</span>
+        <span class="spec-val">期間可選 3 個月、1 年、3 年或全部。也可依全部、有未填項目、支付方式、帳戶或多個標記篩選。「有未填項目」包含缺少支付方式或標籤的明細。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">編輯</span>
+        <span class="spec-val">點開任一列即可編輯或刪除。若明細已全額扣款，金額、日期、支付方式等主要欄位會被鎖定。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>扣款狀況</h2>
+    <div class="callout">
+      扣款狀況把即將到來的扣款與已完成的扣款整合在同一個流程。確認銀行已扣款後，用箭頭圖示將該帳戶群組移到<strong>已扣款</strong>。隨時都能移回未扣款。
+    </div>
+
+    <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">未扣款區塊</span>
+        <span class="spec-val">未扣款項目分為即將到期與已逾期兩組。若有逾期項目，會出現切換控制項。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">近期扣款總額</span>
+        <span class="spec-val">上方選單會顯示所設定扣款期間的總額，可選 1～20 天或 1 個月。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">依帳戶分組</span>
+        <span class="spec-val">即使扣款日相同，關聯到不同帳戶的項目會視為不同的扣款群組。可切換依日期、支付方式或帳戶彙整。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">篩選</span>
+        <span class="spec-val">可選全部、支付方式或帳戶。選定支付方式或帳戶後，彙整會切換為依日期，讓時間順序更容易閱讀。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">明細</span>
+        <span class="spec-val">點開扣款列，可查看該筆扣款中依支付方式分區的內容與原始消費明細。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">單筆調整</span>
+        <span class="spec-val">在扣款明細中可將單一項目在未扣款與已扣款之間移動。適用於只有一筆接近結帳日的項目要到下次才扣款的情況。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">鎖定開關</span>
+        <span class="spec-val">扣款明細中也有各項目的鎖定開關。這是舊版 App 確認勾選功能的復刻，但改用鎖頭圖示而非勾號。已鎖定表示你已核對過對帳單或存摺。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>支付方式、帳戶與標記</h2>
+    <div class="spec-group">
+      <p class="spec-group-title">支付方式</p>
+      <div class="spec-row">
+        <span class="spec-key">適用範圍</span>
+        <span class="spec-val">只登錄日後會從銀行帳戶扣款的支付方式。以電子錢包為例，綁定信用的使用與儲值屬於範圍內，但花用已儲值的餘額則不在範圍內。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">時程類型</span>
+        <span class="spec-val">可選結帳日／付款日或 N 天後。結帳日或付款日也可以設為月底。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">關聯帳戶</span>
+        <span class="spec-val">每個支付方式可關聯一個帳戶。變更關聯時，相關的歷史帳單與扣款群組會重新建立，不會留下舊的帳戶群組。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">點開編輯</span>
+        <span class="spec-val">在支付方式清單點按任一列即可開啟編輯畫面。狀態的檢視則透過扣款狀況的彙整與篩選進行。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">帳戶與標記</p>
+      <div class="spec-row">
+        <span class="spec-key">帳戶</span>
+        <span class="spec-val">儲存扣款帳戶的名稱，也可以從內建範例開始建立。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">標記</span>
+        <span class="spec-val">每個標記都能顯示相關的消費明細清單，方便檢視與整理。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>備份與設定</h2>
+    <div class="spec-group">
+      <p class="spec-group-title">JSON 備份</p>
+      <div class="spec-row">
+        <span class="spec-key">匯出</span>
+        <span class="spec-val">將所有資料匯出為 JSON 檔。可選精簡格式以節省空間，或選易讀格式方便檢視。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">匯入</span>
+        <span class="spec-val">匯入先前匯出的 JSON 檔。重複匯入相同資料只會更新明細，不會產生重複。帳單與扣款的已扣款狀態也會一併還原。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">整理舊資料</span>
+        <span class="spec-val">若資料庫過大，可在設定中整理較舊的明細。實務上約三年的紀錄是預設的運用範圍。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">顯示與操作</p>
+      <div class="spec-row">
+        <span class="spec-key">新手／達人</span>
+        <span class="spec-val">新手模式會顯示較多說明。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">文字大小</span>
+        <span class="spec-val">「自動」會依 iOS 的文字大小設定。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">開啟時顯示</span>
+        <span class="spec-val">選擇啟動或返回 App 時自動開啟的畫面：不做任何事、主畫面、用語音新增消費、新增消費、消費清單（預設為不做任何事）。編輯途中不會被打斷。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">自動顯示數字鍵盤</span>
+        <span class="spec-val">在尚未輸入金額的狀態開啟「新增消費」時，數字鍵盤會自動開啟。可在設定中開關。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">使用語音輸入</span>
+        <span class="spec-val">設定主選單是否顯示「用語音新增消費」。僅在裝置語言支援語音辨識時才會顯示此選項（預設開啟）。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">配色</span>
+        <span class="spec-val">可從 12 種配色中選擇扣款狀況（未扣款／待確認／已扣款）與選單圖示的配色。所選配色也會套用到 App 圖示，讓主畫面呈現相同色調。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">存檔後動作</span>
+        <span class="spec-val">可選擇存檔後返回、清空以便繼續輸入、保留相同日期與支付方式，或顯示紀錄。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">說明與支援</span>
+        <span class="spec-val">可從設定在 App 內開啟本使用說明。支援項目中也提供小技巧與獎勵式影片廣告。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>基本規格</h2>
+    <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">適用消費</span>
+        <span class="spec-val">日後才從帳戶扣款的消費（即時扣款的卡片與現金儲值不在範圍內）</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">平台</span>
+        <span class="spec-val">iOS 18 或以上</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">金額上限</span>
+        <span class="spec-val">99,999,999</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">日期範圍</span>
+        <span class="spec-val">2000-01-01 至 2100-12-31</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">標籤長度</span>
+        <span class="spec-val">最多 50 字</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">備註長度</span>
+        <span class="spec-val">最多 200 字</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">付款方式</span>
+        <span class="spec-val">一次付清或 1～12 期分期（假設無利息、無手續費）。不支援紅利分期</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">扣款日計算</span>
+        <span class="spec-val">依結帳日／付款月／付款日自動計算。N 天後方式的卡片為使用日期 + N 天。未選擇支付方式時，扣款日等於使用日期</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">扣款日固定</span>
+        <span class="spec-val">每個項目都能在手動與自動之間切換。標記為已扣款的項目會自動固定</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">重複</span>
+        <span class="spec-val">1 至 99 個月。標記為已扣款時會自動產生下個週期的複本</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">標記</span>
+        <span class="spec-val">每個項目可加多個標記，用於清單的篩選與彙總</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">扣款總額期間</span>
+        <span class="spec-val">近期 1 至 20 天，或 30、35、40、50、60 天（預設 15 天）</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">資料儲存</span>
+        <span class="spec-val">僅存於裝置內（SwiftData），不做雲端同步。裝置本身可透過 iCloud 備份保存</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">備份／還原</span>
+        <span class="spec-val">可從設定將全部資料以 JSON 匯出／匯入（精簡或易讀格式）</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">JSON 匯入原則</span>
+        <span class="spec-val">依 id 合併（upsert）。會還原主檔（帳戶、支付方式、標記）、明細、已扣款狀態與扣款日固定。缺少的陣列鍵視為未指定並跳過。若儲存中途失敗，所有變更都會回復，讓資料庫維持一致</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">JSON 匯入正規化</span>
+        <span class="spec-val">分期期數會正規化到允許範圍，超出範圍者視為一次付清。N 天後方式的卡片，付款月會正規化為 0。分期明細中手動調整過的金額在匯入時會保留。無法解析的金額會以 0 匯入並留下警告</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">舊資料轉移</span>
+        <span class="spec-val">自動從舊版 Core Data 檔（AzCredit.sqlite）轉移。失敗時下次啟動會自動重試。iCloud 還原後缺少 WAL/SHM 會自動修復</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">整理舊明細</span>
+        <span class="spec-val">可在設定中一次刪除超過指定年數的明細</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">隱私</span>
+        <span class="spec-val">不會將任何資料傳送到外部伺服器。裝置內的資料庫未加密，因此本 App 的設計原則是不存放敏感的個人資訊</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>版本紀錄</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>版本</th><th>日期</th><th>開發環境</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0.1.0</td><td>2010/4/2</td><td>Xcode 3, iOS 3, Objective-C, Core Data</td></tr>
+          <tr><td>0.2.8</td><td>2010/7/6</td><td>Xcode 3, iOS 4, Objective-C, Core Data</td></tr>
+          <tr><td>0.3.3</td><td>2010/12/8</td><td>Xcode 3, iOS 4, Objective-C, Core Data</td></tr>
+          <tr><td>0.4.3</td><td>2011/3/29</td><td>Xcode 4, iOS 4, Objective-C, Core Data</td></tr>
+          <tr><td>1.0.0</td><td>2011/5/5</td><td>Xcode 4, iOS 4, Objective-C, Core Data</td></tr>
+          <tr><td>1.0.1</td><td>2011/5/27</td><td>Xcode 4, iOS 4, Objective-C, Core Data</td></tr>
+          <tr><td>1.1.0</td><td>2011/8/22</td><td>Xcode 4, iOS 4, Objective-C, Core Data</td></tr>
+          <tr><td>1.1.7</td><td>2012/4/11</td><td>Xcode 4, iOS 5, Objective-C, Core Data</td></tr>
+          <tr><td>1.1.12</td><td>2012/10/26</td><td>Xcode 4, iOS 6, Objective-C, Core Data</td></tr>
+          <tr><td>1.2.0</td><td>2017/9/12</td><td>Xcode 9, iOS 10, Objective-C, Core Data</td></tr>
+          <tr><td>1.2.4</td><td>2018/9/4</td><td>Xcode 9, iOS 11, Objective-C, Core Data</td></tr>
+          <tr><td>2.0.0</td><td>2026/5/13</td><td>Xcode 26, iOS 18+, Swift 6, SwiftData</td></tr>
+          <tr><td>2.1.0</td><td>2026/5/15</td><td>將舊版 App 的確認勾選以鎖定開關形式復活，改善紀錄的期間／複合篩選／排序，以及扣款狀況的彙整與篩選顯示</td></tr>
+          <tr><td>2.2.0</td><td>2026/5/27</td><td>新增數字鍵盤自動顯示的開關設定，擴充從既有明細複製新消費的途徑（消費清單中金額相同／最近編輯、支付方式清單、扣款明細）</td></tr>
+          <tr><td>2.3.0</td><td>2026/6/8</td><td>Xcode 26.5，統一為草稿方式（新增消費／複製），扣款明細新增整批變更按鈕，週末與假日順延至下個營業日（jp），扣款日可跳至上一個／下一個付款日，分期付款復活，改善新手說明，扣款總額期間可在扣款狀況畫面變更</td></tr>
+          <tr><td>2.4.0</td><td>2026/6/20</td><td>新增用語音新增消費（金額/標籤 → 支付方式兩階段，支付方式可從清單改選，並將選擇結果學習為語音候選），支援 Siri／捷徑（說「Hey Siri，在 Deferin 語音輸入」即可啟動），扣款狀況與選單圖示可從 12 種配色中選擇（也會反映到 App 圖示），改善 JSON 匯入（擴大接受部分 JSON、支付方式自動整理為正規形式、重複帳單/付款鍵的正規化）</td></tr>
+          <tr><td>2.4.1</td><td>2026/6/24</td><td>修正扣款狀況的篩選條件（依支付方式／依帳戶）未反映到其下扣款明細的問題</td></tr>
+          <tr><td>2.4.2</td><td>2026/6/27</td><td>修正在扣款明細鎖定後鎖頭圖示看不見、無法解鎖的問題（發生於 iOS 18～25，原因為使用了 iOS 26 才加入的 SF Symbol）</td></tr>
+          <tr><td>2.5.0</td><td>2026/7/6</td><td>分期付款擴充為 1～12 期的清單選擇（jp 仍維持最多 2 期），新增德文、韓文與繁體中文語系，將待確認扣款的條件改善為「今日以前的未扣款」</td></tr>
+          <tr><td>2.5.1</td><td>2026/7/14</td><td>英文版 App 名稱改為「Deferin」（日文名稱不變），Siri 仍可用「Deferin」「CrediMemo」等名稱啟動</td></tr>
+          <tr><td>2.5.2</td><td>2026/7/20</td><td>新增設定「開啟時顯示」（不做任何事／主畫面／用語音新增消費／新增消費／消費清單），複製明細時金額也會一併帶入，「從消費清單複製」欄位會保留展開狀態，並讓存檔前的複製明細說明更清楚</td></tr>
+          <tr><td>2.6.0</td><td>2026/7/27</td><td>新增輸入輔助「常用消費」（從常用標籤帶入支付方式、標記與用過三次以上的相同金額，可在設定切換為「從消費清單複製」或「無」），用語音新增消費也會依標籤以同樣方式帶入，提示整理已扣款中超過三年的舊資料，並在扣款狀況以注意圖示提醒超過一年的未扣款項目</td></tr>
+          <tr><td>2.6.1</td><td>2026/7/30</td><td>改善語音輸入的辨識準確度（修正金額辨識、含數字的店名被誤判為金額、以及貨幣單位混入標籤的問題），改為與紀錄中的標籤比對以統一寫法，修正停頓後重說時改為覆寫而非附加，辨識中的文字改為單行顯示，並修正潛在問題</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+<script src="../../../theme.js"></script>
+</body>
+</html>

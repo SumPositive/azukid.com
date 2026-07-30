@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deferin 사용 설명서</title>
+  <meta name="description" content="나중에 결제되는 지출을 기록하고 결제 예정 상태를 확인하며 결제 수단을 관리하고 JSON으로 백업하는 Deferin 사용 설명서입니다.">
+  <link rel="canonical" href="https://azukid.com/ko/sumpo/CreditMemo/creditmemo.html">
+  <link rel="alternate" href="https://azukid.com/jp/sumpo/CreditMemo/creditmemo.html" hreflang="ja">
+  <link rel="alternate" href="https://azukid.com/en/sumpo/CreditMemo/creditmemo.html" hreflang="en">
+  <link rel="alternate" href="https://azukid.com/de/sumpo/CreditMemo/creditmemo.html" hreflang="de">
+  <link rel="alternate" href="https://azukid.com/ko/sumpo/CreditMemo/creditmemo.html" hreflang="ko">
+  <link rel="alternate" href="https://azukid.com/zh-Hant/sumpo/CreditMemo/creditmemo.html" hreflang="zh-Hant">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="Deferin 사용 설명서">
+  <meta property="og:description" content="Deferin에서 나중에 결제되는 지출을 기록하고 결제 상태를 확인하며 결제 수단을 관리하고 데이터를 백업하는 방법입니다.">
+  <meta property="og:url" content="https://azukid.com/ko/sumpo/CreditMemo/creditmemo.html">
+  <link rel="stylesheet" href="../../../style.css?v=20260508">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../index.html">홈</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">Deferin</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <img class="page-header-icon" src="../../../images/icon-credit.png" alt="Deferin">
+    <div class="page-header-text">
+      <h1>Deferin 사용 설명서</h1>
+      <p class="page-tagline">후일 결제 확인 앱</p>
+    </div>
+  </div>
+
+  <div class="lead">
+    <p>Deferin은 나중에 계좌에서 인출되는 지출을 관리하는 앱입니다. 신용카드 사용, 신용 연동 간편결제 충전, N일 후 인출, 지정일 인출 등 후불 결제 수단을 대상으로 합니다. 즉시 인출되는 체크카드 결제나 현금 충전처럼 그 자리에서 정산이 끝나는 결제는 대상이 아닙니다.</p>
+  </div>
+
+  <section class="content-section">
+    <h2>기본 흐름</h2>
+    <div class="step-flow">
+      <div class="step-card">
+        <span class="step-number">1</span>
+        <strong>결제 기록</strong>
+        <p>금액을 입력하고 필요하면 라벨이나 태그를 추가합니다.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">2</span>
+        <strong>결제 수단 선택</strong>
+        <p>인출 일정을 결정하는 카드나 후불 결제 수단을 선택합니다.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">3</span>
+        <strong>인출 확인</strong>
+        <p>미결제와 결제 완료를 확인하고 계좌별로 예정된 인출을 살펴봅니다.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">4</span>
+        <strong>수정 또는 백업</strong>
+        <p>필요하면 이력을 수정하거나 JSON으로 내보내 백업합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="callout">⚠️ 데이터는 암호화되지 않습니다. 개인정보나 비밀정보를 입력하지 마세요.</div>
+
+  <div class="pill-link-row">
+    <a class="pill-link" href="https://apps.apple.com/kr/app/id432458298">App Store</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/EULA_en.html">최종 사용자 사용권 계약</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/PrivacyPolicy_en.html">개인정보 처리방침</a>
+    <a class="pill-link" href="../index.html">작성자 소개: sumpo</a>
+  </div>
+
+  <section class="content-section">
+    <h2>기능</h2>
+    <div class="feature-grid">
+      <div class="feature-item">음성으로 새 결제<small>금액과 라벨을 말하면 내역이 만들어집니다. 이어서 결제 수단도 말로 지정할 수 있습니다.</small></div>
+      <div class="feature-item">Siri 음성 입력<small>“Hey Siri, Deferin에서 음성 입력”이라고 말하면 앱이 열리고 음성 입력이 시작됩니다.</small></div>
+      <div class="feature-item">색상 프리셋 12종<small>인출 상태와 메뉴 아이콘의 배색을 12종에서 고를 수 있습니다. 앱 아이콘에도 반영됩니다.</small></div>
+      <div class="feature-item">새 결제를 빠르게 입력<small>금액만 먼저 입력해 저장하고, 나머지는 나중에 채울 수 있습니다.</small></div>
+      <div class="feature-item">자주 쓰는 결제로 자동 입력<small>자주 쓰는 라벨을 고르면 결제 수단과 태그가 채워집니다. 같은 금액을 3회 이상 사용한 라벨은 금액도 함께 채워집니다.</small></div>
+      <div class="feature-item">이력을 나중에 수정<small>저장한 내역을 열어 라벨·태그·결제 수단·계좌를 변경할 수 있습니다.</small></div>
+      <div class="feature-item">예정된 인출 확인<small>가까운 인출 합계를 보고 미결제와 결제 완료를 전환할 수 있습니다.</small></div>
+      <div class="feature-item">계좌별 집계<small>인출일이 같아도 계좌별로 나누어 파악할 수 있습니다.</small></div>
+      <div class="feature-item">결제 일정 관리<small>마감일/결제일 방식과 N일 후 방식을 모두 지원합니다.</small></div>
+      <div class="feature-item">태그 여러 개 지정<small>전문가 모드에서는 여러 태그 지정과 태그별 정리가 가능합니다.</small></div>
+      <div class="feature-item">JSON으로 백업<small>백업이나 다른 기기로 이전할 때 사용합니다.</small></div>
+      <div class="feature-item">표시 방식 조정<small>글자 크기, 시작 시 화면, 저장 후 동작 등을 설정할 수 있습니다.</small></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>화면 구성</h2>
+    <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">음성으로 새 결제</span>
+        <span class="spec-val">마이크로 내역을 만듭니다. 먼저 금액과 라벨을 말하고, 필요하면 결제 수단도 말로 지정할 수 있습니다. 인식된 수단은 탭해서 목록에서 다시 고를 수 있습니다. “Hey Siri, Deferin에서 음성 입력”으로 실행할 수도 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">새 결제</span>
+        <span class="spec-val">새 결제 내역을 입력합니다. 앱을 열 때 이 화면이 자동으로 열리도록 설정할 수 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">이력</span>
+        <span class="spec-val">저장된 내역을 봅니다. 대상 기간, 미입력 항목, 결제 수단, 계좌, 여러 태그로 걸러내고 날짜나 금액으로 정렬할 수 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">인출 상태</span>
+        <span class="spec-val">인출 예정과 인출 완료를 함께 표시합니다. 날짜·결제 수단·계좌 집계를 전환하고 수단이나 계좌로 걸러낼 수 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">결제 수단</span>
+        <span class="spec-val">카드 이름이나 후불 수단, 마감일/결제일, 인출 계좌를 등록합니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">인출 계좌</span>
+        <span class="spec-val">인출되는 계좌 이름을 관리합니다. 결제 수단별로 연결할 수 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">태그</span>
+        <span class="spec-val">내역을 분류하는 선택 항목입니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">설정</span>
+        <span class="spec-val">표시 옵션, 저장 후 동작, 백업, 지원 링크입니다.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>새 결제 입력하기</h2>
+    <div class="callout">
+      먼저 <strong>금액</strong>을 넣거나 <strong>자주 쓰는 결제</strong>를 골라 저장하세요. 나머지는 나중에 채울 수 있습니다. 초보자 모드에서는 이 흐름이 입력 화면에 직접 안내됩니다.
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">기본 항목</p>
+      <div class="spec-row">
+        <span class="spec-key">자주 쓰는 결제</span>
+        <span class="spec-val">자주 쓰는 결제가 금액 칸 위에 버튼으로 표시됩니다. 탭하면 라벨·결제 수단·태그가 한 번에 채워지고, 같은 금액을 3회 이상 사용한 라벨은 금액도 채워집니다. 다시 탭하면 해제됩니다. 핸들을 끌어 표시 줄 수를 바꿀 수 있습니다. 설정에서 “결제 목록에서 복사” 또는 “없음”으로 바꿀 수 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">금액</span>
+        <span class="spec-val">숫자 키패드로 입력합니다. 금액을 넣었거나 자주 쓰는 결제를 골랐으면 저장할 수 있습니다(금액이 없으면 나중에 채울 수 있는 임시 내역으로 저장됩니다).</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">사용일</span>
+        <span class="spec-val">달력에서 선택합니다. 나중의 인출일은 선택한 결제 수단에 따라 자동으로 계산됩니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">결제 수단</span>
+        <span class="spec-val">카드나 다른 후불 수단을 고릅니다. 선택하지 않은 상태로 저장하고 나중에 이력에서 채울 수도 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">계좌</span>
+        <span class="spec-val">선택한 결제 수단에 연결된 계좌가 아직 없을 때만 표시됩니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">라벨</span>
+        <span class="spec-val">가게나 용도 같은 짧은 메모입니다. 입력하는 동안 과거 라벨이 제안됩니다.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">선택 항목</p>
+      <div class="spec-row">
+        <span class="spec-key">태그</span>
+        <span class="spec-val">전문가 모드에서 사용할 수 있습니다. 여러 개를 지정하고 나중에 변경할 수 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">반복</span>
+        <span class="spec-val">전문가 모드에서 일시불 내역에 사용할 수 있습니다. 결제 완료로 표시하면 다음 달 또는 주기의 복사본을 자동으로 만들 수 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">메모</span>
+        <span class="spec-val">내역과 함께 남기고 싶은 내용을 자유롭게 적을 수 있습니다.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">비슷한 내역</p>
+      <div class="spec-row">
+        <span class="spec-key">기존 내역에서 복사</span>
+        <span class="spec-val">이력에서 금액이 같은 내역이나 최근 수정한 내역을 골라 새 결제로 복사할 수 있습니다. 결제 수단 목록에서 복사하거나, 인출 상태에서 인출일과 결제 수단을 복사할 수도 있습니다. 복사하면 금액도 함께 넘어옵니다. 복사로 만들어진 임시 내역은 탭해서 수정하고 저장하면 확정되며, 저장하지 않으면 자동으로 사라집니다.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">인출일 — 자동 / 수동</p>
+      <div class="spec-row">
+        <span class="spec-key">
+          <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="vertical-align:-4px;margin-right:4px">
+            <path fill="#0A84FF" d="M12 3a9 9 0 0 1 9 9 9 9 0 0 1-2.64 6.36l-1.42-1.42A7 7 0 0 0 19 12a7 7 0 0 0-7-7 7 7 0 0 0-7 7 7 7 0 0 0 2.06 4.94l1.06-1.06.71 4.24-4.24-.71 1.06-1.06A9 9 0 0 1 3 12a9 9 0 0 1 9-9z"/>
+            <text x="12" y="15.5" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#0A84FF">A</text>
+          </svg>
+          자동
+        </span>
+        <span class="spec-val">인출일은 사용일과 결제 수단(마감일 / 결제일 / 결제월, 또는 N일 후 방식)에서 자동으로 계산됩니다. 사용일이나 결제 수단을 바꾸면 자동으로 갱신됩니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">
+          <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="vertical-align:-4px;margin-right:4px">
+            <path fill="#34C759" d="M12 1.5a1.5 1.5 0 0 0-1.5 1.5v7.5h-1V4.5a1.5 1.5 0 0 0-3 0v9.25l-1.4-1.4a1.5 1.5 0 0 0-2.12 2.12L7.5 19a6 6 0 0 0 10.5-4V6a1.5 1.5 0 0 0-3 0v4.5h-1V3a1.5 1.5 0 0 0-1.5-1.5z"/>
+          </svg>
+          수동
+        </span>
+        <span class="spec-val">아이콘을 탭하면 그 시점의 날짜로 고정됩니다. 이후에는 사용일이나 결제 수단을 바꿔도 인출일이 움직이지 않습니다. 마감일을 놓친 결제를 다음 인출 주기로 옮길 때 편리합니다. 날짜를 탭해 달력에서 고르거나, “이전 / 다음 결제일” 버튼으로 한 주기씩 이동할 수 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">결제 완료 시 수동으로 고정</span>
+        <span class="spec-val">항목을 결제 완료로 표시하면 인출일이 자동으로 수동으로 바뀌어 고정되며, 이후 사용일이나 결제 수단을 바꿔도 움직이지 않습니다. 미결제로 되돌려도 고정 상태는 유지되지만, 아이콘을 탭해 자동으로 되돌릴 수 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">분할 결제</span>
+        <span class="spec-val">분할 횟수는 1~12회에서 고를 수 있습니다. 인출일은 회차별로 한 줄씩 표시되고, 자동/수동 아이콘은 모든 줄을 함께 전환합니다. 금액은 자동으로 나뉘며, 금액을 탭해 직접 조정하면 나머지 회차가 그에 맞게 바뀝니다. 뒤 회차의 날짜는 앞 회차보다 뒤여야 하므로, 앞 회차를 그보다 뒤로 옮기면 뒤 회차가 자동으로 다음 달로 밀립니다. 어느 회차가 결제 완료로 표시되면 남은 회차의 날짜 외의 항목(금액, 사용일, 결제 수단 등)은 읽기 전용이 됩니다.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>이력 살펴보기</h2>
+    <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">정렬</span>
+        <span class="spec-val">날짜나 금액으로 정렬합니다. 각 정렬은 내림차순과 오름차순을 전환할 수 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">필터</span>
+        <span class="spec-val">기간을 3개월, 1년, 3년, 전체에서 고를 수 있습니다. 또한 전체, 미입력 있음, 결제 수단, 계좌, 여러 태그로 걸러낼 수 있습니다. 미입력 있음은 결제 수단이나 라벨이 빠진 내역을 포함합니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">수정</span>
+        <span class="spec-val">줄을 열어 수정하거나 삭제합니다. 이미 전액 결제된 내역은 금액·날짜·결제 수단 같은 핵심 항목이 잠깁니다.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>인출 상태</h2>
+    <div class="callout">
+      인출 상태는 예정된 인출과 이미 인출된 항목을 한 흐름으로 보여줍니다. 계좌에서 인출을 확인했으면 화살표 아이콘으로 해당 계좌 그룹을 <strong>결제 완료</strong>로 옮기세요. 언제든 미결제로 되돌릴 수 있습니다.
+    </div>
+
+    <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">미결제 구역</span>
+        <span class="spec-val">미결제 항목은 예정과 기한 초과 그룹으로 나뉩니다. 기한이 지난 항목이 있으면 전환 스위치가 나타납니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">가까운 인출 합계</span>
+        <span class="spec-val">상단 메뉴에 설정한 인출 기간의 합계가 표시됩니다. 1~20일 또는 1개월을 고를 수 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">계좌별 그룹</span>
+        <span class="spec-val">인출일이 같아도 계좌가 다른 항목은 별도의 인출 그룹으로 처리됩니다. 날짜·결제 수단·계좌 집계를 전환할 수 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">필터</span>
+        <span class="spec-val">전체, 결제 수단, 계좌에서 고릅니다. 수단이나 계좌를 고르면 시간 흐름을 보기 쉽도록 집계가 날짜로 바뀝니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">상세</span>
+        <span class="spec-val">인출 줄을 열면 해당 인출에 포함된 결제 수단별 구역과 원래 결제 내역을 확인할 수 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">항목 단위 조정</span>
+        <span class="spec-val">인출 상세에서는 항목 하나만 미결제와 결제 완료 사이로 옮길 수 있습니다. 마감일에 걸친 항목 하나만 다음에 인출될 때 사용합니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">잠금 전환</span>
+        <span class="spec-val">인출 상세에는 항목별 잠금 전환도 있습니다. 예전 앱의 확인 체크 기능을 되살린 것으로, 체크 표시 대신 자물쇠 아이콘을 사용합니다. 잠긴 항목은 명세서나 통장과 이미 맞춰본 항목을 뜻합니다.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>결제 수단 · 계좌 · 태그</h2>
+    <div class="spec-group">
+      <p class="spec-group-title">결제 수단</p>
+      <div class="spec-row">
+        <span class="spec-key">대상 범위</span>
+        <span class="spec-val">나중에 계좌에서 인출되는 결제 수단만 등록하세요. 간편결제의 경우 신용 연동 사용과 충전은 대상이지만, 이미 충전된 잔액을 쓰는 것은 대상이 아닙니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">일정 방식</span>
+        <span class="spec-val">마감일 / 결제일 또는 N일 후 중에서 고릅니다. 마감일이나 결제일로 월말도 지정할 수 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">연결 계좌</span>
+        <span class="spec-val">결제 수단마다 계좌 하나를 연결할 수 있습니다. 연결을 바꾸면 관련된 과거 청구와 인출 그룹이 다시 만들어져 예전 계좌 그룹이 남지 않습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">열어서 수정</span>
+        <span class="spec-val">결제 수단 목록에서 줄을 탭하면 수정 화면이 열립니다. 상태 확인은 인출 상태의 집계와 필터에서 합니다.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">계좌와 태그</p>
+      <div class="spec-row">
+        <span class="spec-key">계좌</span>
+        <span class="spec-val">인출되는 계좌 이름을 저장합니다. 기본 제공 프리셋에서 시작할 수도 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">태그</span>
+        <span class="spec-val">태그마다 관련된 결제 내역 목록을 보여 주어 확인과 정리에 쓸 수 있습니다.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>백업과 설정</h2>
+    <div class="spec-group">
+      <p class="spec-group-title">JSON 백업</p>
+      <div class="spec-row">
+        <span class="spec-key">내보내기</span>
+        <span class="spec-val">모든 데이터를 JSON 파일로 내보냅니다. 보관용으로 압축 형식, 확인용으로 보기 쉬운 형식을 고를 수 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">가져오기</span>
+        <span class="spec-val">내보낸 JSON 파일을 가져옵니다. 같은 데이터를 다시 가져오면 중복이 생기지 않고 내역이 갱신됩니다. 청구와 인출의 결제 완료 상태도 복원됩니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">오래된 데이터 정리</span>
+        <span class="spec-val">데이터베이스가 너무 커지면 설정에서 오래된 내역을 정리할 수 있습니다. 실제로는 3년 정도의 이력이 사용을 전제한 범위입니다.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">표시와 동작</p>
+      <div class="spec-row">
+        <span class="spec-key">초보자 / 전문가</span>
+        <span class="spec-val">초보자 모드에서는 설명이 더 많이 표시됩니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">글자 크기</span>
+        <span class="spec-val">자동은 iOS의 글자 크기 설정을 따릅니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">시작 시 열기</span>
+        <span class="spec-val">앱을 실행하거나 다시 돌아왔을 때 자동으로 열 화면을 고릅니다: 아무것도 안 함, 주 화면, 음성으로 새 결제, 새 결제, 결제 목록(기본값은 아무것도 안 함). 수정하는 중에는 끼어들지 않습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">키패드 자동 표시</span>
+        <span class="spec-val">금액을 입력하지 않은 상태로 새 결제를 열면 숫자 키패드가 자동으로 열립니다. 설정에서 켜고 끌 수 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">음성 입력 사용</span>
+        <span class="spec-val">주 메뉴에 “음성으로 새 결제”를 표시할지 정합니다. 기기 언어가 음성 인식에서 지원될 때만 표시됩니다(기본값 켜짐).</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">색상 프리셋</span>
+        <span class="spec-val">인출 상태(미결제 / 확인 대기 / 결제 완료)와 메뉴 아이콘의 배색을 12종에서 고릅니다. 고른 프리셋은 앱 아이콘에도 적용되어 홈 화면에서도 같은 배색이 보입니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">저장 후 동작</span>
+        <span class="spec-val">저장한 뒤 되돌아가기, 다음 입력을 위해 비우기, 날짜와 결제 수단 유지, 이력 표시 중에서 고릅니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">설명서와 지원</span>
+        <span class="spec-val">설정에서 이 사용 설명서를 앱 안에서 열 수 있습니다. 지원 항목에는 팁과 보상형 동영상 광고도 있습니다.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>기본 사양</h2>
+    <div class="spec-group">
+      <div class="spec-row">
+        <span class="spec-key">대상 결제</span>
+        <span class="spec-val">나중에 계좌에서 인출되는 결제(즉시 인출 카드와 현금 충전은 대상 아님)</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">플랫폼</span>
+        <span class="spec-val">iOS 18 이상</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">최대 금액</span>
+        <span class="spec-val">99,999,999</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">날짜 범위</span>
+        <span class="spec-val">2000-01-01 ~ 2100-12-31</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">라벨 길이</span>
+        <span class="spec-val">최대 50자</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">메모 길이</span>
+        <span class="spec-val">최대 200자</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">결제 방식</span>
+        <span class="spec-val">일시불 또는 1~12회 분할(무이자·수수료 없음 전제). 보너스 결제는 지원하지 않습니다</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">인출일 계산</span>
+        <span class="spec-val">마감일 / 결제월 / 결제일에서 자동으로 계산합니다. N일 후 방식 카드는 사용일 + N일입니다. 결제 수단을 고르지 않으면 인출일은 사용일과 같습니다</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">인출일 고정</span>
+        <span class="spec-val">항목마다 수동과 자동을 전환할 수 있습니다. 결제 완료로 표시한 항목은 자동으로 고정됩니다</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">반복</span>
+        <span class="spec-val">1~99개월. 결제 완료로 표시하면 다음 주기의 복사본이 자동으로 만들어집니다</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">태그</span>
+        <span class="spec-val">항목마다 여러 태그를 지정할 수 있습니다. 목록에서 필터와 집계에 사용됩니다</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">인출 합계 기간</span>
+        <span class="spec-val">최근 1~20일, 30, 35, 40, 50, 60일(기본값 15일)</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">데이터 저장</span>
+        <span class="spec-val">기기 안에만 저장(SwiftData). 클라우드 동기화는 없습니다. 기기 자체는 iCloud 백업으로 보관할 수 있습니다</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">백업 / 복원</span>
+        <span class="spec-val">설정에서 전체 데이터를 JSON으로 내보내기 / 가져오기(압축 또는 보기 쉬운 형식)</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">JSON 가져오기 방침</span>
+        <span class="spec-val">id 기준 병합(upsert). 기준 정보(계좌·결제 수단·태그), 내역, 결제 완료 상태, 인출일 고정을 복원합니다. 없는 배열 키는 지정하지 않은 것으로 보고 건너뜁니다. 저장이 중간에 실패하면 모든 변경이 되돌려져 데이터베이스가 일관된 상태로 유지됩니다</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">JSON 가져오기 정규화</span>
+        <span class="spec-val">분할 횟수는 허용 범위로 정규화되며, 범위를 벗어나면 일시불이 됩니다. N일 후 방식 카드는 결제월이 0으로 정규화됩니다. 분할 내역에서 직접 조정한 금액은 가져올 때 유지됩니다. 해석할 수 없는 금액은 0으로 가져오고 경고를 남깁니다</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">이전 데이터 이행</span>
+        <span class="spec-val">예전 Core Data 파일(AzCredit.sqlite)에서 자동으로 이행합니다. 실패하면 다음 실행 때 자동으로 다시 시도합니다. iCloud 복원 후 WAL/SHM이 없으면 자동으로 복구합니다</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">오래된 내역 정리</span>
+        <span class="spec-val">설정에서 지정한 연수보다 오래된 내역을 한꺼번에 삭제할 수 있습니다</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">개인정보</span>
+        <span class="spec-val">외부 서버로 데이터를 보내지 않습니다. 기기 안의 데이터베이스는 암호화되지 않으므로, 민감한 개인정보를 저장하지 않도록 설계되어 있습니다</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>이력</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>버전</th><th>날짜</th><th>개발 환경</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0.1.0</td><td>2010/4/2</td><td>Xcode 3, iOS 3, Objective-C, Core Data</td></tr>
+          <tr><td>0.2.8</td><td>2010/7/6</td><td>Xcode 3, iOS 4, Objective-C, Core Data</td></tr>
+          <tr><td>0.3.3</td><td>2010/12/8</td><td>Xcode 3, iOS 4, Objective-C, Core Data</td></tr>
+          <tr><td>0.4.3</td><td>2011/3/29</td><td>Xcode 4, iOS 4, Objective-C, Core Data</td></tr>
+          <tr><td>1.0.0</td><td>2011/5/5</td><td>Xcode 4, iOS 4, Objective-C, Core Data</td></tr>
+          <tr><td>1.0.1</td><td>2011/5/27</td><td>Xcode 4, iOS 4, Objective-C, Core Data</td></tr>
+          <tr><td>1.1.0</td><td>2011/8/22</td><td>Xcode 4, iOS 4, Objective-C, Core Data</td></tr>
+          <tr><td>1.1.7</td><td>2012/4/11</td><td>Xcode 4, iOS 5, Objective-C, Core Data</td></tr>
+          <tr><td>1.1.12</td><td>2012/10/26</td><td>Xcode 4, iOS 6, Objective-C, Core Data</td></tr>
+          <tr><td>1.2.0</td><td>2017/9/12</td><td>Xcode 9, iOS 10, Objective-C, Core Data</td></tr>
+          <tr><td>1.2.4</td><td>2018/9/4</td><td>Xcode 9, iOS 11, Objective-C, Core Data</td></tr>
+          <tr><td>2.0.0</td><td>2026/5/13</td><td>Xcode 26, iOS 18+, Swift 6, SwiftData</td></tr>
+          <tr><td>2.1.0</td><td>2026/5/15</td><td>예전 앱의 확인 체크를 잠금 전환으로 되살리고, 이력의 대상 기간·복합 필터·정렬과 인출 상태의 집계/필터 표시를 개선</td></tr>
+          <tr><td>2.2.0</td><td>2026/5/27</td><td>키패드 자동 표시 켜기/끄기 설정 추가, 기존 내역에서 새 결제를 복사하는 경로 확대(결제 목록의 같은 금액/최근 수정, 결제 수단 목록, 인출 내역에서)</td></tr>
+          <tr><td>2.3.0</td><td>2026/6/8</td><td>Xcode 26.5, 임시 내역 방식(새 결제/복사)으로 통일, 인출 내역에 일괄 변경 버튼, 주말·공휴일의 다음 영업일 이월(jp), 인출일의 이전/다음 결제일로 이동, 분할 결제 부활, 초보자 도움말 개선, 인출 합계 기간을 인출 상태 화면에서 변경</td></tr>
+          <tr><td>2.4.0</td><td>2026/6/20</td><td>음성으로 새 결제 추가(금액/라벨 → 수단의 2단계, 수단은 목록에서 다시 고를 수 있고 선택 결과를 음성 후보로 학습), Siri / 단축어 지원(“Hey Siri, Deferin에서 음성 입력”으로 실행), 인출 상태와 메뉴 아이콘의 색상 프리셋 12종 선택 가능(앱 아이콘에도 반영), JSON 가져오기 개선(부분 JSON 수용 확대, 결제 수단의 정규형 자동 정리, 중복 청구/결제 키 정규화)</td></tr>
+          <tr><td>2.4.1</td><td>2026/6/24</td><td>인출 상태의 필터 조건(수단별 / 계좌별)이 하위 인출 내역에 반영되지 않는 문제 수정</td></tr>
+          <tr><td>2.4.2</td><td>2026/6/27</td><td>인출 내역에서 잠금을 걸면 자물쇠 아이콘이 보이지 않아 해제할 수 없는 문제 수정(iOS 18~25에서 발생. iOS 26에 추가된 SF Symbol을 사용했기 때문)</td></tr>
+          <tr><td>2.5.0</td><td>2026/7/6</td><td>분할 결제를 1~12회 목록 선택으로 확대(jp는 종전대로 최대 2회), 독일어·한국어·번체 중국어 지원 추가, 인출 확인 대기 조건을 “오늘 이전의 미결제”로 개선</td></tr>
+          <tr><td>2.5.1</td><td>2026/7/14</td><td>영어판 앱 이름을 “Deferin”으로 변경(일본어 이름은 그대로), Siri는 “Deferin” “CrediMemo” 등 어느 이름으로도 실행 가능</td></tr>
+          <tr><td>2.5.2</td><td>2026/7/20</td><td>설정 “시작 시 열기” 추가(아무것도 안 함/주 화면/음성으로 새 결제/새 결제/결제 목록에서 선택), 내역을 복사할 때 금액도 함께 넘어오도록 개선, “결제 목록에서 복사” 칸의 열림 상태 유지, 저장 전 복사 내역 안내를 명확히 함</td></tr>
+          <tr><td>2.6.0</td><td>2026/7/27</td><td>새 결제 입력을 돕는 “자주 쓰는 결제” 추가(자주 쓰는 라벨에서 결제 수단·태그·3회 이상 같은 금액을 채움, 설정에서 “결제 목록에서 복사” “없음”으로 전환 가능), 음성으로 새 결제에서도 라벨로 같은 방식으로 채움, 결제 완료 중 3년보다 오래된 데이터 정리 안내, 인출 상태에서 1년보다 오래된 미결제를 주의 아이콘으로 알림</td></tr>
+          <tr><td>2.6.1</td><td>2026/7/30</td><td>음성 입력의 인식 정확도 개선(금액 인식, 숫자가 들어간 가게 이름을 금액으로 잘못 읽는 문제, 통화 단위가 라벨에 섞이는 문제 수정), 이력의 라벨과 맞춰 표기를 통일하도록 개선, 잠시 멈춘 뒤 다시 말하면 덮어쓰도록 수정, 인식 중인 문자열을 한 줄로 표시, 잠재적 문제 수정</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+<script src="../../../theme.js"></script>
+</body>
+</html>
