@@ -8,6 +8,9 @@
   <link rel="canonical" href="https://azukid.com/en/sumpo/CreditMemo/creditmemo.html">
   <link rel="alternate" href="https://azukid.com/jp/sumpo/CreditMemo/creditmemo.html" hreflang="ja">
   <link rel="alternate" href="https://azukid.com/en/sumpo/CreditMemo/creditmemo.html" hreflang="en">
+  <link rel="alternate" href="https://azukid.com/de/sumpo/CreditMemo/creditmemo.html" hreflang="de">
+  <link rel="alternate" href="https://azukid.com/ko/sumpo/CreditMemo/creditmemo.html" hreflang="ko">
+  <link rel="alternate" href="https://azukid.com/zh-Hant/sumpo/CreditMemo/creditmemo.html" hreflang="zh-Hant">
   <meta name="theme-color" content="#f5f5f7">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="en_US">
@@ -217,8 +220,8 @@
         <span class="spec-val">When you mark an item as paid, its debit date automatically switches to Manual and is fixed so it doesn't drift when you change the use date or payment method later. The fixed state stays even if you move the item back to unpaid, but you can tap the icon to switch back to Auto.</span>
       </div>
       <div class="spec-row">
-        <span class="spec-key">2-installment payment</span>
-        <span class="spec-val">The debit date is shown on two rows (1st and 2nd installment), and the Auto / Manual icon toggles both rows together. The amount is split automatically; tap an amount to redistribute manually within the range of 1 to (total − 1), with the other side updating accordingly. The 2nd installment's date is constrained to fall after the 1st; if you move the 1st past the 2nd, the app shifts the 2nd to the following month automatically. Once the 1st installment is marked as paid, fields other than the 2nd installment's date (amount, use date, payment method, etc.) become read-only. Enable "Use 2-installment payment" in Settings to make this option available for new entries — existing 2-installment records remain visible and editable even when the setting is off.</span>
+        <span class="spec-key">Installment payment</span>
+        <span class="spec-val">You can split a payment into 1 to 12 installments. The debit date is shown on one row per installment, and the Auto / Manual icon toggles all rows together. The amount is divided evenly by default; tap an amount to adjust it manually, and the remaining installments update accordingly. Each installment's date is constrained to fall after the previous one; if you move an earlier installment past a later one, the app shifts the following installments to the next month automatically. Once an installment is marked as paid, fields other than the remaining installments' dates (amount, use date, payment method, etc.) become read-only. Enable "Use installments" in Settings to make this option available for new entries — existing installment records remain visible and editable even when the setting is off. Deferin does not calculate interest or fees, so use this only for interest-free, fee-free plans.</span>
       </div>
     </div>
   </section>
@@ -398,7 +401,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Payment Methods</span>
-        <span class="spec-val">Lump sum or 2-payment installment (interest-free, fee-free assumed). Three or more installments and bonus payments are not supported</span>
+        <span class="spec-val">Lump sum or 1 to 12 installments (interest-free, fee-free assumed). Bonus payments are not supported</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Debit Date Calculation</span>
@@ -438,7 +441,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">JSON Import Normalization</span>
-        <span class="spec-val">Payment method is normalized to 1 (lump sum) or 2 (2-payment); anything else becomes lump sum. For N-days-later cards, payment month is normalized to 0. Manually adjusted amounts in a 2-payment record are preserved on import. Amounts that fail to parse are imported as 0 and a warning is logged</span>
+        <span class="spec-val">The installment count is normalized to the supported range of 1 to 12; anything outside it becomes lump sum. For N-days-later cards, payment month is normalized to 0. Manually adjusted amounts in an installment record are preserved on import. Amounts that fail to parse are imported as 0 and a warning is logged</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Legacy Migration</span>
@@ -485,7 +488,7 @@
           <tr><td>2.5.1</td><td>2026/7/14</td><td>Renamed the English app name to "Deferin" (the Japanese name stays "Crememo"); Siri still launches with "Deferin," "CrediMemo," or the old names</td></tr>
           <tr><td>2.5.2</td><td>2026/7/20</td><td>Added the "Open on Launch" setting (Do Nothing / Main Menu / New Payment by Voice / New Payment / Payment List); copying a record now carries over the amount; the "Copy from list" panel remembers its open/closed state; clearer guidance for unsaved copied drafts</td></tr>
           <tr><td>2.6.0</td><td>2026/7/27</td><td>Added "Frequent Payments" as an input aid (fills the payment method, tags, and amounts used three or more times from a frequently used label; switchable to "Copy from Payment List" or "None" in Settings); New Payment by Voice fills in the same way from the label; suggests tidying up paid records older than three years; flags unpaid items older than one year with a caution icon in Payment Status</td></tr>
-          <tr><td>2.6.1</td><td>2026/7/28</td><td>Improved voice input accuracy (fixed amount parsing such as "12,000," store names containing numerals being misread as amounts, and currency units leaking into the label); recognized labels are now matched against your history so the wording stays consistent; restating after a pause now overwrites instead of appending; the in-progress transcript is shown on a single line; fixed potential issues</td></tr>
+          <tr><td>2.6.1</td><td>2026/7/30</td><td>Improved voice input accuracy (fixed amount parsing such as "12,000," store names containing numerals being misread as amounts, and currency units leaking into the label); recognized labels are now matched against your history so the wording stays consistent; restating after a pause now overwrites instead of appending; the in-progress transcript is shown on a single line; fixed potential issues</td></tr>
         </tbody>
       </table>
     </div>
