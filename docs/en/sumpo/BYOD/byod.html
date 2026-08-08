@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BYOD User Guide</title>
-  <meta name="description" content="User guide for the BYOD sample for field service companies, covering Today, sales, job sites, collections, confirmations, work instructions, attendance, and administration.">
+  <meta name="description" content="User guide for the BYOD sample for field service companies, covering Today, sales, job sites, collections, communication, to-dos, attendance, and administration.">
   <link rel="canonical" href="https://azukid.com/en/sumpo/BYOD/byod.html">
   <link rel="alternate" href="https://azukid.com/jp/sumpo/BYOD/byod.html" hreflang="ja">
   <link rel="alternate" href="https://azukid.com/en/sumpo/BYOD/byod.html" hreflang="en">
@@ -52,7 +52,7 @@
   <section class="guide-hero">
     <div class="guide-hero-copy">
       <p>This sample is designed for a regional installation and maintenance company where employees and partner contractors securely join the same work from personal devices</p>
-      <p>The Today screen brings together assigned sales, job sites, collections, confirmations requiring a response, work instructions, and attendance</p>
+      <p>The Today screen brings together assigned sales, job sites, collections, communication requiring a response, to-dos, and attendance</p>
       <div class="guide-kpis">
         <div class="guide-kpi"><strong>Assignment First</strong><span>Prioritize information relevant to you</span></div>
         <div class="guide-kpi"><strong>Site Scoped</strong><span>Separate employee and contractor access</span></div>
@@ -85,11 +85,11 @@
     <h2>The Today screen</h2>
     <p>Below the date, the screen shows only the work where you are included as an assignee</p>
     <div class="feature-grid">
-      <div class="feature-item">Check first<small>Unanswered confirmations and assigned or overdue work instructions appear first</small></div>
+      <div class="feature-item">To-dos<small>Shows three assigned open to-dos in priority order and always includes every item due today</small></div>
       <div class="feature-item">Sales<small>Sales and management staff see their active assigned opportunities</small></div>
       <div class="feature-item">Job sites<small>Employees can see all sites. Partner contractors see only their assigned sites</small></div>
       <div class="feature-item">Collections<small>Management staff see assigned receivables, invoices, and payment progress</small></div>
-      <div class="feature-item">Current status<small>Check attendance and open the next action, Clock in or Clock out, from the top right</small></div>
+      <div class="feature-item">Current status<small>The top right shows gray Not clocked in or blue Working. Contractors see Not entered / On site</small></div>
       <div class="feature-item">Issue reported<small>An issue is highlighted separately from workflow status and shown to its selected employee audience</small></div>
     </div>
     <p class="byod-flow-note">Employees can use View all in each list to inspect the overall picture. Partner contractors never receive data for unassigned sites</p>
@@ -100,32 +100,37 @@
     <div class="step-flow">
       <div class="step-card"><span class="step-number">1</span><strong>Sales</strong><p>Move from inquiry to meeting, estimate, and won while recording billing details during the sales stage</p></div>
       <div class="step-card"><span class="step-number">2</span><strong>Convert to a job site</strong><p>Carry a won opportunity into a site with address, cautions, effort, period, contact, and assignees</p></div>
-      <div class="step-card"><span class="step-number">3</span><strong>Perform the work</strong><p>Issue work instructions and share confirmations, handovers, and the latest issue status within the site</p></div>
+      <div class="step-card"><span class="step-number">3</span><strong>Perform the work</strong><p>Create assigned to-dos and share communication, handovers, and the latest issue status within the site</p></div>
       <div class="step-card"><span class="step-number">4</span><strong>Collections</strong><p>Move from receivable to invoice and paid while managing transfer or collection dates</p></div>
     </div>
   </section>
 
   <section class="content-section">
-    <h2>Confirmations</h2>
+    <h2>Communication</h2>
     <span class="byod-label">NO ONE-TO-ONE DIRECT MESSAGES</span>
     <div class="feature-grid">
-      <div class="feature-item">Three or more people<small>Every confirmation includes an administrator and is shared by a team, never just two people</small></div>
+      <div class="feature-item">Three or more people<small>Every communication includes an administrator and is shared by a team, never just two people</small></div>
       <div class="feature-item">Nominate respondents<small>Choose one or more required respondents. Each nominated person answers OK or NG</small></div>
       <div class="feature-item">Optional note<small>Add text only when an OK or NG response needs context</small></div>
       <div class="feature-item">Action, unread, all<small>Filter the list around what you need to handle first</small></div>
+      <div class="feature-item">Changes and history<small>Changing the message records the before-and-after text and shows its history to every viewer</small></div>
     </div>
-    <p>The original confirmation is not overwritten. Add a dated change instruction with its author whenever the instruction changes</p>
+    <p>The author or an administrator can change the message body. Participants, required respondents, reads, and responses stay fixed. Change history appears only when a change exists</p>
   </section>
 
   <section class="content-section">
-    <h2>Work instructions</h2>
+    <h2>To-dos</h2>
     <div class="feature-grid">
-      <div class="feature-item">Select a job site<small>Only people already assigned to the selected site appear as work assignee candidates</small></div>
+      <div class="feature-item">Choose what it relates to<small>Manage sales, job-site, collection, and internal work in one To-do feature</small></div>
+      <div class="feature-item">Focused assignees<small>Only members of the selected sales item, site, or collection appear as candidates</small></div>
       <div class="feature-item">Calendar deadline<small>The due date runs through the end of that day, and overdue work is emphasized</small></div>
       <div class="feature-item">Completion note required<small>A note is required before completion to reduce accidental taps</small></div>
       <div class="feature-item">Recheck reason required<small>Returning completed work to Recheck requires a recorded reason</small></div>
+      <div class="feature-item">Sizing guide<small>Open ? Help on the create screen for the recommended half-day size and examples</small></div>
+      <div class="feature-item">Edit history<small>Record each before-and-after value and show the history to everyone who can view the to-do</small></div>
     </div>
-    <p>Work instructions also preserve the original text and accumulate dated, authored change instructions</p>
+    <p>The list shows a Sales, Site, Collection, or Internal label and the related item name. + To-do on each detail page preselects that item</p>
+    <p>Title, details, deadline, related item, and assignees can be edited. Earlier change instructions are carried into the edit history</p>
   </section>
 
   <section class="content-section">
@@ -141,12 +146,13 @@
 
   <section class="content-section" id="attendance">
     <h2>Attendance</h2>
+    <p class="byod-flow-note">Contractors see Entry / Exit instead of Clock in / Clock out. Executives record attendance by tapping the Today button, without choosing a location</p>
     <div class="byod-role-grid">
       <div class="byod-role"><strong>Where a punch terminal is available</strong><span>Show your one-time QR code to a registered terminal. Clock in or Clock out is determined automatically from your previous record</span></div>
-      <div class="byod-role"><strong>Where no terminal is available</strong><span>Choose an assigned sale, assigned site, Home, or Other, then tap Punch. Other requires a location name</span></div>
+      <div class="byod-role"><strong>Where no terminal is available</strong><span>Choose an assigned sale, assigned site, or Other, then tap Punch. Other requires a location name</span></div>
     </div>
     <div class="step-flow">
-      <div class="step-card"><span class="step-number">1</span><strong>Open Attendance</strong><p>Tap the next action, Clock in or Clock out, at the top right of Today</p></div>
+      <div class="step-card"><span class="step-number">1</span><strong>Open Attendance</strong><p>Tap Not clocked in or Working at the top right of Today. Contractors see Not entered / On site</p></div>
       <div class="step-card"><span class="step-number">2</span><strong>Choose a method</strong><p>Show the QR code to a terminal or select a location for direct punching</p></div>
       <div class="step-card"><span class="step-number">3</span><strong>Complete the punch</strong><p>After a direct punch succeeds, the app returns to Today and shows the result</p></div>
       <div class="step-card"><span class="step-number">4</span><strong>Review records</strong><p>The Attendance screen shows your current status and today's records</p></div>
@@ -160,7 +166,7 @@
       <div class="byod-role"><strong>Executive / Works Manager</strong><span>Reviews the organization, administration, audit, and change history</span></div>
       <div class="byod-role"><strong>Administration / Safety</strong><span>Invites users, manages sales, sites and collections, and corrects attendance</span></div>
       <div class="byod-role"><strong>Sales / Site Supervisor</strong><span>Manages opportunities, sees all sites, and advances assigned work</span></div>
-      <div class="byod-role"><strong>In-house Technician</strong><span>Sees all sites and handles assigned work and confirmations</span></div>
+      <div class="byod-role"><strong>In-house Technician</strong><span>Sees all sites and handles assigned work and communication</span></div>
       <div class="byod-role"><strong>Partner Contractor</strong><span>Sees only assigned sites and the work information required at those sites</span></div>
       <div class="byod-role"><strong>Punch Terminal</strong><span>Scans QR codes and records punches without displaying business information</span></div>
     </div>
