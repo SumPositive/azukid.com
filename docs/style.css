@@ -551,6 +551,16 @@ a.link-item:hover { background: var(--surface-2); text-decoration: none; }
   line-height: 1.6;
 }
 
+/*
+  2行のタグラインで1行目を主役にする（BYOD）。
+  改行は <br> が担うので、ここでは display を変えない
+  （block にすると <br> と二重に改行される）
+*/
+.page-tagline strong {
+  font-size: 1.0625rem;
+  color: var(--text);
+}
+
 /* ── Content sections on detail pages ── */
 .content-section {
   margin-bottom: 40px;
@@ -1027,6 +1037,14 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: 40px;
 }
 
+/*
+  右カラム（guide-panel）を持たないページ用。
+  2カラムのまま1つだけ置くと、左の 1.1fr 分に縮んで見える
+*/
+.guide-hero.single-column {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .guide-hero-copy {
   background: var(--surface);
   border: 1px solid var(--border-light);
@@ -1043,7 +1061,8 @@ p:last-child { margin-bottom: 0; }
 
 .guide-kpis {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* 項目数が3から増えても崩れないよう、幅で折り返す */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 10px;
   margin-top: 18px;
 }
