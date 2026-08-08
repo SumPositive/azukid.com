@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BYOD User Guide</title>
+  <meta name="description" content="User guide for the BYOD sample for field service companies, covering Today, sales, job sites, collections, communication, to-dos, attendance, and administration.">
+  <link rel="canonical" href="https://azukid.com/en/sumpo/BYOD/byod.html">
+  <link rel="alternate" href="https://azukid.com/jp/sumpo/BYOD/byod.html" hreflang="ja">
+  <link rel="alternate" href="https://azukid.com/en/sumpo/BYOD/byod.html" hreflang="en">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="BYOD User Guide">
+  <meta property="og:description" content="A guide to the BYOD sample that reliably delivers only the work information each person needs.">
+  <meta property="og:url" content="https://azukid.com/en/sumpo/BYOD/byod.html">
+  <link rel="stylesheet" href="../../../style.css?v=20260804">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+  <style>
+    /* BYODの操作対象を短いカードで見渡せるようにする */
+    .byod-live-link { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 18px; border-radius: 999px; background: var(--accent); color: #fff; font-weight: 700; text-decoration: none; }
+    .byod-role-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .byod-role { padding: 16px; border: 1px solid var(--border-light); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
+    .byod-role strong, .byod-role span { display: block; }
+    .byod-role span { margin-top: 6px; color: var(--text-2); font-size: .82rem; line-height: 1.6; }
+    .byod-flow-note { margin-top: 12px; color: var(--text-2); font-size: .82rem; line-height: 1.7; }
+    .byod-label { display: inline-block; margin-bottom: 8px; color: var(--accent); font-size: .75rem; font-weight: 800; letter-spacing: .04em; }
+    @media (max-width: 680px) { .byod-role-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../index.html">Home</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">BYOD</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <div class="page-header-text">
+      <h1>BYOD User Guide</h1>
+      <p class="page-tagline">Deliver only the information each person needs</p>
+    </div>
+  </div>
+
+  <!-- サンプルの全体像 -->
+  <section class="guide-hero">
+    <div class="guide-hero-copy">
+      <p>This sample is designed for a regional installation and maintenance company where employees and partner contractors securely join the same work from personal devices</p>
+      <p>The Today screen brings together assigned sales, job sites, collections, communication requiring a response, to-dos, and attendance</p>
+      <div class="guide-kpis">
+        <div class="guide-kpi"><strong>Assignment First</strong><span>Prioritize information relevant to you</span></div>
+        <div class="guide-kpi"><strong>Site Scoped</strong><span>Separate employee and contractor access</span></div>
+        <div class="guide-kpi"><strong>History Kept</strong><span>Never erase the original instruction</span></div>
+      </div>
+      <p><a class="byod-live-link" href="https://byod.sumpo.uk/">Open the BYOD sample</a></p>
+    </div>
+  </section>
+
+  <div class="pill-link-row">
+    <a class="pill-link" href="#start">Getting started</a>
+    <a class="pill-link" href="#today">Today</a>
+    <a class="pill-link" href="#work">Workflows</a>
+    <a class="pill-link" href="#attendance">Attendance</a>
+    <a class="pill-link" href="#admin">Administration</a>
+  </div>
+
+  <section class="content-section" id="start">
+    <h2>Getting started</h2>
+    <div class="step-flow">
+      <div class="step-card"><span class="step-number">1</span><strong>Administrator invitation</strong><p>An administrator sets the person's name and role, then provides a QR code or a ten-minute invitation code</p></div>
+      <div class="step-card"><span class="step-number">2</span><strong>Register the device</strong><p>Scan the QR code with the standard camera or enter the code, then register a passkey using device biometrics</p></div>
+      <div class="step-card"><span class="step-number">3</span><strong>Sign in with a passkey</strong><p>No password is used. Sign in with the device's face, fingerprint, or screen lock verification</p></div>
+      <div class="step-card"><span class="step-number">4</span><strong>Start from Today</strong><p>After sign-in, the app opens the work items that need your attention now</p></div>
+    </div>
+    <div class="callout"><strong>Names are managed centrally</strong><p>Users do not choose their own nicknames. An administrator assigns and changes display names</p></div>
+  </section>
+
+  <section class="content-section" id="today">
+    <h2>The Today screen</h2>
+    <p>Below the date, the screen shows only the work where you are included as an assignee</p>
+    <div class="feature-grid">
+      <div class="feature-item">To-dos<small>Shows three assigned open to-dos in priority order and always includes every item due today</small></div>
+      <div class="feature-item">Sales<small>Sales and management staff see their active assigned opportunities</small></div>
+      <div class="feature-item">Job sites<small>Employees can see all sites. Partner contractors see only their assigned sites</small></div>
+      <div class="feature-item">Collections<small>Management staff see assigned receivables, invoices, and payment progress</small></div>
+      <div class="feature-item">Current status<small>The top right shows gray Not clocked in or blue Working. Contractors see Not entered / On site</small></div>
+      <div class="feature-item">Issue reported<small>An issue is highlighted separately from workflow status and shown to its selected employee audience</small></div>
+    </div>
+    <p class="byod-flow-note">Employees can use View all in each list to inspect the overall picture. Partner contractors never receive data for unassigned sites</p>
+  </section>
+
+  <section class="content-section" id="work">
+    <h2>Business workflow</h2>
+    <div class="step-flow">
+      <div class="step-card"><span class="step-number">1</span><strong>Sales</strong><p>Move from inquiry to meeting, estimate, and won while recording billing details during the sales stage</p></div>
+      <div class="step-card"><span class="step-number">2</span><strong>Convert to a job site</strong><p>Carry a won opportunity into a site with address, cautions, effort, period, contact, and assignees</p></div>
+      <div class="step-card"><span class="step-number">3</span><strong>Perform the work</strong><p>Create assigned to-dos and share communication, handovers, and the latest issue status within the site</p></div>
+      <div class="step-card"><span class="step-number">4</span><strong>Collections</strong><p>Move from receivable to invoice and paid while managing transfer or collection dates</p></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Communication</h2>
+    <span class="byod-label">NO ONE-TO-ONE DIRECT MESSAGES</span>
+    <div class="feature-grid">
+      <div class="feature-item">Three or more people<small>Every communication includes an administrator and is shared by a team, never just two people</small></div>
+      <div class="feature-item">Nominate respondents<small>Choose one or more required respondents. Each nominated person answers OK or NG</small></div>
+      <div class="feature-item">Optional note<small>Add text only when an OK or NG response needs context</small></div>
+      <div class="feature-item">Action, unread, all<small>Filter the list around what you need to handle first</small></div>
+      <div class="feature-item">Changes and history<small>Changing the message records the before-and-after text and shows its history to every viewer</small></div>
+    </div>
+    <p>The author or an administrator can change the message body. Participants, required respondents, reads, and responses stay fixed. Change history appears only when a change exists</p>
+  </section>
+
+  <section class="content-section">
+    <h2>To-dos</h2>
+    <div class="feature-grid">
+      <div class="feature-item">Choose what it relates to<small>Manage sales, job-site, collection, and internal work in one To-do feature</small></div>
+      <div class="feature-item">Focused assignees<small>Only members of the selected sales item, site, or collection appear as candidates</small></div>
+      <div class="feature-item">Calendar deadline<small>The due date runs through the end of that day, and overdue work is emphasized</small></div>
+      <div class="feature-item">Completion note required<small>A note is required before completion to reduce accidental taps</small></div>
+      <div class="feature-item">Recheck reason required<small>Returning completed work to Recheck requires a recorded reason</small></div>
+      <div class="feature-item">Sizing guide<small>Open ? Help on the create screen for the recommended half-day size and examples</small></div>
+      <div class="feature-item">Edit history<small>Record each before-and-after value and show the history to everyone who can view the to-do</small></div>
+    </div>
+    <p>The list shows a Sales, Site, Collection, or Internal label and the related item name. + To-do on each detail page preselects that item</p>
+    <p>Title, details, deadline, related item, and assignees can be edited. Earlier change instructions are carried into the edit history</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Editing sites, sales, and collections</h2>
+    <div class="feature-grid">
+      <div class="feature-item">Assignees<small>Practitioners are listed first. Managers appear smaller in parentheses on the right</small></div>
+      <div class="feature-item">Site map<small>Open Google Maps from the address, adjust the pin, and save latitude and longitude</small></div>
+      <div class="feature-item">Report an issue<small>Checking Issue reported requires a latest summary and a sharing scope</small></div>
+      <div class="feature-item">Change history<small>Administrators see newest-first history with removed and added text distinguished</small></div>
+    </div>
+    <p>Create and edit screens keep Back at the upper left and Save at the upper right</p>
+  </section>
+
+  <section class="content-section" id="attendance">
+    <h2>Attendance</h2>
+    <p class="byod-flow-note">Contractors see Entry / Exit instead of Clock in / Clock out. Executives record attendance by tapping the Today button, without choosing a location</p>
+    <div class="byod-role-grid">
+      <div class="byod-role"><strong>Where a punch terminal is available</strong><span>Show your one-time QR code to a registered terminal. Clock in or Clock out is determined automatically from your previous record</span></div>
+      <div class="byod-role"><strong>Where no terminal is available</strong><span>Choose an assigned sale, assigned site, or Other, then tap Punch. Other requires a location name</span></div>
+    </div>
+    <div class="step-flow">
+      <div class="step-card"><span class="step-number">1</span><strong>Open Attendance</strong><p>Tap Not clocked in or Working at the top right of Today. Contractors see Not entered / On site</p></div>
+      <div class="step-card"><span class="step-number">2</span><strong>Choose a method</strong><p>Show the QR code to a terminal or select a location for direct punching</p></div>
+      <div class="step-card"><span class="step-number">3</span><strong>Complete the punch</strong><p>After a direct punch succeeds, the app returns to Today and shows the result</p></div>
+      <div class="step-card"><span class="step-number">4</span><strong>Review records</strong><p>The Attendance screen shows your current status and today's records</p></div>
+    </div>
+    <p class="byod-flow-note">A punch terminal opens its scanning screen automatically after sign-in. On success it sounds a cue and shows a large blue Clock in or green Clock out result for three seconds</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Visibility by role</h2>
+    <div class="byod-role-grid">
+      <div class="byod-role"><strong>Executive / Works Manager</strong><span>Reviews the organization, administration, audit, and change history</span></div>
+      <div class="byod-role"><strong>Administration / Safety</strong><span>Invites users, manages sales, sites and collections, and corrects attendance</span></div>
+      <div class="byod-role"><strong>Sales / Site Supervisor</strong><span>Manages opportunities, sees all sites, and advances assigned work</span></div>
+      <div class="byod-role"><strong>In-house Technician</strong><span>Sees all sites and handles assigned work and communication</span></div>
+      <div class="byod-role"><strong>Partner Contractor</strong><span>Sees only assigned sites and the work information required at those sites</span></div>
+      <div class="byod-role"><strong>Punch Terminal</strong><span>Scans QR codes and records punches without displaying business information</span></div>
+    </div>
+  </section>
+
+  <section class="content-section" id="admin">
+    <h2>Administrator operations</h2>
+    <div class="feature-grid">
+      <div class="feature-item">Invite users<small>Set the person's name and role, then provide the registration QR or code in person</small></div>
+      <div class="feature-item">Activate or stop access<small>Stopping a former worker or contractor also returns their open screens to sign-in</small></div>
+      <div class="feature-item">Correct attendance<small>Keep the original time when correcting a record and export monthly CSV data</small></div>
+      <div class="feature-item">Audit and history<small>Review the operations that matter, such as sensitive views and state changes</small></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Sample-only person switching</h2>
+    <p>In the sample, tap the name in the header to list fictional users by role and switch to the selected person's view</p>
+    <div class="callout"><strong>Not an operational feature</strong><p>You can switch to any active user except the person currently shown and punch terminals. The previous person appears after switching, the session is not treated as passkey-authenticated, and every switch is audited</p></div>
+  </section>
+
+  <section class="content-section">
+    <h2>Safe usage principles</h2>
+    <div class="feature-grid">
+      <div class="feature-item">No business data stored on the device<small>Pages are not cached, so business information is not retained after sign-out</small></div>
+      <div class="feature-item">No passwords<small>Passkeys and device verification replace passwords that are easily shared or reused</small></div>
+      <div class="feature-item">Do not fetch unassigned data<small>Unauthorized data is rejected by the API, not merely hidden in the screen</small></div>
+      <div class="feature-item">Do not overwrite instructions<small>Instructions and their changes remain available for later review</small></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Reference documents</h2>
+    <p>The following planning and design documents are currently provided in Japanese</p>
+    <div class="link-list">
+      <a class="link-item" href="../../../jp/sumpo/BYOD/slide/byod_summary.pdf"><span class="link-item-label">Summary — Technology and workplace policy</span><span class="link-item-arrow">›</span></a>
+      <a class="link-item" href="../../../jp/sumpo/BYOD/slide/byod_proposal.pdf"><span class="link-item-label">Technology — A web-app-first approach</span><span class="link-item-arrow">›</span></a>
+      <a class="link-item" href="../../../jp/sumpo/BYOD/slide/byod_seido_taigu.pdf"><span class="link-item-label">Policy and treatment — Remove three concerns</span><span class="link-item-arrow">›</span></a>
+      <a class="link-item" href="../../../jp/sumpo/BYOD/design.html"><span class="link-item-label">BYOD design document</span><span class="link-item-arrow">›</span></a>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Contact</h2>
+    <div class="spec-group">
+      <div class="spec-row"><span class="spec-key">Sample concept</span><span class="spec-val"><a href="../index.html">sumpo</a></span></div>
+      <div class="spec-row"><span class="spec-key">Deployment and customization</span><span class="spec-val"><a href="https://info.engineer.co.jp/en/index.html" target="_blank" rel="noopener noreferrer">Engineer LLC</a> — <a href="../contact.html">Contact us</a></span></div>
+    </div>
+  </section>
+
+</main>
+<script src="../../../theme.js"></script>
+</body>
+</html>

@@ -4,32 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BYOD　取扱説明</title>
-  <meta name="description" content="BYOD の取扱説明です。中小企業や個人商店を対象とした BYOD による IT/DX 推進のためのサンプルアプリと、技術編・制度待遇編の説明資料を掲載しています。">
+  <meta name="description" content="設備工事・保守会社向けBYODサンプルの取扱説明です。今日、営業、現場、集金、れんらく、やること、出退勤、管理機能の使い方を案内します。">
   <link rel="canonical" href="https://azukid.com/jp/sumpo/BYOD/byod.html">
   <link rel="alternate" href="https://azukid.com/jp/sumpo/BYOD/byod.html" hreflang="ja">
+  <link rel="alternate" href="https://azukid.com/en/sumpo/BYOD/byod.html" hreflang="en">
   <meta name="theme-color" content="#f5f5f7">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:title" content="BYOD 取扱説明">
-  <meta property="og:description" content="中小企業や個人商店を対象とした BYOD による IT/DX を推進するためのサンプルアプリです。">
+  <meta property="og:description" content="必要十分な業務情報を担当者へ確実に届けるBYODサンプルの操作ガイドです。">
   <meta property="og:url" content="https://azukid.com/jp/sumpo/BYOD/byod.html">
-  <link rel="stylesheet" href="../../../style.css?v=20260508">
+  <link rel="stylesheet" href="../../../style.css?v=20260804">
   <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
   <style>
-    /* 資料リンクの補足行（.feature-item small と同じ見え方に揃える） */
-    .link-item-label small {
-      display: block;
-      font-size: .8rem;
-      font-weight: 400;
-      color: var(--text-2);
-      margin-top: 2px;
-      line-height: 1.45;
-    }
-    /* 体制表：項目名を折り返さない（.affiliations と同じ扱い） */
-    .roles .spec-key {
-      width: auto;
-      white-space: nowrap;
-    }
+    /* BYODの操作対象を短いカードで見渡せるようにする */
+    .byod-live-link { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 18px; border-radius: 999px; background: var(--accent); color: #fff; font-weight: 700; text-decoration: none; }
+    .byod-role-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .byod-role { padding: 16px; border: 1px solid var(--border-light); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
+    .byod-role strong, .byod-role span { display: block; }
+    .byod-role span { margin-top: 6px; color: var(--text-2); font-size: .82rem; line-height: 1.6; }
+    .byod-flow-note { margin-top: 12px; color: var(--text-2); font-size: .82rem; line-height: 1.7; }
+    .byod-label { display: inline-block; margin-bottom: 8px; color: var(--accent); font-size: .75rem; font-weight: 800; letter-spacing: .04em; }
+    @media (max-width: 680px) { .byod-role-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -39,7 +35,7 @@
     <a class="header-back" href="../../index.html">ホーム</a>
     <span class="header-sep">/</span>
     <span class="site-logo">BYOD</span>
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="ダークモードを切り替える"></button>
   </div>
 </header>
 
@@ -48,109 +44,175 @@
   <div class="page-header">
     <div class="page-header-text">
       <h1>BYOD　取扱説明</h1>
-      <p class="page-tagline">Bring Your Own Device BaseKit.</p>
+      <p class="page-tagline">必要な情報だけを、必要な人へ確実に届ける</p>
     </div>
   </div>
 
-  <section class="content-section">
-    <h2>はじめに</h2>
-    <div class="lead">
-      <p>中小企業や個人商店を対象とした &quot;BYODによるIT/DX&quot; を推進するためのサンプルアプリです。</p>
-    </div>
-  </section>
-
-  <section class="content-section">
-    <h2>BYODの説明資料</h2>
-    <p>技術で「安全に使える」ように、制度で「喜んで使える」ように。BYOD を定着させるための考え方をまとめた資料です。</p>
-    <div class="link-list">
-      <a class="link-item" href="slide/byod_summary.pdf">
-        <span class="link-item-label">サマリー — 技術と制度の両輪<small>技術編・制度編の要点を1本にまとめた概要版　PDF・6ページ</small></span>
-        <span class="link-item-arrow">›</span>
-      </a>
-      <a class="link-item" href="slide/byod_proposal.pdf">
-        <span class="link-item-label">技術編 — Webアプリ優先で解く<small>端末にデータを残さない設計、1コードで全OS対応、弱点は専用アプリで補う　PDF・6ページ</small></span>
-        <span class="link-item-arrow">›</span>
-      </a>
-      <a class="link-item" href="slide/byod_seido_taigu.pdf">
-        <span class="link-item-label">制度・待遇編 — 3つの不安をなくす<small>費用・プライバシー・ルール／労務の不安を制度で解消する　PDF・7ページ</small></span>
-        <span class="link-item-arrow">›</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="content-section">
-    <h2>BYODの「落とし穴」</h2>
-    <p>BYOD で本当に難しいのは、機能を作ることではありません。<strong>多種多様な端末と通信環境に、実際に動くものを届けること</strong>です。</p>
-
-    <div class="feature-grid">
-      <div class="feature-item">機種・画面サイズがばらばら<small>新しい端末から数年前の端末まで混在する。小さい画面でも文字が読めて、操作できる必要がある</small></div>
-      <div class="feature-item">OS・ブラウザのバージョンが揃わない<small>最新版だけを想定すると、古い端末を持つ人が使えない。どこまで対応するかの線引きが要る</small></div>
-      <div class="feature-item">文字サイズ・表示設定が人それぞれ<small>端末側で文字を大きくしている利用者は珍しくない。レイアウトが崩れれば業務が止まる</small></div>
-      <div class="feature-item">通信環境が一定でない<small>現場・移動中・屋内で電波状況が変わる。遅い回線でも待たされない設計が要る</small></div>
-      <div class="feature-item">ダークモード・明るさ・屋外の視認性<small>現場では直射日光の下で画面を見ることもある</small></div>
-      <div class="feature-item">利用者のITスキルに幅がある<small>説明書を読まなくても使えることが、そのまま定着率になる</small></div>
-    </div>
-
-    <p>これらは、社内向けシステムではあまり問われません。端末を会社が配れば揃えられるからです。<strong>しかし BYOD では揃えられません。</strong></p>
-  </section>
-
-  <section class="content-section">
-    <h2>公開アプリのノウハウが活きる</h2>
-    <p>そして、この「揃わない相手に届ける」という課題は、<strong>App Store や Google Play で一般公開するアプリがずっと向き合ってきたもの</strong>と同じです。</p>
-
-    <div class="lead">
-      <p>不特定多数の利用者に、どの端末・どの環境でも動くものを届け、審査を通し、改善を重ねて公開し続ける。BYOD が直面する落とし穴は、公開アプリの世界では日常の前提条件です。</p>
-    </div>
-
-    <p>このサンプルは、公開アプリで積み上げてきた次のような知見を土台にしています。</p>
-
-    <div class="feature-grid">
-      <div class="feature-item">幅広い端末での実機検証<small>新旧の端末・画面サイズで実際に確認する進め方</small></div>
-      <div class="feature-item">文字サイズ変更への対応<small>利用者が文字を大きくしても崩れないレイアウト設計</small></div>
-      <div class="feature-item">ダークモード対応<small>明暗どちらの環境でも読めるようにする配色の考え方</small></div>
-      <div class="feature-item">多言語・多通貨対応<small>表示が伸び縮みしても破綻しない設計。外国人労働者のいる職場にも応用できる</small></div>
-      <div class="feature-item">説明書なしで使える画面<small>公開アプリで問われ続けてきた、迷わせない導線の作り方</small></div>
-      <div class="feature-item">継続的な改善と保守<small>公開して終わりにせず、使われながら直していく運用</small></div>
-    </div>
-
-    <p>BYOD 向けのシステムを、社内システムの延長ではなく<strong>公開アプリと同じ基準で作る</strong> — それがこのサンプルの立ち位置です。</p>
-  </section>
-
-  <section class="content-section">
-    <h2>設計書</h2>
-    <div class="link-list">
-      <a class="link-item" href="design.html">
-        <span class="link-item-label">DESIGN.md — 設計書</span>
-        <span class="link-item-arrow">›</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="content-section">
-    <h2>体制とお問い合わせ</h2>
-    <div class="spec-group roles">
-      <div class="spec-row">
-        <span class="spec-key">サンプルのアイデアとPDCAサイクル</span>
-        <span class="spec-val"><a href="../index.html">sumpo</a> が担当します</span>
+  <!-- サンプルの全体像 -->
+  <section class="guide-hero">
+    <div class="guide-hero-copy">
+      <p>地域の設備工事・保守会社を想定し、社員と協力会社が私物端末から同じ業務へ安全に参加するサンプルです</p>
+      <p>自分が担当する営業・現場・集金、回答が必要なれんらく、やること、出退勤を「今日」にまとめます</p>
+      <div class="guide-kpis">
+        <div class="guide-kpi"><strong>担当中心</strong><span>自分に必要な情報を優先</span></div>
+        <div class="guide-kpi"><strong>現場単位</strong><span>社員と協力会社の範囲を分離</span></div>
+        <div class="guide-kpi"><strong>履歴を保存</strong><span>変更前の指示を消さない</span></div>
       </div>
-      <div class="spec-row">
-        <span class="spec-key">営業・カスタマイズ</span>
-        <span class="spec-val"><a href="https://info.engineer.co.jp/jp/index.html" target="_blank" rel="noopener noreferrer">エンジニア合同会社</a>が担当します。<a href="../contact.html">お問い合わせ</a>いただければ連絡いたします</span>
-      </div>
+      <p><a class="byod-live-link" href="https://byod.sumpo.uk/">BYODサンプルを開く</a></p>
+    </div>
+  </section>
+
+  <div class="pill-link-row">
+    <a class="pill-link" href="#start">最初に行うこと</a>
+    <a class="pill-link" href="#today">今日の画面</a>
+    <a class="pill-link" href="#work">業務機能</a>
+    <a class="pill-link" href="#attendance">出退勤</a>
+    <a class="pill-link" href="#admin">管理</a>
+  </div>
+
+  <section class="content-section" id="start">
+    <h2>最初に行うこと</h2>
+    <div class="step-flow">
+      <div class="step-card"><span class="step-number">1</span><strong>管理者が招待</strong><p>管理画面で名前と役割を決め、10分間有効なQRまたは招待コードを本人へ渡します</p></div>
+      <div class="step-card"><span class="step-number">2</span><strong>本人の端末を登録</strong><p>QRを標準カメラで読み取るかコードを入力し、端末の生体認証でパスキーを登録します</p></div>
+      <div class="step-card"><span class="step-number">3</span><strong>パスキーでログイン</strong><p>以後はパスワードを使わず、端末の顔・指紋・画面ロックでログインします</p></div>
+      <div class="step-card"><span class="step-number">4</span><strong>「今日」から開始</strong><p>ログインすると、自分が今対応する業務をまとめた画面が開きます</p></div>
+    </div>
+    <div class="callout"><strong>名前は管理者が決定</strong><p>利用者が自由にニックネームを付ける方式ではありません。変更も管理者が行います</p></div>
+  </section>
+
+  <section class="content-section" id="today">
+    <h2>「今日」の画面</h2>
+    <p>日付の下に、自分が担当に含まれる情報だけが業務順に表示されます</p>
+    <div class="feature-grid">
+      <div class="feature-item">やること<small>自分が担当する未完了のやることを優先順に3件表示し、今日が期限なら3件を超えてもすべて表示します</small></div>
+      <div class="feature-item">営業<small>営業・管理社員には、自分が担当する進行中の営業案件を表示します</small></div>
+      <div class="feature-item">現場<small>社員は全現場を見渡せます。協力会社は担当現場だけを確認できます</small></div>
+      <div class="feature-item">集金<small>管理社員には、自分が担当する売掛・請求・入金の進行を表示します</small></div>
+      <div class="feature-item">今の状態<small>右上にグレーの「未出勤」またはブルーの「出勤中」を表示します。協力会社は「未入場／入場中」と表示します</small></div>
+      <div class="feature-item">問題発生<small>通常ステータスとは分けて目立たせ、設定した共有範囲の社員へ表示します</small></div>
+    </div>
+    <p class="byod-flow-note">社員は各一覧の「すべて見る」から全体を確認できます。協力会社には担当外の現場や情報を表示しません</p>
+  </section>
+
+  <section class="content-section" id="work">
+    <h2>業務の流れ</h2>
+    <div class="step-flow">
+      <div class="step-card"><span class="step-number">1</span><strong>営業</strong><p>引き合い → 商談 → 見積 → 受注へ進め、請求先情報も営業時点で登録します</p></div>
+      <div class="step-card"><span class="step-number">2</span><strong>現場へ転記</strong><p>受注した営業案件を現場へ引き継ぎ、住所、注意事項、工数、期間、連絡先、担当者を整えます</p></div>
+      <div class="step-card"><span class="step-number">3</span><strong>作業を実施</strong><p>担当者のやることを作り、れんらく、申し送り、問題の最新状況を同じ現場で共有します</p></div>
+      <div class="step-card"><span class="step-number">4</span><strong>集金</strong><p>売掛 → 請求 → 入金へ進め、振込予定日または集金予定日を管理します</p></div>
     </div>
   </section>
 
   <section class="content-section">
-    <h2>履歴</h2>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Version</th><th>公開日</th><th>開発環境等</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>0.1.0</td><td>TBD</td><td>準備中</td></tr>
-        </tbody>
-      </table>
+    <h2>れんらく</h2>
+    <span class="byod-label">個人間のDMを作らない</span>
+    <div class="feature-grid">
+      <div class="feature-item">管理者を含む3名以上<small>必ず複数人で内容と回答を共有し、1対1の連絡にしません</small></div>
+      <div class="feature-item">回答者を指名<small>1名から複数名を指定できます。指名された人はOKまたはNGで回答します</small></div>
+      <div class="feature-item">補足は任意<small>OK・NGに必要な説明だけをテキストで追加できます</small></div>
+      <div class="feature-item">要対応・未読・すべて<small>自分が対応すべき情報を優先して絞り込めます</small></div>
+      <div class="feature-item">変更と変更履歴<small>本文を変更すると変更前後を記録し、閲覧できる全員へ履歴を表示します</small></div>
+    </div>
+    <p>発信者・代表・総務は本文を変更できます。参加者、回答を求める人、既読、回答は変更されません。履歴がある場合だけ「変更あり　変更履歴を見る」を表示します</p>
+  </section>
+
+  <section class="content-section">
+    <h2>やること</h2>
+    <div class="feature-grid">
+      <div class="feature-item">関連先を選ぶ<small>営業・現場・集金・社内を1つの「やること」で管理します</small></div>
+      <div class="feature-item">担当者を自動で絞る<small>選んだ営業案件、現場、集金の担当者だけを候補として表示します</small></div>
+      <div class="feature-item">期限をカレンダー指定<small>期限日はその日の終わりまでとして扱い、期限切れを強調します</small></div>
+      <div class="feature-item">完了コメント必須<small>完了時にコメントを入力してから確定し、押し間違いを防ぎます</small></div>
+      <div class="feature-item">再確認理由必須<small>完了後に再確認へ戻す場合は、理由を記録して表示します</small></div>
+      <div class="feature-item">大きさの目安<small>作成画面の「？ ヘルプ」から、半日以内で完了を判断できる粒度と具体例を確認できます</small></div>
+      <div class="feature-item">変更と変更履歴<small>履歴がある場合だけ「変更あり　変更履歴を見る」を、そのやることを見られる全員へ表示します</small></div>
+    </div>
+    <p>一覧では「営業」「現場」「集金」「社内」のラベルと関連先名を表示します。各詳細画面の「＋やること」から作成すると関連先が自動で選ばれます</p>
+    <p>件名、内容、期限、関連先、担当者を変更できます。過去の変更指示も変更履歴へ引き継がれます</p>
+  </section>
+
+  <section class="content-section">
+    <h2>現場・営業・集金の変更</h2>
+    <div class="feature-grid">
+      <div class="feature-item">担当者<small>実務者を先に列記し、管理者は右側に小さく括弧付きで表示します</small></div>
+      <div class="feature-item">現場の地図<small>住所からGoogle Mapsを表示し、ピンを調整して緯度・経度を登録できます</small></div>
+      <div class="feature-item">問題発生<small>チェック時に「問題の概要と最新状況」と共有範囲の選択が必須です</small></div>
+      <div class="feature-item">変更履歴<small>履歴がある場合だけ「変更あり　変更履歴を見る」を表示します。削除文字と追加文字も区別します</small></div>
+    </div>
+    <p>作成・変更画面では、左上の「戻る」と右上の「変更を保存」を固定表示します</p>
+  </section>
+
+  <section class="content-section" id="attendance">
+    <h2>出退勤</h2>
+    <p class="byod-flow-note">協力会社の画面では「出勤／退勤」を「入場／退場」と表示します。代表・役員は「今日」のボタンを押すだけで記録され、打刻場所の選択はありません</p>
+    <div class="byod-role-grid">
+      <div class="byod-role"><strong>打刻端末がある場所</strong><span>自分の画面に出したワンタイムQRを、登録済みの打刻端末へかざします。出勤・退勤は直前の記録から自動判定されます</span></div>
+      <div class="byod-role"><strong>打刻端末がない場所</strong><span>担当する営業、担当現場、その他から場所を選び「打刻」を押します。その他は場所名の入力が必須です</span></div>
+    </div>
+    <div class="step-flow">
+      <div class="step-card"><span class="step-number">1</span><strong>出退勤を開く</strong><p>「今日」の右上にある「未出勤」または「出勤中」を押します。協力会社は「未入場／入場中」と表示されます</p></div>
+      <div class="step-card"><span class="step-number">2</span><strong>方法を選ぶ</strong><p>QRを読み取り端末へかざすか、この端末で打刻する場所を選びます</p></div>
+      <div class="step-card"><span class="step-number">3</span><strong>打刻を確定</strong><p>直接打刻が完了すると「今日」へ戻り、結果を表示します</p></div>
+      <div class="step-card"><span class="step-number">4</span><strong>記録を確認</strong><p>自分の今日の記録と今の状態を出退勤画面で確認できます</p></div>
+    </div>
+    <p class="byod-flow-note">打刻端末はログイン後に自動で読み取り画面へ移動します。読み取り成功時は音を鳴らし、出勤を青、退勤を緑の大きな表示で3秒間知らせます</p>
+  </section>
+
+  <section class="content-section">
+    <h2>役割による見え方</h2>
+    <div class="byod-role-grid">
+      <div class="byod-role"><strong>代表・工事責任者</strong><span>全体確認、管理、監査、変更履歴を扱います</span></div>
+      <div class="byod-role"><strong>総務・安全管理</strong><span>利用者招待、営業・現場・集金の管理、打刻修正を行います</span></div>
+      <div class="byod-role"><strong>営業・現場監督</strong><span>営業案件と全現場を確認し、担当業務を進めます</span></div>
+      <div class="byod-role"><strong>自社技術者</strong><span>全現場を見渡し、自分の作業とれんらくへ対応します</span></div>
+      <div class="byod-role"><strong>協力会社</strong><span>担当現場と、その現場に必要な作業・れんらくだけを見られます</span></div>
+      <div class="byod-role"><strong>打刻端末</strong><span>QRの読み取りと打刻だけを行い、業務情報は表示しません</span></div>
+    </div>
+  </section>
+
+  <section class="content-section" id="admin">
+    <h2>管理者の操作</h2>
+    <div class="feature-grid">
+      <div class="feature-item">利用者を招待<small>名前と役割を管理者が設定し、対面で登録用QRまたはコードを渡します</small></div>
+      <div class="feature-item">稼働・停止<small>退職や契約終了時は利用者を停止し、開いている画面も自動でログイン画面へ戻します</small></div>
+      <div class="feature-item">打刻を修正<small>元の時刻を残したまま修正し、CSVで月次集計を出力できます</small></div>
+      <div class="feature-item">監査と変更履歴<small>機密表示や状態変更など、必要な操作だけを記録して確認します</small></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>デモ専用の人物切替</h2>
+    <p>サンプルでは、ヘッダーの名前をタップすると架空の利用者を役割別に一覧表示し、選んだ人の画面へ切り替えられます</p>
+    <div class="callout"><strong>実運用向けの機能ではありません</strong><p>表示中の本人と打刻端末を除く稼働中利用者へ切り替えられます。切替後は元の人が候補へ現れ、パスキー認証済みとしては扱わず、操作も監査ログへ残します</p></div>
+  </section>
+
+  <section class="content-section">
+    <h2>安全に使うために</h2>
+    <div class="feature-grid">
+      <div class="feature-item">端末へ業務データを保存しない<small>画面はキャッシュせず、ログアウト後に業務情報を端末へ残しません</small></div>
+      <div class="feature-item">パスワードを持たない<small>パスキーと端末の生体認証を使い、共有されやすいパスワードを廃止します</small></div>
+      <div class="feature-item">担当外を取得しない<small>非表示にするだけでなく、権限のない業務データをAPIから返しません</small></div>
+      <div class="feature-item">変更を上書きしない<small>指示と変更履歴を残し、後から経緯を確認できるようにします</small></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>資料・設計書</h2>
+    <div class="link-list">
+      <a class="link-item" href="slide/byod_summary.pdf"><span class="link-item-label">サマリー — 技術と制度の両輪</span><span class="link-item-arrow">›</span></a>
+      <a class="link-item" href="slide/byod_proposal.pdf"><span class="link-item-label">技術編 — Webアプリ優先で解く</span><span class="link-item-arrow">›</span></a>
+      <a class="link-item" href="slide/byod_seido_taigu.pdf"><span class="link-item-label">制度・待遇編 — 3つの不安をなくす</span><span class="link-item-arrow">›</span></a>
+      <a class="link-item" href="design.html"><span class="link-item-label">BYOD 設計書</span><span class="link-item-arrow">›</span></a>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>お問い合わせ</h2>
+    <div class="spec-group">
+      <div class="spec-row"><span class="spec-key">サンプルの企画</span><span class="spec-val"><a href="../index.html">sumpo</a></span></div>
+      <div class="spec-row"><span class="spec-key">導入・カスタマイズ</span><span class="spec-val"><a href="https://info.engineer.co.jp/jp/index.html" target="_blank" rel="noopener noreferrer">エンジニア合同会社</a>へ<a href="../contact.html">お問い合わせ</a>ください</span></div>
     </div>
   </section>
 
