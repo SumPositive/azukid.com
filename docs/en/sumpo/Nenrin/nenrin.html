@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nenrin User Guide</title>
+  <meta name="description" content="User guide for Nenrin, a Japanese calendar reference app: convert between Western years and Japanese era years (Reiwa, Heisei, Showa), look up the zodiac animal, ages, rokuyo, kanreki and yakudoshi.">
+  <link rel="canonical" href="https://azukid.com/en/sumpo/Nenrin/nenrin.html">
+  <link rel="alternate" href="https://azukid.com/jp/sumpo/Nenrin/nenrin.html" hreflang="ja">
+  <link rel="alternate" href="https://azukid.com/en/sumpo/Nenrin/nenrin.html" hreflang="en">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Nenrin User Guide">
+  <meta property="og:description" content="How to use Nenrin to convert Japanese era years to Western years, find the zodiac animal of any year, and read Japanese age customs such as kanreki and yakudoshi.">
+  <meta property="og:url" content="https://azukid.com/en/sumpo/Nenrin/nenrin.html">
+  <link rel="stylesheet" href="../../../style.css?v=20260508">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../index.html">Home</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">Nenrin</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <img class="page-header-icon" src="../../../images/icon-nenrin.png" alt="Nenrin">
+    <div class="page-header-text">
+      <h1>Nenrin User Guide</h1>
+      <p class="page-tagline">A reference table for Japanese era years, zodiac animals, and ages</p>
+    </div>
+  </div>
+
+  <div class="lead">
+    <p>In Japan, years are counted two ways at once. 2026 is also <strong>Reiwa 8</strong> — and official forms, licences, certificates, museum labels, and gravestones frequently use only the second form. Nenrin puts both on the same line, for every year from 1600 to 2100.</p>
+    <p>Each row shows the Western year, the Japanese era year, the zodiac animal, and an age. You can read the table in any direction: era year to Western year, age to birth year, or birth year to age. Optional columns add the cultural markers Japanese people look for in a year — the sexagenary cycle, the nine stars, school milestones, longevity celebrations, and unlucky years.</p>
+    <p>The name comes from <strong>年輪 <em>nenrin</em></strong>, the growth rings of a tree — the year-by-year record a trunk keeps of its own life. The app's Japanese name is 和暦年齢メモ (<em>wareki nenrei memo</em>), "era-year and age notes".</p>
+  </div>
+
+  <div class="callout">📝 <strong>The app's interface is in Japanese only.</strong> The data it presents — era names, zodiac signs, rokuyo — is Japanese by nature, so the app has not been translated. This guide explains what each screen shows and which button does what, so you can use it without reading Japanese. Every label you will meet is listed with its reading and meaning below.</div>
+
+  <section class="content-section">
+    <h2>Background: how Japanese years work</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Era years (年号 nengō / 和暦 wareki)</p>
+      <div class="spec-row">
+        <span class="spec-key">The idea</span>
+        <span class="spec-val">Japan numbers its years from the accession of each emperor. When a new emperor takes the throne, the count restarts at 1. The current era, <strong>Reiwa (令和)</strong>, began in 2019 — so 2019 is Reiwa 1, and 2026 is Reiwa 8.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Year 1 is special</span>
+        <span class="spec-val">The first year of an era is not written "1". It is written <strong>元年 (gannen)</strong>, "origin year". You will see 令和元年, not 令和1年. Nenrin follows this convention.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Transition years</span>
+        <span class="spec-val">An era changes mid-year, so one calendar year can carry two era names. 1868 is both 慶応4年 (Keiō 4) and 明治元年 (Meiji 1), split at the date of the change. Nenrin shows both names on such rows, and marks the changeover day in that year's calendar. There are 40 such years between 1600 and 2100.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">The four modern eras</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>明治 <strong>Meiji</strong> — 1868–1912</li>
+            <li>大正 <strong>Taishō</strong> — 1912–1926</li>
+            <li>昭和 <strong>Shōwa</strong> — 1926–1989 &nbsp;(the era most older Japanese people were born in)</li>
+            <li>平成 <strong>Heisei</strong> — 1989–2019</li>
+            <li class="is-default">★ 令和 <strong>Reiwa</strong> — 2019– &nbsp;(current)</li>
+          </ul>
+          Before Meiji, eras changed far more often — for auspicious omens, disasters, or a new sixty-year cycle. The Edo period alone has dozens. Nenrin covers all of them back to 1600 (慶長 Keichō).
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Quick conversion</span>
+        <span class="spec-val">
+          Western year = first year of the era + era year − 1
+          <ul class="option-list">
+            <li>Shōwa → add 1925 &nbsp;(Shōwa 47 = 1972)</li>
+            <li>Heisei → add 1988 &nbsp;(Heisei 12 = 2000)</li>
+            <li>Reiwa → add 2018 &nbsp;(Reiwa 8 = 2026)</li>
+          </ul>
+        </span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">The zodiac (干支 eto)</p>
+      <div class="spec-row">
+        <span class="spec-key">Twelve animals</span>
+        <span class="spec-val">Every year carries one of twelve animals: 🐭 rat, 🐮 ox, 🐯 tiger, 🐰 rabbit, 🐲 dragon, 🐍 snake, 🐴 horse, 🐑 sheep, 🐵 monkey, 🐔 rooster, 🐶 dog, 🐷 boar. They repeat every twelve years, and Japanese people commonly know their own animal. New Year cards are decorated with the coming year's animal.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Sixty-year cycle</span>
+        <span class="spec-val">The full traditional name pairs the animal with one of ten "heavenly stems", giving a cycle of <strong>sixty</strong> years. 2026 is 丙午 <em>hinoe-uma</em>, "fire horse". The list shows the animal; open a year to see the full stem-and-branch name with its reading.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Counting age (数え年 kazoedoshi)</p>
+      <div class="spec-row">
+        <span class="spec-key">Two systems</span>
+        <span class="spec-val">Modern Japan uses <strong>満年齢</strong> (<em>man-nenrei</em>) — the same as the Western count, incremented on your birthday. Traditional customs use <strong>数え年</strong> (<em>kazoedoshi</em>): you are 1 at birth, and everyone gains a year together on New Year's Day. It runs one to two years ahead of the Western count.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Why it matters</span>
+        <span class="spec-val">Longevity celebrations and unlucky years are traditionally reckoned in <em>kazoedoshi</em>. Nenrin lets you switch the whole table between the two, and adjusts those markers accordingly.</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="pill-link-row">
+    <a class="pill-link" href="https://info.engineer.co.jp/EULA_en.html">End User License Agreement</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/PrivacyPolicy_en.html">Privacy Policy</a>
+    <a class="pill-link" href="../index.html">Author Bio: sumpo</a>
+  </div>
+
+  <section class="content-section">
+    <h2>Basic Flow</h2>
+    <div class="step-flow">
+      <div class="step-card">
+        <span class="step-number">1</span>
+        <strong>Open the list</strong>
+        <p>The app starts with the current year centred on screen. Scroll up and down through the years.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">2</span>
+        <strong>Choose whose age</strong>
+        <p>The three tabs at the bottom decide who the age column refers to: anyone, yourself, or someone on your list.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">3</span>
+        <strong>Jump to a year</strong>
+        <p>Tap 移動 at the top right to jump by age, Western year, or era year.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">4</span>
+        <strong>Open a year</strong>
+        <p>Tap any row to see that year's calendar, its details, and a note field.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Reading the screen</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Buttons you will meet</p>
+      <div class="spec-row">
+        <span class="spec-key">設定</span>
+        <span class="spec-val"><em>settei</em> — Settings. Gear icon, top left.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">移動</span>
+        <span class="spec-val"><em>idō</em> — Jump. Arrow icon, top right. Opens the year-jump sheet.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">年齢</span>
+        <span class="spec-val"><em>nenrei</em> — Age. First bottom tab.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">自分</span>
+        <span class="spec-val"><em>jibun</em> — Myself. Second bottom tab.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">名簿</span>
+        <span class="spec-val"><em>meibo</em> — Name list / roster. Third bottom tab.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">歳</span>
+        <span class="spec-val"><em>sai</em> — "years old". Follows every age in the table.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">年</span>
+        <span class="spec-val"><em>nen</em> — "year". Follows every year number.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">A row in the list</p>
+      <div class="spec-row">
+        <span class="spec-key">Always shown</span>
+        <span class="spec-val">Western year · Japanese era year · age. On a transition year the era column carries both era names on two lines.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Optional</span>
+        <span class="spec-val">Zodiac animal, nine star, school milestone, longevity celebration, unlucky year — each switched on individually in Settings.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Highlights</span>
+        <span class="spec-val">The current year and the reference person's birth year are tinted. A year you jumped to is marked in a different colour so you can see where you landed.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Negative ages</span>
+        <span class="spec-val">Years before the reference birth year show a negative age such as <code>-2歳</code>, dimmed. It reads as "two years before this person was born".</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">The three tabs</p>
+      <div class="spec-row">
+        <span class="spec-key">年齢 Age</span>
+        <span class="spec-val">Shows how old someone born in each year is today. No birth date needed. The age column moves to the left edge, which makes it easy to scan from an age to a birth year.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">自分 Myself</span>
+        <span class="spec-val">Uses the birth date you saved in Settings and shows how old you were, or will be, in each year. If no birth date is set, the settings sheet opens first.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">名簿 Roster</span>
+        <span class="spec-val">Uses the birth date of a person you saved — family, relatives, friends — so you can check anyone's age against the same table.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Features</h2>
+    <div class="feature-grid">
+      <div class="feature-item">Western year, era year, zodiac and age on one line<small>501 years, from 1600 (Keichō 5) to 2100 (Reiwa 82). Opens centred on the current year</small></div>
+      <div class="feature-item">Full era coverage back to the Edo period<small>Era data comes from the operating system's Japanese calendar, so Keichō, Genroku, Kansei and the rest are all correct</small></div>
+      <div class="feature-item">Transition years show both era names<small>e.g. Keiō 4 / Meiji 1, with 元年 gannen used for first years</small></div>
+      <div class="feature-item">Switch between Western and traditional age counting<small>man-nenrei or kazoedoshi; longevity and unlucky-year markers follow your choice</small></div>
+      <div class="feature-item">Negative ages for years before birth<small>Shown as -2歳 and dimmed, so the sign is unmistakable</small></div>
+      <div class="feature-item">Jump by age to find a birth year<small>Numeric keypad with a sign key for negative ages (−150 to 150)</small></div>
+      <div class="feature-item">Jump by Western year or era year<small>Pick an era from the dropdown and type the year, e.g. Reiwa 8</small></div>
+      <div class="feature-item">Converts era years that never existed<small>Shōwa 100 → 2025, Reiwa −20 → 1998. Useful for the common Japanese habit of "continuing" a finished era to compare generations</small></div>
+      <div class="feature-item">The converted year appears as you type<small>You get the answer without leaving the jump sheet</small></div>
+      <div class="feature-item">Write a note on any year<small>Up to 400 characters per year, saved automatically; clearing the text deletes the note</small></div>
+      <div class="feature-item">Keep notes private to the Myself view<small>Notes stay hidden in the age and roster views, so you can show the screen to someone else</small></div>
+      <div class="feature-item">Full calendar for any year<small>Month by month, with swipe and a month dropdown. Era transition days are marked in place</small></div>
+      <div class="feature-item">Rokuyo and moon age in the calendar<small>The six-day luck cycle used for choosing wedding and funeral dates, plus the lunar phase</small></div>
+      <div class="feature-item">Zodiac column<small>Emoji and kanji in the list; full stem-and-branch name with reading in the detail view</small></div>
+      <div class="feature-item">Nine star astrology (九星気学)<small>Your honmeisei, one of nine stars, reckoned from the start of spring</small></div>
+      <div class="feature-item">School milestones<small>Japanese school years start in April; the app marks entry to elementary school through university graduation</small></div>
+      <div class="feature-item">Longevity celebrations (賀寿)<small>Kanreki at 60, koki at 70, kiju at 77 and the rest — the birthdays Japanese families hold parties for</small></div>
+      <div class="feature-item">Unlucky years (厄年 yakudoshi)<small>The ages at which people traditionally visit a shrine for purification. Requires setting a gender</small></div>
+      <div class="feature-item">Save a roster of people<small>Name and birth date for family and friends; drag to reorder</small></div>
+      <div class="feature-item">Beginner mode with on-screen guidance<small>Beginner or Expert. Beginner explains each screen in Japanese; Expert removes the text and packs more rows in</small></div>
+      <div class="feature-item">Choose the appearance mode<small>Auto, Light, or Dark. Auto follows the system setting</small></div>
+      <div class="feature-item">Change the text size<small>Auto, Standard, Large, Extra Large. Auto follows the system text size</small></div>
+      <div class="feature-item">Fits a row to any screen width<small>When space runs short the whole row scales down in steps rather than wrapping</small></div>
+      <div class="feature-item">Landscape and iPad support<small>Wider screens get more space between columns</small></div>
+      <div class="feature-item">Settings are remembered<small>Display mode, text size, appearance, birth date, age reckoning, optional columns, and your last jump entry are restored on next launch</small></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>How to</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Convert an era year to a Western year</p>
+      <div class="spec-row">
+        <span class="spec-key">Steps</span>
+        <span class="spec-val">Tap 移動 (top right). Use the dropdown on the left to pick the era, then type the year on the keypad. The converted Western year appears on the right as you type, so you have your answer before you even jump.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Where you meet this</span>
+        <span class="spec-val">Japanese driving licences, residence cards, bank forms, and koseki family registers are all dated in era years. So are museum captions and historical markers.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Years that never existed</span>
+        <span class="spec-val">The app will happily convert Shōwa 100 (= 2025) or Reiwa −20 (= 1998). Japanese people often extend a closed era this way when talking about age — "he'd be Shōwa 100 this year".</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Out of range</span>
+        <span class="spec-val">If the result falls outside 1600–2100, the app says so and moves to the nearest end of the table.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Find the birth year for an age</p>
+      <div class="spec-row">
+        <span class="spec-key">Steps</span>
+        <span class="spec-val">Select the 年齢 tab at the bottom — the age column moves to the left edge. Scroll, or tap 移動 and choose 年齢 from the dropdown and type the age.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Example</span>
+        <span class="spec-val">Enter 48 and the list moves to the year someone aged 48 was born — 1978, Shōwa 53, if the current year is 2026.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Find someone's zodiac animal</p>
+      <div class="spec-row">
+        <span class="spec-key">Steps</span>
+        <span class="spec-val">Turn on 干支 in Settings to show the animal in the list, then scroll to their birth year — or tap the row to see the full sixty-cycle name with its Japanese reading.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Useful for</span>
+        <span class="spec-val">New Year cards, gifts, and the very common Japanese small-talk question 何年生まれ？ ("which animal year were you born in?"), which asks age without asking age.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Use the roster</p>
+      <div class="spec-row">
+        <span class="spec-key">Add</span>
+        <span class="spec-val">Open the 名簿 tab and tap + at the top right. Enter a name (up to 20 characters), a birth date, and optionally a gender.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Select</span>
+        <span class="spec-val">Tap a name to switch the whole table to that person's birth date.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Edit or delete</span>
+        <span class="spec-val">Use the edit button at the right of the row, or swipe the row left. Deletion asks for confirmation and cannot be undone.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Reorder</span>
+        <span class="spec-val">Press and hold a row, then drag it up or down. The order is saved.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Write a note</p>
+      <div class="spec-row">
+        <span class="spec-key">Write</span>
+        <span class="spec-val">Tap a row to open the year, and use the note field in the middle. There is no save button — text is saved automatically.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Delete</span>
+        <span class="spec-val">Clear the text and the note for that year is removed.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Hide</span>
+        <span class="spec-val">With "メモは自分だけに表示" on in Settings, notes appear only in the 自分 view.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>The cultural markers</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">賀寿 — longevity celebrations</p>
+      <div class="spec-row">
+        <span class="spec-key">What it is</span>
+        <span class="spec-val">Certain ages call for a family celebration. The best known is <strong>還暦 kanreki</strong>, when the sixty-year zodiac cycle returns to the animal and stem of your birth — a symbolic rebirth, traditionally marked by wearing a red vest and cap. The names that follow come from playful readings of the kanji: 米寿 <em>beiju</em> (88) because 米 splits into 八十八.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">The ages</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>還暦 <em>kanreki</em> 61 — the zodiac cycle completes</li>
+            <li>緑寿 <em>rokuju</em> 66</li>
+            <li>古希 <em>koki</em> 70 — "rare since antiquity"</li>
+            <li>喜寿 <em>kiju</em> 77</li>
+            <li>傘寿 <em>sanju</em> 80 &nbsp;· 半寿 <em>hanju</em> 81</li>
+            <li>米寿 <em>beiju</em> 88</li>
+            <li>卒寿 <em>sotsuju</em> 90 &nbsp;· 白寿 <em>hakuju</em> 99</li>
+            <li>百寿 <em>momoju</em> 100 &nbsp;· 茶寿 <em>chaju</em> 108 &nbsp;· 皇寿 <em>kōju</em> 111</li>
+            <li>大還暦 <em>daikanreki</em> 121 — a second full cycle</li>
+          </ul>
+          All are traditional <em>kazoedoshi</em> ages; in the Western count they fall one year earlier. Nenrin places them correctly for whichever counting method you have selected.
+        </span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">厄年 — unlucky years (yakudoshi)</p>
+      <div class="spec-row">
+        <span class="spec-key">What it is</span>
+        <span class="spec-val">Ages considered prone to misfortune, when many people visit a shrine or temple for a purification rite (厄払い <em>yakubarai</em>) at the start of the year. The year before and after each unlucky year are also watched, as 前厄 <em>maeyaku</em> and 後厄 <em>atoyaku</em>.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">The ages</span>
+        <span class="spec-val">Men: 25, 42, 61. Women: 19, 33, 37, 61 — all in <em>kazoedoshi</em>. Men's 42 and women's 33 are 大厄 <em>taiyaku</em>, the great unlucky years, partly because 42 can be read <em>shi-ni</em> ("to death") and 33 <em>san-zan</em> ("disastrous"). The app requires a gender setting to show these; leave it unspecified and the column stays empty.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">六曜 — the six-day cycle (rokuyo)</p>
+      <div class="spec-row">
+        <span class="spec-key">What it is</span>
+        <span class="spec-val">A repeating six-day luck cycle printed on most Japanese calendars and consulted when scheduling weddings and funerals. It runs on the old lunisolar calendar, which is why the sequence jumps at the start of each lunar month.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">The six days</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>大安 <em>taian</em> — most auspicious; the day couples choose to marry</li>
+            <li>友引 <em>tomobiki</em> — "pulling friends"; funerals are avoided, as it may draw others along</li>
+            <li>先勝 <em>senshō</em> — morning good, afternoon bad</li>
+            <li>先負 <em>senbu</em> — morning bad, afternoon good</li>
+            <li>赤口 <em>shakkō</em> — only around noon is safe</li>
+            <li>仏滅 <em>butsumetsu</em> — least auspicious; wedding halls discount their rates</li>
+          </ul>
+        </span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">九星気学 — nine star astrology</p>
+      <div class="spec-row">
+        <span class="spec-key">What it is</span>
+        <span class="spec-val">A divination system that assigns everyone a 本命星 <em>honmeisei</em>, one of nine stars, from their birth year — used for fortune-telling and choosing auspicious directions to travel. The nine run from 一白水星 <em>ippaku suisei</em> to 九紫火星 <em>kyūshi kasei</em>.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Note</span>
+        <span class="spec-val">The star year turns at 立春 <em>risshun</em>, the traditional start of spring in early February — not on 1 January. People born in January or early February belong to the previous year's star.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">学齢 — school milestones</p>
+      <div class="spec-row">
+        <span class="spec-key">What it is</span>
+        <span class="spec-val">The Japanese school year runs April to March, and children enter elementary school in the April after turning six. Because the cohort is defined by the school year rather than the birthday, Japanese people identify their peers by school year as readily as by age. The app marks elementary entry, elementary and junior high graduation, high school graduation, and university graduation.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Settings</h2>
+    <div class="spec-group">
+      <p class="spec-group-title">Display</p>
+      <div class="spec-row">
+        <span class="spec-key">表示モード</span>
+        <span class="spec-val">Display mode.
+          <ul class="option-list">
+            <li class="is-default">★ 初心者 Beginner — shows explanatory text on each screen</li>
+            <li>達人 Expert — hides the text and packs more rows onto the screen</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">文字サイズ</span>
+        <span class="spec-val">Text size.
+          <ul class="option-list">
+            <li class="is-default">★ 自動 Auto — follows the system text size</li>
+            <li>標準 / 大 / 特大 — Standard, Large, Extra Large</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">外観モード</span>
+        <span class="spec-val">Appearance.
+          <ul class="option-list">
+            <li class="is-default">★ 自動 Auto — follows the system setting</li>
+            <li>ライト / ダーク — Light, Dark</li>
+          </ul>
+        </span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">About you</p>
+      <div class="spec-row">
+        <span class="spec-key">生年月日</span>
+        <span class="spec-val">Your birth date. Unset by default. Once saved, the 自分 view shows your age in every year and marks your birth year. It can be cleared at any time.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">年齢の数え方</span>
+        <span class="spec-val">Age reckoning.
+          <ul class="option-list">
+            <li class="is-default">★ 満年齢 <em>man-nenrei</em> — the Western count, incremented on your birthday</li>
+            <li>数え年 <em>kazoedoshi</em> — 1 at birth, incremented every New Year's Day</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">性別</span>
+        <span class="spec-val">Gender — 未指定 unspecified / 男性 male / 女性 female. Used only to determine unlucky years, which differ by gender. Left unspecified, they are not shown.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Optional columns</p>
+      <div class="spec-row">
+        <span class="spec-key">メモは自分だけに表示</span>
+        <span class="spec-val">Show notes only in the Myself view. On by default.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">干支</span>
+        <span class="spec-val">Zodiac animal. Off by default.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">九星</span>
+        <span class="spec-val">Nine star. Off by default.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">入学・卒業</span>
+        <span class="spec-val">School milestones. Off by default; needs a birth date.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">長寿祝い</span>
+        <span class="spec-val">Longevity celebrations. Off by default.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">厄年</span>
+        <span class="spec-val">Unlucky years. Off by default; needs a gender.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Era reference</h2>
+    <p>The five most recent eras, with the years they cover and the number to add to an era year.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Era</th><th>Reading</th><th>Period</th><th>Add to convert</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>令和</td><td>Reiwa</td><td>2019 – present</td><td>+2018</td><td>令和8年 = 2026</td></tr>
+          <tr><td>平成</td><td>Heisei</td><td>1989 – 2019</td><td>+1988</td><td>平成12年 = 2000</td></tr>
+          <tr><td>昭和</td><td>Shōwa</td><td>1926 – 1989</td><td>+1925</td><td>昭和47年 = 1972</td></tr>
+          <tr><td>大正</td><td>Taishō</td><td>1912 – 1926</td><td>+1911</td><td>大正10年 = 1921</td></tr>
+          <tr><td>明治</td><td>Meiji</td><td>1868 – 1912</td><td>+1867</td><td>明治33年 = 1900</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Transition years belong to two eras — 1926 is both Taishō 15 and Shōwa 1, 1989 both Shōwa 64 and Heisei 1, 2019 both Heisei 31 and Reiwa 1. Nenrin shows the exact changeover date on those rows. Eras before Meiji are all in the app; there are far too many to list here.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Specifications</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Calendar calculations</p>
+      <div class="spec-row">
+        <span class="spec-key">Range</span>
+        <span class="spec-val">1600 to 2100 (501 years) — Keichō 5 through Reiwa 82</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Eras</span>
+        <span class="spec-val">Taken from the operating system's Japanese calendar. The range contains 40 transition years, each showing two era names.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Zodiac</span>
+        <span class="spec-val">Stems and branches computed from the Western year (1600 = 庚子, 1868 = 戊辰, 1926 = 丙寅, 2026 = 丙午, 2100 = 庚申)</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Rokuyo</span>
+        <span class="spec-val">Derived from the lunisolar month and day</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Moon age</span>
+        <span class="spec-val">An approximation based on the lunisolar day, with the new moon at 0, shown as one of eight phases</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Nine star</span>
+        <span class="spec-val">Reckoned from <em>risshun</em>. The exact date shifts between 3 and 5 February depending on the year; the app uses the conventional 4 February.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Longevity ages</span>
+        <span class="spec-val">61, 66, 70, 77, 80, 81, 88, 90, 99, 100, 108, 111, 121 in <em>kazoedoshi</em></span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Unlucky ages</span>
+        <span class="spec-val">Men 25, 42, 61; women 19, 33, 37, 61 in <em>kazoedoshi</em>, with the years either side as <em>maeyaku</em> and <em>atoyaku</em></span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Data</p>
+      <div class="spec-row">
+        <span class="spec-key">Notes</span>
+        <span class="spec-val">Up to 400 characters per year, stored in a JSON file on the device and included in iCloud backups</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Roster</span>
+        <span class="spec-val">Names up to 20 characters, no limit on entries, stored on the device</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Age entry</span>
+        <span class="spec-val">−150 to 150</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Sync</span>
+        <span class="spec-val">On-device only. Data is not synced between devices.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Requirements</p>
+      <div class="spec-row">
+        <span class="spec-key">OS</span>
+        <span class="spec-val">iOS / iPadOS 17.0 or later</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Devices</span>
+        <span class="spec-val">iPhone / iPad / Mac (Designed for iPad). Portrait and landscape</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Language</span>
+        <span class="spec-val">Japanese interface only</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Ads</span>
+        <span class="spec-val">A banner is shown at the top of the screen. Non-personalised ads only; no tracking permission is requested.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">App information</p>
+      <div class="spec-row">
+        <span class="spec-key">Version x.y.z.#</span>
+        <span class="spec-val">x: major rework　y: new or changed features　z: fixes　#: build number</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>History</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Version</th><th>Released</th><th>Development environment</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1.0.0</td><td>In preparation</td><td>Xcode 26, iOS 17+, Swift 6, SwiftUI — first release</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+
+</main>
+<script src="../../../theme.js"></script>
+</body>
+</html>
