@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>和暦年齢メモ　取扱説明</title>
+  <meta name="description" content="和暦年齢メモ の取扱説明です。西暦・和暦・干支・年齢の一覧、年齢や元号からの移動、名簿、カレンダーとメモ、九星・厄年・長寿祝いなどの表示設定を紹介します。">
+  <link rel="canonical" href="https://azukid.com/jp/sumpo/Nenrin/nenrin.html">
+  <link rel="alternate" href="https://azukid.com/jp/sumpo/Nenrin/nenrin.html" hreflang="ja">
+  <link rel="alternate" href="https://azukid.com/en/sumpo/Nenrin/nenrin.html" hreflang="en">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="和暦年齢メモ 取扱説明">
+  <meta property="og:description" content="西暦・和暦・干支・年齢を一覧で引ける 和暦年齢メモ の機能、移動操作、名簿、カレンダーとメモ、表示設定をまとめています。">
+  <meta property="og:url" content="https://azukid.com/jp/sumpo/Nenrin/nenrin.html">
+  <link rel="stylesheet" href="../../../style.css?v=20260508">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="header-back" href="../../index.html">ホーム</a>
+    <span class="header-sep">/</span>
+    <span class="site-logo">和暦年齢メモ</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-header">
+    <img class="page-header-icon" src="../../../images/icon-nenrin.png" alt="和暦年齢メモ">
+    <div class="page-header-text">
+      <h1>和暦年齢メモ　取扱説明</h1>
+      <p class="page-tagline">西暦・和暦・干支・年齢をまとめて引ける早見アプリ</p>
+    </div>
+  </div>
+
+  <div class="lead">
+    <p>1600年から2100年までの各年について、西暦・和暦（元号）・干支・年齢を1行にまとめた一覧アプリです。</p>
+    <p>「昭和47年生まれは今何歳か」「48歳の人は何年生まれか」「令和8年は西暦何年か」を、どの向きからでも同じ一覧で引けます。年ごとにメモを残せるので、家族の記録や出来事の覚え書きにも使えます。</p>
+  </div>
+
+  <section class="content-section">
+    <h2>基本操作の流れ</h2>
+    <div class="step-flow">
+      <div class="step-card">
+        <span class="step-number">1</span>
+        <strong>一覧を見る</strong>
+        <p>起動すると当年が画面の中央に表示されます。上下にスクロールして年をたどれます。</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">2</span>
+        <strong>基準を選ぶ</strong>
+        <p>下部の「年齢」「自分」「名簿」で、年齢欄を誰の基準で表示するかを切り替えます。</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">3</span>
+        <strong>目的の年へ移動する</strong>
+        <p>右上の「移動」から、年齢・西暦・元号年のどれでも指定して一気に移動できます。</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">4</span>
+        <strong>年を開く</strong>
+        <p>行をタップすると、その年のカレンダーとメモ欄が開きます。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="callout">⚠️ データは暗号化しないので、個人情報や秘密情報を入れないでください。</div>
+
+  <div class="pill-link-row">
+    <a class="pill-link" href="https://info.engineer.co.jp/EULA.html">エンドユーザー使用許諾契約</a>
+    <a class="pill-link" href="https://info.engineer.co.jp/PrivacyPolicy.html">プライバシーポリシー</a>
+    <a class="pill-link" href="../index.html">作者自己紹介: sumpo</a>
+  </div>
+
+  <section class="content-section">
+    <h2>画面の構成</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">主画面（一覧）</p>
+      <div class="spec-row">
+        <span class="spec-key">上部</span>
+        <span class="spec-val">左に［設定］、右に［移動］。その下に広告バナーを置いています。初心者モードでは、その下に使い方のヒントが出ます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">一覧</span>
+        <span class="spec-val">1行に「西暦・和暦・年齢」を並べます。設定を入れると、干支・九星・入学卒業・長寿祝い・厄年も同じ行に加わります。メモのある年は2行目に本文の先頭が小さく出ます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">下部タブ</span>
+        <span class="spec-val">「年齢」「自分」「名簿」の3つ。年齢欄を誰の基準で出すかを切り替えます。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">3つの基準（下部タブ）</p>
+      <div class="spec-row">
+        <span class="spec-key">年齢</span>
+        <span class="spec-val">「その年に生まれた人は今何歳か」を表示します。誰の生年月日も要りません。年齢欄が左端に来て、年齢から生年をたどりやすくなります。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">自分</span>
+        <span class="spec-val">設定した自分の生年月日をもとに、「その年に自分は何歳か」を表示します。生年月日が未設定のときは設定シートが開きます。生まれた年には目印が付きます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">名簿</span>
+        <span class="spec-val">名簿から選んだ方の生年月日を基準にした一覧へ切り替えます。家族や親戚の年齢を同じ画面で確認できます。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>機能</h2>
+    <div class="feature-grid">
+      <div class="feature-item">西暦・和暦・干支・年齢を1行で引ける<small>1600年（慶長5年）から2100年（令和82年）までの501年分。当年を中央にして起動する</small></div>
+      <div class="feature-item">江戸期からの元号に対応<small>元号データは OS の和暦カレンダーに委ねているため、慶長・元禄・寛政なども正しく表示される</small></div>
+      <div class="feature-item">改元があった年は2つの元号を併記<small>例：慶応4年／明治元年。元年は「元年」と表記する</small></div>
+      <div class="feature-item">年齢の数え方を選べる<small>満年齢／数え年。長寿祝いや厄年の判定も選んだ数え方に合わせる</small></div>
+      <div class="feature-item">マイナスの年齢も表示する<small>基準の生年より前の年は「-2歳」のように表示し、色を落として区別する</small></div>
+      <div class="feature-item">年齢を指定して生年へ移動できる<small>専用テンキーで年齢を入力。符号ボタンでマイナス年齢も指定できる（-150〜150）</small></div>
+      <div class="feature-item">西暦・元号年を指定して移動できる<small>「令和 8」のように元号と年を入力。ドロップダウンには年齢・西暦・各元号が並ぶ</small></div>
+      <div class="feature-item">実在しない元号年も換算する<small>昭和100年 → 2025年、令和-20年 → 1998年。移動前に換算後の西暦を表示する</small></div>
+      <div class="feature-item">移動先の行に目印が付く<small>移動して着地した行を明示。生年の目印とは色を変えている</small></div>
+      <div class="feature-item">年ごとにメモを残せる<small>1年につき最大400文字。入力は自動保存され、空にすると削除される</small></div>
+      <div class="feature-item">メモを「自分」のときだけ表示できる<small>年齢や名簿の一覧ではメモが隠れるので、画面を人に見せるときに使える</small></div>
+      <div class="feature-item">その年のカレンダーを表示<small>月送り、左右スワイプ、月のプルダウン選択に対応。改元日には区切りと元号を示す</small></div>
+      <div class="feature-item">カレンダーに六曜と月齢を表示<small>旧暦をもとに大安・仏滅などと、月の満ち欠けを示す</small></div>
+      <div class="feature-item">干支を表示できる<small>絵文字＋漢字。詳細では十干十二支と読みかなまで出る（例：丙午／ひのえうま）</small></div>
+      <div class="feature-item">九星気学の本命星を表示できる<small>立春区切りで判定。一白水星〜九紫火星</small></div>
+      <div class="feature-item">入学・卒業の年を表示できる<small>小学校入学から大学卒業までの節目</small></div>
+      <div class="feature-item">長寿祝いを表示できる<small>還暦・古希・喜寿・傘寿・米寿・卒寿・白寿・百寿・大還暦など</small></div>
+      <div class="feature-item">厄年を表示できる<small>前厄・本厄・後厄。男性42歳・女性33歳の大厄も示す。性別が未指定のときは表示しない</small></div>
+      <div class="feature-item">名簿を登録できる<small>家族・親戚・友人の名前と生年月日を登録。長押しドラッグで好きな順に並べ替えられる</small></div>
+      <div class="feature-item">初心者モード（操作ヒント付き）<small>設定で「初心者」「達人」を切り替え。初心者モードでは各画面に使い方の説明が出る。達人モードは行を詰めて情報量を増やす</small></div>
+      <div class="feature-item">外観モードを選択できる<small>自動・ライト・ダーク。自動ではシステム設定に従う</small></div>
+      <div class="feature-item">文字サイズを変更できる<small>自動・標準・大・特大。自動ではシステムの文字サイズ設定に従う</small></div>
+      <div class="feature-item">狭い画面でも1行に収める<small>幅が足りないときは行全体を段階的に縮小して、折り返さずに表示する</small></div>
+      <div class="feature-item">横向き・iPad に対応<small>広い画面では列の間隔を広げる</small></div>
+      <div class="feature-item">設定が保存される<small>表示モード、文字サイズ、外観、生年月日、年齢の数え方、各表示項目、直前の移動指定を次回起動時も維持</small></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>使いかた</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">年齢から生年を調べる</p>
+      <div class="spec-row">
+        <span class="spec-key">手順</span>
+        <span class="spec-val">下部の［年齢］を選ぶと、年齢欄が左端に来た一覧になります。そのままスクロールするか、右上の［移動］で「年齢」を選んで数字を入れると、その年齢の方が生まれた年へ移動します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">例</span>
+        <span class="spec-val">「48」と入れると、48歳の方が生まれた年（当年が2026年なら1978年＝昭和53年）へ移動します。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">和暦を西暦に直す</p>
+      <div class="spec-row">
+        <span class="spec-key">手順</span>
+        <span class="spec-val">右上の［移動］を押し、左端のドロップダウンから元号を選んで年をテンキーで入れます。入力中は右端に換算後の西暦が表示されるので、移動しなくても答えが分かります。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">実在しない年</span>
+        <span class="spec-val">「昭和100年」のように実際には無い元号年も換算します。<br>換算式：西暦 ＝ その元号の元年の西暦 ＋ 元号年 − 1</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">範囲外</span>
+        <span class="spec-val">換算結果が1600〜2100の外に出る場合は、その旨を表示したうえで端の年へ移動します。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">名簿を使う</p>
+      <div class="spec-row">
+        <span class="spec-key">追加</span>
+        <span class="spec-val">下部の［名簿］を開き、右上の＋から名前（最大20文字）と生年月日、必要なら性別を入力して保存します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">選ぶ</span>
+        <span class="spec-val">名前の行をタップすると、その方の生年月日を基準にした一覧に切り替わります。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">変更・削除</span>
+        <span class="spec-val">行の右端の変更ボタン、または行を左へスワイプして「変更」「削除」を選びます。削除は確認の後に実行され、取り消しはできません。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">並べ替え</span>
+        <span class="spec-val">行を長押ししたまま上下へドラッグします。並び順は保存され、追加や変更をしても崩れません。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">メモを書く</p>
+      <div class="spec-row">
+        <span class="spec-key">書く</span>
+        <span class="spec-val">一覧の行をタップして開いた画面の中ほどにメモ欄があります。入力すると自動で保存されるので、保存ボタンはありません。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">消す</span>
+        <span class="spec-val">本文をすべて消すと、その年のメモは削除されます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">隠す</span>
+        <span class="spec-val">設定の「メモは自分だけに表示」をオンにすると、「自分」の一覧のときだけメモが出ます。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>設定</h2>
+    <div class="spec-group">
+      <p class="spec-group-title">表示</p>
+      <div class="spec-row">
+        <span class="spec-key">表示モード</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li class="is-default">★ 初心者 — 各画面に使い方の説明を表示する</li>
+            <li>達人 — 説明を消し、行を詰めて情報量を増やす</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">文字サイズ</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li class="is-default">★ 自動 — システムの文字サイズ設定に従う</li>
+            <li>標準／大／特大 — アプリ側で固定する</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">外観モード</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li class="is-default">★ 自動 — システム設定に従う</li>
+            <li>ライト／ダーク — アプリ側で固定する</li>
+          </ul>
+        </span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">自分</p>
+      <div class="spec-row">
+        <span class="spec-key">生年月日</span>
+        <span class="spec-val">未設定。登録すると「自分」の一覧で各年の年齢が表示され、生まれた年に目印が付きます。いつでも消去できます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">年齢の数え方</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li class="is-default">★ 満年齢 — 誕生日を迎えるごとに1つ増える</li>
+            <li>数え年 — 生まれた時点で1歳、元日ごとに1つ増える</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">性別</span>
+        <span class="spec-val">未指定／男性／女性。厄年の判定に使います。未指定のときは厄年を表示しません。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">一覧に表示する項目</p>
+      <div class="spec-row">
+        <span class="spec-key">メモは自分だけに表示</span>
+        <span class="spec-val">既定オン。「自分」の一覧のときだけメモを表示します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">干支</span>
+        <span class="spec-val">既定オフ。各年に干支を絵文字と漢字で表示します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">九星</span>
+        <span class="spec-val">既定オフ。九星気学の本命星を表示します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">入学・卒業</span>
+        <span class="spec-val">既定オフ。生年月日をもとに小入学〜大卒業の節目を表示します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">長寿祝い</span>
+        <span class="spec-val">既定オフ。還暦・古希・喜寿などを表示します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">厄年</span>
+        <span class="spec-val">既定オフ。前厄・本厄・後厄を表示します。性別が未指定の場合は表示されません。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>仕様・諸元</h2>
+
+    <div class="spec-group">
+      <p class="spec-group-title">暦の計算</p>
+      <div class="spec-row">
+        <span class="spec-key">対象範囲</span>
+        <span class="spec-val">西暦 1600年〜2100年（501年）。慶長5年から令和82年まで</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">元号</span>
+        <span class="spec-val">OS が持つ和暦カレンダーから求めます。対象範囲には改元年が40件あり、その年は2つの元号を併記します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">干支</span>
+        <span class="spec-val">十干十二支を西暦から算出します（1600＝庚子、1868＝戊辰、1926＝丙寅、2026＝丙午、2100＝庚申）</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">六曜</span>
+        <span class="spec-val">旧暦の月日から求めます（先勝・友引・先負・仏滅・大安・赤口）</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">月齢</span>
+        <span class="spec-val">旧暦の日をもとにした概算です。朔（新月）を0とし、8つの月相で示します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">九星</span>
+        <span class="spec-val">立春区切りで判定します。立春の日付は年により2月3日〜5日に揺れますが、通例の2月4日で判定しています。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">長寿祝い</span>
+        <span class="spec-val">還暦61・緑寿66・古希70・喜寿77・傘寿80・半寿81・米寿88・卒寿90・白寿99・百寿100・茶寿108・皇寿111・大還暦121（いずれも数え年）</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">厄年</span>
+        <span class="spec-val">男性は25・42・61歳、女性は19・33・37・61歳を本厄とし、その前後を前厄・後厄とします（数え年）。男性42歳・女性33歳は大厄です。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">データ</p>
+      <div class="spec-row">
+        <span class="spec-key">メモ</span>
+        <span class="spec-val">1年につき最大400文字。端末内の JSON ファイルに保存し、iCloud バックアップの対象になります。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">名簿</span>
+        <span class="spec-val">名前は最大20文字。件数の上限はありません。端末内に保存します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">年齢入力</span>
+        <span class="spec-val">-150〜150</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">同期</span>
+        <span class="spec-val">端末内のみ。他の端末とは同期しません。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">動作環境</p>
+      <div class="spec-row">
+        <span class="spec-key">対応 OS</span>
+        <span class="spec-val">iOS / iPadOS 17.0 以降</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">対応機種</span>
+        <span class="spec-val">iPhone / iPad / Mac（Designed for iPad）。縦向き・横向きの両方に対応</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">広告</span>
+        <span class="spec-val">画面上部にバナー広告を表示します。非パーソナライズ広告のみを使用し、トラッキングの許可は求めません。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">アプリ情報</p>
+      <div class="spec-row">
+        <span class="spec-key">Version x.y.z.#</span>
+        <span class="spec-val">x：大幅改良・全面刷新　y：機能追加・変更　z：微修正・不具合修正　#：ビルド連番</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>履歴</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Version</th><th>公開日</th><th>開発環境等</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1.0.0</td><td>準備中</td><td>Xcode 26, iOS 17〜, Swift 6, SwiftUI — 初版</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+
+</main>
+<script src="../../../theme.js"></script>
+</body>
+</html>
