@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nenrin User Guide</title>
-  <meta name="description" content="User guide for Nenrin, a Japanese calendar reference app: convert between Western years and Japanese era years (Reiwa, Heisei, Showa), look up the zodiac animal, ages, rokuyo, kanreki and yakudoshi.">
+  <meta name="description" content="User guide for Nenrin: convert Japanese era years, understand age before and after a birthday, track anniversaries, and explore Japanese calendar terms.">
   <link rel="canonical" href="https://azukid.com/en/sumpo/Nenrin/nenrin.html">
   <link rel="alternate" href="https://azukid.com/jp/sumpo/Nenrin/nenrin.html" hreflang="ja">
   <link rel="alternate" href="https://azukid.com/en/sumpo/Nenrin/nenrin.html" hreflang="en">
@@ -12,7 +12,7 @@
   <meta property="og:type" content="article">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Nenrin User Guide">
-  <meta property="og:description" content="How to use Nenrin to convert Japanese era years to Western years, find the zodiac animal of any year, and read Japanese age customs such as kanreki and yakudoshi.">
+  <meta property="og:description" content="How to use Nenrin to convert Japanese era years, understand birthday-based ages, track anniversaries, and explore Japanese calendar culture.">
   <meta property="og:url" content="https://azukid.com/en/sumpo/Nenrin/nenrin.html">
   <link rel="stylesheet" href="../../../style.css?v=20260508">
   <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
@@ -222,7 +222,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">名簿 Roster</span>
-        <span class="spec-val">Uses the birth date of a person you saved — family, relatives, friends — so you can check anyone's age against the same table.</span>
+        <span class="spec-val">Choose a birthday to see that person's age in every year, or choose an anniversary to see its year-by-year count.</span>
       </div>
     </div>
   </section>
@@ -234,6 +234,7 @@
       <div class="feature-item">Full era coverage back to the Edo period<small>Era data comes from the operating system's Japanese calendar, so Keichō, Genroku, Kansei and the rest are all correct</small></div>
       <div class="feature-item">Transition years show both era names<small>e.g. Keiō 4 / Meiji 1, with 元年 gannen used for first years</small></div>
       <div class="feature-item">Switch between Western and traditional age counting<small>man-nenrei or kazoedoshi; longevity and unlucky-year markers follow your choice</small></div>
+      <div class="feature-item">See the difference before and after a birthday<small>The current year clearly shows the age reached on this year's birthday and the person's age today (1.1.0)</small></div>
       <div class="feature-item">Negative ages for years before birth<small>Shown as -2歳 and dimmed, so the sign is unmistakable</small></div>
       <div class="feature-item">Jump by age to find a birth year<small>Numeric keypad with a sign key for negative ages (−150 to 150)</small></div>
       <div class="feature-item">Jump by Western year or era year<small>Pick an era from the dropdown and type the year, e.g. Reiwa 8</small></div>
@@ -243,12 +244,14 @@
       <div class="feature-item">Keep notes private to the Myself view<small>Notes stay hidden in the age and roster views, so you can show the screen to someone else</small></div>
       <div class="feature-item">Full calendar for any year<small>Month by month, with swipe and a month dropdown. Era transition days are marked in place</small></div>
       <div class="feature-item">Rokuyo and the moon in the calendar<small>The six-day luck cycle used for choosing wedding and funeral dates, plus how much of the moon is lit — calculated for the moon you would see that evening. 大安 taian is marked in red and full moons in yellow</small></div>
+      <div class="feature-item">Tap a term to read what it means<small>Tap any era name, stem-branch sign, rokuyo, nine-star sign, yakudoshi or gaju in the year detail view for its reading, meaning and cultural background (1.1.0)</small></div>
       <div class="feature-item">Zodiac column<small>Emoji and kanji in the list; full stem-and-branch name with reading in the detail view</small></div>
       <div class="feature-item">Nine star astrology (九星気学)<small>Your honmeisei, one of nine stars, reckoned from the start of spring</small></div>
       <div class="feature-item">School milestones<small>Japanese school years start in April; the app marks entry to elementary school through university graduation</small></div>
       <div class="feature-item">Longevity celebrations (賀寿)<small>Kanreki at 60, koki at 70, kiju at 77 and the rest — the birthdays Japanese families hold parties for</small></div>
       <div class="feature-item">Unlucky years (厄年 yakudoshi)<small>The ages at which people traditionally visit a shrine for purification. Requires setting a gender</small></div>
       <div class="feature-item">Save a roster of people<small>Name and birth date for family and friends; drag to reorder</small></div>
+      <div class="feature-item">Save anniversaries and track each year<small>Add a wedding, company founding date or other milestone; its starting year is year 0 and the next year is the first anniversary (1.1.0)</small></div>
       <div class="feature-item">Beginner mode with on-screen guidance<small>Beginner or Expert. Beginner explains each screen in Japanese; Expert removes the text and packs more rows in</small></div>
       <div class="feature-item">Choose the appearance mode<small>Auto, Light, or Dark. Auto follows the system setting</small></div>
       <div class="feature-item">Change the text size<small>Auto, Standard, Large, Extra Large. Auto follows the system text size</small></div>
@@ -309,11 +312,15 @@
       <p class="spec-group-title">Use the roster</p>
       <div class="spec-row">
         <span class="spec-key">Add</span>
-        <span class="spec-val">Open the 名簿 tab and tap + at the top right. Enter a name (up to 20 characters), a birth date, and optionally a gender.</span>
+        <span class="spec-val">Open the 名簿 tab, tap +, and choose Birthday or Anniversary. Enter a name or title (up to 20 characters) and a date; a birthday can also include a gender.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Select</span>
-        <span class="spec-val">Tap a name to switch the whole table to that person's birth date.</span>
+        <span class="spec-val">Tap a birthday to show that person's age table, or tap an anniversary to show its count in every year.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Counting anniversaries</span>
+        <span class="spec-val">The starting year is year 0 and the next year is the first anniversary. The count stays the same throughout each calendar year, regardless of month and day.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Edit or delete</span>
@@ -624,6 +631,7 @@
         </thead>
         <tbody>
           <tr><td>1.0.0</td><td>2026/9/3</td><td>Xcode 26, iOS 17+, Swift 6, SwiftUI — first release</td></tr>
+          <tr><td>1.1.0</td><td>In preparation</td><td>Term explanations in year details, richer cultural context in English, birthday-aware age guidance, and anniversary tracking in the roster</td></tr>
         </tbody>
       </table>
     </div>
