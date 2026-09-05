@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>和暦年齢メモ　取扱説明</title>
-  <meta name="description" content="和暦年齢メモ の取扱説明です。西暦・和暦・年齢・干支などの一覧、年齢や元号からの移動、名簿、カレンダーとメモ、九星・厄年・長寿祝いなどの表示設定を紹介します。">
+  <meta name="description" content="和暦年齢メモ の取扱説明です。西暦・和暦・年齢・干支などの一覧、誕生日前後の年齢案内、記念日の周年、用語解説、カレンダーとメモを紹介します。">
   <link rel="canonical" href="https://azukid.com/jp/sumpo/Nenrin/nenrin.html">
   <link rel="alternate" href="https://azukid.com/jp/sumpo/Nenrin/nenrin.html" hreflang="ja">
   <link rel="alternate" href="https://azukid.com/en/sumpo/Nenrin/nenrin.html" hreflang="en">
@@ -12,7 +12,7 @@
   <meta property="og:type" content="article">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:title" content="和暦年齢メモ 取扱説明">
-  <meta property="og:description" content="西暦・和暦・年齢・干支などをまとめて引ける 和暦年齢メモ の機能、移動操作、名簿、カレンダーとメモ、表示設定をまとめています。">
+  <meta property="og:description" content="西暦・和暦・年齢・干支などをまとめて引ける 和暦年齢メモ の機能、誕生日前後の案内、記念日の周年、用語解説をまとめています。">
   <meta property="og:url" content="https://azukid.com/jp/sumpo/Nenrin/nenrin.html">
   <link rel="stylesheet" href="../../../style.css?v=20260508">
   <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
@@ -112,7 +112,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">名簿</span>
-        <span class="spec-val">名簿から選んだ方の生年月日を基準にした一覧へ切り替えます。家族や親戚の年齢を同じ画面で確認できます。</span>
+        <span class="spec-val">名簿から誕生日を選ぶとその方の年齢を、記念日を選ぶと年ごとの周年を一覧に表示します。</span>
       </div>
     </div>
   </section>
@@ -124,6 +124,7 @@
       <div class="feature-item">江戸期からの元号に対応<small>元号データは OS の和暦カレンダーに委ねているため、慶長・元禄・寛政なども正しく表示される</small></div>
       <div class="feature-item">改元があった年は2つの元号を併記<small>例：慶応4年／明治元年。元年は「元年」と表記する</small></div>
       <div class="feature-item">年齢の数え方を選べる<small>満年齢／数え年。長寿祝いや厄年の判定も選んだ数え方に合わせる</small></div>
+      <div class="feature-item">誕生日前後の年齢が分かる<small>当年には、その年の誕生日で迎える年齢と今日時点の満年齢を分かりやすく案内する（1.1.0）</small></div>
       <div class="feature-item">マイナスの年齢も表示する<small>基準の生年より前の年は「-2歳」のように表示し、色を落として区別する</small></div>
       <div class="feature-item">年齢を指定して生年へ移動できる<small>専用テンキーで年齢を入力。符号ボタンでマイナス年齢も指定できる（-150〜150）</small></div>
       <div class="feature-item">西暦・元号年を指定して移動できる<small>「令和 8」のように元号と年を入力。ドロップダウンには年齢・西暦・各元号が並ぶ</small></div>
@@ -133,12 +134,14 @@
       <div class="feature-item">メモを「自分」のときだけ表示できる<small>年齢や名簿の一覧ではメモが隠れるので、画面を人に見せるときに使える</small></div>
       <div class="feature-item">その年のカレンダーを表示<small>月送り、左右スワイプ、月のプルダウン選択に対応。改元日には区切りと元号を示す</small></div>
       <div class="feature-item">カレンダーに六曜と月の満ち欠けを表示<small>大安・仏滅などの六曜と、輝面率（月の光っている割合）を示す。夕方から夜に見える月に合わせた値。大安は赤、満月は黄色で示すので日取りを選びやすい</small></div>
+      <div class="feature-item">漢字をタップすると解説が開く<small>年詳細画面の元号・干支・六曜・九星・厄年・賀寿をタップすると、読みと意味、由来の解説を表示する（1.1.0）</small></div>
       <div class="feature-item">干支を表示できる<small>絵文字＋漢字。詳細では十干十二支と読みかなまで出る（例：丙午／ひのえうま）</small></div>
       <div class="feature-item">九星気学の本命星を表示できる<small>立春区切りで判定。一白水星〜九紫火星</small></div>
       <div class="feature-item">入学・卒業の年を表示できる<small>小学校入学から大学卒業までの節目</small></div>
       <div class="feature-item">長寿祝いを表示できる<small>還暦・古希・喜寿・傘寿・米寿・卒寿・白寿・百寿・大還暦など</small></div>
       <div class="feature-item">厄年を表示できる<small>前厄・本厄・後厄。男性42歳・女性33歳の大厄も示す。性別が未指定のときは表示しない</small></div>
       <div class="feature-item">名簿を登録できる<small>家族・親戚・友人の名前と生年月日を登録。長押しドラッグで好きな順に並べ替えられる</small></div>
+      <div class="feature-item">記念日を登録して周年を確認できる<small>結婚記念日や創立記念日などを登録すると、登録年を0周年として年ごとの周年を一覧表示する（1.1.0）</small></div>
       <div class="feature-item">初心者モード（操作ヒント付き）<small>設定で「初心者」「達人」を切り替え。初心者モードでは各画面に使い方の説明が出る。達人モードは行を詰めて情報量を増やす</small></div>
       <div class="feature-item">外観モードを選択できる<small>自動・ライト・ダーク。自動ではシステム設定に従う</small></div>
       <div class="feature-item">文字サイズを変更できる<small>自動・標準・大・特大。自動ではシステムの文字サイズ設定に従う</small></div>
@@ -183,11 +186,15 @@
       <p class="spec-group-title">名簿を使う</p>
       <div class="spec-row">
         <span class="spec-key">追加</span>
-        <span class="spec-val">下部の［名簿］を開き、右上の＋から名前（最大20文字）と生年月日、必要なら性別を入力して保存します。</span>
+        <span class="spec-val">下部の［名簿］を開き、右上の＋から「誕生日」か「記念日」を選びます。名前または名称（最大20文字）と日付を入力し、誕生日では必要に応じて性別も選んで保存します。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">選ぶ</span>
-        <span class="spec-val">名前の行をタップすると、その方の生年月日を基準にした一覧に切り替わります。</span>
+        <span class="spec-val">誕生日の行をタップするとその方の年齢一覧に、記念日の行をタップすると周年一覧に切り替わります。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">周年の数え方</span>
+        <span class="spec-val">登録した年が0周年、翌年が1周年です。月日にかかわらず、その年の中では同じ周年数を表示します。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">変更・削除</span>
@@ -391,7 +398,8 @@
           <tr><th>Version</th><th>公開日</th><th>開発環境等</th></tr>
         </thead>
         <tbody>
-          <tr><td>1.0.0</td><td>審査提出中</td><td>Xcode 26, iOS 17〜, Swift 6, SwiftUI — 初版</td></tr>
+          <tr><td>1.0.0</td><td>2026/9/3</td><td>Xcode 26, iOS 17〜, Swift 6, SwiftUI — 初版</td></tr>
+          <tr><td>1.1.0</td><td>2026/9/5</td><td>年詳細の用語解説、英語版の文化解説、誕生日前後の年齢案内、名簿の記念日・周年表示を追加</td></tr>
         </tbody>
       </table>
     </div>
