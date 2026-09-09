@@ -54,7 +54,7 @@
       <div class="step-card">
         <span class="step-number">2</span>
         <strong>基準を選ぶ</strong>
-        <p>下部の「年齢」「自分」「名簿」で、年齢欄を誰の基準で表示するかを切り替えます。</p>
+        <p>下部の「生まれ年」「自分」「名簿」で、年齢欄を誰の基準で表示するかを切り替えます。</p>
       </div>
       <div class="step-card">
         <span class="step-number">3</span>
@@ -91,20 +91,24 @@
         <span class="spec-val">左に［設定］、右に［移動］。その下に広告バナーを置いています。初心者モードでは、その下に使い方のヒントが出ます。</span>
       </div>
       <div class="spec-row">
+        <span class="spec-key">見出し</span>
+        <span class="spec-val">一覧のすぐ上に「西暦・和暦・年齢…」の見出しが固定されます。タップすると新しい順と古い順が入れ替わります。矢印は、初期の並びのときは塗りつぶし、入れ替えると中空になります。</span>
+      </div>
+      <div class="spec-row">
         <span class="spec-key">一覧</span>
         <span class="spec-val">1行に「西暦・和暦・年齢」を並べます。設定を入れると、干支・九星・入学卒業・長寿祝い・厄年も同じ行に加わります。メモのある年は2行目に本文の先頭が小さく出ます。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">下部タブ</span>
-        <span class="spec-val">「年齢」「自分」「名簿」の3つ。年齢欄を誰の基準で出すかを切り替えます。</span>
+        <span class="spec-val">「生まれ年」「自分」「名簿」の3つ。年齢欄を誰の基準で出すかを切り替えます。</span>
       </div>
     </div>
 
     <div class="spec-group">
       <p class="spec-group-title">3つの基準（下部タブ）</p>
       <div class="spec-row">
-        <span class="spec-key">年齢</span>
-        <span class="spec-val">「その年に生まれた人は今何歳か」を表示します。誰の生年月日も要りません。年齢欄が左端に来て、年齢から生年をたどりやすくなります。</span>
+        <span class="spec-key">生まれ年</span>
+        <span class="spec-val">「その年に生まれた人は今何歳か」を表示します。誰の生年月日も要りません。年齢から生年をたどるときに使います。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">自分</span>
@@ -131,7 +135,10 @@
       <div class="feature-item">実在しない元号年も換算する<small>昭和100年 → 2025年、令和-20年 → 1998年。移動前に換算後の西暦を表示する</small></div>
       <div class="feature-item">移動先の行に目印が付く<small>移動して着地した行を明示。生年の目印とは色を変えている</small></div>
       <div class="feature-item">年ごとにメモを残せる<small>1年につき最大400文字。入力は自動保存され、空にすると削除される</small></div>
-      <div class="feature-item">メモを「自分」のときだけ表示できる<small>年齢や名簿の一覧ではメモが隠れるので、画面を人に見せるときに使える</small></div>
+      <div class="feature-item">自分と名簿の一人ひとりに別々のメモを残せる<small>同じ年でも人ごとに違う覚え書きを残せる（1.2.0）</small></div>
+      <div class="feature-item">メモを「自分」のときだけ表示できる<small>生まれ年や名簿の一覧ではメモが隠れるので、画面を人に見せるときに使える</small></div>
+      <div class="feature-item">すべてのメモと名簿を書き出して復元できる<small>1つのファイルに保存し、機種変更のときなどに読み込んで元に戻せる（1.2.0）</small></div>
+      <div class="feature-item">一覧の見出しで並び順を変えられる<small>見出しをタップすると新しい順と古い順が入れ替わる。矢印の塗りつぶしで初期の並びかどうかが分かる（1.2.0）</small></div>
       <div class="feature-item">その年のカレンダーを表示<small>月送り、左右スワイプ、月のプルダウン選択に対応。改元日には区切りと元号を示す</small></div>
       <div class="feature-item">カレンダーに六曜と月の満ち欠けを表示<small>大安・仏滅などの六曜と、輝面率（月の光っている割合）を示す。夕方から夜に見える月に合わせた値。大安は赤、満月は黄色で示すので日取りを選びやすい</small></div>
       <div class="feature-item">漢字をタップすると解説が開く<small>年詳細画面の元号・干支・六曜・九星・厄年・賀寿をタップすると、読みと意味、由来の解説を表示する（1.1.0）</small></div>
@@ -158,7 +165,7 @@
       <p class="spec-group-title">年齢から生年を調べる</p>
       <div class="spec-row">
         <span class="spec-key">手順</span>
-        <span class="spec-val">下部の［年齢］を選ぶと、年齢欄が左端に来た一覧になります。そのままスクロールするか、右上の［移動］で「年齢」を選んで数字を入れると、その年齢の方が生まれた年へ移動します。</span>
+        <span class="spec-val">下部の［生まれ年］を選ぶと、その年に生まれた方の年齢が並ぶ一覧になります。そのままスクロールするか、右上の［移動］で「年齢」を選んで数字を入れると、その年齢の方が生まれた年へ移動します。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">例</span>
@@ -304,6 +311,18 @@
         <span class="spec-val">既定オフ。前厄・本厄・後厄を表示します。性別が未指定の場合は表示されません。</span>
       </div>
     </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">バックアップ</p>
+      <div class="spec-row">
+        <span class="spec-key">書き出し</span>
+        <span class="spec-val">すべてのメモと名簿を1つのファイルに書き出します。「ファイル」アプリやiCloud Driveなど、好きな場所に保存できます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">読み込み</span>
+        <span class="spec-val">書き出したファイルを選ぶと、メモと名簿を復元します。機種変更のときや、誤って消してしまったときに使えます。</span>
+      </div>
+    </div>
   </section>
 
   <section class="content-section">
@@ -400,6 +419,7 @@
         <tbody>
           <tr><td>1.0.0</td><td>2026/9/3</td><td>Xcode 26, iOS 17〜, Swift 6, SwiftUI — 初版</td></tr>
           <tr><td>1.1.0</td><td>2026/9/5</td><td>年詳細の用語解説、英語版の文化解説、誕生日前後の年齢案内、名簿の記念日・周年表示を追加</td></tr>
+          <tr><td>1.2.0</td><td>準備中</td><td>生まれ年一覧としてデザイン変更、一覧の見出しと並び替え、自分・名簿ごとのメモ、メモと名簿の書き出し・読み込み、和紙風の背景を追加</td></tr>
         </tbody>
       </table>
     </div>

@@ -166,7 +166,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">干支</span>
-        <span class="spec-val"><em>eto</em> — the zodiac sign, shown with its emoji. Readings are given in kana and romaji.</span>
+        <span class="spec-val"><em>eto</em> — the zodiac sign, shown with its emoji. Readings are given in romaji.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">九星</span>
@@ -193,6 +193,10 @@
     <div class="spec-group">
       <p class="spec-group-title">A row in the list</p>
       <div class="spec-row">
+        <span class="spec-key">Column headers</span>
+        <span class="spec-val">Pinned just above the list. Tap them to switch between newest and oldest first. A filled arrow means the original order; a hollow one means it has been reversed.</span>
+      </div>
+      <div class="spec-row">
         <span class="spec-key">Always shown</span>
         <span class="spec-val">Western year · Japanese era year · age. On a transition year the era column carries both era names on two lines.</span>
       </div>
@@ -213,8 +217,8 @@
     <div class="spec-group">
       <p class="spec-group-title">The three tabs</p>
       <div class="spec-row">
-        <span class="spec-key">年齢 Age</span>
-        <span class="spec-val">Shows how old someone born in each year is today. No birth date needed. The age column moves to the left edge, which makes it easy to scan from an age to a birth year.</span>
+        <span class="spec-key">生まれ年 Birth year</span>
+        <span class="spec-val">Shows how old someone born in each year is today. No birth date needed. Use it to scan from an age back to a birth year.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">自分 Myself</span>
@@ -241,7 +245,10 @@
       <div class="feature-item">Converts era years that never existed<small>Shōwa 100 → 2025, Reiwa −20 → 1998. Useful for the common Japanese habit of "continuing" a finished era to compare generations</small></div>
       <div class="feature-item">The converted year appears as you type<small>You get the answer without leaving the jump sheet</small></div>
       <div class="feature-item">Write a note on any year<small>Up to 400 characters per year, saved automatically; clearing the text deletes the note</small></div>
-      <div class="feature-item">Keep notes private to the Myself view<small>Notes stay hidden in the age and roster views, so you can show the screen to someone else</small></div>
+      <div class="feature-item">Separate notes for yourself and each person on the list<small>The same year can hold a different note for each person (1.2.0)</small></div>
+      <div class="feature-item">Keep notes private to the Myself view<small>Notes stay hidden in the birth year and roster views, so you can show the screen to someone else</small></div>
+      <div class="feature-item">Export and restore all notes and the roster<small>Save everything to one file and read it back — useful when you change devices (1.2.0)</small></div>
+      <div class="feature-item">Sort the table from its column headers<small>Tap the headers to switch between newest and oldest first. Filled arrows mean the original order, hollow ones mean it has been reversed (1.2.0)</small></div>
       <div class="feature-item">Full calendar for any year<small>Month by month, with swipe and a month dropdown. Era transition days are marked in place</small></div>
       <div class="feature-item">Rokuyo and the moon in the calendar<small>The six-day luck cycle used for choosing wedding and funeral dates, plus how much of the moon is lit — calculated for the moon you would see that evening. 大安 taian is marked in red and full moons in yellow</small></div>
       <div class="feature-item">Tap a term to read what it means<small>Tap any era name, stem-branch sign, rokuyo, nine-star sign, yakudoshi or gaju in the year detail view for its reading, meaning and cultural background (1.1.0)</small></div>
@@ -288,7 +295,7 @@
       <p class="spec-group-title">Find the birth year for an age</p>
       <div class="spec-row">
         <span class="spec-key">Steps</span>
-        <span class="spec-val">Select the 年齢 tab at the bottom — the age column moves to the left edge. Scroll, or tap 移動 and choose 年齢 from the dropdown and type the age.</span>
+        <span class="spec-val">Select the 生まれ年 tab at the bottom. Scroll, or tap 移動 and choose 年齢 from the dropdown and type the age.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Example</span>
@@ -512,6 +519,18 @@
         <span class="spec-val">Unlucky years. Off by default; needs a gender.</span>
       </div>
     </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Backup</p>
+      <div class="spec-row">
+        <span class="spec-key">Export</span>
+        <span class="spec-val">Writes every note and the whole roster to a single file. Save it wherever you like — the Files app, iCloud Drive, and so on.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Import</span>
+        <span class="spec-val">Choose an exported file to restore your notes and roster. Useful when you move to a new device, or if something was deleted by mistake.</span>
+      </div>
+    </div>
   </section>
 
   <section class="content-section">
@@ -632,6 +651,7 @@
         <tbody>
           <tr><td>1.0.0</td><td>2026/9/3</td><td>Xcode 26, iOS 17+, Swift 6, SwiftUI — first release</td></tr>
           <tr><td>1.1.0</td><td>2026/9/5</td><td>Term explanations in year details, richer cultural context in English, birthday-aware age guidance, and anniversary tracking in the roster</td></tr>
+          <tr><td>1.2.0</td><td>In preparation</td><td>Redesigned as a birth year list, sortable column headers, separate notes for yourself and each person, export and restore, and a washi paper background</td></tr>
         </tbody>
       </table>
     </div>
