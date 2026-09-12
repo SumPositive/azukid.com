@@ -377,22 +377,6 @@ body {
   text-decoration: none;
 }
 
-.app-card-btn-discord {
-  background: var(--surface-2);
-  color: #5865F2;
-  border: 1.5px solid #5865F2;
-  gap: 4px;
-  border-radius: 20px;
-  box-shadow: 0 1px 3px rgba(0,0,0,.08);
-}
-
-.app-card-btn-discord:hover {
-  background: #5865F2;
-  border-color: #5865F2;
-  color: #fff;
-  text-decoration: none;
-}
-
 /* ── Doc row (products docs section) ── */
 .doc-list {
   background: var(--surface);
