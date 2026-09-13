@@ -97,7 +97,7 @@
           <button class="hotspot hotspot-toggle" type="button" aria-expanded="false" aria-controls="jp-main-4">4</button>
           <div class="hotspot-popover is-left" id="jp-main-4">
             <strong>支払い総額</strong>
-            <small>まず合計（支払総額）を入れます。数字をタップすればテンキー入力できます</small>
+            <small>まず合計（支払総額）を入れます。数字をタップすればテンキー入力できます（四則計算も可）</small>
           </div>
         </div>
         <div class="hotspot-anchor" style="top: 87.5%; left: 50%;">
@@ -153,7 +153,7 @@
       <div class="step-card">
         <span class="step-number">1</span>
         <strong>合計金額を入れる</strong>
-        <p>上段の合計金額を回すか、金額表示をタップしてテンキーで入力します</p>
+        <p>上段の合計金額を回すか、金額表示をタップしてテンキーで入力します。テンキーでは <code>÷ × − +</code> の計算もできます</p>
       </div>
       <div class="step-card">
         <span class="step-number">2</span>
@@ -171,6 +171,38 @@
         <p>人数だけ固定するか、全操作を固定して誤操作を防ぎます</p>
       </div>
     </div>
+  </section>
+
+  <section class="content-section">
+    <h2>テンキーで計算する</h2>
+    <p>合計金額や人数の数字をタップするとテンキーが開きます。数字キーの右に <code>÷ × − +</code> があり、割り勘の下準備をその場で済ませられます。</p>
+    <div class="locale-grid">
+      <div class="locale-card">
+        <h3>使いどころ</h3>
+        <div class="locale-sample">
+          <strong>78,500 ÷ 3</strong>
+          <span>3組で等分したときの1組あたり</span>
+        </div>
+        <p>レシートの合計から割り引いたり、何人分かをまとめて掛けたりできます</p>
+      </div>
+      <div class="locale-card">
+        <h3>端数の扱い</h3>
+        <div class="locale-sample">
+          <strong>26,166.66… → 26,167</strong>
+          <span>切り上げ / 四捨五入 / 偶数丸め / 切り捨て</span>
+        </div>
+        <p>割り切れないときだけ丸め方を選べます。選んだ方法は次に開いたときも引き継ぎます</p>
+      </div>
+      <div class="locale-card">
+        <h3>計算のしかた</h3>
+        <div class="locale-sample">
+          <strong>÷ 3 × 3 = 78,500</strong>
+          <span>途中で丸めない</span>
+        </div>
+        <p>端数は計算の途中では保たれ、確定するときに一度だけ丸めます。割ってから掛け戻しても元の金額に戻ります</p>
+      </div>
+    </div>
+    <p>入力した値は、金額の行をタップするか右のチェックを押すと確定します。</p>
   </section>
 
   <section class="content-section">
@@ -303,6 +335,7 @@
           <tr><td>2.2.1</td><td>2026/6/10</td><td>文字サイズ対応・端数の小数表示・パネルのコンパクト表示、Firebase Analytics / Crashlytics を導入</td></tr>
           <tr><td>2.2.2</td><td>2026/6/27</td><td>ダイアル設定を最新化しスタイル3種を追加、旧スタイルを刷新、パネルスタイルをシート化</td></tr>
           <tr><td>2.3.0</td><td>2026/7/6</td><td>多言語対応（de・es・fr・it・ko・zh-Hant）、アプリアイコン刷新、iPad レイアウト調整</td></tr>
+          <tr><td>2.4.0</td><td>TBD</td><td>テンキーに四則計算を追加、設定シートの選択方式をプルダウンへ変更</td></tr>
         </tbody>
       </table>
     </div>

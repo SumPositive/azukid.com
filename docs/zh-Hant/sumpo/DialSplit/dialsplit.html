@@ -153,7 +153,7 @@
       <div class="step-card">
         <span class="step-number">1</span>
         <strong>輸入合計金額</strong>
-        <p>在上方面板轉動轉盤，或點按金額顯示以數字鍵盤輸入</p>
+        <p>在上方面板轉動轉盤，或點按金額顯示以數字鍵盤輸入。數字鍵盤也可進行 <code>÷ × − +</code> 運算</p>
       </div>
       <div class="step-card">
         <span class="step-number">2</span>
@@ -171,6 +171,38 @@
         <p>可只固定人數，或固定全部操作以避免誤觸</p>
       </div>
     </div>
+  </section>
+
+  <section class="content-section">
+    <h2>用數字鍵盤計算</h2>
+    <p>點按金額或人數即可開啟數字鍵盤。數字鍵右側有 <code>÷ × − +</code>，可以當場算好再輸入。</p>
+    <div class="locale-grid">
+      <div class="locale-card">
+        <h3>適用情境</h3>
+        <div class="locale-sample">
+          <strong>78,500 ÷ 3</strong>
+          <span>分成三組時每組的金額</span>
+        </div>
+        <p>可從收據總額扣除折扣，或將一人份乘上人數</p>
+      </div>
+      <div class="locale-card">
+        <h3>小數處理</h3>
+        <div class="locale-sample">
+          <strong>26,166.66… → 26,167</strong>
+          <span>無條件進位 / 四捨五入 / 偶數捨入 / 無條件捨去</span>
+        </div>
+        <p>只有除不盡時才會出現捨入方式的選項，所選方式下次開啟時仍會沿用</p>
+      </div>
+      <div class="locale-card">
+        <h3>計算方式</h3>
+        <div class="locale-sample">
+          <strong>÷ 3 × 3 = 78,500</strong>
+          <span>過程中不做捨入</span>
+        </div>
+        <p>計算過程保留小數，確定時才捨入一次。因此除完再乘回去會回到原本的金額</p>
+      </div>
+    </div>
+    <p>點按金額列或右側的勾選圖示即可確定輸入的數值。</p>
   </section>
 
   <section class="content-section">
@@ -299,6 +331,7 @@
           <tr><td>2.0.0</td><td>2026/4/16</td><td>Swift 6 / SwiftUI, Xcode 26, iOS 26</td></tr>
           <tr><td>2.0.1</td><td>2026/4/17</td><td>新增支持開發者功能（打賞・廣告）</td></tr>
           <tr><td>2.1.0</td><td>2026/4/22</td><td>新增人數鎖定、全部操作鎖定、轉盤設定、外觀模式、背景設定、金額轉盤級距設定與依地區語言的貨幣處理</td></tr>
+          <tr><td>2.4.0</td><td>TBD</td><td>數字鍵盤新增四則運算，設定頁的選擇方式改為下拉選單</td></tr>
         </tbody>
       </table>
     </div>

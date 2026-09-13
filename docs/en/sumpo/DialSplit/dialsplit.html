@@ -153,7 +153,7 @@
       <div class="step-card">
         <span class="step-number">1</span>
         <strong>Enter the total</strong>
-        <p>Set the bill total from the top panel with the dial or the numpad</p>
+        <p>Set the bill total from the top panel with the dial or the numpad, which also handles <code>÷ × − +</code></p>
       </div>
       <div class="step-card">
         <span class="step-number">2</span>
@@ -171,6 +171,38 @@
         <p>Freeze people only or freeze all controls to avoid accidental changes</p>
       </div>
     </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Calculating on the numpad</h2>
+    <p>Tap any amount or people count to open the numpad. The <code>÷ × − +</code> keys sit to the right of the digits, so you can work out the split before committing a value.</p>
+    <div class="locale-grid">
+      <div class="locale-card">
+        <h3>When it helps</h3>
+        <div class="locale-sample">
+          <strong>78,500 ÷ 3</strong>
+          <span>Per group when split three ways</span>
+        </div>
+        <p>Take a discount off the receipt total, or multiply one share by the number of people</p>
+      </div>
+      <div class="locale-card">
+        <h3>Handling remainders</h3>
+        <div class="locale-sample">
+          <strong>26,166.66… → 26,167</strong>
+          <span>Round up / half up / bankers / down</span>
+        </div>
+        <p>The rounding picker appears only when the result does not divide evenly, and your choice carries over next time</p>
+      </div>
+      <div class="locale-card">
+        <h3>How it calculates</h3>
+        <div class="locale-sample">
+          <strong>÷ 3 × 3 = 78,500</strong>
+          <span>No rounding in between</span>
+        </div>
+        <p>Remainders are kept through the calculation and rounded once when you commit, so dividing and multiplying back returns the original amount</p>
+      </div>
+    </div>
+    <p>Commit the value by tapping the amount row or the check mark beside it.</p>
   </section>
 
   <section class="content-section">
@@ -303,6 +335,7 @@
           <tr><td>2.2.1</td><td>2026/6/10</td><td>Text size support, decimal display for fractional amounts, compact panel layout, and Firebase Analytics / Crashlytics integration</td></tr>
           <tr><td>2.2.2</td><td>2026/6/27</td><td>Refreshed dial settings with three new styles and revamped legacy styles; panel style moved to a sheet</td></tr>
           <tr><td>2.3.0</td><td>2026/7/6</td><td>Multilingual support (de, es, fr, it, ko, zh-Hant), redesigned app icon, and iPad layout adjustments</td></tr>
+          <tr><td>2.4.0</td><td>TBD</td><td>Added arithmetic to the numpad and switched settings pickers to dropdowns</td></tr>
         </tbody>
       </table>
     </div>
