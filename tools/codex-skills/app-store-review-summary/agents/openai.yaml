@@ -1,0 +1,4 @@
+interface:
+  display_name: "App Storeレビュー集約"
+  short_description: "公開中アプリの2026年以降のレビューを集約・要約します"
+  default_prompt: "$app-store-review-summary を使ってレビュー集約メニューを表示してください"
