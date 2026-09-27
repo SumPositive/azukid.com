@@ -43,6 +43,7 @@
   <div class="lead">
     <p>記錄並回顧血壓、心率、體溫、體重等每日的健康數據。</p>
     <p>測量時段（起床、運動後等）會依輸入時間自動分類。以圖表掌握趨勢、進行統計分析，並可與 Apple 健康 App 連動。</p>
+    <p>在症狀記錄中，可將頭痛、肩頸僵硬等症狀與發作時的環境及發作前的狀況一併記錄，並回顧發作的趨勢。</p>
   </div>
 
   <section class="content-section">
@@ -99,6 +100,10 @@
       <div class="feature-item">調整圖表與統計面板高度<small>上下拖曳下緣的把手</small></div>
       <div class="feature-item">從候選清單選擇測量地點與裝置<small>在候選清單顯示預設值與輸入紀錄，輕觸即可填入</small></div>
       <div class="feature-item">再次輕觸記錄標籤即可新增<small>開啟記錄畫面時再次輕觸標籤，即顯示新增記錄工作表</small></div>
+      <div class="feature-item">可記錄症狀<small>發作與結束的日期時間、程度（無・輕微・中等・嚴重）、備註</small></div>
+      <div class="feature-item">可記錄發作時的環境<small>氣溫・濕度・氣壓・24 小時氣壓差、室溫・室內濕度、裝置氣壓計</small></div>
+      <div class="feature-item">可用標籤記錄發作前的狀況與處置<small>從預設中複選，也可輸入名稱新增</small></div>
+      <div class="feature-item">可分析症狀<small>發作日曆・發作週期性・發作與環境・發作與發作前的狀況</small></div>
     </div>
   </section>
 
@@ -235,6 +240,120 @@
     </div>
 
     <div class="spec-group">
+      <p class="spec-group-title">症狀記錄</p>
+      <div class="spec-row">
+        <span class="spec-key">記錄項目</span>
+        <span class="spec-val">症狀・發作時間・結束時間・程度・環境・發作前的狀況・處置・備註</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">程度</span>
+        <span class="spec-val">無・輕微・中等・嚴重。「無」會作為未出現症狀的記錄保留，不計入發作次數。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">結束</span>
+        <span class="spec-val">發作當下可維持「結束」關閉直接儲存。症狀平息後，點一下記錄列表中的「沙漏」即可填入結束時間並顯示持續時長。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">症狀預設</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>肩頸僵硬</li>
+            <li>腰痛</li>
+            <li>頭痛</li>
+            <li>倦怠・疲乏</li>
+            <li>頭暈</li>
+            <li>腹痛</li>
+            <li>流鼻水・鼻塞</li>
+            <li>咳嗽</li>
+            <li>發燒</li>
+            <li>失眠</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">發作前狀況預設</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>睡眠不足</li>
+            <li>過勞</li>
+            <li>壓力</li>
+            <li>長時間看螢幕</li>
+            <li>長時間同一姿勢</li>
+            <li>受寒</li>
+            <li>飲酒</li>
+            <li>吃太多</li>
+            <li>沒吃飯</li>
+            <li>生理期</li>
+          </ul>
+        可複選。未選擇時視為「想不到原因」。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">處置預設</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>解熱鎮痛藥</li>
+            <li>睡覺</li>
+            <li>靜養</li>
+            <li>熱敷</li>
+            <li>冰敷</li>
+            <li>胃腸藥</li>
+            <li>抗過敏藥</li>
+            <li>泡澡</li>
+            <li>伸展運動</li>
+            <li>就醫</li>
+          </ul>
+        可複選。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">新增・編輯標籤</span>
+        <span class="spec-val">清單中沒有的症狀、狀況、處置，可輸入名稱新增。長按可變更名稱。越常使用的項目會排在越上方。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">環境（室外）</span>
+        <span class="spec-val">氣溫・濕度・氣壓・24 小時氣壓差。在日本國內可取得日本氣象廳 AMeDAS 的觀測值（記錄時間須在現在的 3 小時以內，公開資料約 9 天份）。其他情況請手動輸入。距上次取得未滿 1 小時再次取得時，會顯示影片廣告。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">環境（室內・裝置）</span>
+        <span class="spec-val">室溫・室內濕度需手動輸入。在具備氣壓計的裝置上，可取得裝置測得的當地氣壓。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">上限</span>
+        <span class="spec-val">發作前的狀況・處置每筆各 10 個、標籤名稱 20 字、備註 200 字</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">症狀分析</p>
+      <div class="spec-row">
+        <span class="spec-key">配置</span>
+        <span class="spec-val">預設顯示於「分析3」。圖表配置可變更。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">分析期間</span>
+        <span class="spec-val">1 週・1 個月・3 個月・6 個月・1 年（發作日曆不受期間影響，依年・月・日瀏覽）</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">圖表</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>發作日曆 — 依年・月・日顯示發作次數與最高程度。點一下日期可查看當天記錄的詳細內容。</li>
+            <li>發作週期性 — 依症狀以點顯示從上次發作到下次發作的間隔，並從 4 次以上的發作推估大致週期。</li>
+            <li>發作與環境 — 對每個有記錄的環境項目，依數值範圍顯示發作次數，並依程度堆疊。</li>
+            <li>發作與發作前的狀況 — 依狀況顯示發作次數並依程度區分。未選擇（想不到原因）的次數以白色長條顯示。</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">計算方式</span>
+        <span class="spec-val">以發作時間計為 1 次（跨日結束的記錄也只計入發作當天）。程度「無」不計入。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">注意</span>
+        <span class="spec-val">此為已記錄範圍的統計，並不表示原因或相關性。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
       <p class="spec-group-title">Apple 健康連動</p>
       <div class="spec-row">
         <span class="spec-key">連動方向</span>
@@ -255,6 +374,10 @@
       <div class="spec-row">
         <span class="spec-key">格式</span>
         <span class="spec-val">PDF、CSV（UTF-8 含 BOM，相容 Excel）、JSON</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">症狀記錄</span>
+        <span class="spec-val">包含於 JSON 匯出（備份）中。PDF・CSV 僅含測量記錄</span>
       </div>
     </div>
 

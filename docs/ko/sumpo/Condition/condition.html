@@ -43,6 +43,7 @@
   <div class="lead">
     <p>혈압·심박수·체온·체중 등 매일의 건강 데이터를 기록하고 되돌아봅니다.</p>
     <p>측정 시점(기상·운동 후 등)은 입력 시각으로부터 자동으로 분류됩니다. 그래프로 추이를 확인하고, 통계로 분석하며, Apple 건강 앱과 연동할 수 있습니다.</p>
+    <p>증상 메모에서는 두통·어깨 결림 같은 증상을 발생 시점의 환경이나 직전 상황과 함께 기록하고, 발생 경향을 돌아볼 수 있습니다.</p>
   </div>
 
   <section class="content-section">
@@ -99,6 +100,10 @@
       <div class="feature-item">그래프·통계 패널 높이 조절<small>아래쪽 가장자리의 핸들을 위아래로 드래그</small></div>
       <div class="feature-item">측정 장소·기기를 후보에서 선택<small>프리셋과 입력 이력을 후보 목록에 표시, 탭하여 입력</small></div>
       <div class="feature-item">기록 탭을 다시 탭하여 추가<small>기록 화면을 연 상태에서 탭을 다시 누르면 새 기록 추가 시트를 표시</small></div>
+      <div class="feature-item">증상을 기록할 수 있음<small>발병·종식 일시, 정도(없음·가벼움·보통·심함), 메모</small></div>
+      <div class="feature-item">발생 시점의 환경을 기록할 수 있음<small>기온·습도·기압·24시간 기압차, 실내 온도·실내 습도, 기기 기압계</small></div>
+      <div class="feature-item">직전 상황과 대처를 태그로 기록할 수 있음<small>프리셋에서 여러 개 선택, 명칭을 입력해 추가도 가능</small></div>
+      <div class="feature-item">증상을 분석할 수 있음<small>증상 발생 달력·발병 주기성·증상 발생과 환경·발생과 직전 상황</small></div>
     </div>
   </section>
 
@@ -235,6 +240,120 @@
     </div>
 
     <div class="spec-group">
+      <p class="spec-group-title">증상 메모</p>
+      <div class="spec-row">
+        <span class="spec-key">기록 항목</span>
+        <span class="spec-val">증상·발병 일시·종식 일시·정도·환경·직전 상황·대처·메모</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">정도</span>
+        <span class="spec-val">없음·가벼움·보통·심함. "없음"은 증상이 나타나지 않은 기록으로 남으며 발생 건수에는 포함되지 않습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">종식</span>
+        <span class="spec-val">발병 시점에는 종식을 끈 채로 저장할 수 있습니다. 가라앉은 뒤 기록 목록의 "모래시계"를 누르면 그 시각이 종식으로 입력되고 지속 시간이 표시됩니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">증상 프리셋</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>어깨 결림</li>
+            <li>요통</li>
+            <li>두통</li>
+            <li>권태감·나른함</li>
+            <li>어지럼증</li>
+            <li>복통</li>
+            <li>콧물·코막힘</li>
+            <li>기침</li>
+            <li>발열</li>
+            <li>불면</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">직전 상황 프리셋</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>수면 부족</li>
+            <li>과로</li>
+            <li>스트레스</li>
+            <li>화면 과다 사용</li>
+            <li>같은 자세 지속</li>
+            <li>몸이 차가워짐</li>
+            <li>음주</li>
+            <li>과식</li>
+            <li>식사 거름</li>
+            <li>생리</li>
+          </ul>
+        여러 개 선택할 수 있습니다. 선택하지 않으면 "짚이는 것 없음"으로 취급합니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">대처 프리셋</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>해열진통제</li>
+            <li>잤다</li>
+            <li>안정을 취함</li>
+            <li>온찜질</li>
+            <li>냉찜질</li>
+            <li>위장약</li>
+            <li>항알레르기제</li>
+            <li>목욕함</li>
+            <li>스트레칭</li>
+            <li>진료를 받음</li>
+          </ul>
+        여러 개 선택할 수 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">태그 추가·편집</span>
+        <span class="spec-val">목록에 없는 증상·상황·대처는 명칭을 입력해 추가할 수 있습니다. 길게 눌러 명칭을 바꿀 수 있습니다. 자주 쓰는 것일수록 위에 표시됩니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">환경(실외)</span>
+        <span class="spec-val">기온·습도·기압·24시간 기압차. 일본 국내에서는 일본 기상청 AMeDAS 관측값을 가져올 수 있습니다(기록 일시가 현재로부터 3시간 이내, 공개 데이터는 약 9일분). 그 밖에는 직접 입력합니다. 마지막으로 가져온 뒤 1시간 이내에 다시 가져올 때는 동영상 광고가 표시됩니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">환경(실내·기기)</span>
+        <span class="spec-val">실내 온도·실내 습도는 직접 입력합니다. 기압계가 있는 기기에서는 기기로 잰 현지 기압을 가져올 수 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">상한</span>
+        <span class="spec-val">직전 상황·대처는 기록 1건당 각 10개, 태그 명칭은 20자, 메모는 200자</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">증상 분석</p>
+      <div class="spec-row">
+        <span class="spec-key">배치</span>
+        <span class="spec-val">처음에는 "분석 3"에 표시됩니다. 차트 배치는 변경할 수 있습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">분석 기간</span>
+        <span class="spec-val">1주·1개월·3개월·6개월·1년(증상 발생 달력은 기간과 관계없이 연·월·일로 살펴봅니다)</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">차트</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>증상 발생 달력 — 연·월·일별 발생 건수와 가장 높은 정도를 표시합니다. 날짜를 누르면 그날 기록의 상세를 표시합니다.</li>
+            <li>발병 주기성 — 증상별로 이전 발생부터 다음 발생까지의 간격을 점으로 표시하고, 4건 이상의 발생에서 대략적인 주기를 추정합니다.</li>
+            <li>증상 발생과 환경 — 기록이 있는 환경 항목마다 환경값 범위별 발생 건수를 정도별로 쌓아 표시합니다.</li>
+            <li>발생과 직전 상황 — 상황별 발생 건수를 정도별로 표시합니다. 선택하지 않은(짚이는 것 없음) 건수는 흰 막대로 표시합니다.</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">세는 방법</span>
+        <span class="spec-val">발병 일시를 기준으로 1건으로 셉니다(날짜를 넘겨 종식된 기록도 발병일에만 셉니다). 정도 "없음"은 세지 않습니다.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">주의</span>
+        <span class="spec-val">기록한 범위의 집계입니다. 원인이나 상관관계를 나타내지 않습니다.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
       <p class="spec-group-title">Apple 건강 연동</p>
       <div class="spec-row">
         <span class="spec-key">연동 방향</span>
@@ -255,6 +374,10 @@
       <div class="spec-row">
         <span class="spec-key">형식</span>
         <span class="spec-val">PDF, CSV(UTF-8 BOM 포함, Excel 호환), JSON</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">증상 메모</span>
+        <span class="spec-val">JSON 내보내기(백업)에 포함됩니다. PDF·CSV는 측정 기록만</span>
       </div>
     </div>
 
