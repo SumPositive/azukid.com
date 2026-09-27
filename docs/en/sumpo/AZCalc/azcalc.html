@@ -104,7 +104,7 @@
     <div class="spec-group">
       <p class="spec-group-title">Package.swift</p>
       <pre>dependencies: [
-    .package(url: "https://github.com/SumPositive/AZCalc", from: "2.0.0")
+    .package(url: "https://github.com/SumPositive/AZCalc", from: "2.1.0")
 ]
 
 // Add to your target
@@ -154,6 +154,7 @@ let bad = AZDecimal("1") / AZDecimal("0")
 bad.isNaN             // true
 bad == bad            // false (NaN is not equal to itself)</pre>
       <p><small>Note: NaN representation via <code>isNaN</code> is available from 2.0.0. Earlier versions returned the internal <code>"-0"</code> sentinel.</small></p>
+      <p><small>Starting with 2.1.0, multiplication also detects digit overflow and returns NaN when the product exceeds the configured precision limit.</small></p>
     </div>
 
     <div class="spec-group">
@@ -380,6 +381,7 @@ let rpn = AZFormula.toRPN(tokens)
           <tr><td>1.0.0</td><td>2026/4/5 Initial release. Includes AZDecimal (arithmetic, rounding, formatting) and AZFormula (formula evaluation), plus fluent config, convenience properties, and a bilingual (ja/en) SwiftUI demo app. Published on Swift Package Index.</td></tr>
           <tr><td>1.2.2</td><td>2026/4/16</td></tr>
           <tr><td>2.0.0</td><td>TBD &lt;Breaking change&gt; Reworked error handling. Division by zero and overflow are now represented by <code>AZDecimal.isNaN</code> (NaN) instead of the internal <code>"-0"</code> sentinel (Double semantics: NaN is not equal to itself). Added <code>.zeroDivision</code> / <code>.overflow</code> errors to AZFormula. √ of a negative value now returns NaN instead of crashing. The <code>.truncate</code> rounding mode is split into <code>.truncateToDigits</code> (truncates the value to the digit count) and <code>.keepFull</code> (no rounding, full precision). Added power: <code>AZDecimal.power(_:)</code> / <code>remainder(dividingBy:)</code> / <code>integerValue</code>, and the <code>^</code> operator in AZFormula. <code>AZDecimal</code> now conforms to <code>Codable</code> (encoded as a single value string). AZFormula errors are more granular (added <code>.unmatchedParenthesis</code> / <code>.missingOperand</code>). Percent symbols and divisors are now exposed and configurable via <code>AZFormula.percentDivisors</code>.</td></tr>
+          <tr><td>2.1.0</td><td>Added digit-overflow detection for multiplication. Products that exceed the configured precision limit now return NaN.</td></tr>
         </tbody>
       </table>
     </div>

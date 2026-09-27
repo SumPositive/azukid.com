@@ -104,7 +104,7 @@
     <div class="spec-group">
       <p class="spec-group-title">Package.swift に追記</p>
       <pre>dependencies: [
-    .package(url: "https://github.com/SumPositive/AZCalc", from: "2.0.0")
+    .package(url: "https://github.com/SumPositive/AZCalc", from: "2.1.0")
 ]
 
 // ターゲットへの追加
@@ -154,6 +154,7 @@ let bad = AZDecimal("1") / AZDecimal("0")
 bad.isNaN             // true
 bad == bad            // false（NaN は自身とも等しくない）</pre>
       <p><small>※ <code>isNaN</code> による NaN 表現は 2.0.0 以降。2.0.0 未満では内部番兵 <code>"-0"</code> を返していました。</small></p>
+      <p><small>2.1.0 以降は掛け算でも桁溢れを検出し、積が設定された精度上限を超えた場合は NaN を返します。</small></p>
     </div>
 
     <div class="spec-group">
@@ -384,6 +385,7 @@ let rpn = AZFormula.toRPN(tokens)
           <tr><td>1.0.0</td><td>2026/4/5 初回公開。AZDecimal（演算・丸め・書式化）と AZFormula（数式評価）を収録。フルエント設定・便利プロパティ・日英ローカライズ対応デモアプリ付属。Swift Package Index 公開</td></tr>
           <tr><td>1.2.2</td><td>2026/4/16</td></tr>
           <tr><td>2.0.0</td><td>TBD ＜破壊的変更＞ エラー表現を刷新。ゼロ除算・オーバーフローは内部番兵 <code>"-0"</code> ではなく <code>AZDecimal.isNaN</code>（NaN）で表現（Double 準拠：NaN は自身とも等しくない）。AZFormula に <code>.zeroDivision</code> / <code>.overflow</code> エラーを追加。負値の √ はクラッシュせず NaN を返す。丸めモード <code>.truncate</code> を <code>.truncateToDigits</code>（値を桁数で切り捨て）と <code>.keepFull</code>（丸めなし全桁保持）に分離。べき乗を追加（<code>AZDecimal.power(_:)</code> / <code>remainder(dividingBy:)</code> / <code>integerValue</code>、AZFormula の <code>^</code> 演算子）。<code>AZDecimal</code> を <code>Codable</code> 準拠（値文字列1本で符号化）。AZFormula のエラーを細分化（<code>.unmatchedParenthesis</code> / <code>.missingOperand</code> を追加）。パーセント記号と除数を <code>AZFormula.percentDivisors</code> で公開・変更可能に</td></tr>
+          <tr><td>2.1.0</td><td>掛け算の桁溢れ検出に対応。積が設定された精度上限を超えた場合は NaN を返す</td></tr>
         </tbody>
       </table>
     </div>
