@@ -16,7 +16,7 @@
   <meta property="og:title" content="体調メモ 取扱説明">
   <meta property="og:description" content="体調メモ Condition の体調記録機能と見返し方をまとめたユーザーガイドです。">
   <meta property="og:url" content="https://azukid.com/jp/sumpo/Condition/condition.html">
-  <link rel="stylesheet" href="../../../style.css?v=20260508">
+  <link rel="stylesheet" href="../../../style.css?v=20260928">
   <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
@@ -42,7 +42,8 @@
 
   <div class="lead">
     <p>血圧・心拍・体温・体重などの体調データを記録して見返すアプリです。</p>
-    <p>測定タイミング（起床時・運動後など）を時刻から自動で分類します。グラフや統計で変化を確認し、Apple ヘルスケアアプリとの同期もできます。</p>
+    <p>測定タイミング（起床時・運動後など）を時刻から自動で分類します。グラフ・統計・症状の図表を「分析」の3つのタブに自由に配置して変化を確認でき、Apple ヘルスケアアプリとの同期もできます。</p>
+    <p>症状メモでは、頭痛・肩こりなどの症状を発症時の環境や直前の状況と一緒に記録し、発症の傾向を見返せます。</p>
   </div>
 
   <section class="content-section">
@@ -51,17 +52,17 @@
       <div class="step-card">
         <span class="step-number">1</span>
         <strong>記録する</strong>
-        <p>血圧・心拍・体温・体重など、必要な項目を入力します。</p>
+        <p>血圧・心拍・体温・体重など、必要な項目を入力します。頭痛などの症状は「症状」として記録します。</p>
       </div>
       <div class="step-card">
         <span class="step-number">2</span>
-        <strong>グラフで見る</strong>
-        <p>1週間から1年まで期間を切り替え、体調の変化を確認します。</p>
+        <strong>分析で見る</strong>
+        <p>分析1〜3のタブで、1週間から1年まで期間を切り替えて変化を確認します。</p>
       </div>
       <div class="step-card">
         <span class="step-number">3</span>
-        <strong>統計で分析する</strong>
-        <p>血圧分布や基準比率などの統計で、記録の傾向を確認します。</p>
+        <strong>配置を整える</strong>
+        <p>グラフ・統計・症状の図表を、見たいタブに振り分けて並べ替えます。</p>
       </div>
       <div class="step-card">
         <span class="step-number">4</span>
@@ -87,6 +88,8 @@
       <div class="feature-item">測定タイミングを自動分類する<small>起床時・安静時・就寝前など、時刻帯から自動判定</small></div>
       <div class="feature-item">グラフで推移を確認できる<small>1週〜1年の期間を切り替え表示</small></div>
       <div class="feature-item">統計分析ができる<small>血圧分布・JSH基準比率・脈圧分析など</small></div>
+      <div class="feature-item">分析の図表を自由に配置できる<small>グラフ・統計・症状の図表を分析1〜3に振り分け、並べ替え・非表示も可能</small></div>
+      <div class="feature-item">測定にも環境を記録できる<small>気温・湿度・気圧などを測定記録にも添えられる</small></div>
       <div class="feature-item">Apple ヘルスケアと同期できる<small>書き込み・読み込み・双方向を選択可能</small></div>
       <div class="feature-item">目標値を設定できる<small>血圧・体重など各項目に目標を登録</small></div>
       <div class="feature-item">PDF・CSV・JSON で出力できる<small>PDF を印刷・CSV を Excel で読み込み・JSON はお好きにどうぞ</small></div>
@@ -95,10 +98,14 @@
       <div class="feature-item">表示と操作感を調整できる<small>外観モード、ダイアルの見た目と操作感を設定可能</small></div>
       <div class="feature-item">複数回測定して平均で保存できる<small>表形式で連続入力、平均値と標準偏差を確認しながら 1 件として登録・編集</small></div>
       <div class="feature-item">血圧の測定部位を左右で記録できる<small>左右の腕・手首を「L・R」で指定、統計では左右ペアの測定値から左右差を集計</small></div>
-      <div class="feature-item">起動時に開く画面を選べる<small>新しい記録・記録一覧・グラフ・統計から選択</small></div>
+      <div class="feature-item">起動時に開く画面を選べる<small>新しい記録・記録一覧・分析1〜3から選択</small></div>
       <div class="feature-item">グラフ／統計パネルの高さを変えられる<small>下端のハンドルを上下にドラッグして調整</small></div>
       <div class="feature-item">測定場所・機器を候補から選べる<small>プリセットと入力履歴を候補一覧に表示、タップで入力</small></div>
       <div class="feature-item">記録タブの再タップで追加できる<small>記録画面を開いた状態でタブをもう一度タップすると新規追加シートを表示</small></div>
+      <div class="feature-item">症状を記録できる<small>発症・終息の日時、程度（なし・軽い・中くらい・強い）、メモ</small></div>
+      <div class="feature-item">発症時の環境を記録できる<small>気温・湿度・気圧・24時間気圧差、室温・室内湿度、端末の気圧計</small></div>
+      <div class="feature-item">直前の状況と対処をタグで記録できる<small>プリセットから複数選択、名称を入力して追加も可能</small></div>
+      <div class="feature-item">症状を分析できる<small>発症カレンダー・発症の周期性・発症と環境・発症と直前の状況</small></div>
     </div>
   </section>
 
@@ -201,7 +208,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">カスタマイズ</span>
-        <span class="spec-val">グラフの表示・非表示と順序を変更可能。平均血圧、体重移動平均などの補助グラフも個別に切り替え可能。</span>
+        <span class="spec-val">分析画面右上の「配置」または設定「分析」→「配置」で、図表ごとに分析1〜3・非表示を選び、並べ替え可能。平均血圧、体重移動平均などの補助グラフも個別に切り替え可能。</span>
       </div>
     </div>
 
@@ -231,7 +238,121 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">カスタマイズ</span>
-        <span class="spec-val">分析項目の表示・非表示と順序を変更可能</span>
+        <span class="spec-val">グラフと同じく「配置」で、分析1〜3・非表示の振り分けと並べ替えが可能</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">症状メモ</p>
+      <div class="spec-row">
+        <span class="spec-key">記録項目</span>
+        <span class="spec-val">症状・発症日時・終息日時・程度・環境・直前の状況・対処・メモ</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">程度</span>
+        <span class="spec-val">なし・軽い・中くらい・強い。「なし」は症状が出なかった記録として残り、発症の件数には数えません。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">終息</span>
+        <span class="spec-val">発症した時点では終息をOFFのまま保存できます。治まったあと記録一覧の「砂時計」を押すと、その時刻が終息として入り、持続時間を表示します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">症状のプリセット</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>肩こり</li>
+            <li>腰痛</li>
+            <li>頭痛</li>
+            <li>倦怠感・だるさ</li>
+            <li>めまい</li>
+            <li>腹痛</li>
+            <li>鼻水・鼻づまり</li>
+            <li>咳</li>
+            <li>発熱</li>
+            <li>不眠</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">直前の状況のプリセット</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>寝不足</li>
+            <li>疲れ・過労</li>
+            <li>ストレス</li>
+            <li>画面の見過ぎ</li>
+            <li>同じ姿勢</li>
+            <li>冷え</li>
+            <li>お酒</li>
+            <li>食べ過ぎ</li>
+            <li>食事抜き</li>
+            <li>生理</li>
+          </ul>
+        複数選択できます。未選択は「思い当たらない」として扱います。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">対処のプリセット</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>解熱鎮痛薬</li>
+            <li>寝た</li>
+            <li>安静にした</li>
+            <li>温めた</li>
+            <li>冷やした</li>
+            <li>胃腸薬</li>
+            <li>抗アレルギー薬</li>
+            <li>入浴した</li>
+            <li>ストレッチ・体操</li>
+            <li>受診した</li>
+          </ul>
+        複数選択できます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">タグの追加・編集</span>
+        <span class="spec-val">一覧にない症状・状況・対処は、名称を入力して追加できます。長押しで名称を変更できます。よく使うものほど上に並びます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">環境（屋外）</span>
+        <span class="spec-val">気温・湿度・気圧・24時間気圧差。日本国内では気象庁アメダスの観測値を取得できます（記録日時が現在から3時間以内。公開データは約9日分）。それ以外は手入力します。前回の取得から1時間以内に再取得するときは動画広告が表示されます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">環境（室内・端末）</span>
+        <span class="spec-val">室温・室内湿度は手入力。気圧計のある端末では、端末で測った現地の気圧を取得できます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">上限</span>
+        <span class="spec-val">直前の状況・対処は1件あたり各10個、タグの名称は20字、メモは200字</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">症状の分析</p>
+      <div class="spec-row">
+        <span class="spec-key">配置</span>
+        <span class="spec-val">初期状態では「分析3」に表示。図表の配置は変更可能</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">分析期間</span>
+        <span class="spec-val">1週間・1ヶ月・3ヶ月・6ヶ月・1年（発症カレンダーは期間によらず年・月・日でたどる）</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">図表</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>発症カレンダー — 年・月・日の発症件数と最大程度を表示。日をタップするとその日の記録の詳細を表示</li>
+            <li>発症の周期性 — 症状ごとに、前回の発症から次の発症までの間隔を点で表示し、4件以上の発症からおよその周期を推定</li>
+            <li>発症と環境 — 記録がある環境項目ごとに、環境値の範囲別の発症件数を程度別に積み上げて表示</li>
+            <li>発症と直前の状況 — 状況ごとの発症件数を程度別に表示。未選択（思い当たらない）の件数は白い棒で表示</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">数え方</span>
+        <span class="spec-val">発症日時で1件と数えます（日をまたいで終息した記録も発症日だけに数える）。程度「なし」は数えません。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">注意</span>
+        <span class="spec-val">記録した範囲の集計です。原因や相関を示すものではありません。</span>
       </div>
     </div>
 
@@ -260,6 +381,10 @@
       <div class="spec-row">
         <span class="spec-key">形式</span>
         <span class="spec-val">PDF・CSV（Excel 対応 UTF-8 BOM）・JSON</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">症状メモ</span>
+        <span class="spec-val">PDF・CSV・JSON 出力に含まれます。出力対象は記録一覧の絞り込み（種別・区分・症状）に従います。設定の「全記録を書き出す」（JSON）には全記録が含まれます</span>
       </div>
     </div>
 

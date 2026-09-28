@@ -16,7 +16,7 @@
   <meta property="og:title" content="Vitalin User Guide">
   <meta property="og:description" content="How to use Vitalin for daily health tracking and review.">
   <meta property="og:url" content="https://azukid.com/en/sumpo/Condition/condition.html">
-  <link rel="stylesheet" href="../../../style.css?v=20260508">
+  <link rel="stylesheet" href="../../../style.css?v=20260928">
   <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
@@ -42,7 +42,8 @@
 
   <div class="lead">
     <p>Record and review daily health data — blood pressure, heart rate, body temperature, weight, and more.</p>
-    <p>Measurement timing (wake, post-exercise, etc.) is automatically classified from the time of entry. Track trends with graphs, run statistical analyses, and sync with the Apple Health app.</p>
+    <p>Measurement timing (wake, post-exercise, etc.) is automatically classified from the time of entry. Place graph, statistics, and symptom charts freely on three Analysis tabs to track changes, and sync with the Apple Health app.</p>
+    <p>With symptom notes, you can record symptoms such as headaches or stiff shoulders together with the environment at onset and what came before, then look back at onset patterns.</p>
   </div>
 
   <section class="content-section">
@@ -51,17 +52,17 @@
       <div class="step-card">
         <span class="step-number">1</span>
         <strong>Record</strong>
-        <p>Enter the metrics you need, such as blood pressure, heart rate, temperature, and weight.</p>
+        <p>Enter the metrics you need, such as blood pressure, heart rate, temperature, and weight. Record symptoms such as headaches as "Symptom".</p>
       </div>
       <div class="step-card">
         <span class="step-number">2</span>
-        <strong>Review Graphs</strong>
-        <p>Switch between 1-week and 1-year periods to review changes in your condition.</p>
+        <strong>Review in Analysis</strong>
+        <p>On the Analysis 1–3 tabs, switch between 1-week and 1-year periods to review changes.</p>
       </div>
       <div class="step-card">
         <span class="step-number">3</span>
-        <strong>Analyze Statistics</strong>
-        <p>Use statistics such as BP distribution and guideline ratios to review trends.</p>
+        <strong>Arrange the Layout</strong>
+        <p>Assign graph, statistics, and symptom charts to the tabs you want and reorder them.</p>
       </div>
       <div class="step-card">
         <span class="step-number">4</span>
@@ -87,6 +88,8 @@
       <div class="feature-item">Automatic timing classification<small>Wake, rest, pre-sleep, etc. — determined from the time of entry</small></div>
       <div class="feature-item">View trends in graphs<small>Switch between 1-week to 1-year periods</small></div>
       <div class="feature-item">Statistical analysis<small>BP distribution, JSH guideline ratios, pulse pressure analysis, and more</small></div>
+      <div class="feature-item">Arrange analysis charts freely<small>Assign graph, statistics, and symptom charts to Analysis 1–3; reorder or hide them</small></div>
+      <div class="feature-item">Record the environment with measurements<small>Add temperature, humidity, pressure, and more to measurement records</small></div>
       <div class="feature-item">Sync with Apple Health<small>Choose write-only, read-only, or bidirectional sync</small></div>
       <div class="feature-item">Set personal goals<small>Target values for BP, weight, and other metrics</small></div>
       <div class="feature-item">Export to PDF, CSV, or JSON<small>Print as PDF · open CSV in Excel · do what you like with JSON</small></div>
@@ -95,10 +98,14 @@
       <div class="feature-item">Tune display and controls<small>Set appearance mode and adjust the dial feel</small></div>
       <div class="feature-item">Record multiple measurements and save the average<small>Enter consecutive readings in a table, then save or edit one record with the average and standard deviation</small></div>
       <div class="feature-item">Record the blood pressure site (left/right)<small>Specify the left/right arm or wrist as “L・R”; stats calculate differences from left/right measurement pairs</small></div>
-      <div class="feature-item">Choose the screen opened at launch<small>Pick from new record, record list, graph, or stats</small></div>
+      <div class="feature-item">Choose the screen opened at launch<small>Pick from new record, record list, or Analysis 1–3</small></div>
       <div class="feature-item">Resize graph and statistics panels<small>Drag the handle at the bottom edge up or down</small></div>
       <div class="feature-item">Pick the location/device from suggestions<small>Presets and your entry history appear in a suggestion list; tap to fill in</small></div>
       <div class="feature-item">Tap the Records tab again to add<small>With the record screen open, tapping the tab again opens the sheet for a new record</small></div>
+      <div class="feature-item">Record symptoms<small>Onset and end times, severity (None, Mild, Moderate, Severe), and a note</small></div>
+      <div class="feature-item">Record the environment at onset<small>Temperature, humidity, pressure, 24-hour pressure change, indoor temperature and humidity, and the device barometer</small></div>
+      <div class="feature-item">Tag what came before and what you did<small>Choose several from presets, or add your own by typing a name</small></div>
+      <div class="feature-item">Analyze symptoms<small>Onset calendar, onset periodicity, onsets and environment, onsets and what came before</small></div>
     </div>
   </section>
 
@@ -201,7 +208,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Customization</span>
-        <span class="spec-val">Toggle graph visibility and reorder as preferred. Auxiliary graphs such as mean BP and weight moving average can be switched separately.</span>
+        <span class="spec-val">Use "Layout" at the top right of Analysis, or Settings &gt; Analysis &gt; Layout, to place each chart on Analysis 1–3 or hide it, and reorder charts. Auxiliary graphs such as mean BP and weight moving average can be switched separately.</span>
       </div>
     </div>
 
@@ -231,7 +238,121 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Customization</span>
-        <span class="spec-val">Toggle section visibility and reorder as preferred</span>
+        <span class="spec-val">As with graphs, use "Layout" to assign sections to Analysis 1–3 or hide them, and reorder them</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Symptom Notes</p>
+      <div class="spec-row">
+        <span class="spec-key">Recorded items</span>
+        <span class="spec-val">Symptom, onset time, end time, severity, environment, what came before, what you did, note</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Severity</span>
+        <span class="spec-val">None, Mild, Moderate, Severe. "None" is kept as a record that the symptom did not appear and is not counted as an onset.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">End</span>
+        <span class="spec-val">You can save at onset with "Ended" off. Once it stops, tap the hourglass in the record list to fill in the end time, and the duration is shown.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Symptom presets</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>Stiff shoulders</li>
+            <li>Lower back pain</li>
+            <li>Headache</li>
+            <li>Fatigue</li>
+            <li>Dizziness</li>
+            <li>Abdominal pain</li>
+            <li>Runny or stuffy nose</li>
+            <li>Cough</li>
+            <li>Fever</li>
+            <li>Insomnia</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">"Before onset" presets</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>Lack of sleep</li>
+            <li>Overwork</li>
+            <li>Stress</li>
+            <li>Too much screen time</li>
+            <li>Same posture too long</li>
+            <li>Got cold</li>
+            <li>Alcohol</li>
+            <li>Ate too much</li>
+            <li>Skipped a meal</li>
+            <li>Period</li>
+          </ul>
+        You can choose more than one. Leaving it unselected means "nothing in particular".</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">"What you did" presets</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>Pain &amp; fever reliever</li>
+            <li>Slept</li>
+            <li>Rested</li>
+            <li>Warmed it</li>
+            <li>Cooled it</li>
+            <li>Stomach medicine</li>
+            <li>Allergy medicine</li>
+            <li>Took a bath</li>
+            <li>Stretched</li>
+            <li>Saw a doctor</li>
+          </ul>
+        You can choose more than one.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Adding and editing tags</span>
+        <span class="spec-val">Symptoms, situations, and actions that are not in the list can be added by typing a name. Long-press a tag to rename it. The ones you use most move to the top.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Environment (outdoor)</span>
+        <span class="spec-val">Temperature, humidity, pressure, and 24-hour pressure change. In Japan, observations from the Japan Meteorological Agency (AMeDAS) can be fetched when the record time is within 3 hours of now (about 9 days of data are published). Otherwise, enter them manually. Fetching again within an hour of the last fetch shows a video ad.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Environment (indoor, device)</span>
+        <span class="spec-val">Indoor temperature and humidity are entered manually. On devices with a barometer, the local pressure measured by the device can be fetched.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Limits</span>
+        <span class="spec-val">Up to 10 "Before onset" and 10 "What you did" tags per record, 20 characters per tag name, 200 characters per note</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Symptom Analysis</p>
+      <div class="spec-row">
+        <span class="spec-key">Placement</span>
+        <span class="spec-val">Shown in "Analysis 3" by default. Chart placement can be changed.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Period</span>
+        <span class="spec-val">1 week, 1 month, 3 months, 6 months, 1 year (the onset calendar is browsed by year, month, and day regardless of the period)</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Charts</span>
+        <span class="spec-val">
+          <ul class="option-list">
+            <li>Onset calendar — Shows the number of onsets and the highest severity by year, month, and day. Tap a day to see the details of that day's records.</li>
+            <li>Onset periodicity — For each symptom, plots the interval from one onset to the next and estimates a rough cycle from 4 or more onsets.</li>
+            <li>Onsets and environment — For each environmental factor with records, shows onset counts by value range, stacked by severity.</li>
+            <li>Onsets and what came before — Shows onset counts for each situation by severity. Onsets with nothing selected ("nothing in particular") are shown as a white bar.</li>
+          </ul>
+        </span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Counting</span>
+        <span class="spec-val">Each record is counted once at its onset time (a record that ends on a later day is counted only on the onset day). Records with severity "None" are not counted.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Note</span>
+        <span class="spec-val">These are tallies of what you recorded. They do not show causes or correlations.</span>
       </div>
     </div>
 
@@ -260,6 +381,10 @@
       <div class="spec-row">
         <span class="spec-key">Formats</span>
         <span class="spec-val">PDF, CSV (UTF-8 with BOM, Excel-compatible), JSON</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Symptom notes</span>
+        <span class="spec-val">Included in PDF, CSV, and JSON exports. What is exported follows the record list filter (type, category, symptom). "Export All" (JSON) in Settings includes all records.</span>
       </div>
     </div>
 
