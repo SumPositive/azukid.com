@@ -94,11 +94,10 @@
       <div class="feature-item">目標値を設定できる<small>血圧・体重など各項目に目標を登録</small></div>
       <div class="feature-item">PDF・CSV・JSON で出力できる<small>PDF を印刷・CSV を Excel で読み込み・JSON はお好きにどうぞ</small></div>
       <div class="feature-item">表示項目と順序をカスタマイズできる<small>記録フォームとグラフそれぞれに設定可能</small></div>
-      <div class="feature-item">文字サイズに対応している<small>iOS の文字サイズ設定に連動してアプリ全体の表示が変わる</small></div>
+      <div class="feature-item">文字サイズはシステム設定に対応している<small>アプリ内に文字サイズの設定は無く、iPhone の「設定」の文字サイズに連動してアプリ全体の表示が変わる</small></div>
       <div class="feature-item">表示と操作感を調整できる<small>外観モード、ダイアルの見た目と操作感を設定可能</small></div>
       <div class="feature-item">複数回測定して平均で保存できる<small>表形式で連続入力、平均値と標準偏差を確認しながら 1 件として登録・編集</small></div>
       <div class="feature-item">血圧の測定部位を左右で記録できる<small>左右の腕・手首を「L・R」で指定、統計では左右ペアの測定値から左右差を集計</small></div>
-      <div class="feature-item">起動時に開く画面を選べる<small>新しい記録・記録一覧・分析1〜3から選択</small></div>
       <div class="feature-item">グラフ／統計パネルの高さを変えられる<small>下端のハンドルを上下にドラッグして調整</small></div>
       <div class="feature-item">測定場所・機器を候補から選べる<small>プリセットと入力履歴を候補一覧に表示、タップで入力</small></div>
       <div class="feature-item">記録タブの再タップで追加できる<small>記録画面を開いた状態でタブをもう一度タップすると新規追加シートを表示</small></div>
@@ -148,34 +147,31 @@
       <p class="spec-group-title">測定タイミング（自動分類）</p>
       <div class="spec-row">
         <span class="spec-key">分類方式</span>
-        <span class="spec-val">記録時刻に基づいて自動分類。各タイミングの時刻帯は設定でカスタマイズ可能。</span>
+        <span class="spec-val">記録時刻に基づいて自動分類。各タイミングの時刻帯は設定でカスタマイズ可能。区分は最大8つで、名称・アイコン・色・並び順も変更できます。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">タイミング種類</span>
         <span class="spec-val">
           <ul class="option-list">
-            <li>起床時 — 目が覚めた直後</li>
-            <li>安静時 — 安静な状態</li>
+            <li>起床時 — 起床後1時間以内（排尿後・朝食や服薬の前）</li>
+            <li>安静時 — 朝・夜以外に、座って落ち着いた状態</li>
             <li>就寝前 — 就寝する直前</li>
-            <li>就寝時 — 就寝中</li>
+            <li>体調不良時 — 体調がおかしいと感じたとき</li>
             <li>運動前 — 運動の開始前</li>
-            <li>運動後 — 運動の終了後</li>
           </ul>
+          2.9.0 より前から利用中の場合は、従来の区分（就寝時・運動後を含む）のまま変わりません。
         </span>
       </div>
       <div class="spec-row">
         <span class="spec-key">デフォルト時間帯</span>
         <span class="spec-val">
           <ul class="option-list">
-            <li>0〜2時：就寝時</li>
+            <li>0〜2時：就寝前</li>
             <li>3〜7時：起床時</li>
-            <li>8〜10時：安静時</li>
-            <li>11〜13時：運動前</li>
-            <li>14〜16時：運動後</li>
-            <li>17〜19時：安静時</li>
-            <li>20〜21時：就寝前</li>
-            <li>22〜23時：就寝時</li>
+            <li>8〜19時：安静時</li>
+            <li>20〜23時：就寝前</li>
           </ul>
+          体調不良時・運動前は時刻では割り当てず、記録するときに選びます。
         </span>
       </div>
     </div>
@@ -396,7 +392,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">文字サイズ</span>
-        <span class="spec-val">iOS の文字サイズ設定に連動（Dynamic Type 対応）</span>
+        <span class="spec-val">システム設定の文字サイズに連動（Dynamic Type 対応）。「設定」→「画面表示と明るさ」→「テキストサイズを変更」で調整。さらに大きくするには「設定」→「アクセシビリティ」→「画面表示とテキストサイズ」→「さらに大きな文字」をオン</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">ダイアル設定</span>

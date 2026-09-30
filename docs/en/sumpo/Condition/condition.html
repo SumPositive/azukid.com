@@ -94,11 +94,10 @@
       <div class="feature-item">Set personal goals<small>Target values for BP, weight, and other metrics</small></div>
       <div class="feature-item">Export to PDF, CSV, or JSON<small>Print as PDF · open CSV in Excel · do what you like with JSON</small></div>
       <div class="feature-item">Customize displayed fields and order<small>Configure separately for the record form and graphs</small></div>
-      <div class="feature-item">Dynamic Type support<small>App-wide text size follows the iOS system text size setting</small></div>
+      <div class="feature-item">Text size follows the system setting<small>There is no text size setting in the app; the whole app follows the text size in iPhone Settings</small></div>
       <div class="feature-item">Tune display and controls<small>Set appearance mode and adjust the dial feel</small></div>
       <div class="feature-item">Record multiple measurements and save the average<small>Enter consecutive readings in a table, then save or edit one record with the average and standard deviation</small></div>
       <div class="feature-item">Record the blood pressure site (left/right)<small>Specify the left/right arm or wrist as “L・R”; stats calculate differences from left/right measurement pairs</small></div>
-      <div class="feature-item">Choose the screen opened at launch<small>Pick from new record, record list, or Analysis 1–3</small></div>
       <div class="feature-item">Resize graph and statistics panels<small>Drag the handle at the bottom edge up or down</small></div>
       <div class="feature-item">Pick the location/device from suggestions<small>Presets and your entry history appear in a suggestion list; tap to fill in</small></div>
       <div class="feature-item">Tap the Records tab again to add<small>With the record screen open, tapping the tab again opens the sheet for a new record</small></div>
@@ -148,34 +147,31 @@
       <p class="spec-group-title">Measurement Timing (Auto-classification)</p>
       <div class="spec-row">
         <span class="spec-key">Method</span>
-        <span class="spec-val">Automatically classified from the time of entry. Time-of-day assignments are customizable in Settings.</span>
+        <span class="spec-val">Automatically classified from the time of entry. Time-of-day assignments are customizable in Settings. Up to 8 categories; names, icons, colors, and order can also be changed.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Categories</span>
         <span class="spec-val">
           <ul class="option-list">
-            <li>Wake — immediately upon waking</li>
-            <li>Rest — in a resting state</li>
-            <li>Before sleep — just before going to bed</li>
-            <li>During sleep</li>
-            <li>Pre-exercise — before starting a workout</li>
-            <li>Post-exercise — after finishing a workout</li>
+            <li>Wake — within an hour of waking (after using the toilet, before breakfast or medication)</li>
+            <li>Rest — seated and settled, at times other than morning or night</li>
+            <li>Before bed — just before going to bed</li>
+            <li>Unwell — when you feel something is wrong</li>
+            <li>Before workout — before starting exercise</li>
           </ul>
+          If you have used the app since before 2.9.0, your existing categories (including During sleep and Post-exercise) stay as they are.
         </span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Default time map</span>
         <span class="spec-val">
           <ul class="option-list">
-            <li>0–2h: During sleep</li>
+            <li>0–2h: Before bed</li>
             <li>3–7h: Wake</li>
-            <li>8–10h: Rest</li>
-            <li>11–13h: Pre-exercise</li>
-            <li>14–16h: Post-exercise</li>
-            <li>17–19h: Rest</li>
-            <li>20–21h: Before sleep</li>
-            <li>22–23h: During sleep</li>
+            <li>8–19h: Rest</li>
+            <li>20–23h: Before bed</li>
           </ul>
+          Unwell and Before workout are not assigned by time; choose them when recording.
         </span>
       </div>
     </div>
@@ -396,7 +392,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Text size</span>
-        <span class="spec-val">Follows the iOS system text size setting (Dynamic Type)</span>
+        <span class="spec-val">Follows the system text size setting (Dynamic Type). Adjust it in Settings &gt; Display &amp; Brightness &gt; Text Size. For even larger text, turn on Settings &gt; Accessibility &gt; Display &amp; Text Size &gt; Larger Text</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Dial settings</span>

@@ -94,11 +94,10 @@
       <div class="feature-item">개인 목표 설정<small>혈압·체중 등의 목표값</small></div>
       <div class="feature-item">PDF·CSV·JSON 내보내기<small>PDF로 인쇄 · CSV는 Excel에서 열기 · JSON은 자유롭게 활용</small></div>
       <div class="feature-item">표시 항목과 순서 커스터마이즈<small>기록 화면과 그래프를 각각 설정</small></div>
-      <div class="feature-item">Dynamic Type 대응<small>앱 전체 글자 크기가 iOS 시스템 글자 크기 설정에 연동</small></div>
+      <div class="feature-item">글자 크기는 시스템 설정에 대응<small>앱 안에는 글자 크기 설정이 없고, iPhone "설정"의 글자 크기에 맞춰 앱 전체 표시가 바뀜</small></div>
       <div class="feature-item">표시와 조작 조정<small>외관 모드 설정과 다이얼 조작감 조정</small></div>
       <div class="feature-item">여러 번 측정해 평균 저장<small>표 형식으로 연속 입력한 뒤 평균과 표준편차를 한 건으로 저장·편집</small></div>
       <div class="feature-item">혈압 측정 부위를 좌우로 기록<small>좌우 팔·손목을 「L・R」로 지정, 기록 목록에 표시, 통계에서 좌우차 확인</small></div>
-      <div class="feature-item">시작 시 열 화면 선택<small>새 기록·기록 목록·분석 1~3 중에서 선택</small></div>
       <div class="feature-item">그래프·통계 패널 높이 조절<small>아래쪽 가장자리의 핸들을 위아래로 드래그</small></div>
       <div class="feature-item">측정 장소·기기를 후보에서 선택<small>프리셋과 입력 이력을 후보 목록에 표시, 탭하여 입력</small></div>
       <div class="feature-item">기록 탭을 다시 탭하여 추가<small>기록 화면을 연 상태에서 탭을 다시 누르면 새 기록 추가 시트를 표시</small></div>
@@ -148,34 +147,31 @@
       <p class="spec-group-title">측정 시점(자동 분류)</p>
       <div class="spec-row">
         <span class="spec-key">방식</span>
-        <span class="spec-val">입력 시각으로부터 자동 분류됩니다. 시간대별 배정은 설정에서 커스터마이즈할 수 있습니다.</span>
+        <span class="spec-val">입력 시각으로부터 자동 분류됩니다. 시간대별 배정은 설정에서 커스터마이즈할 수 있습니다. 구분은 최대 8개이며, 이름·아이콘·색·순서도 바꿀 수 있습니다.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">구분</span>
         <span class="spec-val">
           <ul class="option-list">
-            <li>기상 — 일어난 직후</li>
-            <li>안정 — 안정된 상태</li>
+            <li>기상 — 일어난 뒤 1시간 이내(소변 후, 아침 식사·복약 전)</li>
+            <li>안정 — 아침·밤 이외에 앉아서 안정된 상태</li>
             <li>취침 전 — 잠자리에 들기 직전</li>
-            <li>취침 중</li>
+            <li>컨디션 불량 — 몸 상태가 이상하다고 느낄 때</li>
             <li>운동 전 — 운동 시작 전</li>
-            <li>운동 후 — 운동 종료 후</li>
           </ul>
+          2.9.0 이전부터 사용 중이라면 기존 구분(취침 중·운동 후 포함)이 그대로 유지됩니다.
         </span>
       </div>
       <div class="spec-row">
         <span class="spec-key">기본 시간대 맵</span>
         <span class="spec-val">
           <ul class="option-list">
-            <li>0–2시: 취침 중</li>
+            <li>0–2시: 취침 전</li>
             <li>3–7시: 기상</li>
-            <li>8–10시: 안정</li>
-            <li>11–13시: 운동 전</li>
-            <li>14–16시: 운동 후</li>
-            <li>17–19시: 안정</li>
-            <li>20–21시: 취침 전</li>
-            <li>22–23시: 취침 중</li>
+            <li>8–19시: 안정</li>
+            <li>20–23시: 취침 전</li>
           </ul>
+          컨디션 불량·운동 전은 시간대로 배정하지 않으며, 기록할 때 선택합니다.
         </span>
       </div>
     </div>
@@ -391,7 +387,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">글자 크기</span>
-        <span class="spec-val">iOS 시스템 글자 크기 설정(Dynamic Type)에 연동</span>
+        <span class="spec-val">시스템 설정의 글자 크기에 연동(Dynamic Type 대응). "설정" &gt; "디스플레이 및 밝기" &gt; "텍스트 크기"에서 조절. 더 크게 하려면 "설정" &gt; "손쉬운 사용" &gt; "디스플레이 및 텍스트 크기" &gt; "더 큰 텍스트"를 켬</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">다이얼 설정</span>
