@@ -150,7 +150,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Betrag</span>
-        <span class="spec-val">Eingabe über den Zahlenblock. Speichern ist mit Betrag oder mit einer ausgewählten häufigen Zahlung möglich (ohne Betrag wird ein Entwurf gespeichert, den du später vervollständigen kannst).</span>
+        <span class="spec-val">Eingabe über den Zahlenblock, der Grundrechenarten (+, -, ×, ÷) beherrscht; für Ergebnisse, die nicht glatt aufgehen, wählst du die Rundung (Aufrunden, kaufmännisch runden oder Abrunden). Speichern ist mit Betrag oder mit einer ausgewählten häufigen Zahlung möglich (ohne Betrag wird ein Entwurf gespeichert, den du später vervollständigen kannst).</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Nutzungsdatum</span>
@@ -166,7 +166,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Bezeichnung</span>
-        <span class="spec-val">Ein kurzer Hinweis wie Geschäft oder Zweck. Frühere Bezeichnungen werden während der Eingabe vorgeschlagen.</span>
+        <span class="spec-val">Ein kurzer Hinweis wie Geschäft oder Zweck. Während der Eingabe erscheinen frühere Bezeichnungen als Vorschläge direkt über der Tastatur; tippe einen an, um ihn zu übernehmen.</span>
       </div>
     </div>
 
@@ -190,7 +190,7 @@
       <p class="spec-group-title">Ähnliche Einträge</p>
       <div class="spec-row">
         <span class="spec-key">Aus vorhandenem kopieren</span>
-        <span class="spec-val">Wähle im Verlauf einen Eintrag mit gleichem Betrag oder einen kürzlich bearbeiteten Eintrag und kopiere ihn in eine neue Zahlung. Kopieren ist auch aus den Zahlungsmitteln möglich, ebenso Abbuchungstermin + Zahlungsmittel aus dem Abbuchungsstatus. Beim Kopieren wird auch der Betrag übernommen. Der so erzeugte Entwurf wird bestätigt, sobald du ihn antippst, bearbeitest und speicherst; ohne Speichern verschwindet der Entwurf automatisch.</span>
+        <span class="spec-val">Wische im Verlauf einen Eintrag nach links und tippe auf „Kopieren“, um direkt darunter einen kopierten Entwurf anzulegen. Du kannst auch einen Eintrag mit gleichem Betrag oder einen kürzlich bearbeiteten Eintrag wählen, aus den Zahlungsmitteln kopieren oder Abbuchungstermin + Zahlungsmittel aus dem Abbuchungsstatus übernehmen. Beim Kopieren wird auch der Betrag übernommen. Tippe den Entwurf an, um ihn zu bearbeiten und zu speichern; ohne Speichern verschwindet er automatisch.</span>
       </div>
     </div>
 
@@ -231,11 +231,11 @@
     <div class="spec-group">
       <div class="spec-row">
         <span class="spec-key">Sortierung</span>
-        <span class="spec-val">Nach Datum oder Betrag sortieren. Jede Sortierung lässt sich zwischen absteigend und aufsteigend umschalten.</span>
+        <span class="spec-val">Nach Bearbeitungsdatum, Nutzungsdatum oder Betrag sortieren. Jede Sortierung lässt sich zwischen absteigend und aufsteigend umschalten. Bei Sortierung nach Nutzungsdatum wird eine Monatssumme angezeigt, und die Liste öffnet sich bei den heutigen Einträgen, auch wenn es zukünftige Einträge gibt.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Filter</span>
-        <span class="spec-val">Wähle den Zeitraum aus 3 Monaten, 1 Jahr, 3 Jahren oder allem. Zusätzlich kannst du nach alle, fehlende Angaben, Zahlungsmittel, Konto oder mehreren Tags filtern. „Fehlende Angaben“ umfasst Einträge ohne Zahlungsmittel oder ohne Bezeichnung.</span>
+        <span class="spec-val">Wähle den Zeitraum aus 3 Monaten, 1 Jahr, 3 Jahren oder allem. Zusätzlich kannst du nach alle, fehlende Angaben, Zahlungsmittel, Konto oder mehreren Tags filtern. Für Tags wählst du OR (mindestens einer davon) oder AND (alle davon). „Fehlende Angaben“ umfasst Einträge ohne Zahlungsmittel oder ohne Bezeichnung.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Bearbeiten</span>
@@ -265,7 +265,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Filter</span>
-        <span class="spec-val">Wähle alle, Zahlungsmittel oder Konto. Bei Auswahl eines Zahlungsmittels oder Kontos wechselt die Gruppierung auf Datum, damit der Zeitverlauf besser lesbar ist.</span>
+        <span class="spec-val">Wähle alle, Zahlungsmittel, Konto oder Tag. Bei Auswahl eines Zahlungsmittels oder Kontos wechselt die Gruppierung auf Datum, damit der Zeitverlauf besser lesbar ist.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Details</span>
@@ -485,6 +485,8 @@
           <tr><td>2.5.2</td><td>2026/7/20</td><td>Einstellung „Beim Öffnen anzeigen“ ergänzt (Nichts / Hauptmenü / Neue Zahlung per Sprache / Neue Zahlung / Zahlungsliste); beim Kopieren eines Eintrags wird nun auch der Betrag übernommen; der Bereich „Aus Liste kopieren“ merkt sich seinen Zustand; klarere Hinweise für nicht gespeicherte kopierte Entwürfe</td></tr>
           <tr><td>2.6.0</td><td>2026/7/27</td><td>„Häufige Zahlungen“ als Eingabehilfe ergänzt (übernimmt Zahlungsmittel, Tags und dreimal oder öfter verwendete Beträge aus einer häufig genutzten Bezeichnung; in den Einstellungen auf „Aus Zahlungsliste kopieren“ oder „Keine“ umschaltbar); „Neue Zahlung per Sprache“ füllt anhand der Bezeichnung genauso aus; empfiehlt das Bereinigen bezahlter Einträge, die älter als drei Jahre sind; kennzeichnet offene Posten, die älter als ein Jahr sind, im Abbuchungsstatus mit einem Warnsymbol</td></tr>
           <tr><td>2.6.1</td><td>2026/7/30</td><td>Genauigkeit der Spracheingabe verbessert (Erkennung von Beträgen, Fehldeutung von Geschäftsnamen mit Zahlen als Betrag und in die Bezeichnung übernommene Währungseinheiten behoben); erkannte Bezeichnungen werden mit dem Verlauf abgeglichen, damit die Schreibweise einheitlich bleibt; erneutes Sprechen nach einer Pause überschreibt jetzt statt anzufügen; der laufende Erkennungstext wird einzeilig angezeigt; potenzielle Fehler behoben</td></tr>
+          <tr><td>2.7.0</td><td>2026/9/12</td><td>Zahlenblock für Beträge unterstützt jetzt Grundrechenarten (+, -, ×, ÷); bei der Eingabe der Bezeichnung werden Vorschläge aus früheren Eingaben angezeigt; beim Tag-Filter im Verlauf ist OR oder AND wählbar; Filter im Abbuchungsstatus unterstützen Tags; bei Sortierung des Verlaufs nach Nutzungsdatum wird eine Monatssumme angezeigt; bei Sortierung nach Nutzungsdatum öffnet sich der Verlauf bei den heutigen Einträgen, auch wenn es zukünftige Einträge gibt</td></tr>
+          <tr><td>2.7.1</td><td>2026/9/28</td><td>Fehler behoben, bei dem durch Wischen über einen Eintrag im Verlauf kein kopierter Entwurf erstellt wurde</td></tr>
         </tbody>
       </table>
     </div>
