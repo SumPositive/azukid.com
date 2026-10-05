@@ -279,6 +279,14 @@
         <span class="spec-key">Lock Toggle</span>
         <span class="spec-val">Debit Details also include a lock toggle for each item. This restores the old app's confirmation check feature, but uses a lock icon instead of a checkmark. A locked item means you have already verified it against your statement or passbook.</span>
       </div>
+      <div class="spec-row">
+        <span class="spec-key">Reconcile Mode</span>
+        <span class="spec-val">Available in Debit Details filtered to a single pay method. Enter the bill total from your card company's statement to see the difference from the items total. Move items with “Next” or “Current”, or add the missing amount as a difference adjustment item, until the difference reaches zero. Then tap “Mark as Reconciled” to lock this time's items together.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Reconciling / Matched</span>
+        <span class="spec-val">If you save partway with “Save as Is” while a difference remains, Debit Status shows “Reconciling”. Once reconciliation is finished, it shows “Matched”.</span>
+      </div>
     </div>
   </section>
 
@@ -312,7 +320,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Tags</span>
-        <span class="spec-val">Each tag can show the list of related payment records for review and cleanup.</span>
+        <span class="spec-val">Each tag can show the list of related payment records for review and cleanup. In the tag list, if the tag you are looking for does not exist, you can add it on the spot.</span>
       </div>
     </div>
   </section>
@@ -491,6 +499,7 @@
           <tr><td>2.6.1</td><td>2026/7/30</td><td>Improved voice input accuracy (fixed amount parsing such as "12,000," store names containing numerals being misread as amounts, and currency units leaking into the label); recognized labels are now matched against your history so the wording stays consistent; restating after a pause now overwrites instead of appending; the in-progress transcript is shown on a single line; fixed potential issues</td></tr>
           <tr><td>2.7.0</td><td>2026/9/12</td><td>The amount keypad now supports arithmetic (+, -, ×, ÷); label entry suggests candidates from your past entries; tag filtering in Records lets you choose OR or AND; Debit Status filters now support tags; Records sorted by date used shows a monthly total; Records sorted by date used opens at today's entries, even when future entries exist</td></tr>
           <tr><td>2.7.1</td><td>2026/9/28</td><td>Fixed an issue where swiping a record cell in Records did not create a copied draft</td></tr>
+          <tr><td>2.8.0</td><td>In Preparation</td><td>Added Reconcile mode for checking debits (move or add items while watching the difference from the bill total; saving partway shows “Reconciling”), add a tag on the spot from the tag list if it is not found, redesigned the tag list with a tag-style layout, cancel while entering now asks for confirmation, made help text easier to read</td></tr>
         </tbody>
       </table>
     </div>

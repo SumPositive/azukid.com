@@ -279,6 +279,14 @@
         <span class="spec-key">Sperrschalter</span>
         <span class="spec-val">Die Abbuchungsdetails enthalten außerdem einen Sperrschalter je Posten. Damit kehrt die Bestätigungsprüfung der alten App zurück, allerdings mit Schloss- statt Häkchen-Symbol. Ein gesperrter Posten bedeutet, dass du ihn bereits mit Abrechnung oder Kontoauszug abgeglichen hast.</span>
       </div>
+      <div class="spec-row">
+        <span class="spec-key">Abgleichmodus</span>
+        <span class="spec-val">Verfügbar in den Abbuchungsdetails, wenn nach einem einzelnen Zahlungsmittel gefiltert ist. Gib den Rechnungsbetrag aus der Abrechnung deines Kartenanbieters ein, um die Differenz zur Postensumme zu sehen. Verschiebe Posten mit „Zur nächsten“ oder „Zu diesmal“ oder füge den fehlenden Betrag als Differenzausgleich hinzu, bis die Differenz 0 beträgt. Mit „Als abgeglichen markieren“ werden die Posten dieser Abbuchung gemeinsam gesperrt.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Abgleich läuft / Abgeglichen</span>
+        <span class="spec-val">Speicherst du mit „So speichern“ zwischendurch, während noch eine Differenz besteht, zeigt der Abbuchungsstatus „Abgleich läuft“. Nach Abschluss des Abgleichs wird „Abgeglichen“ angezeigt.</span>
+      </div>
     </div>
   </section>
 
@@ -312,7 +320,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Tags</span>
-        <span class="spec-val">Jeder Tag kann die Liste der zugehörigen Zahlungseinträge zur Durchsicht und Bereinigung anzeigen.</span>
+        <span class="spec-val">Jeder Tag kann die Liste der zugehörigen Zahlungseinträge zur Durchsicht und Bereinigung anzeigen. In der Tag-Liste kannst du einen gesuchten Tag direkt hinzufügen, wenn es ihn noch nicht gibt.</span>
       </div>
     </div>
   </section>
@@ -487,6 +495,7 @@
           <tr><td>2.6.1</td><td>2026/7/30</td><td>Genauigkeit der Spracheingabe verbessert (Erkennung von Beträgen, Fehldeutung von Geschäftsnamen mit Zahlen als Betrag und in die Bezeichnung übernommene Währungseinheiten behoben); erkannte Bezeichnungen werden mit dem Verlauf abgeglichen, damit die Schreibweise einheitlich bleibt; erneutes Sprechen nach einer Pause überschreibt jetzt statt anzufügen; der laufende Erkennungstext wird einzeilig angezeigt; potenzielle Fehler behoben</td></tr>
           <tr><td>2.7.0</td><td>2026/9/12</td><td>Zahlenblock für Beträge unterstützt jetzt Grundrechenarten (+, -, ×, ÷); bei der Eingabe der Bezeichnung werden Vorschläge aus früheren Eingaben angezeigt; beim Tag-Filter im Verlauf ist OR oder AND wählbar; Filter im Abbuchungsstatus unterstützen Tags; bei Sortierung des Verlaufs nach Nutzungsdatum wird eine Monatssumme angezeigt; bei Sortierung nach Nutzungsdatum öffnet sich der Verlauf bei den heutigen Einträgen, auch wenn es zukünftige Einträge gibt</td></tr>
           <tr><td>2.7.1</td><td>2026/9/28</td><td>Fehler behoben, bei dem durch Wischen über einen Eintrag im Verlauf kein kopierter Entwurf erstellt wurde</td></tr>
+          <tr><td>2.8.0</td><td>In Vorbereitung</td><td>Abgleichmodus für die Abbuchungsprüfung hinzugefügt (Posten verschieben oder ergänzen und dabei die Differenz zum Rechnungsbetrag sehen; Zwischenspeichern zeigt „Abgleich läuft“), fehlende Tags direkt in der Tag-Liste hinzufügen, Tag-Liste im Tag-Stil neu gestaltet, Bestätigung beim Abbrechen während der Eingabe, Hilfetexte leichter lesbar</td></tr>
         </tbody>
       </table>
     </div>
