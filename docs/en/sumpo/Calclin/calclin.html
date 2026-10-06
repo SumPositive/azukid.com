@@ -86,9 +86,13 @@
       <div class="feature-item">Switch Calculator/Formula mode from the input row<small>Check and change the current calculation style without leaving the active input area</small></div>
       <div class="feature-item">See a running total while entering numbers<small>Calculator mode shows the running total on the current input row (when display width allows)</small></div>
       <div class="feature-item">Paper-roll style history display<small>Subtle side lines and top shading make each roll easier to distinguish, especially with multiple frames</small></div>
-      <div class="feature-item">Edit past roll rows and recalculate<small>In calculator mode, tap any roll row to edit and recalculate</small></div>
-      <div class="feature-item">Beginner mode with operation hints<small>Switch between Beginner and Expert in Settings. Beginner mode shows labels and tips throughout the UI</small></div>
+      <div class="feature-item">Use Formula and Calculator in one roll<small>Formula rows and Calculator rows flow together seamlessly in the same roll (2.4.0)</small></div>
+      <div class="feature-item">Edit past roll rows and recalculate<small>Tap a Calculator detail row to fix its operator and value and recalculate — even while in Formula mode (2.4.0)</small></div>
+      <div class="feature-item">Tap an = row in the history to reuse its answer<small>Continue calculating from the quoted answer. Tap repeatedly to add it up, like [M+] (2.4.0)</small></div>
+      <div class="feature-item">Full precision kept through to the answer<small>Answers keep full precision, not just intermediate steps; only the display is rounded to your digit setting. Tap a rounded answer to see the full-precision value (2.4.0)</small></div>
+      <div class="feature-item">Beginner mode with operation hints<small>Switch between Beginner and Expert in Settings. Beginner mode shows labels and tips throughout the UI. The help sheet is available in Expert mode too, and Expert mode switches rolls and keyboards twice as fast (2.4.0)</small></div>
       <div class="feature-item">Choose the appearance mode<small>Auto, Light, or Dark. Auto follows the system setting; Light and Dark force the app appearance</small></div>
+      <div class="feature-item">Adjust the display from the input row menu<small>Tap the function icon on the input row to change Roll actions (copy, export, erase), input row color, input number font, when to show the latest row, and integer and decimal formatting — while watching the roll (2.4.0)</small></div>
       <div class="feature-item">Choose the decimal point symbol<small>Default: [.] period</small></div>
       <div class="feature-item">Change the number of decimal digits shown<small>Default: 3 digits, up to 10 digits</small></div>
       <div class="feature-item">Choose a rounding mode<small>Default: round half to even (banker's rounding)</small></div>
@@ -98,12 +102,12 @@
       <div class="feature-item">History of expressions and answers<small>Swipe left: delete　Swipe right: add memo / copy expression / copy answer　Double-tap: copy expression</small></div>
       <div class="feature-item">Add notes to history entries</div>
       <div class="feature-item">Enlarge or reduce text size</div>
-      <div class="feature-item">Settings are saved<small>Display mode, appearance mode, text scale, scrolling, decimal point, grouping, rounding, and related options are restored on next launch</small></div>
-      <div class="feature-item">Perform unit-aware calculations<small>Length, area, volume, weight</small></div>
+      <div class="feature-item">Settings are saved<small>Display mode, appearance mode, font size, when to show the latest row, input row color, decimal point, grouping, rounding, and related options are restored on next launch</small></div>
+      <div class="feature-item">Perform unit-aware calculations<small>Length, area, volume, weight<br>Press a different unit key to change only the unit, then press the same key again to convert the value: 60㎡ →[坪]→ 60坪 →[坪]→ 18.15坪<br>Tap an underlined unit to pick another one from the conversion list (2.4.0)</small></div>
       <div class="feature-item">Lay out the keyboard to your liking<small>Long-press any key to define it. Merge keys vertically or horizontally to create larger keys (vertical-priority). Undefined keys (nop) stay visible and can be long-pressed to redefine.</small></div>
-      <div class="feature-item">Switch keyboards<small>5 layouts available (30 keys each)</small></div>
+      <div class="feature-item">Switch keyboards<small>5 layouts available (30 keys each). Swipe left or right, or tap a dot below, to switch</small></div>
       <div class="feature-item">Export and import keyboard layouts<small>Export: choose your destination — AirDrop, Files, Mail, and more. Filename: CalclinKeyboard_yyyyMMdd.json<br>Import: load from any JSON file</small></div>
-      <div class="feature-item">Export the calculation roll as a PDF<small>The PDF button appears in the input row and hides automatically when the frame is too narrow</small></div>
+      <div class="feature-item">Export the calculation roll<small>From Roll in the input row menu: copy as text, create a text file, create a PDF, or erase the roll (with confirmation) (2.4.0)</small></div>
     </div>
   </section>
 
@@ -114,7 +118,7 @@
       <p class="spec-group-title">Calculation Engine</p>
       <div class="spec-row">
         <span class="spec-key">Engine</span>
-        <span class="spec-val">C/C++ fixed-point decimal. Internal calculations are stored in BCD arrays, and the significant-digit count can be changed by definition values. The current app setting uses 60 digits.</span>
+        <span class="spec-val">C/C++ fixed-point decimal. Internal calculations are stored in BCD arrays, and the significant-digit count can be changed by definition values. The current app setting uses 60 digits (30 integer + 30 decimal). Full precision is kept from intermediate steps through to the answer, and only the display is rounded to your decimal digits and rounding mode. Overflow is reported as an error (2.4.0).</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Calculation mode</span>
@@ -150,16 +154,20 @@
         <span class="spec-val">Auto / Light / Dark</span>
       </div>
       <div class="spec-row">
-        <span class="spec-key">Auto-scroll</span>
-        <span class="spec-val">Off / On input / On total</span>
+        <span class="spec-key">Show latest row</span>
+        <span class="spec-val">★ Recommended / Off / On input / On total</span>
       </div>
       <div class="spec-row">
-        <span class="spec-key">Text scale</span>
-        <span class="spec-val">0.5–3.0</span>
+        <span class="spec-key">Font size</span>
+        <span class="spec-val">★ Auto (follows the system setting) / Standard / Large / Extra Large</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Input row color</span>
+        <span class="spec-val">★ Accent / Deep Teal / Indigo / Bronze / Graphite</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Decimal digits</span>
-        <span class="spec-val">0–10 (max 15)</span>
+        <span class="spec-val">0–10 (default 3)</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Rounding modes</span>
@@ -291,6 +299,7 @@
           <tr><td>2.2.0</td><td>2026/4/21</td><td>Xcode 26, iOS 26 — improved paper-roll design, clearer frame separators for multiple calculators, Calculator/Formula and PDF controls in the input row, appearance modes, persistent settings, history-row deletion fix, and added in-app tip purchases to support the developer</td></tr>
           <tr><td>2.3.0</td><td>2026/5/24</td><td>Xcode 26, iOS 26 — text-size support (all screens, sheets, keyboard), custom radio buttons / dropdowns, digit font selection (also changeable via long-press on the input row), improved input-row display (two-line expression + running total, plus auto-shrink), grouping/decimal separators reflected in previews</td></tr>
           <tr><td>2.3.1</td><td>2026/7/15</td><td>Xcode 26, iOS 26 — refreshed app icon (SVG-based), unified the Japanese app name to Calclin, and other fixes and improvements</td></tr>
+          <tr><td>2.4.0</td><td>In Preparation</td><td>Xcode 26, iOS 26 — Formula and Calculator used seamlessly in one roll, tap an = row in the history to reuse its answer (repeat to add up, like M+), full precision kept through to the answer (tap a rounded answer to see the full value), improved unit operations and conversion list, input row function menu (copy, text/PDF export and erase for the roll, input row color, font, when to show the latest row, integer and decimal formatting), twice-as-fast roll and keyboard switching in Expert mode, and reworked selection controls in Settings</td></tr>
         </tbody>
       </table>
     </div>
