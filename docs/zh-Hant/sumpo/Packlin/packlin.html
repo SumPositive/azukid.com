@@ -27,7 +27,7 @@
 <header class="site-header"><div class="site-header-inner"><a class="header-back" href="../../index.html">首頁</a><span class="header-sep">/</span><span class="site-logo">Packlin</span><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button></div></header>
 <main class="page">
   <div class="page-header"><img class="page-header-icon" src="../../../images/icon-packlin.png" alt="Packlin"><div class="page-header-text"><h1>Packlin 使用說明</h1><p class="page-tagline">物品列表與打包準備 App</p></div></div>
-  <div class="lead"><p>Packlin 以行李包、群組、物品三層管理旅行、出差、活動與興趣用品。</p><p>可確認數量、重量與勾選狀態，並支援分享、備份、公開行李包與 Chappy(AI) 生成。</p></div>
+  <div class="lead"><p>Packlin 管理旅行、出差、活動與興趣用品。每個行李包都可選擇以<strong>標籤</strong>自由分類物品，或以<strong>群組</strong>分層整理。</p><p>可確認數量、重量與勾選狀態，並支援分享、備份、公開行李包與 Chappy(AI) 生成。</p></div>
   <section class="content-section"><h2>基本流程</h2><div class="step-flow">      <div class="step-card"><span class="step-number">1</span><strong>建立行李包</strong><p>為旅行、活動或一組物品建立行李包。</p></div>
       <div class="step-card"><span class="step-number">2</span><strong>新增群組與物品</strong><p>將物品分成群組，輸入需要數、庫存與重量。</p></div>
       <div class="step-card"><span class="step-number">3</span><strong>確認準備狀態</strong><p>勾選已準備物品，確認不足數量與總重量。</p></div>
@@ -35,6 +35,10 @@
   <div class="callout">⚠️ 資料未加密。請勿儲存個人或機密資訊。</div>
   <div class="pill-link-row"><a class="pill-link" href="https://apps.apple.com/tw/app/id495525984">App Store</a><a class="pill-link" href="https://info.engineer.co.jp/EULA_en.html">終端使用者授權合約</a><a class="pill-link" href="https://info.engineer.co.jp/PrivacyPolicy_en.html">隱私權政策</a><a class="pill-link" href="../index.html">作者介紹: sumpo</a></div>
   <section class="content-section"><h2>Undo</h2><div class="callout">Packlin 盡量減少確認視窗與儲存按鈕。刪除會立即生效。若操作錯誤，請使用 <strong>Undo ↩︎</strong>。最多可回到10步前，也可用 Redo 重做。</div></section>
+  <section class="content-section"><h2>分類方式（標籤／群組）</h2><div class="callout">分類方式可依行李包分別選擇：在行李包列表點按包包圖示開啟<strong>編輯行李包</strong>，於<strong>分類方式</strong>切換。新的行李包會以標籤開始。</div><div class="spec-group">      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val"><strong>標籤</strong>：不建立階層，所有物品排在同一個列表中，加上標籤來寬鬆分類。一個物品可以加上多個標籤。開啟行李包會直接顯示物品瀏覽。</span></div>
+      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val"><strong>群組</strong>：以「行李包 › 群組 › 物品」三層嚴謹分類。每個物品一定只屬於一個群組。</span></div>
+      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">可隨時切換，物品與標籤都不會消失。從群組切換為標籤時，群組名稱會作為標籤加到該群組的物品上。以標籤新增的物品會放入「標籤式群組」。</span></div>
+      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">在物品詳細中點按標籤即可加上或移除；新的標籤可從搜尋欄新增。長按標籤可變更名稱，或從行李包的所有物品移除。</span></div></div></section>
   <section class="content-section"><h2>功能</h2><div class="feature-grid">      <div class="feature-item">逐項勾選</div>
       <div class="feature-item">需要數、庫存與重量記錄</div>
       <div class="feature-item">拖放排序</div>
@@ -43,31 +47,37 @@
       <div class="feature-item">瀏覽並排序行李包內所有物品</div>
       <div class="feature-item">匯出、匯入與完整備份</div>
       <div class="feature-item">公開到雲端並匯入公開行李包</div>
-      <div class="feature-item">使用 Chappy(AI) 建立或修改行李包</div></div></section>
-  <section class="content-section"><h2>物品總覽</h2><div class="callout">物品總覽會跨群組顯示行李包內所有物品。適合最終確認、搜尋，以及依未勾選、不足個數、不足重量、庫存重量排序。</div></section>
-  <section class="content-section"><h2>數量輸入</h2><div class="callout">重量、庫存與需要數可用轉盤或數字鍵盤輸入。可在轉盤設定中調整樣式與靈敏度。</div></section>
+      <div class="feature-item">使用 Chappy(AI) 建立或修改行李包</div>
+      <div class="feature-item">以標籤分類物品（每個物品可加多個標籤）</div>
+      <div class="feature-item">批次操作：一次加上或移除標籤、複製到其他行李包或刪除</div></div></section>
+  <section class="content-section"><h2>物品瀏覽</h2><div class="callout">物品瀏覽會以單一列表顯示行李包中的所有物品。使用標籤時，開啟行李包就會直接進入此畫面；使用群組時，可從群組列表下方的按鈕開啟。可選擇標籤篩選，或搜尋標籤與物品；並依未勾選、不足數量、不足重量或庫存重量，以遞增或遞減排序。點按一列可開啟物品詳細，點按重量與數量則可在對話框中直接修改。使用標籤時，列表末尾會顯示總重量，並可用「批次操作」處理選取的物品。</div></section>
+  <section class="content-section"><h2>數量輸入</h2><div class="callout">單件重量、庫存與所需數量可用步進器（預設）或轉盤調整，切換按鈕位於物品詳細的數量區右上角。點按數字可用附計算功能（÷ × − ＋）的數字鍵盤直接輸入。轉盤的樣式與靈敏度可以調整。</div></section>
   <section class="content-section"><h2>分享、備份與匯入</h2><div class="spec-group">      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">單一行李包可匯出為 <code>.packlin</code> 檔案，並透過 AirDrop、郵件或其他 App 分享。</span></div>
       <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">所有行李包可儲存為一個備份檔，日後再還原。</span></div>
       <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">匯入備份時，相符的行李包會覆寫，新行李包會新增。</span></div></div></section>
   <section class="content-section"><h2>公開行李包</h2><div class="callout">可將自己的行李包公開到雲端。公開行李包可被其他使用者查看與匯入。公開前請移除個人資訊。</div></section>
   <section class="content-section"><h2>iCloud 備份</h2><div class="callout">AI 使用券與公開 ID 會備份到 iCloud。換機時可在不需要帳號或個人資訊的情況下恢復使用券與公開狀態。</div></section>
-  <section class="content-section"><h2>AI 生成（Chappy）<small style="font-size:0.65em; font-weight:normal; margin-left:8px;">選用 · App 內購買</small></h2><div class="callout">輸入目的地、期間、目的或變更內容後，Chappy 會建議新行李包或修改既有行李包。每次送出需要1張 AI 使用券，可購買或觀看廣告取得。</div></section>
+  <section class="content-section"><h2>AI 生成（Chappy）<small style="font-size:0.65em; font-weight:normal; margin-left:8px;">選用</small></h2><div class="callout">輸入目的地、天數、目的或修改內容後，Chappy 會建議新的行李包或修改既有行李包。每次請求使用 1 張 AI 使用券。沒有使用券時，也可以觀看影片廣告後送出請求。</div></section>
   <section class="content-section"><h2>設定</h2><div class="spec-group">      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">顯示模式：初學者顯示提示，達人更精簡</span></div>
       <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">外觀：系統、淺色或深色</span></div>
       <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">文字大小：自動、標準、大、特大</span></div>
       <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">新增位置：加到上方或下方</span></div>
-      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">勾選與庫存可自動連動</span></div></div></section>
+      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">勾選與庫存可自動連動</span></div>
+      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">明細：第一行一律顯示名稱、重量與數量。「含標籤」會加上標籤，「含標籤與備註」會加上標籤與備註；「最小」與「極小」更為緊湊</span></div>
+      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">1,000g 起顯示 kg：適用於總重量與單件重量，輸入一律以 g 為單位</span></div></div></section>
   <section class="content-section"><h2>規格</h2><div class="spec-group">      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">資料庫：SwiftData (sqlite3)</span></div>
       <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">結構：行李包 → 群組 → 物品</span></div>
       <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">參考值：30個行李包、30個群組、每群組100個物品</span></div>
       <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">最大值：重量999,999g、庫存999、需要數999</span></div>
-      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">名稱與備註：各200字，AI需求：1,000字</span></div></div></section>
+      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">名稱與備註：各200字，AI需求：1,000字</span></div>
+      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">標籤：每個物品最多 20 個，每個 16 字。使用標籤的行李包在內部仍維持三層結構</span></div></div></section>
   <section class="content-section"><h2>版本記錄</h2><div class="table-wrap"><table><thead><tr><th>版本</th><th>日期</th><th>說明</th></tr></thead><tbody>          <tr><td>3.0</td><td>2025/12/8</td><td>SwiftUI / SwiftData rebuild</td></tr>
           <tr><td>3.1.0</td><td>2026/2/3</td><td>iOS 26 support and UI updates</td></tr>
           <tr><td>3.2.0</td><td>2026/4/21</td><td>List and editing improvements</td></tr>
           <tr><td>3.3.0</td><td>2026/5/24</td><td>Text size selection and Move Multiple</td></tr>
           <tr><td>3.3.1</td><td>2026/6/9</td><td>Data integrity, robustness and stability improvements</td></tr>
-          <tr><td>3.4.0</td><td>2026/7/14</td><td>Pack publishing, iCloud backup of AI tickets and publishing ID</td></tr></tbody></table></div></section>
+          <tr><td>3.4.0</td><td>2026/7/14</td><td>Pack publishing, iCloud backup of AI tickets and publishing ID</td></tr>
+          <tr><td>3.5.0</td><td>TBD</td><td>Xcode 27, iOS 27、標籤（分類與篩選）、遞增／遞減排序與總重量、批次操作、步進器／轉盤、數字鍵盤計算功能、8 種語言</td></tr></tbody></table></div></section>
 </main>
 <script src="../../../theme.js?v=20260928"></script>
 </body>

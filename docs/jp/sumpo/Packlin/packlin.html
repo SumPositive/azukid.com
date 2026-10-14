@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>モチメモ　取扱説明</title>
-  <meta name="description" content="モチメモ Packlin の取扱説明です。持ち物リスト、荷造り準備、共有、バックアップ、AI 提案機能などを案内します。">
+  <meta name="description" content="モチメモ Packlin の取扱説明です。持ち物リスト、タグ式とグループ式、荷造り準備、共有、バックアップ、AI 提案機能などを案内します。">
   <link rel="canonical" href="https://azukid.com/jp/sumpo/Packlin/packlin.html">
   <link rel="alternate" href="https://azukid.com/jp/sumpo/Packlin/packlin.html" hreflang="ja">
   <link rel="alternate" href="https://azukid.com/en/sumpo/Packlin/packlin.html" hreflang="en">
@@ -46,6 +46,7 @@
 
   <div class="lead">
     <p>旅行・出張・イベント・趣味用品の持ち物をリスト化し、必要数や重量を確認しながら荷造りを整えるアプリです。</p>
+    <p>パックごとに、タグで自由に分ける「タグ式」と、グループで階層に分ける「グループ式」を選べます。</p>
     <p>チェックリスト、共有、バックアップ、AI 提案機能を使って、忘れ物を減らし、準備の負担を軽くできます。</p>
   </div>
 
@@ -60,7 +61,7 @@
       <div class="step-card">
         <span class="step-number">2</span>
         <strong>アイテムを登録する</strong>
-        <p>必要数、在庫数、重量などを入力して、持ち物リストを整えます。</p>
+        <p>必要数、在庫数、重量などを入力し、タグを付けて分類します。</p>
       </div>
       <div class="step-card">
         <span class="step-number">3</span>
@@ -93,28 +94,73 @@
   </section>
 
   <section class="content-section">
+    <h2>分類方式（タグ式・グループ式）</h2>
+    <div class="callout">
+      パックごとに分類方式を選べます。パック一覧でバッグのアイコンをタップして開く「パック編集」の <strong>分類方式</strong> で切り替えます。新しいパックはタグ式で始まります。
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">2 つの方式</p>
+      <div class="spec-row">
+        <span class="spec-key">タグ式</span>
+        <span class="spec-val">階層を作らずにアイテムを 1 つのリストに並べ、タグを付けてゆるやかに分類します。1 つのアイテムに複数のタグを付けられます。パックを開くと、すぐにアイテム縦覧が表示されます。パック一覧では、バッグの取っ手にタグがぶら下がったアイコンで示します。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">グループ式</span>
+        <span class="spec-val">パック（バッグ）・グループ（ポーチ）・アイテム（物品）の 3 層で、きっちり分類します。アイテムは必ずどれか 1 つのグループに入ります。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">切り替え</span>
+        <span class="spec-val">いつでも切り替えられ、アイテムやタグは消えません。グループ式からタグ式に変えると、グループ名がタグとしてそのグループのアイテムに付きます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">タグ式グループ</span>
+        <span class="spec-val">タグ式で追加したアイテムは「タグ式グループ」に入ります。グループ式に戻すと、このグループで見られます。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">タグ</p>
+      <div class="spec-row">
+        <span class="spec-key">付ける・外す</span>
+        <span class="spec-val">アイテム詳細のタグ欄で、タグを押すと付け外しできます。上の欄に入力して探し、見つからないときは「追加」で新しいタグとして付けられます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">名前の変更・削除</span>
+        <span class="spec-val">タグを長押しすると名前を変更でき、このパックで同じタグが付いたアイテムもまとめて変わります。長押し中に出るゴミ箱ボタンで、このパックのすべてのアイテムからそのタグを外せます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">一覧での表示</span>
+        <span class="spec-val">設定の「明細表示」を <strong>タグ付き</strong> か <strong>タグ・メモ付き</strong> にすると、一覧の各行にタグを表示します。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
     <h2>機能</h2>
     <div class="feature-grid">
       <div class="feature-item">アイテムごとにチェックできる<small>全体の完了状況もひと目で確認</small></div>
+      <div class="feature-item">タグで分類できる<small>1 つのアイテムに複数のタグ。タグ式とグループ式をパックごとに選べる</small></div>
       <div class="feature-item">必要数と在庫数を記録できる</div>
       <div class="feature-item">アイテムの重量を登録できる<small>単位：g。パック全体の総重量を表示</small></div>
       <div class="feature-item">ドラッグ＆ドロップで並べ替えできる</div>
       <div class="feature-item">アイテムを移動・複製できる<small>他のグループやパックへ。アイテム一覧から「まとめて移動」も可能</small></div>
       <div class="feature-item">グループを移動・複製できる<small>他のパックへ</small></div>
-      <div class="feature-item">パック内の全アイテムを縦覧・検索できる<small>未✔︎順・不足個数・不足重量・在庫重量で並べ替え</small></div>
+      <div class="feature-item">パック内の全アイテムを縦覧・検索できる<small>タグで絞り込み。未✔︎順・不足個数・不足重量・在庫重量で並べ替え（昇順・降順）</small></div>
+      <div class="feature-item">まとめて操作できる<small>タグ式で、タグの付け外し・他のパックへコピー・削除をまとめて</small></div>
       <div class="feature-item">Undo：最大 10 回前の状態に戻せる</div>
       <div class="feature-item">Redo：最大 10 回 Undo 前の状態に進める</div>
       <div class="feature-item">パックを書き出し・読み込みできる<small>他の端末や友人と共有</small></div>
       <div class="feature-item">全パックを一括バックアップ・復元できる<small>機種変更やデータ保全に</small></div>
       <div class="feature-item">パックをクラウドに公開できる<small>他の利用者が公開したパックを取り込むことも可能</small></div>
-      <div class="feature-item">AI がパックを提案してくれる（オプション）<small>利用券が必要。購入または広告視聴で入手</small></div>
+      <div class="feature-item">AI がパックを提案してくれる（オプション）<small>AI 利用券、または動画広告の視聴で依頼</small></div>
     </div>
   </section>
 
   <section class="content-section">
     <h2>アイテム縦覧</h2>
     <div class="callout">
-      グループ一覧画面下部の「アイテム縦覧」ボタンから、パック内の全アイテムをグループをまたいで一覧表示できます。出発前の最終チェックや荷物の見直しに便利です。キーワード検索にも対応しています。
+      パック内の全アイテムを、グループをまたいで 1 つの一覧で表示します。タグ式ではパックを開くとこの画面になり、グループ式ではグループ一覧画面下部の「アイテム縦覧」ボタンから開きます。出発前の最終チェックや荷物の見直しに便利です。
     </div>
 
     <div class="spec-group">
@@ -135,39 +181,79 @@
         <span class="spec-key">在庫重量</span>
         <span class="spec-val">現在の在庫重量（在庫数 × 単重）が大きい順に表示します。重量オーバー時の見直しに役立ちます。</span>
       </div>
+      <div class="spec-row">
+        <span class="spec-key">昇順・降順</span>
+        <span class="spec-val">並べ替え条件の右のボタンで、昇順と降順を切り替えます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">並べ直し</span>
+        <span class="spec-val">チェックや数量を変えても、行の位置はすぐには動きません。並びが古くなると並べ替え条件がグレーになり、タップすると並べ直します。</span>
+      </div>
     </div>
 
     <div class="spec-group">
-      <p class="spec-group-title">その他</p>
+      <p class="spec-group-title">絞り込みと検索</p>
       <div class="spec-row">
-        <span class="spec-key">キーワード検索</span>
-        <span class="spec-val">名前・メモを対象にリアルタイムで絞り込みます。</span>
+        <span class="spec-key">タグ一覧</span>
+        <span class="spec-val">タグを選ぶと、そのタグのアイテムだけに絞り込みます。「タグなし」も選べます。下のハンドルを上下にドラッグすると、タグ一覧の高さを変えられます。</span>
       </div>
       <div class="spec-row">
-        <span class="spec-key">常時並べ替え</span>
-        <span class="spec-val">オンにすると、チェック・在庫の変更に合わせてリストが自動で並び直ります。</span>
+        <span class="spec-key">検索</span>
+        <span class="spec-val">タグと、アイテムの名称・メモを対象に、入力に合わせて絞り込みます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">合計重量（タグ式）</span>
+        <span class="spec-val">一覧の末尾に、表示中のアイテムの合計重量を表示します。タグで絞り込むと、そのタグのアイテムの合計になります。</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">操作</p>
+      <div class="spec-row">
+        <span class="spec-key">詳細編集</span>
+        <span class="spec-val">行をタップすると、アイテム詳細を開きます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">数量パネル</span>
+        <span class="spec-val">行の重量・数量の部分をタップすると吹き出しが開き、その場で個重量・在庫数・必要数を変えられます。メモとタグも確認できます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">追加（タグ式）</span>
+        <span class="spec-val">右上の ＋ ボタンか、一覧の末尾の「末尾に追加」でアイテムを追加できます。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">まとめて操作（タグ式）</span>
+        <span class="spec-val">「まとめて操作」を押して行をタップで選び、「操作」から <strong>タグを付ける</strong>・<strong>タグを外す</strong>・<strong>他のパックへコピー</strong>・<strong>削除</strong> をまとめて行えます。「表示中をすべて選択」で、絞り込んだ結果を一度に選べます。</span>
       </div>
     </div>
   </section>
 
   <section class="content-section">
     <h2>数量入力</h2>
-    <p style="margin-bottom:12px;">個重量・在庫数・必要数はそれぞれ 2 とおりの方法で入力できます。</p>
+    <p style="margin-bottom:12px;">個重量・在庫数・必要数は、アイテム詳細の数量欄や、一覧の数量パネルで入力できます。</p>
 
     <div class="spec-group">
       <p class="spec-group-title">入力方法</p>
       <div class="spec-row">
+        <span class="spec-key">ステッパ</span>
+        <span class="spec-val">＋・− ボタンで 1 ずつ増減します（初期設定）。</span>
+      </div>
+      <div class="spec-row">
         <span class="spec-key">ダイアル</span>
-        <span class="spec-val">各フィールド右側のダイアルを左右にドラッグして値を増減します。スタイル（見た目）と感度（ピッチ・スムージング・慣性）はダイアル設定でカスタマイズできます。</span>
+        <span class="spec-val">ダイアルを左右にドラッグして値を増減します。アイテム詳細の数量欄の右上のボタンで、ステッパとダイアルを切り替えられます。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">テンキー</span>
-        <span class="spec-val">フィールドの数値部分をタップすると専用テンキーシートが開きます。直接数値を入力できます。</span>
+        <span class="spec-val">数値をタップすると、画面下にテンキーが開き、直接入力できます。÷ × − ＋ の計算もでき、割り算の端数は四捨五入します。</span>
       </div>
     </div>
 
     <div class="spec-group">
       <p class="spec-group-title">ダイアル設定</p>
+      <div class="spec-row">
+        <span class="spec-key">開き方</span>
+        <span class="spec-val">ダイアル表示のとき、数量欄の右上に出る「ダイアル設定」から開きます。</span>
+      </div>
       <div class="spec-row">
         <span class="spec-key">スタイル</span>
         <span class="spec-val">Legacy / Midnight / Brass / Ocean / Shape / Varnia / Chrome / Hairline / Rubber の 9 種類から選べます。</span>
@@ -259,10 +345,10 @@
   </section>
 
   <section class="content-section">
-    <h2>AI 生成（チャッピー）<small style="font-size:0.65em; font-weight:normal; margin-left:8px;">オプション・有料</small></h2>
+    <h2>AI 生成（チャッピー）<small style="font-size:0.65em; font-weight:normal; margin-left:8px;">オプション</small></h2>
     <div class="callout">
       旅行先やイベントの目的を伝えると、AI がパックの内容を提案してくれます。提案されたパックはそのまま保存でき、あとから自由に編集できます。既存パックを AI に渡して修正を依頼することもできます。<br><br>
-      <strong>1 回の生成につき AI 利用券 1 枚が必要です。</strong>利用券はアプリ内購入（1 枚・5 枚）または広告視聴で入手できます。
+      <strong>1 回の生成につき AI 利用券 1 枚を使います。</strong>利用券がなくても、動画広告を視聴して依頼できます。
     </div>
 
     <div class="spec-group">
@@ -282,14 +368,14 @@
     </div>
 
     <div class="spec-group">
-      <p class="spec-group-title">AI 利用券の入手方法</p>
+      <p class="spec-group-title">依頼の方法</p>
       <div class="spec-row">
-        <span class="spec-key">アプリ内購入</span>
-        <span class="spec-val">1 枚・5 枚のセットを購入できます。</span>
+        <span class="spec-key">AI 利用券</span>
+        <span class="spec-val">お持ちの AI 利用券で依頼できます。残りの枚数はチャッピーの画面に表示されます。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">広告視聴</span>
-        <span class="spec-val">設定画面の「広告を見て寄付」から動画広告を視聴することでも入手できます。</span>
+        <span class="spec-val">利用券がないときは、チャッピーの画面から動画広告を視聴すると、利用券を使わずに依頼できます。</span>
       </div>
     </div>
   </section>
@@ -309,7 +395,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">明細表示</span>
-        <span class="spec-val">行ごとの表示行数を切り替えます。<strong>最小</strong>：名称 1 行・メモ非表示　<strong>1 行</strong>：名称 1 行・メモ 1 行　<strong>2 行</strong>：各 2 行　<strong>3 行</strong>：各 3 行。</span>
+        <span class="spec-val">一覧の各行に何を出すかを選びます。1 行目はどれも名称・重量・数量です。<strong>タグ・メモ付き</strong>：2 行目にタグ、3 行目にメモ　<strong>タグ付き</strong>：2 行目にタグ　<strong>名称（重量・数量）</strong>：1 行目のみ　<strong>最小</strong>：1 行目のみで行間を詰める　<strong>極小</strong>：さらに詰める。タグやメモが空の行は表示しません。グループの行は、タグ・メモ付きのときだけメモを表示します。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">文字サイズ</span>
@@ -332,8 +418,8 @@
         <span class="spec-val">必要数ぶんの重量（必要数 × 単重）を表示します。</span>
       </div>
       <div class="spec-row">
-        <span class="spec-key">重量計 1000g から kg 表示</span>
-        <span class="spec-val">合計重量が 1,000g 以上になると「1.0 kg」形式に切り替えます。</span>
+        <span class="spec-key">重量 1,000g から kg 表示</span>
+        <span class="spec-val">合計重量やアイテムの個重量が 1,000g 以上になると「1.0 kg」形式に切り替えます。入力は常に g です。</span>
       </div>
     </div>
 
@@ -366,6 +452,10 @@
       <div class="spec-row">
         <span class="spec-key">階層</span>
         <span class="spec-val">Pack → Group → Item の 3 層構造。Item が最小単位です。</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">タグ</span>
+        <span class="spec-val">Item に複数のタグを付けられます。タグ式のパックも内部では同じ 3 層構造で、タグ式で追加した Item は「タグ式グループ」に入ります。</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Pack</span>
@@ -435,6 +525,10 @@
         <span class="spec-val">200 文字</span>
       </div>
       <div class="spec-row">
+        <span class="spec-key">タグ</span>
+        <span class="spec-val">16 文字、1 アイテムに 20 個まで</span>
+      </div>
+      <div class="spec-row">
         <span class="spec-key">AI 要望テキスト</span>
         <span class="spec-val">1,000 文字</span>
       </div>
@@ -475,6 +569,7 @@
           <tr><td>3.3.0</td><td>2026/5/24</td><td>文字サイズ選択（自動/標準/大/特大）、アイテム一覧に「まとめて移動」を追加</td></tr>
           <tr><td>3.3.1</td><td>2026/6/9</td><td>一覧の広告表示を見直し、細かな表示調整と安定性の改善</td></tr>
           <tr><td>3.4.0</td><td>2026/7/14</td><td>パック公開機能、AI利用券・公開IDのiCloudバックアップ、アプリアイコン刷新</td></tr>
+          <tr><td>3.5.0</td><td>TBD</td><td>Xcode 27, iOS 27、タグ式（タグで分類・絞り込み）、アイテム縦覧の昇順・降順と合計重量、まとめて操作、ステッパ／ダイアル切り替え、テンキーの計算機能、8 言語対応</td></tr>
         </tbody>
       </table>
     </div>

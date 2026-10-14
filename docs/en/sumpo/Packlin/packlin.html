@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Packlin User Guide</title>
-  <meta name="description" content="User guide for Packlin, covering item lists, packing preparation, sharing, backup, and AI-assisted pack suggestions.">
+  <meta name="description" content="User guide for Packlin, covering item lists, tags and groups, packing preparation, sharing, backup, and AI-assisted pack suggestions.">
   <link rel="canonical" href="https://azukid.com/en/sumpo/Packlin/packlin.html">
   <link rel="alternate" href="https://azukid.com/jp/sumpo/Packlin/packlin.html" hreflang="ja">
   <link rel="alternate" href="https://azukid.com/en/sumpo/Packlin/packlin.html" hreflang="en">
@@ -46,6 +46,7 @@
 
   <div class="lead">
     <p>List belongings for trips, business travel, events, and hobby gear, then prepare your packing while checking quantities and weight.</p>
+    <p>For each pack, choose <strong>Tags</strong> to sort items freely, or <strong>Groups</strong> to organize them in layers.</p>
     <p>Use checklists, sharing, backup, and AI-assisted suggestions to reduce forgotten items and make preparation easier.</p>
   </div>
 
@@ -60,7 +61,7 @@
       <div class="step-card">
         <span class="step-number">2</span>
         <strong>Add Items</strong>
-        <p>Enter required quantity, stock quantity, weight, and other item details.</p>
+        <p>Enter required quantity, stock quantity, and weight, and sort items with tags.</p>
       </div>
       <div class="step-card">
         <span class="step-number">3</span>
@@ -93,92 +94,177 @@
   </section>
 
   <section class="content-section">
+    <h2>Organize By (Tags / Groups)</h2>
+    <div class="callout">
+      You can choose how each pack is organized. Tap the bag icon in the pack list to open <strong>Edit pack</strong>, and switch with <strong>Organize by</strong>. New packs start with Tags.
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Two ways</p>
+      <div class="spec-row">
+        <span class="spec-key">Tags</span>
+        <span class="spec-val">Items sit in one flat list, and you sort them loosely by attaching tags. One item can have several tags. Opening the pack takes you straight to Item browse. In the pack list, the pack icon shows a tag hanging from the bag's handle.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Groups</span>
+        <span class="spec-val">Sort strictly in three layers: Pack (bag), Group (pouch), and Item. Each item always belongs to exactly one group.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Switching</span>
+        <span class="spec-val">You can switch at any time, and no items or tags are lost. When you switch from Groups to Tags, each group name is attached as a tag to the items in that group.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Tag-mode group</span>
+        <span class="spec-val">Items added with Tags go into the "Tag-mode group". When you switch back to Groups, you'll find them in this group.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Tags</p>
+      <div class="spec-row">
+        <span class="spec-key">Add / remove</span>
+        <span class="spec-val">In the Tags section of the item detail, tap a tag to attach or remove it. Type in the field above to find a tag; if it isn't there, tap "Add" to attach it as a new tag.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Rename / delete</span>
+        <span class="spec-val">Press and hold a tag to rename it, and items in this pack with the same tag change too. While renaming, the trash button removes that tag from every item in this pack.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">In lists</span>
+        <span class="spec-val">Set "Details" in Settings to <strong>With tags</strong> or <strong>With tags &amp; memo</strong> to show tags on each row.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
     <h2>Features</h2>
     <div class="feature-grid">
       <div class="feature-item">Check items one by one<small>See overall completion at a glance</small></div>
+      <div class="feature-item">Sort items with tags<small>Several tags per item. Choose Tags or Groups for each pack</small></div>
       <div class="feature-item">Record required quantity and stock quantity</div>
       <div class="feature-item">Register item weight<small>Unit: g. View total weight per pack.</small></div>
       <div class="feature-item">Reorder via drag and drop</div>
       <div class="feature-item">Move or duplicate items<small>To other groups or packs. Bulk "Move Multiple" is also available from the item list</small></div>
       <div class="feature-item">Move or duplicate groups<small>To other packs</small></div>
-      <div class="feature-item">Browse and search all items in a pack<small>Sort by unchecked, shortage count, shortage weight, or stock weight</small></div>
+      <div class="feature-item">Browse and search all items in a pack<small>Filter by tag. Sort by unchecked, shortage count, shortage weight, or stock weight, ascending or descending</small></div>
+      <div class="feature-item">Bulk edit<small>With Tags: add or remove tags, copy to another pack, or delete, all at once</small></div>
       <div class="feature-item">Undo: revert up to 10 steps</div>
       <div class="feature-item">Redo: restore up to 10 steps</div>
       <div class="feature-item">Export and import packs<small>Share with other devices or friends</small></div>
       <div class="feature-item">Full backup and restore<small>For device migration or data safety</small></div>
       <div class="feature-item">Publish packs to the cloud<small>You can also import packs published by other users</small></div>
-      <div class="feature-item">AI suggests pack contents (optional)<small>Requires tickets — purchase or watch an ad</small></div>
+      <div class="feature-item">AI suggests pack contents (optional)<small>Use an AI ticket, or watch a video ad to send a request</small></div>
     </div>
   </section>
 
   <section class="content-section">
-    <h2>Item Overview</h2>
+    <h2>Item Browse</h2>
     <div class="callout">
-      Tap "Item Overview" in the footer of the group list screen to browse all items across every group in a pack. Perfect for a final check before departure or reviewing your load. Keyword search is also supported.
+      Item browse shows every item in a pack in one list, across all groups. With Tags, opening a pack takes you to this screen. With Groups, open it from the "Item Browse" button at the bottom of the group list. Handy for a final check before departure or for reviewing your load.
     </div>
 
     <div class="spec-group">
-      <p class="spec-group-title">Sort options</p>
+      <p class="spec-group-title">Sorting</p>
       <div class="spec-row">
         <span class="spec-key">Unchecked</span>
-        <span class="spec-val">Unchecked items appear first. Ideal for a final pre-departure review.</span>
+        <span class="spec-val">Brings unchecked items to the top. Ideal for a final check before departure.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Shortage count</span>
-        <span class="spec-val">Items where stock falls short of required quantity, sorted by largest shortfall first.</span>
+        <span class="spec-val">Lists items whose stock is below the required quantity, largest shortage first.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Shortage weight</span>
-        <span class="spec-val">Items sorted by the weight of their shortage (shortage count × unit weight), heaviest first.</span>
+        <span class="spec-val">Lists items by the weight of the shortfall (shortage × unit weight), largest first.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Stock weight</span>
-        <span class="spec-val">Items sorted by current stock weight (stock count × unit weight), heaviest first. Useful when reviewing an overweight pack.</span>
+        <span class="spec-val">Lists items by current stock weight (stock × unit weight), largest first. Useful when your bag is overweight.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Ascending / descending</span>
+        <span class="spec-val">The button to the right of the sort option switches between ascending and descending order.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Re-sort</span>
+        <span class="spec-val">Rows don't move right away when you check items or change counts. When the order is out of date, the sort option turns gray; tap it to sort again.</span>
       </div>
     </div>
 
     <div class="spec-group">
-      <p class="spec-group-title">Other</p>
+      <p class="spec-group-title">Filtering and search</p>
       <div class="spec-row">
-        <span class="spec-key">Keyword search</span>
-        <span class="spec-val">Filters by item name and memo in real time.</span>
+        <span class="spec-key">Tag list</span>
+        <span class="spec-val">Choose a tag to show only items with that tag. "No tag" is also available. Drag the handle below the list up or down to change its height.</span>
       </div>
       <div class="spec-row">
-        <span class="spec-key">Auto-sort</span>
-        <span class="spec-val">When enabled, the list re-sorts automatically as you check items or update stock.</span>
+        <span class="spec-key">Search</span>
+        <span class="spec-val">Narrows the list as you type, matching tags and item names and memos.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Total weight (Tags)</span>
+        <span class="spec-val">The end of the list shows the total weight of the items shown. When filtered by a tag, it's the total for that tag.</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Actions</p>
+      <div class="spec-row">
+        <span class="spec-key">Item detail</span>
+        <span class="spec-val">Tap a row to open the item detail.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Quantity panel</span>
+        <span class="spec-val">Tap the weight and count on a row to open a callout where you can change the weight per item, stock, and required count on the spot. It also shows the memo and tags.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Add (Tags)</span>
+        <span class="spec-val">Add items with the ＋ button at the top right, or with "Add to end" at the end of the list.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Bulk edit (Tags)</span>
+        <span class="spec-val">Tap "Bulk edit", select rows by tapping them, then use "Actions" to <strong>Add tags</strong>, <strong>Remove tags</strong>, <strong>Copy to another pack</strong>, or <strong>Delete</strong> all at once. "Select all shown" selects the filtered results in one go.</span>
       </div>
     </div>
   </section>
 
   <section class="content-section">
     <h2>Quantity Input</h2>
-    <p style="margin-bottom:12px;">Weight per item, stock count, and required quantity can each be entered in two ways.</p>
+    <p style="margin-bottom:12px;">Enter the weight per item, stock, and required count in the quantity section of the item detail, or in the quantity panel of a list.</p>
 
     <div class="spec-group">
       <p class="spec-group-title">Input methods</p>
       <div class="spec-row">
+        <span class="spec-key">Stepper</span>
+        <span class="spec-val">Adjust by 1 with the ＋ and − buttons (default).</span>
+      </div>
+      <div class="spec-row">
         <span class="spec-key">Dial</span>
-        <span class="spec-val">Drag the dial to the right of each field left or right to increase or decrease the value. The dial style (appearance) and sensitivity (pitch, smoothing, inertia) can be customized in Dial Settings.</span>
+        <span class="spec-val">Drag the dial left or right to adjust the value. The button at the top right of the quantity section in the item detail switches between the stepper and the dial.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Numeric keypad</span>
-        <span class="spec-val">Tap the number shown in a field to open a dedicated numeric keypad sheet where you can type a value directly.</span>
+        <span class="spec-val">Tap a number to open a keypad at the bottom of the screen and type the value directly. It can also calculate with ÷ × − ＋; fractions from division are rounded to the nearest whole number.</span>
       </div>
     </div>
 
     <div class="spec-group">
-      <p class="spec-group-title">Dial Settings</p>
+      <p class="spec-group-title">Dial settings</p>
+      <div class="spec-row">
+        <span class="spec-key">How to open</span>
+        <span class="spec-val">When the dial is shown, open "Dial" settings at the top right of the quantity section.</span>
+      </div>
       <div class="spec-row">
         <span class="spec-key">Style</span>
-        <span class="spec-val">Choose from 9 visual styles: Legacy, Midnight, Brass, Ocean, Shape, Varnia, Chrome, Hairline, or Rubber.</span>
+        <span class="spec-val">Choose from 9 styles: Legacy / Midnight / Brass / Ocean / Shape / Varnia / Chrome / Hairline / Rubber.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Sensitivity preset</span>
-        <span class="spec-val">Five presets available: Fine, Mild, Standard, Light, and Fast.</span>
+        <span class="spec-val">Choose from 5 levels: Fine / Mild / Standard / Light / Fast.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Fine-tuning</span>
-        <span class="spec-val">Adjust pitch, smoothing, and inertia start velocity individually with sliders.</span>
+        <span class="spec-val">Adjust pitch, smoothing, and inertia start speed with sliders.</span>
       </div>
     </div>
   </section>
@@ -259,10 +345,10 @@
   </section>
 
   <section class="content-section">
-    <h2>AI Generation (Chappy)<small style="font-size:0.65em; font-weight:normal; margin-left:8px;">Optional · In-app purchase</small></h2>
+    <h2>AI Generation (Chappy)<small style="font-size:0.65em; font-weight:normal; margin-left:8px;">Optional</small></h2>
     <div class="callout">
       Tell Chappy where you're going or what the occasion is, and the AI will suggest a complete pack for you. The suggested pack is saved directly and can be edited freely afterward. You can also hand an existing pack to Chappy and ask for revisions.<br><br>
-      <strong>Each generation costs 1 AI ticket.</strong> Tickets are available via in-app purchase (1 or 5 tickets) or by watching an ad.
+      <strong>Each generation uses 1 AI ticket.</strong> Even without tickets, you can send a request by watching a video ad.
     </div>
 
     <div class="spec-group">
@@ -282,14 +368,14 @@
     </div>
 
     <div class="spec-group">
-      <p class="spec-group-title">How to get tickets</p>
+      <p class="spec-group-title">How to send a request</p>
       <div class="spec-row">
-        <span class="spec-key">In-app purchase</span>
-        <span class="spec-val">Available in sets of 1 or 5 tickets.</span>
+        <span class="spec-key">AI tickets</span>
+        <span class="spec-val">Use the AI tickets you have. The number left is shown on the Chappy screen.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Watch an ad</span>
-        <span class="spec-val">Tickets can also be earned by watching a video ad from the "Support with an Ad" button in Settings.</span>
+        <span class="spec-val">When you have no tickets, watch a video ad from the Chappy screen to send a request without using a ticket.</span>
       </div>
     </div>
   </section>
@@ -309,7 +395,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Row detail</span>
-        <span class="spec-val">Controls how many lines are shown per row. <strong>Minimal</strong>: name 1 line, memo hidden. <strong>1 line</strong>: name 1 line, memo 1 line. <strong>2 lines</strong>: 2 lines each. <strong>3 lines</strong>: 3 lines each.</span>
+        <span class="spec-val">Chooses what each row in a list shows. The first line always shows the name, weight, and count. <strong>With tags &amp; memo</strong>: tags on line 2, memo on line 3. <strong>With tags</strong>: tags on line 2. <strong>Name (weight, count)</strong>: first line only. <strong>Min</strong>: first line only, with tighter spacing. <strong>Tiny</strong>: even tighter. Lines with no tags or memo are not shown. Group rows show the memo only with With tags &amp; memo.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Text size</span>
@@ -332,8 +418,8 @@
         <span class="spec-val">Displays the weight for the required quantity (required × unit weight).</span>
       </div>
       <div class="spec-row">
-        <span class="spec-key">Show kg above 1,000 g</span>
-        <span class="spec-val">When the total weight reaches 1,000 g, switches display to "1.0 kg" format.</span>
+        <span class="spec-key">Show kg from 1,000 g</span>
+        <span class="spec-val">When a total weight or an item's weight per item reaches 1,000 g, it is shown in "1.0 kg" format. Input is always in g.</span>
       </div>
     </div>
 
@@ -366,6 +452,10 @@
       <div class="spec-row">
         <span class="spec-key">Layers</span>
         <span class="spec-val">Three layers: Pack → Group → Item. Item is the smallest unit.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Tags</span>
+        <span class="spec-val">An Item can have several tags. Packs using Tags keep the same three layers internally; Items added with Tags go into the "Tag-mode group".</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Pack</span>
@@ -435,6 +525,10 @@
         <span class="spec-val">200 characters</span>
       </div>
       <div class="spec-row">
+        <span class="spec-key">Tags</span>
+        <span class="spec-val">16 characters each, up to 20 per item</span>
+      </div>
+      <div class="spec-row">
         <span class="spec-key">AI request text</span>
         <span class="spec-val">1,000 characters</span>
       </div>
@@ -475,6 +569,7 @@
           <tr><td>3.3.0</td><td>2026/5/24</td><td>Text size selection (Auto / Standard / Large / Extra Large), added "Move Multiple" to item list</td></tr>
           <tr><td>3.3.1</td><td>2026/6/9</td><td>Reworked ad placement in lists, minor display tweaks and stability improvements</td></tr>
           <tr><td>3.4.0</td><td>2026/7/14</td><td>Pack publishing, iCloud backup of AI tickets and publishing ID, refreshed app icon</td></tr>
+          <tr><td>3.5.0</td><td>TBD</td><td>Xcode 27, iOS 27, Tags (sort and filter by tag), ascending/descending order and total weight in Item browse, Bulk edit, stepper/dial switch, calculator on the keypad, 8 languages</td></tr>
         </tbody>
       </table>
     </div>

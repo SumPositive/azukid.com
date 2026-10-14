@@ -27,7 +27,7 @@
 <header class="site-header"><div class="site-header-inner"><a class="header-back" href="../../index.html">Startseite</a><span class="header-sep">/</span><span class="site-logo">Packlin</span><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button></div></header>
 <main class="page">
   <div class="page-header"><img class="page-header-icon" src="../../../images/icon-packlin.png" alt="Packlin"><div class="page-header-text"><h1>Packlin Bedienungsanleitung</h1><p class="page-tagline">App für Packlisten und Reisevorbereitung</p></div></div>
-  <div class="lead"><p>Packlin verwaltet Dinge für Reisen, Geschäftsreisen, Events und Hobbys in drei Ebenen: Pack, Gruppe und Objekt.</p><p>Du kannst Mengen, Gewicht und Check-Status prüfen, Packs teilen, sichern, veröffentlichen und mit Chappy (KI) erstellen lassen.</p></div>
+  <div class="lead"><p>Packlin verwaltet Dinge für Reisen, Geschäftsreisen, Events und Hobbys. Für jedes Pack wählst du <strong>Tags</strong>, um Objekte frei zu ordnen, oder <strong>Gruppen</strong>, um sie in Ebenen zu gliedern.</p><p>Du kannst Mengen, Gewicht und Check-Status prüfen, Packs teilen, sichern, veröffentlichen und mit Chappy (KI) erstellen lassen.</p></div>
   <section class="content-section"><h2>Grundablauf</h2><div class="step-flow">      <div class="step-card"><span class="step-number">1</span><strong>Pack erstellen</strong><p>Erstelle ein Pack für eine Reise, ein Event oder eine Ausrüstung.</p></div>
       <div class="step-card"><span class="step-number">2</span><strong>Gruppen und Objekte hinzufügen</strong><p>Teile Dinge in Gruppen auf und erfasse benötigte Menge, Bestand und Gewicht.</p></div>
       <div class="step-card"><span class="step-number">3</span><strong>Vorbereitung prüfen</strong><p>Hake vorbereitete Objekte ab und kontrolliere Fehlmengen und Gesamtgewicht.</p></div>
@@ -35,6 +35,10 @@
   <div class="callout">⚠️ Daten sind nicht verschlüsselt. Speichere keine persönlichen oder vertraulichen Informationen.</div>
   <div class="pill-link-row"><a class="pill-link" href="https://apps.apple.com/de/app/id495525984">App Store</a><a class="pill-link" href="https://info.engineer.co.jp/EULA_en.html">Endnutzer-Lizenzvereinbarung</a><a class="pill-link" href="https://info.engineer.co.jp/PrivacyPolicy_en.html">Datenschutzerklärung</a><a class="pill-link" href="../index.html">Autor: sumpo</a></div>
   <section class="content-section"><h2>Undo</h2><div class="callout">Packlin vermeidet zusätzliche Bestätigungen und Speichern-Buttons. Löschen wirkt sofort. Wenn du dich vertippst oder versehentlich löschst, nutze <strong>Undo ↩︎</strong>. Bis zu 10 Schritte können zurückgenommen und mit Redo wiederhergestellt werden.</div></section>
+  <section class="content-section"><h2>Ordnen nach (Tags / Gruppen)</h2><div class="callout">Die Ordnungsart wählst du pro Pack: Tippe in der Packliste auf das Taschensymbol, öffne <strong>Pack bearbeiten</strong> und wechsle unter <strong>Ordnen nach</strong>. Neue Packs beginnen mit Tags.</div><div class="spec-group">      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val"><strong>Tags</strong>: Alle Objekte stehen in einer flachen Liste und werden locker mit Tags geordnet. Ein Objekt kann mehrere Tags haben. Das Pack öffnet direkt „Objekte durchsuchen“.</span></div>
+      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val"><strong>Gruppen</strong>: Streng geordnet in drei Ebenen Pack › Gruppe › Objekt. Jedes Objekt gehört zu genau einer Gruppe.</span></div>
+      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">Du kannst jederzeit wechseln, ohne Objekte oder Tags zu verlieren. Beim Wechsel von Gruppen zu Tags wird jeder Gruppenname als Tag an die Objekte dieser Gruppe vergeben. Mit Tags hinzugefügte Objekte landen in der „Tag-Modus-Gruppe“.</span></div>
+      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">Tags vergibst du im Objektdetail per Tippen; ein neuer Tag lässt sich über das Suchfeld hinzufügen. Halte einen Tag gedrückt, um ihn umzubenennen oder aus allen Objekten des Packs zu entfernen.</span></div></div></section>
   <section class="content-section"><h2>Funktionen</h2><div class="feature-grid">      <div class="feature-item">Checklisten pro Objekt</div>
       <div class="feature-item">Benötigte Menge, Bestand und Gewicht</div>
       <div class="feature-item">Drag & Drop Sortierung</div>
@@ -43,31 +47,37 @@
       <div class="feature-item">Alle Objekte eines Packs durchsuchen und sortieren</div>
       <div class="feature-item">Packs exportieren, importieren und vollständig sichern</div>
       <div class="feature-item">Packs in der Cloud veröffentlichen und öffentliche Packs importieren</div>
-      <div class="feature-item">Chappy (KI) für neue Packs oder Änderungen nutzen</div></div></section>
-  <section class="content-section"><h2>Objektübersicht</h2><div class="callout">Die Objektübersicht zeigt alle Objekte eines Packs über alle Gruppen hinweg. Sie eignet sich für die Endkontrolle, Suche und Sortierung nach nicht abgehakt, Fehlmenge, Fehlgewicht oder Bestandsgewicht.</div></section>
-  <section class="content-section"><h2>Mengeneingabe</h2><div class="callout">Gewicht, Bestand und benötigte Menge können mit dem Dial oder einem Ziffernblock eingegeben werden. In den Dial-Einstellungen lassen sich Stil und Empfindlichkeit anpassen.</div></section>
+      <div class="feature-item">Chappy (KI) für neue Packs oder Änderungen nutzen</div>
+      <div class="feature-item">Objekte mit Tags ordnen (mehrere Tags pro Objekt)</div>
+      <div class="feature-item">Mehrere bearbeiten: Tags hinzufügen oder entfernen, in ein anderes Pack kopieren, löschen</div></div></section>
+  <section class="content-section"><h2>Objekte durchsuchen</h2><div class="callout">„Objekte durchsuchen“ zeigt alle Objekte eines Packs in einer Liste. Mit Tags öffnet das Pack direkt diese Ansicht; mit Gruppen über die Schaltfläche unten in der Gruppenliste. Wähle einen Tag, um die Liste einzugrenzen, oder suche nach Tags und Objekten. Sortiere nach nicht abgehakt, Fehlmenge, Fehlgewicht oder Bestandsgewicht, auf- oder absteigend. Tippe auf eine Zeile, um das Objektdetail zu öffnen, oder auf Gewicht und Menge, um sie direkt in einer Sprechblase zu ändern. Mit Tags zeigt das Listenende das Gesamtgewicht, und „Mehrere bearbeiten“ wirkt auf ausgewählte Objekte.</div></section>
+  <section class="content-section"><h2>Mengeneingabe</h2><div class="callout">Gewicht, Bestand und benötigte Menge änderst du mit dem Stepper (Standard) oder dem Regler; der Umschalter steht oben rechts im Mengenbereich des Objektdetails. Tippe auf eine Zahl, um sie über einen Ziffernblock mit Rechenfunktion (÷ × − ＋) einzugeben. Stil und Empfindlichkeit des Reglers lassen sich anpassen.</div></section>
   <section class="content-section"><h2>Teilen, Backup und Import</h2><div class="spec-group">      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">Ein einzelnes Pack kann als <code>.packlin</code>-Datei exportiert und über AirDrop, Mail oder andere Apps geteilt werden.</span></div>
       <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">Alle Packs können in einer Backup-Datei gesichert und später wieder importiert werden.</span></div>
       <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">Beim Backup-Import werden passende Packs überschrieben; neue Packs werden ergänzt.</span></div></div></section>
   <section class="content-section"><h2>Öffentliche Packs</h2><div class="callout">Du kannst eigene Packs in der Cloud veröffentlichen. Veröffentlichte Packs sind für andere Nutzer sichtbar und importierbar. Entferne persönliche Informationen vor dem Veröffentlichen.</div></section>
   <section class="content-section"><h2>iCloud-Backup</h2><div class="callout">AI-Tickets und Veröffentlichungs-ID werden in iCloud gesichert. Beim Gerätewechsel können Tickets und Veröffentlichungsstatus wiederhergestellt werden, ohne Konto oder persönliche Daten.</div></section>
-  <section class="content-section"><h2>KI-Erstellung (Chappy)<small style="font-size:0.65em; font-weight:normal; margin-left:8px;">Optional · In-App-Kauf</small></h2><div class="callout">Beschreibe Ziel, Zeitraum, Zweck oder Änderungen. Chappy schlägt ein neues Pack vor oder überarbeitet ein vorhandenes Pack. Jede Sendung verbraucht 1 AI-Ticket; Tickets erhältst du per Kauf oder durch Ansehen einer Anzeige.</div></section>
+  <section class="content-section"><h2>KI-Erstellung (Chappy)<small style="font-size:0.65em; font-weight:normal; margin-left:8px;">Optional</small></h2><div class="callout">Beschreibe Ziel, Zeitraum, Zweck oder Änderungen. Chappy schlägt ein neues Pack vor oder überarbeitet ein vorhandenes Pack. Jede Anfrage verbraucht 1 AI-Ticket. Ohne Tickets kannst du eine Anfrage senden, indem du eine Videowerbung ansiehst.</div></section>
   <section class="content-section"><h2>Einstellungen</h2><div class="spec-group">      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">Anzeigemodus: Anfänger zeigt Hinweise, Experte ist kompakter</span></div>
       <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">Darstellung: System, Hell oder Dunkel</span></div>
       <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">Textgröße: Auto, Standard, Groß oder Sehr groß</span></div>
       <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">Neue Einträge: oben oder unten einfügen</span></div>
-      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">Check und Bestand können automatisch verknüpft werden</span></div></div></section>
+      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">Check und Bestand können automatisch verknüpft werden</span></div>
+      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">Details: Die erste Zeile zeigt immer Name, Gewicht und Menge. „Mit Tags“ zeigt zusätzlich Tags, „Mit Tags &amp; Memo“ Tags und Memo; „Min“ und „Winzig“ sind kompakter</span></div>
+      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">Ab 1.000 g in kg anzeigen: gilt für Gesamtgewichte und das Gewicht pro Objekt; Eingabe immer in g</span></div></div></section>
   <section class="content-section"><h2>Spezifikationen</h2><div class="spec-group">      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">Datenbank: SwiftData (sqlite3)</span></div>
       <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">Struktur: Pack → Gruppe → Objekt</span></div>
       <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">Richtwerte: 30 Packs, 30 Gruppen, 100 Objekte pro Gruppe</span></div>
       <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">Maximalwerte: Gewicht 999.999 g, Bestand 999, benötigte Menge 999</span></div>
-      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">Name und Memo: je 200 Zeichen, AI-Anfrage: 1.000 Zeichen</span></div></div></section>
+      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">Name und Memo: je 200 Zeichen, AI-Anfrage: 1.000 Zeichen</span></div>
+      <div class="spec-row"><span class="spec-key">•</span><span class="spec-val">Tags: bis zu 20 pro Objekt, je 16 Zeichen. Packs mit Tags behalten intern die drei Ebenen</span></div></div></section>
   <section class="content-section"><h2>Versionsverlauf</h2><div class="table-wrap"><table><thead><tr><th>Version</th><th>Datum</th><th>Beschreibung</th></tr></thead><tbody>          <tr><td>3.0</td><td>2025/12/8</td><td>SwiftUI / SwiftData rebuild</td></tr>
           <tr><td>3.1.0</td><td>2026/2/3</td><td>iOS 26 support and UI updates</td></tr>
           <tr><td>3.2.0</td><td>2026/4/21</td><td>List and editing improvements</td></tr>
           <tr><td>3.3.0</td><td>2026/5/24</td><td>Text size selection and Move Multiple</td></tr>
           <tr><td>3.3.1</td><td>2026/6/9</td><td>Data integrity, robustness and stability improvements</td></tr>
-          <tr><td>3.4.0</td><td>2026/7/14</td><td>Pack publishing, iCloud backup of AI tickets and publishing ID</td></tr></tbody></table></div></section>
+          <tr><td>3.4.0</td><td>2026/7/14</td><td>Pack publishing, iCloud backup of AI tickets and publishing ID</td></tr>
+          <tr><td>3.5.0</td><td>TBD</td><td>Xcode 27, iOS 27, Tags (ordnen und filtern), auf-/absteigende Sortierung und Gesamtgewicht, Mehrere bearbeiten, Stepper/Regler, Rechenfunktion im Ziffernblock, 8 Sprachen</td></tr></tbody></table></div></section>
 </main>
 <script src="../../../theme.js?v=20260928"></script>
 </body>
