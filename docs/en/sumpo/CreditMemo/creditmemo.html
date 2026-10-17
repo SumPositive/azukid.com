@@ -146,7 +146,7 @@
       <p class="spec-group-title">Basic Fields</p>
       <div class="spec-row">
         <span class="spec-key">Frequent Payments</span>
-        <span class="spec-val">Your most-used payments appear as buttons above the amount field. Tap one to fill in the label, payment method, and tags at once; labels used with the same amount three or more times fill in the amount too. Tap again to clear. Drag the handle to change how many rows show. In Settings you can switch to "Copy from Payment List" or "None".</span>
+        <span class="spec-val">Your most-used payments appear as buttons above the amount field. Tap one to fill in the label, payment method, and tags at once; labels used with the same amount three or more times fill in the amount too. Tap again to clear. Drag the handle to change how many rows show. In Settings you can switch to "Copy from Payment List" or "None". You can use it on every screen where you enter a label (Edit Payment, adding an item in Reconcile mode, and more). Labels are shown as signs with pointed ends, and tags as rounded capsules.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Amount</span>
@@ -178,7 +178,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Repeat</span>
-        <span class="spec-val">Available for lump-sum records in Expert mode. When the record is marked paid, the app can create the next monthly or periodic copy automatically.</span>
+        <span class="spec-val">Available for lump-sum records in Expert mode. Once the use date has passed, the next record is added automatically at the interval you set, such as monthly (for use dates on or after April 1, 2026).</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Notes</span>
@@ -190,7 +190,7 @@
       <p class="spec-group-title">Similar Records</p>
       <div class="spec-row">
         <span class="spec-key">Copy from existing</span>
-        <span class="spec-val">In Records, swipe a record cell left and tap Copy to add a copied draft directly below the source record. You can also pick a matching-amount or recently edited record, copy from Pay Methods, or copy the debit date + method from Debit Status. Copying carries over the amount as well. Tap the draft to edit and save it; if you don't save, it disappears automatically.</span>
+        <span class="spec-val">In Records, swipe a record cell left and tap Copy to add a copied draft directly below the source record. You can also pick a matching-amount or recently edited record, copy from Pay Methods, or copy the debit date + method from Debit Status. Copying carries over the amount as well. Tap the draft to edit and save it; if you don't save, it disappears automatically. After you save a copy, that record is centered in the list with a blue outline.</span>
       </div>
     </div>
 
@@ -235,11 +235,11 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Filters</span>
-        <span class="spec-val">Choose the period from 3 months, 1 year, 3 years, or all time. You can also filter by all, has blanks, payment method, account, or multiple tags. Tags can match with OR (any of them) or AND (all of them). Has Blanks includes records missing a payment method or label.</span>
+        <span class="spec-val">Choose the period from 3 months, 1 year, 3 years, or all time. You can also filter by all, has blanks, payment method, account, label, or multiple tags. Tags can match with OR (any of them) or AND (all of them). Has Blanks includes records missing a payment method or label.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Editing</span>
-        <span class="spec-val">Open any row to edit or delete it. Once a record is already fully paid, some core fields such as amount, date, and payment method are locked.</span>
+        <span class="spec-val">Open any row to edit or delete it. Once a record is already fully paid, some core fields such as amount, date, and payment method are locked. For unpaid records, you can see and toggle the lock with the lock icon in the list.</span>
       </div>
     </div>
   </section>
@@ -247,7 +247,7 @@
   <section class="content-section">
     <h2>Debit Status</h2>
     <div class="callout">
-      Debit Status combines upcoming debits and already-paid ones in one flow. When you confirm a bank debit, use the arrow icon to move that account group to <strong>Paid</strong>. You can move it back to unpaid whenever needed.
+      Debit Status combines upcoming debits and already-paid ones in one flow. When you confirm a bank debit, use the diamond icon to move that account group to <strong>Paid</strong>. You can move it back to unpaid whenever needed.
     </div>
 
     <div class="spec-group">
@@ -281,11 +281,11 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Reconcile Mode</span>
-        <span class="spec-val">Available in Debit Details filtered to a single pay method. Enter the bill total from your card company's statement to see the difference from the items total. Move items with “Next” or “Current”, or add the missing amount as a difference adjustment item, until the difference reaches zero. Then tap “Mark as Reconciled” to lock this time's items together.</span>
+        <span class="spec-val">Available in Debit Details filtered to a single pay method. Enter the bill total from your card company's statement to see the difference from the items total. Items with the same debit date are reconciled together even if some are unpaid and some are paid, and each item's lock state is shown. Move items with “Next” or “Current”, or add the missing amount as a difference adjustment item, until the difference reaches zero. Then tap “Mark as Reconciled” to lock this time's items together. Reconciling does not mark them as paid. If no bill total has been entered but every item this time is already locked, you can tap “Mark as Reconciled” right away.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Reconciling / Matched</span>
-        <span class="spec-val">If you save partway with “Save as Is” while a difference remains, Debit Status shows “Reconciling”. Once reconciliation is finished, it shows “Matched”.</span>
+        <span class="spec-val">If you save partway with “Mark as Reconciling” while a difference remains, Debit Status shows “Reconciling”. “Matched” appears only after you confirm with a difference of zero in Reconcile mode. If the total changes afterward because items are added or amounts are edited, “Matched” is removed.</span>
       </div>
     </div>
   </section>
@@ -320,7 +320,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Tags</span>
-        <span class="spec-val">Each tag can show the list of related payment records for review and cleanup. In the tag list, if the tag you are looking for does not exist, you can add it on the spot.</span>
+        <span class="spec-val">Each tag can show the list of related payment records for review and cleanup. In the tag list, if the tag you are looking for does not exist, you can add it on the spot. If you rename a tag to the same name as an existing tag, you can merge it into that tag.</span>
       </div>
     </div>
   </section>
@@ -352,6 +352,10 @@
       <div class="spec-row">
         <span class="spec-key">Text Size</span>
         <span class="spec-val">Auto follows your iOS text-size preference.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Label &amp; Tag Spacing</span>
+        <span class="spec-val">Choose Normal, Compact, or Smallest for the padding of label and tag capsules. The text size stays the same; tighter spacing shows more at once.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Open on Launch</span>
@@ -425,7 +429,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Repeat</span>
-        <span class="spec-val">1 to 99 months. When marked paid, a copy is generated automatically for the next cycle</span>
+        <span class="spec-val">1 to 99 months. Once the use date has passed, a copy is generated automatically for the next cycle (use dates on or after 2026-04-01)</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Tags</span>
@@ -500,6 +504,7 @@
           <tr><td>2.7.0</td><td>2026/9/12</td><td>The amount keypad now supports arithmetic (+, -, ×, ÷); label entry suggests candidates from your past entries; tag filtering in Records lets you choose OR or AND; Debit Status filters now support tags; Records sorted by date used shows a monthly total; Records sorted by date used opens at today's entries, even when future entries exist</td></tr>
           <tr><td>2.7.1</td><td>2026/9/28</td><td>Fixed an issue where swiping a record cell in Records did not create a copied draft</td></tr>
           <tr><td>2.8.0</td><td>2026/10/6</td><td>Added Reconcile mode for checking debits (move or add items while watching the difference from the bill total; saving partway shows “Reconciling”), add a tag on the spot from the tag list if it is not found, redesigned the tag list with a tag-style layout, cancel while entering now asks for confirmation, made help text easier to read, fixed dates not displaying correctly when the Japanese calendar is selected, the calendar now follows the “First Day of Week” setting</td></tr>
+          <tr><td>2.9.0</td><td>In Preparation</td><td>Repeat now creates the next record once the use date has passed, improved record copying, Frequent Payments and labels are available on every label entry screen, filter the payment list by label, show and toggle the lock of unpaid records in the payment list, show lock state in Reconcile mode, reconcile unpaid and paid items with the same debit date together, “Mark as Reconciled” no longer marks items as paid, merge tags with the same name, added “Label &amp; Tag Spacing” to Settings, new unpaid/paid icons, fixed items showing as matched while a difference remained</td></tr>
         </tbody>
       </table>
     </div>
