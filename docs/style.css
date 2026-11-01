@@ -218,11 +218,15 @@ body {
   flex-direction: column;
   gap: 4px;
   padding-top: 4px;
+  /* 狭いカード（シート表示など）で長い状態名がカード外へはみ出さないよう、残り幅に収める */
+  flex: 1;
+  min-width: 0;
 }
 .app-card-version {
   font-size: .75rem;
   line-height: 1.4;
-  white-space: nowrap;
+  /* 収まらない時だけ折り返す（"3.5.0 In Preparation" → "3.5.0 In / Preparation"） */
+  overflow-wrap: anywhere;
 }
 .app-card-version-live { color: var(--accent); }
 .app-card-version-review { color: var(--yellow); }
