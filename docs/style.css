@@ -2006,3 +2006,11 @@ p:last-child { margin-bottom: 0; }
     font-family: var(--font);
   }
 }
+
+/* スマホ縦やシート表示の幅では、アプリパネルを1列にして文字を詰めずに見せる */
+@media (max-width: 440px) {
+  .app-grid { grid-template-columns: 1fr; }
+  /* 1列なら横幅に余裕があるので、ボタンは横並びに戻す */
+  .app-card-footer { flex-direction: row; gap: 8px; }
+  .app-card-btn { flex: 1; width: auto; }
+}
