@@ -204,6 +204,8 @@ body {
 
 .app-card-top {
   display: flex;
+  /* バージョン表示がアイコンの右に収まらない狭いカードでは、アイコンの下へ回す */
+  flex-wrap: wrap;
   align-items: flex-start;
   gap: 10px;
   margin-bottom: 10px;
@@ -218,15 +220,11 @@ body {
   flex-direction: column;
   gap: 4px;
   padding-top: 4px;
-  /* 狭いカード（シート表示など）で長い状態名がカード外へはみ出さないよう、残り幅に収める */
-  flex: 1;
-  min-width: 0;
 }
 .app-card-version {
   font-size: .75rem;
   line-height: 1.4;
-  /* 収まらない時だけ折り返す（"3.5.0 In Preparation" → "3.5.0 In / Preparation"） */
-  overflow-wrap: anywhere;
+  white-space: nowrap;
 }
 .app-card-version-live { color: var(--accent); }
 .app-card-version-review { color: var(--yellow); }
@@ -1914,6 +1912,14 @@ p:last-child { margin-bottom: 0; }
   .app-card { padding: 14px 14px 12px; min-width: 0; }
   .app-card-footer { flex-direction: column; gap: 6px; }
   .app-card-btn { flex: none; width: 100%; min-width: 0; }
+  /* 狭いカードでは長いボタン名（独語など）を折り返し、語の途中はハイフンで分ける */
+  .app-card-btn {
+    white-space: normal;
+    text-align: center;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    overflow-wrap: break-word;
+  }
 
   .doc-row { padding: 12px 16px; gap: 8px; }
 
