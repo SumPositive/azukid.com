@@ -106,6 +106,8 @@
       <div class="feature-item">Record the environment at onset<small>Temperature, humidity, pressure, 24-hour pressure change, indoor temperature and humidity, and the device barometer</small></div>
       <div class="feature-item">Tag what came before and what you did<small>Choose several from presets, or add your own by typing a name</small></div>
       <div class="feature-item">Analyze symptoms<small>Onset calendar, onset periodicity, onsets and environment, onsets and what came before</small></div>
+      <div class="feature-item">Record sleep and see how it relates to blood pressure<small>Add the time you fell asleep and sleep time to wake records; can be taken from the Health app</small></div>
+      <div class="feature-item">Get notified at measurement time<small>A notification at your usual measurement time for each category (no sound or vibration)</small></div>
     </div>
   </section>
 
@@ -178,6 +180,42 @@
     </div>
 
     <div class="spec-group">
+      <p class="spec-group-title">Sleep</p>
+      <div class="spec-row">
+        <span class="spec-key">Recorded items</span>
+        <span class="spec-val">Time you fell asleep and sleep time. Only for Category 1 records (default name “Wake”)</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Input</span>
+        <span class="spec-val">Pick from menus in 30-minute steps. Fell asleep: 18 hours before the record time up to the record time. Sleep time: “No sleep” to “Over 10h”</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">From the Health app</span>
+        <span class="spec-val">“Get Sleep Data” fills it in from sleep recorded in the Health app (read only). With “Get Sleep Data Automatically” on, it is fetched automatically, for example when you open a new Category 1 record</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Analysis</span>
+        <span class="spec-val">The “Blood Pressure × Fell Asleep” and “Blood Pressure × Sleep Time” statistics show the correlation coefficient (r) from Category 1 records</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">Measurement Reminders</p>
+      <div class="spec-row">
+        <span class="spec-key">Setup</span>
+        <span class="spec-val">Turn on “Notify” for each category when editing categories in Settings</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Time</span>
+        <span class="spec-val">The time the category usually starts, based on the per-weekday category pattern estimated from your records. No notification on weekdays that can’t be estimated</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Notification</span>
+        <span class="spec-val">Shown only, with no sound or vibration. Tap it to open the measurement screen</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
       <p class="spec-group-title">Graphs</p>
       <div class="spec-row">
         <span class="spec-key">View periods</span>
@@ -226,6 +264,8 @@
             <li>Left–right blood pressure difference (calculated from paired measurements only)</li>
             <li>24-hour blood pressure distribution</li>
             <li>Weight × blood pressure scatter plot (with Pearson correlation coefficient)</li>
+            <li>Blood pressure × fell asleep (Category 1 records)</li>
+            <li>Blood pressure × sleep time (Category 1 records)</li>
             <li>Weight summary statistics</li>
             <li>Temperature summary</li>
             <li>24-hour temperature distribution</li>
@@ -369,7 +409,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Supported data</span>
-        <span class="spec-val">Blood pressure, heart rate, body temperature, weight, body fat % (skeletal muscle % not supported)</span>
+        <span class="spec-val">Blood pressure, heart rate, body temperature, weight, body fat % (skeletal muscle % not supported). Sleep is read only</span>
       </div>
     </div>
 
@@ -471,6 +511,7 @@
           <tr><td>2.8.3</td><td>2026/9/13</td><td>Added suggestion lists to the location/device field, tapping the Records tab again now opens the new record sheet, unified settings choices into pull-down lists, improved the iPad layout, limited ads to a single header banner, and fixed the keyboard closing while typing notes</td></tr>
           <tr><td>2.9.0</td><td>2026/10/4</td><td>Symptom notes (record onset and end times, weather such as temperature and pressure, and what happened just before, then analyze them), weather for measurements too (fetched automatically in Japan), graphs and statistics combined into three analysis tabs with freely placed charts (renamable tabs, shared or separate periods), updated default categories, "Add Symptom" added to the launch screen options, faster launch, app settings included in backups, and fixed pressing Return in a note confirming the input</td></tr>
           <tr><td>2.9.1</td><td>2026/10/6</td><td>Fixed dates not showing correctly when the system calendar is set to Japanese, the symptom calendar and date entry now follow the "First Day of Week" setting, and dates are easier to read</td></tr>
+          <tr><td>2.10.0</td><td>TBD</td><td>Xcode 27.1, iOS 27. Sleep recording (time you fell asleep and sleep time for Category 1 “Wake”, taken from the Health app, analyzed against blood pressure), measurement reminders for each category (tap to open the measurement screen), and in Measurement, new rows show the average so far as a guide</td></tr>
         </tbody>
       </table>
     </div>

@@ -106,6 +106,8 @@
       <div class="feature-item">発症時の環境を記録できる<small>気温・湿度・気圧・24時間気圧差、室温・室内湿度、端末の気圧計</small></div>
       <div class="feature-item">直前の状況と対処をタグで記録できる<small>プリセットから複数選択、名称を入力して追加も可能</small></div>
       <div class="feature-item">症状を分析できる<small>発症カレンダー・発症の周期性・発症と環境・発症と直前の状況</small></div>
+      <div class="feature-item">睡眠を記録して血圧との関係を分析できる<small>起床時の記録に入眠時刻・睡眠時間を添えられる。ヘルスケアから取得も可能</small></div>
+      <div class="feature-item">測定時刻に通知を受け取れる<small>区分ごとに、いつもの測定時刻に通知（音や振動はなし）</small></div>
     </div>
   </section>
 
@@ -178,6 +180,42 @@
     </div>
 
     <div class="spec-group">
+      <p class="spec-group-title">睡眠</p>
+      <div class="spec-row">
+        <span class="spec-key">記録項目</span>
+        <span class="spec-val">入眠時刻・睡眠時間。区分1（初期名「起床時」）の記録にだけ添えられます</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">入力</span>
+        <span class="spec-val">プルダウンで30分刻みに選択。入眠時刻は記録日時の18時間前〜記録日時、睡眠時間は「不眠」〜「10時間超」</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">ヘルスケアから取得</span>
+        <span class="spec-val">「睡眠データを取得する」で、ヘルスケアに記録された睡眠から入力します（読み取りのみ）。「睡眠データを自動取得する」をオンにすると、区分1の新しい記録を開いたときなどに自動で取得します</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">分析</span>
+        <span class="spec-val">統計「血圧 × 入眠時刻」「血圧 × 睡眠時間」で、区分1の記録から相関係数（r）を表示</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">測定時刻の通知</p>
+      <div class="spec-row">
+        <span class="spec-key">設定</span>
+        <span class="spec-val">設定の区分の編集で、区分ごとに「通知する」をオン</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">通知の時刻</span>
+        <span class="spec-val">記録から推定した曜日ごとの区分の分布で、その区分がいつも始まる時刻。推定できない曜日は通知しません</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">通知の内容</span>
+        <span class="spec-val">表示だけで、音や振動はありません。通知をタップすると測定画面が開きます</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
       <p class="spec-group-title">グラフ</p>
       <div class="spec-row">
         <span class="spec-key">表示期間</span>
@@ -226,6 +264,8 @@
             <li>血圧の左右差（左右ペアの測定値だけを対象に集計）</li>
             <li>24時間血圧分布</li>
             <li>体重×血圧 相関散布図（ピアソン相関係数付き）</li>
+            <li>血圧 × 入眠時刻（区分1の記録）</li>
+            <li>血圧 × 睡眠時間（区分1の記録）</li>
             <li>体重サマリー</li>
             <li>体温サマリー</li>
             <li>24時間体温分布</li>
@@ -369,7 +409,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">対応データ種</span>
-        <span class="spec-val">血圧・心拍数・体温・体重・体脂肪率（骨格筋率は非対応）</span>
+        <span class="spec-val">血圧・心拍数・体温・体重・体脂肪率（骨格筋率は非対応）。睡眠は読み取りのみ</span>
       </div>
     </div>
 
@@ -471,6 +511,7 @@
           <tr><td>2.8.3</td><td>2026/9/13</td><td>測定場所・機器の入力に候補一覧を追加、記録タブの再タップで新しい記録の追加シートを表示、設定の選択肢をプルダウンリストに統一、iPad の表示を改善、広告をヘッダー部のバナーのみに見直し、メモ入力中にキーボードが閉じる問題を修正</td></tr>
           <tr><td>2.9.0</td><td>2026/10/4</td><td>症状メモ（発症〜終息の日時、気温・気圧などの環境、直前の状況を記録して分析）、測定にも環境を記録（国内は自動取得）、グラフと統計を3つの分析タブにまとめ図表を自由に配置（タブ名の変更、期間の同期）、区分の初期設定を見直し、起動時に開く画面に「症状を追加」を追加、起動を高速化、バックアップにアプリの設定を追加、メモ入力で改行すると確定してしまう不具合を修正</td></tr>
           <tr><td>2.9.1</td><td>2026/10/6</td><td>和暦に設定していると日付が正しく表示されない不具合を修正、症状カレンダーと日付の入力が「週の始まりの曜日」の設定に対応、日付表示を見やすく改善</td></tr>
+          <tr><td>2.10.0</td><td>TBD</td><td>Xcode 27.1, iOS 27、睡眠の記録（区分1〈起床時〉に入眠時刻・睡眠時間、ヘルスケアから取得、血圧との関係を分析）、区分ごとの測定時刻の通知（タップで測定画面を開く）、測定を追加：複数行入力時、新しい行にそれまでの平均値を目安として表示</td></tr>
         </tbody>
       </table>
     </div>

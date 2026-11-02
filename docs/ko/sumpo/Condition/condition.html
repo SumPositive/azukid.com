@@ -106,6 +106,8 @@
       <div class="feature-item">발생 시점의 환경을 기록할 수 있음<small>기온·습도·기압·24시간 기압차, 실내 온도·실내 습도, 기기 기압계</small></div>
       <div class="feature-item">직전 상황과 대처를 태그로 기록할 수 있음<small>프리셋에서 여러 개 선택, 명칭을 입력해 추가도 가능</small></div>
       <div class="feature-item">증상을 분석할 수 있음<small>증상 발생 달력·발병 주기성·증상 발생과 환경·발생과 직전 상황</small></div>
+      <div class="feature-item">수면을 기록하고 혈압과의 관계를 분석할 수 있음<small>기상 시 기록에 잠든 시각·수면 시간을 남길 수 있음. 건강 앱에서 가져오기도 가능</small></div>
+      <div class="feature-item">측정 시각에 알림을 받을 수 있음<small>구분마다 평소 측정 시각에 알림(소리나 진동 없음)</small></div>
     </div>
   </section>
 
@@ -178,6 +180,42 @@
     </div>
 
     <div class="spec-group">
+      <p class="spec-group-title">수면</p>
+      <div class="spec-row">
+        <span class="spec-key">기록 항목</span>
+        <span class="spec-val">잠든 시각·수면 시간. 구분 1(초기 이름 「기상」) 기록에만 남길 수 있습니다</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">입력</span>
+        <span class="spec-val">풀다운에서 30분 단위로 선택. 잠든 시각은 기록 일시 18시간 전~기록 일시, 수면 시간은 「불면」~「10시간 초과」</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">건강 앱에서 가져오기</span>
+        <span class="spec-val">「수면 데이터 가져오기」로 건강 앱에 기록된 수면에서 입력합니다(읽기만). 「수면 데이터 자동으로 가져오기」를 켜면 구분 1의 새 기록을 열 때 등에 자동으로 가져옵니다</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">분석</span>
+        <span class="spec-val">통계 「혈압 × 잠든 시각」「혈압 × 수면 시간」에서 구분 1 기록으로 상관계수(r)를 표시</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">측정 시각 알림</p>
+      <div class="spec-row">
+        <span class="spec-key">설정</span>
+        <span class="spec-val">설정의 구분 편집에서 구분마다 「알림」을 켬</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">알림 시각</span>
+        <span class="spec-val">기록으로 추정한 요일별 구분 분포에서 그 구분이 평소 시작되는 시각. 추정할 수 없는 요일에는 알리지 않습니다</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">알림 내용</span>
+        <span class="spec-val">표시만 되며 소리나 진동은 없습니다. 알림을 탭하면 측정 화면이 열립니다</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
       <p class="spec-group-title">그래프</p>
       <div class="spec-row">
         <span class="spec-key">표시 기간</span>
@@ -225,6 +263,8 @@
             <li>혈압 / 측정 시점 상관</li>
             <li>24시간 혈압 분포</li>
             <li>체중 × 혈압 산점도(피어슨 상관계수 포함)</li>
+            <li>혈압 × 잠든 시각(구분 1 기록)</li>
+            <li>혈압 × 수면 시간(구분 1 기록)</li>
             <li>체중 요약 통계</li>
             <li>체온 요약</li>
             <li>24시간 체온 분포</li>
@@ -364,7 +404,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">지원 데이터</span>
-        <span class="spec-val">혈압, 심박수, 체온, 체중, 체지방률(골격근률은 미지원)</span>
+        <span class="spec-val">혈압, 심박수, 체온, 체중, 체지방률(골격근률은 미지원). 수면은 읽기만</span>
       </div>
     </div>
 
@@ -466,6 +506,7 @@
           <tr><td>2.8.3</td><td>2026/9/13</td><td>측정 장소·기기 입력에 후보 목록 추가, 기록 탭을 다시 탭하면 새 기록 추가 시트를 표시, 설정 선택지를 풀다운 리스트로 통일, iPad 표시 개선, 광고를 헤더부 배너만으로 조정, 메모 입력 중 키보드가 닫히는 문제 수정</td></tr>
           <tr><td>2.9.0</td><td>2026/10/4</td><td>증상 메모(시작·종료 일시, 기온·기압 등의 환경, 직전 상황을 기록해 분석), 측정에도 환경 기록(일본 국내는 자동 취득), 그래프와 통계를 3개의 분석 탭으로 통합해 차트를 자유롭게 배치(탭 이름 변경, 기간 동기화), 구분의 초기 설정 재검토, 시작 시 열기에 "증상 추가" 추가, 시작 속도 개선, 백업에 앱 설정 추가, 메모 입력 중 줄바꿈하면 확정되던 문제 수정</td></tr>
           <tr><td>2.9.1</td><td>2026/10/6</td><td>시스템 달력을 일본력으로 설정하면 날짜가 올바르게 표시되지 않던 문제 수정, 증상 캘린더와 날짜 입력이 시스템의 주 시작 요일 설정을 따르도록 대응, 날짜 표시를 보기 쉽게 개선</td></tr>
+          <tr><td>2.10.0</td><td>TBD</td><td>Xcode 27.1, iOS 27, 수면 기록(구분 1〈기상〉에 잠든 시각·수면 시간, 건강 앱에서 가져오기, 혈압과의 관계 분석), 구분별 측정 시각 알림(탭하면 측정 화면 열림), 측정 추가: 여러 행 입력 시 새 행에 지금까지의 평균값을 기준으로 표시</td></tr>
         </tbody>
       </table>
     </div>

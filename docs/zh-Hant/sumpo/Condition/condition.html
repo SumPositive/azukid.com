@@ -106,6 +106,8 @@
       <div class="feature-item">可記錄發作時的環境<small>氣溫・濕度・氣壓・24 小時氣壓差、室溫・室內濕度、裝置氣壓計</small></div>
       <div class="feature-item">可用標籤記錄發作前的狀況與處置<small>從預設中複選，也可輸入名稱新增</small></div>
       <div class="feature-item">可分析症狀<small>發作日曆・發作週期性・發作與環境・發作與發作前的狀況</small></div>
+      <div class="feature-item">可記錄睡眠並分析與血壓的關係<small>可在起床時的記錄中加上入睡時間與睡眠時間，也可從健康App取得</small></div>
+      <div class="feature-item">可在測量時間收到通知<small>依分類在平常的測量時間通知（無聲音與震動）</small></div>
     </div>
   </section>
 
@@ -178,6 +180,42 @@
     </div>
 
     <div class="spec-group">
+      <p class="spec-group-title">睡眠</p>
+      <div class="spec-row">
+        <span class="spec-key">記錄項目</span>
+        <span class="spec-val">入睡時間、睡眠時間。僅能加在分類 1（初始名稱「起床」）的記錄中</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">輸入</span>
+        <span class="spec-val">以下拉選單每 30 分鐘選擇。入睡時間為記錄時間前 18 小時～記錄時間，睡眠時間為「失眠」～「超過10小時」</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">從健康App取得</span>
+        <span class="spec-val">點選「取得睡眠資料」，從健康App記錄的睡眠輸入（僅讀取）。開啟「自動取得睡眠資料」後，開啟分類 1 的新記錄時等會自動取得</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">分析</span>
+        <span class="spec-val">統計「血壓 × 入睡時間」「血壓 × 睡眠時間」以分類 1 的記錄顯示相關係數（r）</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <p class="spec-group-title">測量時間通知</p>
+      <div class="spec-row">
+        <span class="spec-key">設定</span>
+        <span class="spec-val">在設定的分類編輯中，依分類開啟「通知」</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">通知時間</span>
+        <span class="spec-val">依記錄推估的每週各日分類分布中，該分類平常開始的時間。無法推估的星期不會通知</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">通知內容</span>
+        <span class="spec-val">僅顯示，不會發出聲音或震動。點選通知即可開啟測量畫面</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
       <p class="spec-group-title">圖表</p>
       <div class="spec-row">
         <span class="spec-key">顯示期間</span>
@@ -225,6 +263,8 @@
             <li>血壓 / 測量時段相關</li>
             <li>24 小時血壓分布</li>
             <li>體重 × 血壓散佈圖（含皮爾森相關係數）</li>
+            <li>血壓 × 入睡時間（分類 1 的記錄）</li>
+            <li>血壓 × 睡眠時間（分類 1 的記錄）</li>
             <li>體重摘要統計</li>
             <li>體溫摘要</li>
             <li>24 小時體溫分布</li>
@@ -364,7 +404,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">支援數據</span>
-        <span class="spec-val">血壓、心率、體溫、體重、體脂率（不支援骨骼肌率）</span>
+        <span class="spec-val">血壓、心率、體溫、體重、體脂率（不支援骨骼肌率）。睡眠僅讀取</span>
       </div>
     </div>
 
@@ -466,6 +506,7 @@
           <tr><td>2.8.3</td><td>2026/9/13</td><td>測量地點與裝置的輸入新增候選清單、再次輕觸記錄標籤即顯示新增記錄工作表、將設定選項統一為下拉式清單、改善 iPad 顯示、廣告調整為僅保留標題區橫幅、修正輸入備註時鍵盤關閉的問題</td></tr>
           <tr><td>2.9.0</td><td>2026/10/4</td><td>症狀記錄（記錄開始與結束時間、氣溫與氣壓等環境、發作前的狀況並加以分析）、測量也能記錄環境（日本境內自動取得）、圖表與統計整合為 3 個分析分頁並可自由配置圖表（可變更分頁名稱、同步期間）、重新調整類別預設值、啟動時開啟新增「新增症狀」、加快啟動速度、備份包含 App 設定、修正輸入備註時換行會直接確定輸入的問題</td></tr>
           <tr><td>2.9.1</td><td>2026/10/6</td><td>修正系統曆法設為日本曆時日期無法正確顯示的問題、症狀月曆與日期輸入改為依照系統的每週起始日設定、改善日期顯示使其更易讀</td></tr>
+          <tr><td>2.10.0</td><td>TBD</td><td>Xcode 27.1, iOS 27、睡眠記錄（分類 1〈起床〉的入睡時間與睡眠時間、從健康App取得、分析與血壓的關係）、依分類的測量時間通知（點選即開啟測量畫面）、新增測量：多列輸入時，新的一列顯示目前為止的平均值作為參考</td></tr>
         </tbody>
       </table>
     </div>
