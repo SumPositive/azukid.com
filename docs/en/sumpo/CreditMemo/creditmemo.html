@@ -150,7 +150,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Amount</span>
-        <span class="spec-val">Entered through the numeric keypad, which supports arithmetic (+, -, ×, ÷) and lets you choose how to round a result that does not divide evenly (up, half up, or down). You can save with either the amount or a Frequent Payment selection (with no amount, it saves as a draft you can complete later).</span>
+        <span class="spec-val">Entered through the numeric keypad, which supports arithmetic (+, -, ×, ÷) and lets you choose how to round a result that does not divide evenly (up, half up, or down). You can save with either the amount or a Frequent Payment selection (with no amount, it saves as a draft you can complete later). Confirm with the button at the bottom right (simply closing the keypad also applies your input).</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Use Date</span>
@@ -168,13 +168,17 @@
         <span class="spec-key">Label</span>
         <span class="spec-val">A short clue such as a shop or purpose. As you type, past labels appear as suggestions just above the keyboard; tap one to use it.</span>
       </div>
+      <div class="spec-row">
+        <span class="spec-key">Duplicate Check</span>
+        <span class="spec-val">When you save, if a record with the same use date and amount already exists, you are asked to confirm. Choose "Cancel" to go back to editing or "Save" to save it anyway.</span>
+      </div>
     </div>
 
     <div class="spec-group">
       <p class="spec-group-title">Optional Fields</p>
       <div class="spec-row">
         <span class="spec-key">Tags</span>
-        <span class="spec-val">Available in Expert mode. You can assign more than one tag and change them later.</span>
+        <span class="spec-val">Available in Expert mode. You can assign more than one tag and change them later. On the tag selection screen, you can choose how to pick tags next to the sort order: "Select &amp; Done" (pick several, then confirm) or "One Tap" (applies and closes as soon as you tap).</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Repeat</span>
@@ -239,7 +243,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Editing</span>
-        <span class="spec-val">Open any row to edit or delete it. Once a record is already fully paid, some core fields such as amount, date, and payment method are locked. For unpaid records, you can see and toggle the lock with the lock icon in the list.</span>
+        <span class="spec-val">Open any row to edit or delete it. Once a record is already fully paid, some core fields such as amount, date, and payment method are locked. For unpaid records, you can see and toggle the lock with the lock icon in the list. When a record has no label, the first line of its notes is shown instead.</span>
       </div>
     </div>
   </section>
@@ -273,7 +277,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Item-level adjustment</span>
-        <span class="spec-val">In Debit Details, you can move a single item between unpaid and paid. Use this when only one near-cutoff item is debited next time.</span>
+        <span class="spec-val">In Debit Details, you can move a single item between unpaid and paid. Use this when only one near-cutoff item is debited next time. Debit Details shows that day's unpaid and paid items together. Marking an item as paid no longer removes it from the list; only its status changes.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Lock Toggle</span>
@@ -309,6 +313,10 @@
       <div class="spec-row">
         <span class="spec-key">Open to Edit</span>
         <span class="spec-val">Tapping a row in the Pay Methods list opens the edit screen. Status review is handled from Debit Status grouping and filters.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Closing and Deleting</span>
+        <span class="spec-val">Deleting a payment method that has records keeps it as "Closed". It can no longer be chosen for new payments and appears at the end of the Pay Methods list, but its records and their unpaid/paid status remain viewable. You can also undo Closed. Deleting a closed method also deletes all of its records.</span>
       </div>
     </div>
 
@@ -505,6 +513,7 @@
           <tr><td>2.7.1</td><td>2026/9/28</td><td>Fixed an issue where swiping a record cell in Records did not create a copied draft</td></tr>
           <tr><td>2.8.0</td><td>2026/10/6</td><td>Added Reconcile mode for checking debits (move or add items while watching the difference from the bill total; saving partway shows “Reconciling”), add a tag on the spot from the tag list if it is not found, redesigned the tag list with a tag-style layout, cancel while entering now asks for confirmation, made help text easier to read, fixed dates not displaying correctly when the Japanese calendar is selected, the calendar now follows the “First Day of Week” setting</td></tr>
           <tr><td>2.9.0</td><td>2026/10/20</td><td>Xcode 27.1, iOS 27, Repeat now creates the next record once the use date has passed, improved record copying, Frequent Payments and labels are available on every label entry screen, filter the payment list by label, show and toggle the lock of unpaid records in the payment list, filter (search) the payment list by amount, full-text (fuzzy) search in the payment list, show lock state in Reconcile mode, reconcile unpaid and paid items with the same debit date together, “Mark as Reconciled” no longer marks items as paid, merge tags with the same name, added “Label &amp; Tag Spacing” to Settings, new unpaid/paid icons, fixed items showing as matched while a difference remained</td></tr>
+          <tr><td>2.9.1</td><td>TBD</td><td>New Payment asks for confirmation before saving when a record with the same use date and amount exists, added a confirm button to the amount keypad, payment methods with records are kept as "Closed" instead of being deleted (deleting a closed method also deletes its records), Debit Details shows unpaid and paid items together, tag selection can be set to "Select &amp; Done" or "One Tap", records with no label show the first line of their notes, fixed paid items sometimes appearing as unpaid in Debit Status</td></tr>
         </tbody>
       </table>
     </div>

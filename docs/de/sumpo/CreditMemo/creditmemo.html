@@ -150,7 +150,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Betrag</span>
-        <span class="spec-val">Eingabe über den Zahlenblock, der Grundrechenarten (+, -, ×, ÷) beherrscht; für Ergebnisse, die nicht glatt aufgehen, wählst du die Rundung (Aufrunden, kaufmännisch runden oder Abrunden). Speichern ist mit Betrag oder mit einer ausgewählten häufigen Zahlung möglich (ohne Betrag wird ein Entwurf gespeichert, den du später vervollständigen kannst).</span>
+        <span class="spec-val">Eingabe über den Zahlenblock, der Grundrechenarten (+, -, ×, ÷) beherrscht; für Ergebnisse, die nicht glatt aufgehen, wählst du die Rundung (Aufrunden, kaufmännisch runden oder Abrunden). Speichern ist mit Betrag oder mit einer ausgewählten häufigen Zahlung möglich (ohne Betrag wird ein Entwurf gespeichert, den du später vervollständigen kannst). Bestätige mit der Taste unten rechts (auch beim Schließen wird die Eingabe übernommen).</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Nutzungsdatum</span>
@@ -168,13 +168,17 @@
         <span class="spec-key">Bezeichnung</span>
         <span class="spec-val">Ein kurzer Hinweis wie Geschäft oder Zweck. Während der Eingabe erscheinen frühere Bezeichnungen als Vorschläge direkt über der Tastatur; tippe einen an, um ihn zu übernehmen.</span>
       </div>
+      <div class="spec-row">
+        <span class="spec-key">Doppelte Einträge prüfen</span>
+        <span class="spec-val">Gibt es beim Sichern bereits einen Eintrag mit gleichem Nutzungsdatum und Betrag, wirst du um Bestätigung gebeten. Mit „Abbrechen“ kehrst du zur Eingabe zurück, mit „Sichern“ wird trotzdem gespeichert.</span>
+      </div>
     </div>
 
     <div class="spec-group">
       <p class="spec-group-title">Optionale Angaben</p>
       <div class="spec-row">
         <span class="spec-key">Tags</span>
-        <span class="spec-val">Im Profi-Modus verfügbar. Du kannst mehrere Tags zuweisen und später ändern.</span>
+        <span class="spec-val">Im Profi-Modus verfügbar. Du kannst mehrere Tags zuweisen und später ändern. Im Auswahlbildschirm wählst du rechts neben der Sortierung, wie Tags ausgewählt werden: „Wählen &amp; Fertig“ (mehrere wählen, dann bestätigen) oder „Ein Tipp“ (wird beim Tippen sofort übernommen und geschlossen).</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Wiederholung</span>
@@ -239,7 +243,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Bearbeiten</span>
-        <span class="spec-val">Öffne eine Zeile, um sie zu bearbeiten oder zu löschen. Ist ein Eintrag bereits vollständig bezahlt, sind Kernfelder wie Betrag, Datum und Zahlungsmittel gesperrt. Bei offenen Einträgen kannst du die Sperre über das Schlosssymbol in der Liste sehen und umschalten.</span>
+        <span class="spec-val">Öffne eine Zeile, um sie zu bearbeiten oder zu löschen. Ist ein Eintrag bereits vollständig bezahlt, sind Kernfelder wie Betrag, Datum und Zahlungsmittel gesperrt. Bei offenen Einträgen kannst du die Sperre über das Schlosssymbol in der Liste sehen und umschalten. Hat ein Eintrag keine Bezeichnung, wird stattdessen die erste Zeile der Notizen angezeigt.</span>
       </div>
     </div>
   </section>
@@ -273,7 +277,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Anpassung einzelner Posten</span>
-        <span class="spec-val">In den Abbuchungsdetails kannst du einen einzelnen Posten zwischen offen und bezahlt verschieben. Nützlich, wenn nur ein knapp am Stichtag liegender Posten erst beim nächsten Mal abgebucht wird.</span>
+        <span class="spec-val">In den Abbuchungsdetails kannst du einen einzelnen Posten zwischen offen und bezahlt verschieben. Nützlich, wenn nur ein knapp am Stichtag liegender Posten erst beim nächsten Mal abgebucht wird. Die Abbuchungsdetails zeigen offene und bezahlte Posten des Tages gemeinsam. Als bezahlt markierte Posten bleiben in der Liste; nur ihr Status ändert sich.</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Sperrschalter</span>
@@ -309,6 +313,10 @@
       <div class="spec-row">
         <span class="spec-key">Zum Bearbeiten öffnen</span>
         <span class="spec-val">Ein Tippen auf eine Zeile in der Liste der Zahlungsmittel öffnet den Bearbeitungsbildschirm. Die Statusprüfung erfolgt über Gruppierung und Filter im Abbuchungsstatus.</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Kündigen und Löschen</span>
+        <span class="spec-val">Löschst du ein Zahlungsmittel mit Einträgen, wird es als „Gekündigt“ behalten. Für neue Zahlungen ist es nicht mehr wählbar und steht am Ende der Liste der Zahlungsmittel, die Einträge und ihr Status (offen/bezahlt) bleiben aber sichtbar. Die Kündigung lässt sich auch aufheben. Löschst du ein gekündigtes Zahlungsmittel, werden auch alle seine Einträge gelöscht.</span>
       </div>
     </div>
 
@@ -501,6 +509,7 @@
           <tr><td>2.7.1</td><td>2026/9/28</td><td>Fehler behoben, bei dem durch Wischen über einen Eintrag im Verlauf kein kopierter Entwurf erstellt wurde</td></tr>
           <tr><td>2.8.0</td><td>2026/10/6</td><td>Abgleichmodus für die Abbuchungsprüfung hinzugefügt (Posten verschieben oder ergänzen und dabei die Differenz zum Rechnungsbetrag sehen; Zwischenspeichern zeigt „Abgleich läuft“), fehlende Tags direkt in der Tag-Liste hinzufügen, Tag-Liste im Tag-Stil neu gestaltet, Bestätigung beim Abbrechen während der Eingabe, Hilfetexte leichter lesbar, Fehler bei eingestelltem japanischem Kalender behoben, der Kalender berücksichtigt jetzt die Einstellung „Erster Wochentag“</td></tr>
           <tr><td>2.9.0</td><td>2026/10/20</td><td>Xcode 27.1, iOS 27, Wiederholung legt den nächsten Eintrag an, sobald das Nutzungsdatum vorbei ist, Kopieren von Einträgen verbessert, häufige Zahlungen und Bezeichnungen auf allen Eingabebildschirmen für Bezeichnungen nutzbar, Zahlungsliste nach Bezeichnung filtern, Sperre offener Einträge in der Zahlungsliste anzeigen und umschalten, Zahlungsliste nach Betrag filtern (suchen), Volltextsuche (unscharfe Suche) in der Zahlungsliste, Sperrstatus im Abgleichmodus anzeigen, offene und bezahlte Posten desselben Abbuchungstermins gemeinsam abgleichen, „Als abgeglichen markieren“ markiert nicht mehr als bezahlt, gleichnamige Tags zusammenführen, „Abstände von Labels &amp; Tags“ in den Einstellungen, neue Symbole für offen/bezahlt, Fehler behoben, durch den trotz Differenz „Abgeglichen“ angezeigt wurde</td></tr>
+          <tr><td>2.9.1</td><td>TBD</td><td>Neue Zahlung fragt vor dem Sichern nach, wenn ein Eintrag mit gleichem Nutzungsdatum und Betrag existiert, Bestätigungstaste im Betragszahlenblock, Zahlungsmittel mit Einträgen werden statt gelöscht als „Gekündigt“ behalten (Löschen eines gekündigten Zahlungsmittels löscht auch seine Einträge), Abbuchungsdetails zeigen offene und bezahlte Posten gemeinsam, Tag-Auswahl wahlweise „Wählen &amp; Fertig“ oder „Ein Tipp“, Einträge ohne Bezeichnung zeigen die erste Zeile der Notizen, Fehler behoben, durch den bezahlte Posten im Abbuchungsstatus manchmal als offen erschienen</td></tr>
         </tbody>
       </table>
     </div>
